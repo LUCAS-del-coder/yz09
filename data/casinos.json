@@ -1,0 +1,372 @@
+[
+  {
+    "id": "shwe-casino",
+    "name": "Shwe Casino",
+    "nameMm": "ရွှေ ကာစီနို",
+    "slug": "shwe-casino",
+    "rating": 4.8,
+    "featured": true,
+    "ctaLink": "https://www.yes8.io/m/home?affiliateCode=seom1802",
+    "ctaBrand": "Yes8",
+    "logo": "/images/casinos/shwe-logo.png",
+    "hero": "/images/casinos/shwe-hero.jpg",
+    "excerpt": "မြန်မာ့အကောင်းဆုံး အွန်လိုင်း ကာစီနို - ဘောနပ်စ် အများဆုံး နှင့် ငွေထုတ်ယူမှု မြန်ဆန်သည်",
+    "pros": [
+      "ဘောနပ်စ် အများဆုံး - 100% အထိ 500,000 MMK",
+      "ငွေထုတ်ယူမှု မြန်ဆန် - 24 နာရီအတွင်း",
+      "24/7 ဖောက်သည်ဝန်ဆောင်မှု",
+      "မြန်မာဘာသာ စကားပြောဆို",
+      "KBZ Pay, Wave Money ထောက်ပံ့"
+    ],
+    "cons": [
+      "အချို့ဂိမ်းများ အင်္ဂလိပ်လို သာရှိ",
+      "လက်မှတ် ထုတ်ပေးမှု နည်းသည်"
+    ],
+    "features": {
+      "games": "1000+",
+      "providers": "50+",
+      "minDeposit": "1000 MMK",
+      "withdrawalTime": "24 နာရီအတွင်း",
+      "support": "24/7 Live Chat",
+      "license": "Curacao Gaming License"
+    },
+    "bonuses": [
+      {
+        "type": "Welcome Bonus",
+        "amount": "100% အထိ 500,000 MMK",
+        "description": "ပထမဆုံးအကြိမ် ဖြည့်သွင်းမှုအတွက်"
+      },
+      {
+        "type": "Reload Bonus",
+        "amount": "50% အထိ 200,000 MMK",
+        "description": "ပုံမှန် ဖြည့်သွင်းမှုအတွက်"
+      }
+    ],
+    "paymentMethods": [
+      "KBZ Pay",
+      "Wave Money",
+      "CB Pay",
+      "AYA Pay",
+      "Visa",
+      "Mastercard"
+    ],
+    "gameCategories": [
+      "Slots",
+      "Live Casino",
+      "Sports Betting",
+      "Fishing",
+      "Poker"
+    ]
+  },
+  {
+    "id": "777-casino",
+    "name": "777 Casino",
+    "nameMm": "၇၇၇ ကာစီနို",
+    "slug": "777-casino",
+    "rating": 4.7,
+    "featured": true,
+    "ctaLink": "https://www.ygn9.net/m/home?affiliateCode=seom1902",
+    "ctaBrand": "Ygn9",
+    "logo": "/images/casinos/777-logo.png",
+    "hero": "/images/casinos/777-hero.jpg",
+    "excerpt": "လစ်ဆင်ရရှိထားသော ယုံကြည်စိတ်ချရသော ကာစီနို - 777 အမှတ်တံဆိပ်",
+    "pros": [
+      "လစ်ဆင်ရရှိထားသော ကာစီနို",
+      "လုံခြုံရေး အထူးကောင်းမွန်",
+      "ဂိမ်းအမျိုးအစား စုံလင်သည်",
+      "မိုဘိုင်း အက်ပ်လုပ်ဆောင်မှု ကောင်းသည်"
+    ],
+    "cons": [
+      "ဘောနပ်စ် ပမာဏ အနည်းငယ် နည်းသည်",
+      "ငွေထုတ်ယူမှု နည်းနည်း ကြာနိုင်သည်"
+    ],
+    "features": {
+      "games": "800+",
+      "providers": "40+",
+      "minDeposit": "2000 MMK",
+      "withdrawalTime": "48 နာရီ",
+      "support": "24/7 Email & Chat",
+      "license": "Malta Gaming Authority"
+    },
+    "bonuses": [
+      {
+        "type": "Welcome Bonus",
+        "amount": "75% အထိ 300,000 MMK",
+        "description": "ပထမဆုံးအကြိမ် ဖြည့်သွင်းမှုအတွက်"
+      }
+    ],
+    "paymentMethods": [
+      "KBZ Pay",
+      "Wave Money",
+      "AYA Pay",
+      "Visa",
+      "Mastercard",
+      "Bank Transfer"
+    ],
+    "gameCategories": [
+      "Slots",
+      "Live Casino",
+      "Sports Betting",
+      "Fishing"
+    ]
+  },
+  {
+    "id": "888-casino",
+    "name": "888 Casino",
+    "nameMm": "၈၈၈ ကာစီနို",
+    "slug": "888-casino",
+    "rating": 4.9,
+    "featured": true,
+    "ctaLink": "https://www.pya777.net/m/home?affiliateCode=seom2002",
+    "ctaBrand": "Pya777",
+    "logo": "/images/casinos/888-logo.png",
+    "hero": "/images/casinos/888-hero.jpg",
+    "excerpt": "888 အမှတ်တံဆိပ် - ကမ္ဘာကျော် ကာစီနို အတွေ့အကြုံ",
+    "pros": [
+      "ကမ္ဘာကျော် အမှတ်တံဆိပ်",
+      "ဂိမ်း အရည်အသွေး မြင့်မားသည်",
+      "ဘောနပ်စ် အများအပြား",
+      "VIP အစီအစဉ် ရှိသည်"
+    ],
+    "cons": [
+      "အကောင့်ဖွင့်လှစ်ရန် စာရွက်စာတမ်း လိုအပ်သည်",
+      "ငွေထုတ်ယူမှု အနည်းငယ် ကြာနိုင်သည်"
+    ],
+    "features": {
+      "games": "1200+",
+      "providers": "60+",
+      "minDeposit": "1000 MMK",
+      "withdrawalTime": "24-48 နာရီ",
+      "support": "24/7 Live Chat & Phone",
+      "license": "UK Gambling Commission"
+    },
+    "bonuses": [
+      {
+        "type": "Welcome Bonus",
+        "amount": "150% အထိ 600,000 MMK",
+        "description": "ပထမဆုံးအကြိမ် ဖြည့်သွင်းမှုအတွက်"
+      },
+      {
+        "type": "Free Spins",
+        "amount": "100 Free Spins",
+        "description": "အထူး ဘောနပ်စ်"
+      }
+    ],
+    "paymentMethods": [
+      "KBZ Pay",
+      "Wave Money",
+      "CB Pay",
+      "Visa",
+      "Mastercard",
+      "Cryptocurrency"
+    ],
+    "gameCategories": [
+      "Slots",
+      "Live Casino",
+      "Sports Betting",
+      "Fishing",
+      "Poker",
+      "Lottery"
+    ]
+  },
+  {
+    "id": "win8-casino",
+    "name": "Win8 Casino",
+    "nameMm": "ဝင်၈ ကာစီနို",
+    "slug": "win8-casino",
+    "rating": 4.6,
+    "featured": false,
+    "ctaLink": "https://www.mmk99.net/m/home?affiliateCode=seom2102",
+    "ctaBrand": "Mmk99",
+    "logo": "/images/casinos/win8-logo.png",
+    "hero": "/images/casinos/win8-hero.jpg",
+    "excerpt": "အနိုင်ရရှိမှု အများဆုံး - Win8 ကာစီနို",
+    "pros": [
+      "အနိုင်ရရှိမှု အခွင့်အလမ်း မြင့်မားသည်",
+      "ဘောနပ်စ် အများအပြား",
+      "ငွေထုတ်ယူမှု မြန်ဆန်",
+      "မိုဘိုင်း အက်ပ်ကောင်းသည်"
+    ],
+    "cons": [
+      "လုံခြုံရေး အနည်းငယ် အားနည်းသည်",
+      "ဖောက်သည်ဝန်ဆောင်မှု အနည်းငယ် နှေးကွေးသည်"
+    ],
+    "features": {
+      "games": "900+",
+      "providers": "45+",
+      "minDeposit": "1000 MMK",
+      "withdrawalTime": "24 နာရီ",
+      "support": "Live Chat (Business Hours)",
+      "license": "Curacao eGaming"
+    },
+    "bonuses": [
+      {
+        "type": "Welcome Bonus",
+        "amount": "200% အထိ 400,000 MMK",
+        "description": "ပထမဆုံးအကြိမ် ဖြည့်သွင်းမှုအတွက်"
+      }
+    ],
+    "paymentMethods": [
+      "KBZ Pay",
+      "Wave Money",
+      "CB Pay",
+      "AYA Pay"
+    ],
+    "gameCategories": [
+      "Slots",
+      "Live Casino",
+      "Sports Betting",
+      "Fishing"
+    ]
+  },
+  {
+    "id": "999-casino",
+    "name": "999 Casino",
+    "nameMm": "၉၉၉ ကာစီနို",
+    "slug": "999-casino",
+    "rating": 4.5,
+    "featured": false,
+    "ctaLink": "https://www.kbz999.net/m/home?affiliateCode=seom2202",
+    "ctaBrand": "Kbz999",
+    "logo": "/images/casinos/999-logo.png",
+    "hero": "/images/casinos/999-hero.jpg",
+    "excerpt": "999 အမှတ်တံဆိပ် - အောင်မြင်မှု နံပါတ်",
+    "pros": [
+      "ဘောနပ်စ် ကြီးမားသည်",
+      "ဂိမ်း အမျိုးအစား စုံလင်သည်",
+      "ငွေဖြည့်သွင်းမှု မြန်ဆန်",
+      "အထူး အစီအစဉ်များ ရှိသည်"
+    ],
+    "cons": [
+      "လစ်ဆင် အတည်ပြုမှု မရှိ",
+      "ဖောက်သည်ဝန်ဆောင်မှု အချိန် ကန့်သတ်ထားသည်"
+    ],
+    "features": {
+      "games": "700+",
+      "providers": "35+",
+      "minDeposit": "1000 MMK",
+      "withdrawalTime": "48-72 နာရီ",
+      "support": "Email & Live Chat",
+      "license": "Pending License"
+    },
+    "bonuses": [
+      {
+        "type": "Welcome Bonus",
+        "amount": "100% + 100 Free Spins",
+        "description": "ပထမဆုံးအကြိမ် ဖြည့်သွင်းမှုအတွက်"
+      }
+    ],
+    "paymentMethods": [
+      "KBZ Pay",
+      "Wave Money",
+      "CB Pay",
+      "AYA Pay"
+    ],
+    "gameCategories": [
+      "Slots",
+      "Live Casino",
+      "Sports Betting"
+    ]
+  },
+  {
+    "id": "pglucky88-casino",
+    "name": "PGLucky88 Casino",
+    "nameMm": "PG Lucky88 ကာစီနို",
+    "slug": "pglucky88-casino",
+    "rating": 4.7,
+    "featured": false,
+    "ctaLink": "https://www.mmk123.net/m/home?affiliateCode=seom2302",
+    "ctaBrand": "Mmk123",
+    "logo": "/images/casinos/pglucky88-logo.png",
+    "hero": "/images/casinos/pglucky88-hero.jpg",
+    "excerpt": "PG Soft ဂိမ်းများ စုံလင်စွာ ရရှိ - Lucky88",
+    "pros": [
+      "PG Soft ဂိမ်းများ စုံလင်စွာ ရရှိ",
+      "ဂိမ်း အရည်အသွေး မြင့်မားသည်",
+      "ဘောနပ်စ် အများအပြား",
+      "မိုဘိုင်း အသုံးပြုရန် ကောင်းသည်"
+    ],
+    "cons": [
+      "အချို့ဂိမ်းများ အင်္ဂလိပ်လို သာရှိ",
+      "ငွေထုတ်ယူမှု အနည်းငယ် ကြာနိုင်သည်"
+    ],
+    "features": {
+      "games": "850+",
+      "providers": "40+",
+      "minDeposit": "1000 MMK",
+      "withdrawalTime": "24-48 နာရီ",
+      "support": "24/7 Live Chat",
+      "license": "Curacao Gaming License"
+    },
+    "bonuses": [
+      {
+        "type": "Welcome Bonus",
+        "amount": "88% အထိ 888,888 MMK",
+        "description": "ပထမဆုံးအကြိမ် ဖြည့်သွင်းမှုအတွက်"
+      }
+    ],
+    "paymentMethods": [
+      "KBZ Pay",
+      "Wave Money",
+      "CB Pay",
+      "AYA Pay",
+      "Visa"
+    ],
+    "gameCategories": [
+      "Slots",
+      "Live Casino",
+      "Fishing",
+      "Arcade"
+    ]
+  },
+  {
+    "id": "fafafa-casino",
+    "name": "FaFaFa Casino",
+    "nameMm": "ဖဖဖ ကာစီနို",
+    "slug": "fafafa-casino",
+    "rating": 4.4,
+    "featured": false,
+    "ctaLink": "https://www.yes8.io/m/home?affiliateCode=seom1802",
+    "ctaBrand": "Yes8",
+    "logo": "/images/casinos/fafafa-logo.png",
+    "hero": "/images/casinos/fafafa-hero.jpg",
+    "excerpt": "ဖဖဖ - မြန်မာ့ အများစု နှစ်သက်သော ကာစီနို",
+    "pros": [
+      "မြန်မာဘာသာ စကားပြောဆို ကောင်းသည်",
+      "ဘောနပ်စ် အများအပြား",
+      "ငွေဖြည့်သွင်းမှု မြန်ဆန်",
+      "ဖောက်သည်ဝန်ဆောင်မှု ကောင်းသည်"
+    ],
+    "cons": [
+      "ဂိမ်း အရေအတွက် အနည်းငယ် နည်းသည်",
+      "လစ်ဆင် အချက်အလက် ရှင်းလင်းမှု နည်းသည်"
+    ],
+    "features": {
+      "games": "600+",
+      "providers": "30+",
+      "minDeposit": "1000 MMK",
+      "withdrawalTime": "24-48 နာရီ",
+      "support": "Live Chat & Phone",
+      "license": "Curacao eGaming"
+    },
+    "bonuses": [
+      {
+        "type": "Welcome Bonus",
+        "amount": "150% အထိ 300,000 MMK",
+        "description": "ပထမဆုံးအကြိမ် ဖြည့်သွင်းမှုအတွက်"
+      }
+    ],
+    "paymentMethods": [
+      "KBZ Pay",
+      "Wave Money",
+      "CB Pay",
+      "AYA Pay"
+    ],
+    "gameCategories": [
+      "Slots",
+      "Live Casino",
+      "Sports Betting"
+    ]
+  }
+]
+
