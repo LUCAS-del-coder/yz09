@@ -7,6 +7,10 @@ const nextConfig = {
   experimental: {
     optimizePackageImports: ['framer-motion'],
   },
+  // Ensure PostCSS is properly configured
+  webpack: (config) => {
+    return config;
+  },
 };
 
 export default nextConfig;
