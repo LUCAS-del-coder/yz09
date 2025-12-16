@@ -40,9 +40,6 @@ export default function CasinoCard({ casino, index = 0 }: CasinoCardProps) {
           alt={casino.nameMm}
           fill
           className="object-cover group-hover:scale-110 transition-transform duration-500"
-          onError={(e) => {
-            e.currentTarget.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='200'%3E%3Crect fill='%231A1A1A' width='400' height='200'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial' font-size='24' fill='%23FFD700' text-anchor='middle' dy='.3em'%3E" + casino.nameMm + "%3C/text%3E%3C/svg%3E";
-          }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-dark via-transparent to-transparent" />
         <div className="absolute top-4 right-4">

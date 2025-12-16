@@ -57,9 +57,6 @@ export default function CasinoReviewPage({ params }: PageProps) {
             fill
             className="object-cover"
             priority
-            onError={(e) => {
-              e.currentTarget.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='600'%3E%3Crect fill='%231A1A1A' width='1200' height='600'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial' font-size='48' fill='%23FFD700' text-anchor='middle' dy='.3em'%3E" + casino.nameMm + "%3C/text%3E%3C/svg%3E";
-            }}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/80 to-transparent" />
         </div>
@@ -74,9 +71,6 @@ export default function CasinoReviewPage({ params }: PageProps) {
                   width={80}
                   height={80}
                   className="object-contain w-full h-full"
-                  onError={(e) => {
-                    e.currentTarget.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Crect fill='%231A1A1A' width='80' height='80'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial' font-size='16' fill='%23FFD700' text-anchor='middle' dy='.3em'%3E" + casino.nameMm + "%3C/text%3E%3C/svg%3E";
-                  }}
                 />
               </div>
               <div>
