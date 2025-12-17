@@ -86,19 +86,19 @@ export default function RootLayout({
 
   return (
     <html lang="my" className={`${myanmarFont.variable} ${englishFont.variable}`}>
-      <head>
+      <body className={`${myanmarFont.variable} ${englishFont.variable}`}>
         <Script
           id="website-schema"
           type="application/ld+json"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
         <Script
           id="organization-schema"
           type="application/ld+json"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
-      </head>
-      <body className={`${myanmarFont.variable} ${englishFont.variable}`}>
         <AgeVerification />
         <Header />
         <main className="min-h-screen">

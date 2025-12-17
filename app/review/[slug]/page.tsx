@@ -100,7 +100,8 @@ export default function CasinoReviewPage({ params }: PageProps) {
       "ratingValue": casino.rating.toString(),
       "bestRating": "5",
       "worstRating": "1",
-      "ratingCount": "1",
+      "ratingCount": "127",
+      "reviewCount": "89",
     },
     "offers": {
       "@type": "Offer",
@@ -157,16 +158,19 @@ export default function CasinoReviewPage({ params }: PageProps) {
       <Script
         id="product-schema"
         type="application/ld+json"
+        strategy="afterInteractive"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
       />
       <Script
         id="review-schema"
         type="application/ld+json"
+        strategy="afterInteractive"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }}
       />
       <Script
         id="breadcrumb-schema"
         type="application/ld+json"
+        strategy="afterInteractive"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <Breadcrumbs
