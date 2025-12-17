@@ -68,7 +68,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     },
     twitter: {
       card: "summary_large_image",
-      title: `${casino.nameMm} - စုံစမ်းစစ်ဆေးချက်`,
+      title: `${casino.name} Review`,
       description: casino.excerpt,
     },
     alternates: {
@@ -89,12 +89,12 @@ export default function CasinoReviewPage({ params }: PageProps) {
   const productSchema = {
     "@context": "https://schema.org",
     "@type": "Product",
-    "name": casino.nameMm,
+    "name": casino.name,
     "description": casino.excerpt,
     "image": `${baseUrl}${casino.logo}`,
     "brand": {
       "@type": "Brand",
-      "name": casino.nameMm,
+      "name": casino.name,
     },
     "aggregateRating": {
       "@type": "AggregateRating",
@@ -115,7 +115,7 @@ export default function CasinoReviewPage({ params }: PageProps) {
     "@type": "Review",
     "itemReviewed": {
       "@type": "Product",
-      "name": casino.nameMm,
+      "name": casino.name,
     },
     "reviewRating": {
       "@type": "Rating",
@@ -147,7 +147,7 @@ export default function CasinoReviewPage({ params }: PageProps) {
       {
         "@type": "ListItem",
         "position": 3,
-        "name": casino.nameMm,
+        "name": casino.name,
         "item": `${baseUrl}/review/${casino.slug}`,
       },
     ],
