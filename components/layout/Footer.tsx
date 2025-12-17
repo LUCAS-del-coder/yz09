@@ -7,6 +7,45 @@ export default function Footer() {
 
   return (
     <footer className="bg-dark border-t border-dark-lightest mt-20">
+      {/* Disclaimer Banner */}
+      <div className="bg-red-900/20 border-b border-red-500/50">
+        <div className="container mx-auto px-4 py-6">
+          <div className="flex items-start gap-4">
+            <span className="text-3xl flex-shrink-0">⚠️</span>
+            <div className="flex-1">
+              <h3 className="text-lg font-bold text-red-400 mb-2">
+                သတိပေးချက် - Disclaimer
+              </h3>
+              <p className="text-gray-300 text-sm mb-3">
+                <strong>Myanmar Casino Reviews</strong> သည် <strong>သတင်းအချက်အလက် ပေးသော ဝဘ်ဆိုဒ်</strong> ဖြစ်ပြီး 
+                အွန်လိုင်း ကာစီနို ကစားရန် ဝန်ဆောင်မှု <strong>မပေးပါ</strong>။ 
+                ဤဝဘ်ဆိုဒ်သည် <strong>18+</strong> အသက်အရွယ် သာရှိသူများအတွက် ဖြစ်ပါသည်။
+              </p>
+              <div className="flex flex-wrap gap-4 text-sm">
+                <a
+                  href="/responsible-gaming"
+                  className="text-gold hover:underline font-semibold"
+                >
+                  တာဝန်ယူမှုရှိသော ဂိမ်းကစားခြင်း →
+                </a>
+                <a
+                  href="/terms"
+                  className="text-gray-400 hover:text-gold"
+                >
+                  အသုံးပြုရန် စည်းမျဉ်းများ
+                </a>
+                <a
+                  href="/privacy"
+                  className="text-gray-400 hover:text-gold"
+                >
+                  ကိုယ်ရေးလုံခြုံမှု
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div className="container mx-auto px-4 py-12">
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           {/* About */}

@@ -44,8 +44,8 @@ export default function CTAButton({
         href={href}
         onClick={onClick}
         className={`${baseStyles} ${variants[variant]} ${sizes[size]}`}
-        target="_blank"
-        rel="noopener noreferrer"
+        target={href.startsWith('http') ? '_blank' : undefined}
+        rel={href.startsWith('http') ? 'nofollow sponsored noopener noreferrer' : undefined}
       >
         <span className="relative z-10 flex items-center gap-2">
           {children}

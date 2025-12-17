@@ -2,9 +2,19 @@ import { Metadata } from "next";
 import ComparisonTable from "@/components/ui/ComparisonTable";
 import casinosData from "@/data/casinos.json";
 
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://example.com';
+
 export const metadata: Metadata = {
   title: "မြန်မာ့ အကောင်းဆုံး ကာစီနို နှိုင်းယှဉ်ချက် - Myanmar Casino Reviews",
   description: "မြန်မာ့အကောင်းဆုံး အွန်လိုင်း ကာစီနို များကို နှိုင်းယှဉ်ချက်။ ဘောနပ်စ်၊ ဂိမ်းများ၊ ငွေလွှဲနည်းလမ်းများ။",
+  alternates: {
+    canonical: `${baseUrl}/review/top-myanmar-casinos`,
+  },
+  openGraph: {
+    title: "မြန်မာ့ အကောင်းဆုံး ကာစီနို နှိုင်းယှဉ်ချက်",
+    description: "မြန်မာ့အကောင်းဆုံး အွန်လိုင်း ကာစီနို များကို နှိုင်းယှဉ်ချက်။",
+    url: `${baseUrl}/review/top-myanmar-casinos`,
+  },
 };
 
 export default function ComparisonPage() {

@@ -1,9 +1,19 @@
 import { Metadata } from "next";
 import CTAButton from "@/components/ui/CTAButton";
 
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://example.com';
+
 export const metadata: Metadata = {
   title: "အစပြုသူများအတွက် လမ်းညွှန် - Myanmar Casino Reviews",
   description: "အွန်လိုင်း ကာစီနို အစပြုသူများအတွက် လမ်းညွှန်။",
+  alternates: {
+    canonical: `${baseUrl}/guide`,
+  },
+  openGraph: {
+    title: "အစပြုသူများအတွက် လမ်းညွှန်",
+    description: "အွန်လိုင်း ကာစီနို အစပြုသူများအတွက် လမ်းညွှန်။",
+    url: `${baseUrl}/guide`,
+  },
 };
 
 const guides = [

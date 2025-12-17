@@ -1,9 +1,19 @@
 import { Metadata } from "next";
 import CTAButton from "@/components/ui/CTAButton";
 
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://example.com';
+
 export const metadata: Metadata = {
   title: "ငွေလွှဲနည်းလမ်းများ - Myanmar Casino Reviews",
   description: "မြန်မာ့အကောင်းဆုံး အွန်လိုင်း ကာစီနို ငွေလွှဲနည်းလမ်းများ။",
+  alternates: {
+    canonical: `${baseUrl}/payment`,
+  },
+  openGraph: {
+    title: "ငွေလွှဲနည်းလမ်းများ",
+    description: "မြန်မာ့အကောင်းဆုံး အွန်လိုင်း ကာစီနို ငွေလွှဲနည်းလမ်းများ။",
+    url: `${baseUrl}/payment`,
+  },
 };
 
 const paymentMethods = [

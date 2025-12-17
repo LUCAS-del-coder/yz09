@@ -37,7 +37,7 @@ export default function CasinoCard({ casino, index = 0 }: CasinoCardProps) {
       <div className="relative h-48 overflow-hidden">
         <Image
           src={casino.hero}
-          alt={casino.nameMm}
+          alt={`${casino.nameMm} ကာစီနို - ${casino.excerpt} - Myanmar အွန်လိုင်း ကာစီနို`}
           fill
           className="object-cover group-hover:scale-110 transition-transform duration-500"
         />

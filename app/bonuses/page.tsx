@@ -2,9 +2,19 @@ import { Metadata } from "next";
 import BonusCard from "@/components/ui/BonusCard";
 import casinosData from "@/data/casinos.json";
 
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://example.com';
+
 export const metadata: Metadata = {
   title: "ဘောနပ်စ် နှင့် ပရိုမိုးရှင်းများ - Myanmar Casino Reviews",
   description: "မြန်မာ့အကောင်းဆုံး အွန်လိုင်း ကာစီနို ဘောနပ်စ်များ နှင့် ပရိုမိုးရှင်းများ။",
+  alternates: {
+    canonical: `${baseUrl}/bonuses`,
+  },
+  openGraph: {
+    title: "ဘောနပ်စ် နှင့် ပရိုမိုးရှင်းများ",
+    description: "မြန်မာ့အကောင်းဆုံး အွန်လိုင်း ကာစီနို ဘောနပ်စ်များ နှင့် ပရိုမိုးရှင်းများ။",
+    url: `${baseUrl}/bonuses`,
+  },
 };
 
 export default function BonusesPage() {

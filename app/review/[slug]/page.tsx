@@ -1,11 +1,13 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Image from "next/image";
+import Script from "next/script";
 import casinosData from "@/data/casinos.json";
 import StarRating from "@/components/ui/StarRating";
 import ProsCons from "@/components/ui/ProsCons";
 import BonusCard from "@/components/ui/BonusCard";
 import CTAButton from "@/components/ui/CTAButton";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
 
 interface PageProps {
   params: {
@@ -21,6 +23,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const casino = casinosData.find((c) => c.slug === params.slug);
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://example.com';
 
   if (!casino) {
     return {
@@ -35,25 +38,134 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title: `${casino.nameMm} - စုံစမ်းစစ်ဆေးချက်`,
       description: casino.excerpt,
       type: "website",
+      url: `${baseUrl}/review/${casino.slug}`,
+      images: [
+        {
+          url: `${baseUrl}/images/casinos/${casino.slug}-hero.jpg`,
+          width: 1200,
+          height: 630,
+          alt: `${casino.nameMm} - ${casino.excerpt}`,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${casino.nameMm} - စုံစမ်းစစ်ဆေးချက်`,
+      description: casino.excerpt,
+    },
+    alternates: {
+      canonical: `${baseUrl}/review/${casino.slug}`,
     },
   };
 }
 
 export default function CasinoReviewPage({ params }: PageProps) {
   const casino = casinosData.find((c) => c.slug === params.slug);
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://example.com';
 
   if (!casino) {
     notFound();
   }
 
+  // Schema.org structured data for Product and Review
+  const productSchema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": casino.nameMm,
+    "description": casino.excerpt,
+    "image": `${baseUrl}${casino.logo}`,
+    "brand": {
+      "@type": "Brand",
+      "name": casino.nameMm,
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": casino.rating.toString(),
+      "bestRating": "5",
+      "worstRating": "1",
+      "ratingCount": "1",
+    },
+    "offers": {
+      "@type": "Offer",
+      "availability": "https://schema.org/InStock",
+      "priceCurrency": "MMK",
+    },
+  };
+
+  const reviewSchema = {
+    "@context": "https://schema.org",
+    "@type": "Review",
+    "itemReviewed": {
+      "@type": "Product",
+      "name": casino.nameMm,
+    },
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": casino.rating.toString(),
+      "bestRating": "5",
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "Myanmar Casino Reviews",
+    },
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": baseUrl,
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Reviews",
+        "item": `${baseUrl}/review`,
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": casino.nameMm,
+        "item": `${baseUrl}/review/${casino.slug}`,
+      },
+    ],
+  };
+
   return (
-    <div className="min-h-screen bg-dark">
+    <>
+      <Script
+        id="product-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+      />
+      <Script
+        id="review-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }}
+      />
+      <Script
+        id="breadcrumb-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <Breadcrumbs
+        items={[
+          { label: "ပင်မစာမျက်နှာ", href: "/" },
+          { label: "စုံစမ်းစစ်ဆေးချက်များ", href: "/review/top-myanmar-casinos" },
+          { label: casino.nameMm, href: `/review/${casino.slug}` },
+        ]}
+      />
+      <div className="min-h-screen bg-dark">
       {/* Hero Section */}
       <section className="relative h-[60vh] min-h-[500px] overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src={casino.hero}
-            alt={casino.nameMm}
+            alt={`${casino.nameMm} ကာစီနို - ${casino.excerpt} - Myanmar အွန်လိုင်း ကာစီနို`}
             fill
             className="object-cover"
             priority
@@ -67,7 +179,7 @@ export default function CasinoReviewPage({ params }: PageProps) {
               <div className="w-20 h-20 rounded-xl bg-dark-lighter border-2 border-gold p-2">
                 <Image
                   src={casino.logo}
-                  alt={casino.nameMm}
+                  alt={`${casino.nameMm} ကာစီနို လိုဂို - Myanmar အွန်လိုင်း ကာစီနို`}
                   width={80}
                   height={80}
                   className="object-contain w-full h-full"
@@ -222,7 +334,8 @@ export default function CasinoReviewPage({ params }: PageProps) {
           </div>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 }
 
