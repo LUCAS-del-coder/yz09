@@ -174,7 +174,7 @@ export default function CasinoReviewPage({ params }: PageProps) {
         items={[
           { label: "ပင်မစာမျက်နှာ", href: "/" },
           { label: "စုံစမ်းစစ်ဆေးချက်များ", href: "/review/top-myanmar-casinos" },
-          { label: casino.nameMm, href: `/review/${casino.slug}` },
+          { label: casino.name, href: `/review/${casino.slug}` },
         ]}
       />
       <div className="min-h-screen bg-dark">
