@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const faqs = [
   {
     question: "Which is better: Shwe Casino or 888 Casino?",
-    answer: "Both Shwe Casino (rating 4.9/5) and 888 Casino (5.0/5) are excellent choices for Myanmar players. 888 Casino offers higher bonuses (150% vs 100%) and both casinos offer withdrawals within 1 hour."
+    answer: "Both Shwe Casino (rating 4.9/5) and 888 Casino (4.7/5) are excellent choices for Myanmar players. Shwe Casino ranks #1 with the best overall rating, while 888 Casino offers higher bonuses (150% vs 100%). Both casinos offer withdrawals within 1 hour."
   },
   {
     question: "Is 777 Casino safe for Myanmar players?",
