@@ -100,7 +100,7 @@ export default function CasinoCard({ casino, rank, index = 0 }: CasinoCardProps)
           <div className={`text-center md:text-left ${textColor}`}>
             <div className="flex items-center gap-2 mb-2 justify-center md:justify-start">
               <StarRating rating={casino.rating} size="lg" />
-              <span className="font-bold text-xl">{casino.rating.toFixed(1)}/10</span>
+              <span className="font-bold text-xl">{casino.rating.toFixed(1)}/5</span>
             </div>
             <h3 className="font-bold text-lg">{casino.nameMm}</h3>
           </div>
