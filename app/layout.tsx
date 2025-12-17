@@ -29,10 +29,10 @@ const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://example.com';
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: "2025 အကောင်းဆုံး Online Casino များ - Myanmar Casino Reviews",
+    default: "Myanmar Casino Reviews | Shwe, 888, 777, Win8, 999 & More",
     template: "%s | Myanmar Casino Reviews",
   },
-  description: "မြန်မာ့အကောင်းဆုံး အွန်လိုင်း ကာစီနို စုံစမ်းစစ်ဆေးချက်များ။ ဘောနပ်စ် အများဆုံး၊ ငွေထုတ်ယူမှု မြန်ဆန်၊ 24/7 ဝန်ဆောင်မှု။",
+  description: "Expert reviews & comparisons of Myanmar's top online casinos: Shwe Casino (ရွှေ), 888 Casino, 777 Casino, Win8, 999 Casino, PGLucky88, FaFaFa. Get exclusive bonuses, ratings & guides for မြန်မာ players in 2025.",
   openGraph: {
     title: "2025 အကောင်းဆုံး Online Casino များ",
     description: "မြန်မာ့အကောင်းဆုံး အွန်လိုင်း ကာစီနို စုံစမ်းစစ်ဆေးချက်များ",

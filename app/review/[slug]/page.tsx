@@ -31,13 +31,31 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     };
   }
 
+  // 建立競品對比關鍵字
+  const competitors = casinosData
+    .filter(c => c.slug !== casino.slug)
+    .slice(0, 3)
+    .map(c => c.name)
+    .join(", ");
+
   return {
-    title: `${casino.nameMm} - စုံစမ်းစစ်ဆေးချက် | Myanmar Casino Reviews`,
-    description: `${casino.excerpt} ${casino.nameMm} အပြည့်အစုံ စုံစမ်းစစ်ဆေးချက်။`,
+    title: `${casino.name} Review 2025 | ${casino.nameMm} vs ${competitors}`,
+    description: `Comprehensive ${casino.name} (${casino.nameMm}) review for Myanmar players. Compare with Shwe Casino, 888, 777, Win8. Rating: ${casino.rating}/5. Bonuses, games, withdrawal times & expert analysis.`,
+    keywords: [
+      casino.name,
+      casino.nameMm,
+      `${casino.name} Myanmar`,
+      `${casino.name} review`,
+      `${casino.name} bonus`,
+      "Shwe Casino alternative",
+      `888 Casino vs ${casino.name}`,
+      "Myanmar online casino",
+      "ကာစီနို မြန်မာ"
+    ].join(", "),
     openGraph: {
-      title: `${casino.nameMm} - စုံစမ်းစစ်ဆေးချက်`,
-      description: casino.excerpt,
-      type: "website",
+      title: `${casino.name} Review | Compare with Shwe, 888, 777 Casinos`,
+      description: `Expert ${casino.name} review. Rating: ${casino.rating}/5. Compare bonuses & features vs Shwe Casino, 888, 777, Win8. Best for Myanmar players.`,
+      type: "article",
       url: `${baseUrl}/review/${casino.slug}`,
       images: [
         {

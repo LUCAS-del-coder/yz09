@@ -23,9 +23,9 @@ export default function CTAButton({
   const baseStyles = "relative inline-flex items-center justify-center font-bold rounded-lg transition-all duration-300 overflow-hidden group";
   
   const variants = {
-    primary: "bg-primary hover:bg-primary-light text-white shadow-lg shadow-primary/50",
-    secondary: "bg-dark-lighter hover:bg-dark-lightest text-white border-2 border-primary",
-    gold: "bg-gradient-to-r from-gold-dark via-gold to-gold-light text-dark hover:shadow-lg hover:shadow-gold/50",
+    primary: "bg-casino-purple-600 hover:bg-casino-purple-700 text-white shadow-lg shadow-casino-purple/50",
+    secondary: "bg-white/10 hover:bg-white/20 text-white border-2 border-casino-purple-400",
+    gold: "btn-play-now text-white",
   };
 
   const sizes = {
