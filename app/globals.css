@@ -34,7 +34,12 @@
   }
 
   .card-hover {
-    @apply transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-casino-purple/20;
+    @apply transition-all duration-300 hover:scale-105 hover:shadow-2xl;
+    --tw-shadow-color: rgba(139, 92, 246, 0.2);
+  }
+  
+  .card-hover:hover {
+    box-shadow: 0 25px 50px -12px rgba(139, 92, 246, 0.2);
   }
 
   /* 新卡片基础样式 */
