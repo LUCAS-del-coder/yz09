@@ -62,7 +62,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
           url: `${baseUrl}/images/casinos/${casino.slug}-hero.jpg`,
           width: 1200,
           height: 630,
-          alt: `${casino.nameMm} - ${casino.excerpt}`,
+          alt: `${casino.name} - ${casino.excerpt}`,
         },
       ],
     },
@@ -183,7 +183,7 @@ export default function CasinoReviewPage({ params }: PageProps) {
         <div className="absolute inset-0">
           <Image
             src={casino.hero}
-            alt={`${casino.nameMm} ကာစီနို - ${casino.excerpt} - Myanmar အွန်လိုင်း ကာစီနို`}
+            alt={`${casino.name} Casino - ${casino.excerpt}`}
             fill
             className="object-cover"
             priority
@@ -197,7 +197,7 @@ export default function CasinoReviewPage({ params }: PageProps) {
               <div className="w-20 h-20 rounded-xl bg-dark-lighter border-2 border-gold p-2">
                 <Image
                   src={casino.logo}
-                  alt={`${casino.nameMm} ကာစီနို လိုဂို - Myanmar အွန်လိုင်း ကာစီနို`}
+                  alt={`${casino.name} Casino Logo`}
                   width={80}
                   height={80}
                   className="object-contain w-full h-full"
@@ -205,7 +205,7 @@ export default function CasinoReviewPage({ params }: PageProps) {
               </div>
               <div>
                 <h1 className="text-4xl md:text-5xl font-bold text-white mb-2">
-                  {casino.nameMm}
+                  {casino.name}
                 </h1>
                 <StarRating rating={casino.rating} size="lg" />
               </div>
@@ -315,7 +315,7 @@ export default function CasinoReviewPage({ params }: PageProps) {
               ကျွမ်းကျင်သူ၏ ဆုံးဖြတ်ချက်
             </h2>
             <p className="text-gray-300 text-lg leading-relaxed mb-6">
-              {casino.nameMm} သည် မြန်မာနိုင်ငံရှိ အကောင်းဆုံး အွန်လိုင်း ကာစီနို များထဲမှ တစ်ခု ဖြစ်သည်။
+              {casino.name} is one of the best online casinos in Myanmar.
               ဘောနပ်စ် အများဆုံး၊ ငွေထုတ်ယူမှု မြန်ဆန်၊ နှင့် 24/7 ဖောက်သည်ဝန်ဆောင်မှု ရရှိနိုင်သည်။
               ဂိမ်း အရည်အသွေး မြင့်မားပြီး မြန်မာဘာသာ ထောက်ပံ့မှု ရှိသည်။
             </p>

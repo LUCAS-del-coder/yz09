@@ -100,14 +100,14 @@ export default function ComparisonTable({ casinos }: ComparisonTableProps) {
                     <div className="w-12 h-12 rounded-lg bg-dark-light overflow-hidden flex-shrink-0">
                       <Image
                         src={casino.logo}
-                        alt={`${casino.nameMm} ကာစီနို လိုဂို - Myanmar အွန်လိုင်း ကာစီနို`}
+                        alt={`${casino.name} Casino Logo`}
                         width={48}
                         height={48}
                         className="object-cover"
                       />
                     </div>
                     <div>
-                      <div className="font-semibold text-white">{casino.nameMm}</div>
+                      <div className="font-semibold text-white">{casino.name}</div>
                       <Link
                         href={`/review/${casino.slug}`}
                         className="text-sm text-primary hover:underline"

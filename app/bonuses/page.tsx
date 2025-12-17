@@ -32,7 +32,7 @@ export default function BonusesPage() {
     casino.bonuses.map((bonus) => ({
       ...bonus,
       ctaLink: brandLinks[Math.floor(Math.random() * brandLinks.length)],
-      casinoName: casino.nameMm,
+      casinoName: casino.name,
     }))
   );
 

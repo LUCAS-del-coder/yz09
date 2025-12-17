@@ -10,7 +10,7 @@ export default function LatestBonuses() {
     casino.bonuses.map((bonus) => ({
       ...bonus,
       ctaLink: casino.ctaLink,
-      casinoName: casino.nameMm,
+      casinoName: casino.name,
     }))
   );
 

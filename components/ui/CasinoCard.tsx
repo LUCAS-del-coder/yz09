@@ -91,7 +91,7 @@ export default function CasinoCard({ casino, rank, index = 0 }: CasinoCardProps)
           <div className="w-28 h-28 md:w-32 md:h-32 rounded-xl bg-white/10 backdrop-blur-md p-4 mb-4 flex items-center justify-center">
             <Image
               src={casino.logo}
-              alt={`${casino.nameMm} ကာစီနို လိုဂို`}
+              alt={`${casino.name} Casino Logo`}
               width={120}
               height={120}
               className="object-contain w-full h-full"
@@ -102,7 +102,7 @@ export default function CasinoCard({ casino, rank, index = 0 }: CasinoCardProps)
               <StarRating rating={casino.rating} size="lg" />
               <span className="font-bold text-xl">{casino.rating.toFixed(1)}/5</span>
             </div>
-            <h3 className="font-bold text-lg">{casino.nameMm}</h3>
+            <h3 className="font-bold text-lg">{casino.name}</h3>
           </div>
         </div>
 
