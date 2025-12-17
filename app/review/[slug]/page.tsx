@@ -39,11 +39,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     .join(", ");
 
   return {
-    title: `${casino.name} Review 2025 | ${casino.nameMm} vs ${competitors}`,
-    description: `Comprehensive ${casino.name} (${casino.nameMm}) review for Myanmar players. Compare with Shwe Casino, 888, 777, Win8. Rating: ${casino.rating}/5. Bonuses, games, withdrawal times & expert analysis.`,
+    title: `${casino.name} Review 2025 | ${casino.name} vs ${competitors}`,
+    description: `Comprehensive ${casino.name} review for Myanmar players. Compare with Shwe Casino, 888, 777, Win8. Rating: ${casino.rating}/5. Bonuses, games, withdrawal times & expert analysis.`,
     keywords: [
       casino.name,
-      casino.nameMm,
       `${casino.name} Myanmar`,
       `${casino.name} review`,
       `${casino.name} bonus`,
