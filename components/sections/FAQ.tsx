@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const faqs = [
   {
     question: "Which is better: Shwe Casino or 888 Casino?",
-    answer: "Both Shwe Casino (rating 4.8/5) and 888 Casino (4.9/5) are excellent choices for Myanmar players. 888 Casino offers higher bonuses (150% vs 100%) but Shwe Casino has faster withdrawals (24h vs 48h)."
+    answer: "Both Shwe Casino (rating 4.9/5) and 888 Casino (5.0/5) are excellent choices for Myanmar players. 888 Casino offers higher bonuses (150% vs 100%) and both casinos offer withdrawals within 1 hour."
   },
   {
     question: "Is 777 Casino safe for Myanmar players?",
@@ -22,7 +22,7 @@ const faqs = [
   },
   {
     question: "How does Win8 compare to 999 Casino?",
-    answer: "Win8 and 999 Casino both offer excellent game selections and bonuses. Win8 has faster withdrawal times (0-24h) while 999 Casino has more game providers (60+). Both are highly rated for Myanmar players."
+    answer: "Win8 and 999 Casino both offer excellent game selections and bonuses. Both casinos offer withdrawals within 1 hour. Both are highly rated for Myanmar players."
   },
   {
     question: "Are PGLucky88 and FaFaFa Casino legitimate?",

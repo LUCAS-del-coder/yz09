@@ -59,8 +59,8 @@ export default function ComparePage() {
             <div>
               <h3 className="font-semibold text-dark mb-2">⚡ Check Withdrawal Speed</h3>
               <p>
-                <strong>Shwe Casino</strong> and <strong>Win8</strong> offer the fastest 
-                withdrawals (0-24 hours), while <strong>888 Casino</strong> takes 24-48 hours.
+                All top casinos including <strong>Shwe Casino</strong>, <strong>888 Casino</strong>, 
+                and <strong>Win8</strong> offer withdrawals within 1 hour.
               </p>
             </div>
             <div>

@@ -226,7 +226,7 @@ export default function CasinoReviewPage({ params }: PageProps) {
       <div className="container mx-auto px-4 py-12">
         <div className="max-w-6xl mx-auto">
           {/* Quick Facts */}
-          <div className="grid md:grid-cols-4 gap-4 mb-12">
+          <div className="grid md:grid-cols-3 gap-4 mb-12">
             <div className="bg-dark-lighter rounded-lg p-6 border border-dark-lightest text-center">
               <div className="text-2xl font-bold text-gold mb-2">{casino.features.games}</div>
               <div className="text-sm text-gray-400">ဂိမ်းများ</div>
@@ -234,10 +234,6 @@ export default function CasinoReviewPage({ params }: PageProps) {
             <div className="bg-dark-lighter rounded-lg p-6 border border-dark-lightest text-center">
               <div className="text-2xl font-bold text-gold mb-2">{casino.features.providers}</div>
               <div className="text-sm text-gray-400">ဂိမ်း ထုတ်လုပ်သူများ</div>
-            </div>
-            <div className="bg-dark-lighter rounded-lg p-6 border border-dark-lightest text-center">
-              <div className="text-2xl font-bold text-gold mb-2">{casino.features.minDeposit}</div>
-              <div className="text-sm text-gray-400">အနည်းဆုံး ဖြည့်သွင်းမှု</div>
             </div>
             <div className="bg-dark-lighter rounded-lg p-6 border border-dark-lightest text-center">
               <div className="text-2xl font-bold text-gold mb-2">{casino.features.withdrawalTime}</div>

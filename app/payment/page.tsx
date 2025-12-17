@@ -97,10 +97,6 @@ export default function PaymentPage() {
               
               <div className="space-y-3 mb-6">
                 <div>
-                  <span className="text-sm text-gray-400">အနည်းဆုံး:</span>
-                  <span className="text-gold font-semibold ml-2">{method.minDeposit}</span>
-                </div>
-                <div>
                   <span className="text-sm text-gray-400">အများဆုံး:</span>
                   <span className="text-gold font-semibold ml-2">{method.maxDeposit}</span>
                 </div>
@@ -126,12 +122,11 @@ export default function PaymentPage() {
           <h2 className="text-2xl font-bold text-white mb-4">ငွေထုတ်ယူမှု</h2>
           <div className="space-y-4 text-gray-300">
             <p>
-              ငွေထုတ်ယူမှုသည် ယေဘူယျအားဖြင့် 24-48 နာရီအတွင်း ပြီးမြောက်သည်။
+              ငွေထုတ်ယူမှုသည် 1 နာရီအတွင်း ပြီးမြောက်သည်။
             </p>
             <ul className="list-disc list-inside space-y-2 ml-4">
-              <li>အနည်းဆုံး ထုတ်ယူမှု: 5,000 MMK</li>
               <li>အများဆုံး ထုတ်ယူမှု: တစ်ရက်လျှင် 10,000,000 MMK</li>
-              <li>ငွေထုတ်ယူမှု အချိန်: 24-48 နာရီ</li>
+              <li>ငွေထုတ်ယူမှု အချိန်: Within 1 hour</li>
               <li>အခွန်မယူပါ</li>
             </ul>
           </div>

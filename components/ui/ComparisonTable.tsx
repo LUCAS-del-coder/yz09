@@ -12,7 +12,7 @@ interface ComparisonTableProps {
 }
 
 export default function ComparisonTable({ casinos }: ComparisonTableProps) {
-  const [sortBy, setSortBy] = useState<"rating" | "games" | "deposit">("rating");
+  const [sortBy, setSortBy] = useState<"rating" | "games">("rating");
 
   const sortedCasinos = [...casinos].sort((a, b) => {
     if (sortBy === "rating") {
@@ -22,9 +22,8 @@ export default function ComparisonTable({ casinos }: ComparisonTableProps) {
       const bGames = parseInt(b.features.games.replace(/\D/g, ""));
       return bGames - aGames;
     } else {
-      const aDeposit = parseInt(a.features.minDeposit.replace(/\D/g, ""));
-      const bDeposit = parseInt(b.features.minDeposit.replace(/\D/g, ""));
-      return aDeposit - bDeposit;
+      // Sort by withdrawal time (already removed deposit sorting)
+      return 0;
     }
   });
 
@@ -51,16 +50,6 @@ export default function ComparisonTable({ casinos }: ComparisonTableProps) {
         >
           ဂိမ်းအရေအတွက်ဖြင့်
         </button>
-        <button
-          onClick={() => setSortBy("deposit")}
-          className={`px-4 py-2 rounded-lg transition-colors ${
-            sortBy === "deposit"
-              ? "bg-primary text-white"
-              : "bg-dark-lighter text-gray-400 hover:bg-dark-light"
-          }`}
-        >
-          အနည်းဆုံးဖြည့်သွင်းမှုဖြင့်
-        </button>
       </div>
 
       <div className="bg-dark-lighter rounded-xl overflow-hidden border border-dark-lightest">
@@ -75,9 +64,6 @@ export default function ComparisonTable({ casinos }: ComparisonTableProps) {
               </th>
               <th className="px-6 py-4 text-left text-sm font-semibold text-gold">
                 ဂိမ်းများ
-              </th>
-              <th className="px-6 py-4 text-left text-sm font-semibold text-gold">
-                အနည်းဆုံး
               </th>
               <th className="px-6 py-4 text-left text-sm font-semibold text-gold">
                 ငွေထုတ်ယူမှု
@@ -121,7 +107,6 @@ export default function ComparisonTable({ casinos }: ComparisonTableProps) {
                   <StarRating rating={casino.rating} size="sm" />
                 </td>
                 <td className="px-6 py-4 text-white">{casino.features.games}</td>
-                <td className="px-6 py-4 text-white">{casino.features.minDeposit}</td>
                 <td className="px-6 py-4 text-white text-sm">
                   {casino.features.withdrawalTime}
                 </td>

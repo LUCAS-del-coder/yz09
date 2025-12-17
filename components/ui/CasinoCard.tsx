@@ -137,7 +137,7 @@ export default function CasinoCard({ casino, rank, index = 0 }: CasinoCardProps)
                 💰 Payout
               </div>
               <div className={`font-bold ${textColor}`}>
-                {casino.features.withdrawalTime || "24h"}
+                {casino.features.withdrawalTime || "Within 1 hour"}
               </div>
             </div>
             <div>
@@ -145,7 +145,7 @@ export default function CasinoCard({ casino, rank, index = 0 }: CasinoCardProps)
                 ⏱️ Speed
               </div>
               <div className={`font-bold ${textColor}`}>
-                {casino.features.withdrawalTime || "0-24h"}
+                {casino.features.withdrawalTime || "Within 1 hour"}
               </div>
             </div>
             <div>
