@@ -87,6 +87,23 @@ export default function RootLayout({
   return (
     <html lang="my" className={`${myanmarFont.variable} ${englishFont.variable}`}>
       <body className={`${myanmarFont.variable} ${englishFont.variable}`}>
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-HRDGFWT9KP"
+          strategy="afterInteractive"
+        />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-HRDGFWT9KP');
+            `,
+          }}
+        />
         <Script
           id="website-schema"
           type="application/ld+json"
