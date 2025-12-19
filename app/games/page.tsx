@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import CTAButton from "@/components/ui/CTAButton";
+import FeaturedGames from "@/components/sections/FeaturedGames";
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://example.com';
 
@@ -81,6 +82,11 @@ export default function GamesPage() {
           <p className="text-gray-400 text-lg max-w-3xl mx-auto">
             မြန်မာ့အကောင်းဆုံး အွန်လိုင်း ကာစီနို ဂိမ်းအမျိုးအစားများ
           </p>
+        </div>
+
+        {/* Featured Games Section */}
+        <div className="mb-12">
+          <FeaturedGames />
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
