@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-myanmar: 'Noto Sans Myanmar', sans-serif;
+    --font-english: 'Poppins', sans-serif;
+  }
+
+  body {
+    @apply bg-background-light text-dark font-myanmar antialiased;
+    min-height: 100vh;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .gradient-gold {
+    @apply bg-gradient-to-r from-gold-dark via-gold to-gold-light;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gradient-purple {
+    @apply bg-gradient-to-r from-casino-purple-600 via-casino-purple-500 to-casino-purple-400;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:scale-105 hover:shadow-2xl;
+    --tw-shadow-color: rgba(139, 92, 246, 0.2);
+  }
+  
+  .card-hover:hover {
+    box-shadow: 0 25px 50px -12px rgba(139, 92, 246, 0.2);
+  }
+
+  /* 新卡片基础样式 */
+  .casino-card {
+    @apply bg-background-card rounded-2xl shadow-lg transition-all duration-300;
+  }
+
+  .casino-card:hover {
+    @apply shadow-2xl -translate-y-1;
+  }
+
+  /* 深色卡片（用于排名前3） */
+  .casino-card-dark {
+    @apply bg-gradient-to-br from-casino-purple-950 via-casino-purple-800 to-casino-purple-700 text-white;
+    border: 1px solid rgba(139, 92, 246, 0.3);
+  }
+
+  /* 绿色 CTA 按钮 */
+  .btn-play-now {
+    @apply bg-casino-green-500 hover:bg-casino-green-600 text-white font-bold py-3 px-8 rounded-lg transition-all duration-300;
+    box-shadow: 0 4px 12px rgba(0, 217, 95, 0.3);
+  }
+
+  .btn-play-now:hover {
+    box-shadow: 0 6px 20px rgba(0, 217, 95, 0.4);
+    transform: translateY(-2px);
+  }
+
+  /* 紫色主题按钮 */
+  .btn-purple {
+    @apply bg-gradient-to-r from-casino-purple-500 to-casino-purple-600 text-white font-semibold py-2 px-6 rounded-lg transition-all duration-300 hover:from-casino-purple-600 hover:to-casino-purple-700;
+  }
+
+  /* 评分星星 */
+  .rating-stars {
+    @apply text-gold text-xl;
+  }
+
+  /* 3D 浮动动画 */
+  .float-3d {
+    animation: float-3d 6s ease-in-out infinite;
+  }
+
+  /* 轮盘旋转动画 */
+  .spin-slow {
+    animation: spin-slow 20s linear infinite;
+  }
+
+  /* 紫色发光效果 */
+  .purple-glow {
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
+  }
+
+  .shimmer-effect {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .shimmer-effect::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 215, 0, 0.3),
+      transparent
+    );
+    animation: shimmer 3s infinite;
+  }
+
+  .casino-pattern {
+    background-image: 
+      repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 10px,
+        rgba(220, 38, 38, 0.05) 10px,
+        rgba(220, 38, 38, 0.05) 20px
+      );
+  }
+}
+

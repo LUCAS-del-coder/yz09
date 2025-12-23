@@ -1,0 +1,68 @@
+"use client";
+
+import { useState } from "react";
+import BonusCard from "../ui/BonusCard";
+import casinosData from "@/data/casinos.json";
+
+export default function LatestBonuses() {
+  const casinos = casinosData;
+  const allBonuses = casinos.flatMap((casino) =>
+    casino.bonuses.map((bonus) => ({
+      ...bonus,
+      ctaLink: casino.ctaLink,
+      casinoName: casino.name,
+    }))
+  );
+
+  const brandLinks = [
+    "https://www.yes8.io/m/home?affiliateCode=seom1802",
+    "https://www.ygn9.net/m/home?affiliateCode=seom1902",
+    "https://www.pya777.net/m/home?affiliateCode=seom2002",
+    "https://www.mmk99.net/m/home?affiliateCode=seom2102",
+  ];
+
+  // Merge bonuses with random brand links for variety
+  const bonusesWithLinks = allBonuses.map((bonus, index) => ({
+    ...bonus,
+    ctaLink: brandLinks[index % brandLinks.length],
+  }));
+
+  return (
+    <section className="py-20 bg-dark-lighter">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <span className="gradient-gold">နောက်ဆုံးပေါ်</span>{" "}
+            <span className="text-white">ဘောနပ်စ်များ</span>
+          </h2>
+          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+            အထူးဘောနပ်စ်များ နှင့် ပရိုမိုးရှင်းများကို ရယူပါ
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {bonusesWithLinks.slice(0, 6).map((bonus, index) => (
+            <BonusCard
+              key={index}
+              type={bonus.type}
+              amount={bonus.amount}
+              description={bonus.description}
+              ctaLink={bonus.ctaLink}
+              index={index}
+            />
+          ))}
+        </div>
+
+        <div className="text-center mt-12">
+          <a
+            href="/bonuses"
+            className="inline-block px-8 py-4 bg-gradient-to-r from-gold-dark via-gold to-gold-light text-dark font-bold rounded-lg hover:shadow-lg hover:shadow-gold/50 transition-all"
+          >
+            ဘောနပ်စ် အားလုံးကို ကြည့်ရှုရန်
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+

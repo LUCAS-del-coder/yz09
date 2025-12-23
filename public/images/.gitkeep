@@ -1,0 +1,10 @@
+# Images directory
+# Place casino logos and hero images here
+# Structure:
+# /images/casinos/
+#   - shwe-logo.png
+#   - shwe-hero.jpg
+#   - 777-logo.png
+#   - 777-hero.jpg
+#   ... etc
+

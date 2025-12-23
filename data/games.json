@@ -1,0 +1,63 @@
+[
+  {
+    "id": "5-lions-megaways",
+    "name": "5 LIONS MEGAWAYS™",
+    "nameMm": "5 LIONS MEGAWAYS™",
+    "provider": "PG Soft",
+    "category": "Slots",
+    "image": "/images/games/5-lions-megaways.jpg",
+    "hot": true,
+    "description": "Experience the power of the golden lion with Megaways mechanics"
+  },
+  {
+    "id": "starlight-princess-1000",
+    "name": "Starlight Princess 1000",
+    "nameMm": "Starlight Princess 1000",
+    "provider": "Pragmatic Play",
+    "category": "Slots",
+    "image": "/images/games/starlight-princess-1000.jpg",
+    "hot": true,
+    "description": "Join the magical princess in this anime-style adventure"
+  },
+  {
+    "id": "gates-of-olympus-1000",
+    "name": "Gates of Olympus 1000",
+    "nameMm": "Gates of Olympus 1000",
+    "provider": "Pragmatic Play",
+    "category": "Slots",
+    "image": "/images/games/gates-of-olympus-1000.jpg",
+    "hot": true,
+    "description": "Face Zeus and his lightning bolts in this epic adventure"
+  },
+  {
+    "id": "ancient-egypt-classic",
+    "name": "ANCIENT EGYPT Classic",
+    "nameMm": "ANCIENT EGYPT Classic",
+    "provider": "PG Soft",
+    "category": "Slots",
+    "image": "/images/games/ancient-egypt-classic.jpg",
+    "hot": false,
+    "description": "Explore the mysteries of ancient Egypt"
+  },
+  {
+    "id": "caishens-gold",
+    "name": "Caishen's Gold",
+    "nameMm": "Caishen's Gold",
+    "provider": "PG Soft",
+    "category": "Slots",
+    "image": "/images/games/caishens-gold.jpg",
+    "hot": true,
+    "description": "Meet the God of Wealth and unlock treasures"
+  },
+  {
+    "id": "gates-of-olympus-1000-alt",
+    "name": "Gates of Olympus 1000",
+    "nameMm": "Gates of Olympus 1000",
+    "provider": "Pragmatic Play",
+    "category": "Slots",
+    "image": "/images/games/gates-of-olympus-1000-alt.jpg",
+    "hot": true,
+    "description": "Face Zeus and his lightning bolts in this epic adventure"
+  }
+]
+
