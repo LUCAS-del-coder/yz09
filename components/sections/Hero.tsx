@@ -30,16 +30,17 @@ export default function Hero() {
               transition={{ duration: 0.8 }}
             >
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                Best Online Casinos For
+                <span className="gradient-gold">၂၀၂၅ မြန်မာ့အကောင်းဆုံး</span>
                 <br />
-                <span className="gradient-gold">Real Money in Myanmar</span>
+                Online Casino များ
               </h1>
               <p className="text-lg md:text-xl text-white/90 mb-6 leading-relaxed">
-                Expert reviews of <strong>Shwe Casino</strong>, <strong>888 Casino</strong>,{" "}
-                <strong>777 Casino</strong>, <strong>Win8</strong>, <strong>999 Casino</strong> & more.
+                <strong>Shwe Casino</strong>, <strong>888 Casino</strong>,{" "}
+                <strong>777 Casino</strong>, <strong>Win8</strong>, <strong>999 Casino</strong>{" "}
+                အကြောင်း ကျွမ်းကျင်သူများ၏ သုံးသပ်ချက်များ
                 <br />
                 <span className="text-gold font-semibold">
-                  Compare bonuses, games & ratings for မြန်မာ players
+                  မြန်မာ ကစားသမားများအတွက် ဘောနပ်စ်များ၊ ဂိမ်းများနှင့် အဆင့်သတ်မှတ်ချက်များ နှိုင်းယှဉ်ပါ
                 </span>
               </p>
               <motion.div
@@ -53,13 +54,13 @@ export default function Hero() {
                   variant="gold"
                   size="lg"
                 >
-                  PLAY NOW
+                  ယခု ကစားပါ
                 </CTAButton>
                 <a
                   href="#casinos"
                   className="px-8 py-4 bg-white/10 backdrop-blur-md hover:bg-white/20 text-white rounded-lg font-semibold transition-colors border border-white/20"
                 >
-                  View Reviews
+                  သုံးသပ်ချက်များ ကြည့်ပါ
                 </a>
               </motion.div>
             </motion.div>

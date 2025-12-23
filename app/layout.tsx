@@ -28,14 +28,23 @@ const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://example.com';
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
+  // 添加地理定位設定
+  other: {
+    'geo.region': 'MM',
+    'geo.country': 'MM',
+    'geo.placename': 'Myanmar',
+    'language': 'my-MM',
+    'content-language': 'my-MM',
+  },
   title: {
-    default: "Myanmar Casino Reviews | Shwe, 888, 777, Win8, 999 & More",
+    // 改為緬甸文優先
+    default: "၂၀၂၅ မြန်မာ့အကောင်းဆုံး Online Casino များ | Myanmar Casino Reviews",
     template: "%s | Myanmar Casino Reviews",
   },
-  description: "Expert reviews & comparisons of Myanmar's top online casinos: Shwe Casino (ရွှေ), 888 Casino, 777 Casino, Win8, 999 Casino, PGLucky88, FaFaFa. Get exclusive bonuses, ratings & guides for မြန်မာ players in 2025.",
+  description: "မြန်မာ့အကောင်းဆုံး အွန်လိုင်း ကာစီနို စုံစမ်းစစ်ဆေးချက်များ - Shwe Casino (ရွှေ), 888, 777, Win8, 999, PGLucky88, FaFaFa အကြောင်း ကျွမ်းကျင်သူများ၏ အကဲဖြတ်ချက်များ၊ ဘောနပ်စ်များနှင့် လမ်းညွှန်များ",
   openGraph: {
-    title: "2025 အကောင်းဆုံး Online Casino များ",
-    description: "မြန်မာ့အကောင်းဆုံး အွန်လိုင်း ကာစီနို စုံစမ်းစစ်ဆေးချက်များ",
+    title: "၂၀၂၅ မြန်မာ့အကောင်းဆုံး Online Casino များ | Myanmar Casino Reviews",
+    description: "မြန်မာ့အကောင်းဆုံး အွန်လိုင်း ကာစီနို စုံစမ်းစစ်ဆေးချက်များ - ဘောနပ်စ်များ၊ အဆင့်သတ်မှတ်ချက်များနှင့် လမ်းညွှန်များ",
     type: "website",
     locale: "my_MM",
     siteName: "Myanmar Casino Reviews",
@@ -43,7 +52,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "2025 အကောင်းဆုံး Online Casino များ",
+    title: "၂၀၂၅ မြန်မာ့အကောင်းဆုံး Online Casino များ",
     description: "မြန်မာ့အကောင်းဆုံး အွန်လိုင်း ကာစီနို စုံစမ်းစစ်ဆေးချက်များ",
   },
   robots: {
@@ -59,6 +68,10 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: baseUrl,
+    languages: {
+      'my-MM': baseUrl,
+      'en': baseUrl + '/en', // 為未來的英文版預留
+    },
   },
 };
 
@@ -70,10 +83,17 @@ export default function RootLayout({
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "Myanmar Casino Reviews",
+    "name": "Myanmar Casino Reviews - မြန်မာ ကာစီနို သုံးသပ်ချက်များ",
     "url": baseUrl,
     "description": "မြန်မာ့အကောင်းဆုံး အွန်လိုင်း ကာစီနို စုံစမ်းစစ်ဆေးချက်များ",
     "inLanguage": "my-MM",
+    "audience": {
+      "@type": "Audience",
+      "geographicArea": {
+        "@type": "Country",
+        "name": "Myanmar"
+      }
+    }
   };
 
   const organizationSchema = {
@@ -82,6 +102,10 @@ export default function RootLayout({
     "name": "Myanmar Casino Reviews",
     "url": baseUrl,
     "description": "မြန်မာ့အကောင်းဆုံး အွန်လိုင်း ကာစီနို စုံစမ်းစစ်ဆေးချက်များ",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "MM"
+    }
   };
 
   return (

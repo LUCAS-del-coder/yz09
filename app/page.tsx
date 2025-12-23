@@ -9,9 +9,15 @@ import FAQ from "@/components/sections/FAQ";
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://example.com';
 
 export const metadata: Metadata = {
-  title: "Myanmar Casino Reviews 2025 | Shwe Casino, 888, 777, Win8, 999 Reviews",
-  description: "Myanmar's #1 casino review site. Compare Shwe Casino, 888 Casino, 777 Casino, Win8, 999 Casino, PGLucky88 & FaFaFa. Expert reviews, bonuses & ratings for မြန်မာ players.",
+  title: "၂၀၂၅ မြန်မာ့အကောင်းဆုံး Online Casino များ | Shwe, 888, 777, Win8, 999",
+  description: "မြန်မာနိုင်ငံအတွက် နံပါတ် ၁ ကာစီနို သုံးသပ်ချက် ဝဘ်ဆိုဒ် - Shwe Casino, 888 Casino, 777 Casino, Win8, 999 Casino, PGLucky88 နှင့် FaFaFa ကို နှိုင်းယှဉ်ပါ။ မြန်မာ ကစားသမားများအတွက် ကျွမ်းကျင်သူ သုံးသပ်ချက်များ၊ ဘောနပ်စ်များနှင့် အဆင့်သတ်မှတ်ချက်များ။",
   keywords: [
+    // 緬甸文關鍵字優先
+    "မြန်မာ ကာစီနို",
+    "ရွှေ ကာစီနို",
+    "၈၈၈ ကာစီနို",
+    "၇၇၇ ကာစီနို",
+    "အွန်လိုင်း ကာစီနို မြန်မာ",
     "Myanmar casino",
     "Shwe Casino",
     "888 Casino Myanmar", 
@@ -20,18 +26,19 @@ export const metadata: Metadata = {
     "999 Casino",
     "PGLucky88",
     "FaFaFa Casino",
-    "online casino Myanmar",
-    "ရွှေ ကာစီနို",
-    "၈၈၈ ကာစီနို",
-    "၇၇၇ ကာစီနို"
+    "online casino Myanmar"
   ].join(", "),
   alternates: {
     canonical: baseUrl,
+    languages: {
+      'my-MM': baseUrl,
+    }
   },
   openGraph: {
-    title: "Best Myanmar Casinos 2025 | Shwe, 888, 777, Win8 Reviews",
-    description: "Expert reviews of Shwe Casino, 888 Casino, 777 Casino, Win8, 999 Casino & more. Find the best bonuses & games for Myanmar players.",
+    title: "၂၀၂၅ မြန်မာ့အကောင်းဆုံး Casino များ | Shwe, 888, 777, Win8",
+    description: "Shwe Casino, 888 Casino, 777 Casino, Win8, 999 Casino အကြောင်း ကျွမ်းကျင်သူ သုံးသပ်ချက်များ။ မြန်မာ ကစားသမားများအတွက် အကောင်းဆုံး ဘောနပ်စ်များနှင့် ဂိမ်းများကို ရှာပါ။",
     url: baseUrl,
+    locale: "my_MM",
   },
 };
 
