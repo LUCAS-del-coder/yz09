@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import CTAButton from "../ui/CTAButton";
@@ -35,12 +36,15 @@ export default function Header() {
         <div className="flex items-center justify-between h-20 gap-4">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group flex-shrink-0">
-            <div className="w-12 h-12 rounded-full bg-gradient-to-br from-casino-purple-600 to-casino-purple-800 flex items-center justify-center group-hover:scale-110 transition-transform">
-              <span className="text-2xl font-bold text-white">🎰</span>
-            </div>
-            <div className="hidden sm:block">
-              <h1 className="text-xl font-bold text-white">Myanmar Casino</h1>
-              <p className="text-xs text-white/70">Reviews & Guide</p>
+            <div className="relative h-12 w-auto group-hover:opacity-90 transition-opacity">
+              <Image
+                src="/images/site-logo.png"
+                alt="Myanmar Casino Guide"
+                width={200}
+                height={48}
+                className="h-12 w-auto object-contain"
+                priority
+              />
             </div>
           </Link>
 
