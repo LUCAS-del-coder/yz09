@@ -36,13 +36,13 @@ export default function Header() {
         <div className="flex items-center justify-between h-20 gap-4">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group flex-shrink-0">
-            <div className="relative h-12 w-auto group-hover:opacity-90 transition-opacity">
+            <div className="relative h-16 md:h-20 w-auto group-hover:opacity-90 transition-opacity">
               <Image
                 src="/images/site-logo.png"
                 alt="Myanmar Casino Guide"
-                width={200}
-                height={48}
-                className="h-12 w-auto object-contain"
+                width={300}
+                height={80}
+                className="h-16 md:h-20 w-auto object-contain"
                 priority
               />
             </div>
