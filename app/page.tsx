@@ -5,8 +5,9 @@ import TrustIndicators from "@/components/sections/TrustIndicators";
 import FeaturedGames from "@/components/sections/FeaturedGames";
 import LatestBonuses from "@/components/sections/LatestBonuses";
 import FAQ from "@/components/sections/FAQ";
+import { getBaseUrl } from "@/lib/config";
 
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://example.com';
+const baseUrl = getBaseUrl();
 
 export const metadata: Metadata = {
   title: "၂၀၂၅ မြန်မာ့အကောင်းဆုံး Online Casino များ | Shwe, 888, 777, Win8, 999",
@@ -26,7 +27,15 @@ export const metadata: Metadata = {
     "999 Casino",
     "PGLucky88",
     "FaFaFa Casino",
-    "online casino Myanmar"
+    "online casino Myanmar",
+    // 長尾關鍵字
+    "best online casino Myanmar 2025",
+    "Myanmar casino reviews",
+    "safe online gambling Myanmar",
+    "casino bonus Myanmar",
+    "အွန်လိုင်း ကာစီနို ဘယ်ဟာ အကောင်းဆုံး",
+    "မြန်မာ တရားဝင် ကာစီနို",
+    "ကာစီနို ငွေထုတ် မြန်ဆန်"
   ].join(", "),
   alternates: {
     canonical: baseUrl,
@@ -43,8 +52,35 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "မြန်မာတွင် အွန်လိုင်း ကာစီနို ကစားခြင်း တရားဝင်ပါသလား?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "မြန်မာနိုင်ငံတွင် အွန်လိုင်း ကာစီနို၏ တရားဝင်မှုသည် ရှုပ်ထွေးနေသေးသည်။ သို့သော် အများအားဖြင့် နိုင်ငံတကာ လိုင်စင်ရ ကာစီနိုများတွင် ကစားခြင်းကို တားမြစ်ထားခြင်း မရှိပါ။"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "ဘယ် ကာစီနို က မြန်မာအတွက် အကောင်းဆုံးပါလဲ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Shwe Casino, 888 Casino နှင့် 777 Casino တို့သည် မြန်မာ ကစားသမားများအတွက် အကောင်းဆုံး ရွေးချယ်မှုများ ဖြစ်သည်။"
+        }
+      }
+    ]
+  };
+
   return (
     <div className="min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <Hero />
       <TrustIndicators />
       <FeaturedCasinos />

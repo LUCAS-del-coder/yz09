@@ -8,6 +8,7 @@ import ProsCons from "@/components/ui/ProsCons";
 import BonusCard from "@/components/ui/BonusCard";
 import CTAButton from "@/components/ui/CTAButton";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
+import { getBaseUrl } from "@/lib/config";
 
 interface PageProps {
   params: {
@@ -23,7 +24,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const casino = casinosData.find((c) => c.slug === params.slug);
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://example.com';
+  const baseUrl = getBaseUrl();
 
   if (!casino) {
     return {
@@ -78,7 +79,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default function CasinoReviewPage({ params }: PageProps) {
   const casino = casinosData.find((c) => c.slug === params.slug);
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://example.com';
+  const baseUrl = getBaseUrl();
 
   if (!casino) {
     notFound();

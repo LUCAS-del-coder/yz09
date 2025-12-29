@@ -1,8 +1,9 @@
 import { MetadataRoute } from 'next';
 import casinosData from '@/data/casinos.json';
+import { getBaseUrl } from '@/lib/config';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://example.com';
+  const baseUrl = getBaseUrl();
 
   // Static pages
   const staticPages = [

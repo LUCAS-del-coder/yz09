@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Noto_Sans_Myanmar, Poppins } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
@@ -7,6 +7,7 @@ import Footer from "@/components/layout/Footer";
 import FloatingCTA from "@/components/ui/FloatingCTA";
 import AgeVerification from "@/components/ui/AgeVerification";
 import CookieConsent from "@/components/ui/CookieConsent";
+import { getBaseUrl } from "@/lib/config";
 
 const myanmarFont = Noto_Sans_Myanmar({
   weight: ["300", "400", "500", "600", "700"],
@@ -24,7 +25,7 @@ const englishFont = Poppins({
   preload: true,
 });
 
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://example.com';
+const baseUrl = getBaseUrl();
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
@@ -33,8 +34,21 @@ export const metadata: Metadata = {
     'geo.region': 'MM',
     'geo.country': 'MM',
     'geo.placename': 'Myanmar',
+    'geo.position': '16.8661;96.1951',
+    'ICBM': '16.8661, 96.1951',
     'language': 'my-MM',
     'content-language': 'my-MM',
+    'apple-mobile-web-app-capable': 'yes',
+    'mobile-web-app-capable': 'yes',
+  },
+  authors: [{ name: 'Myanmar Casino Reviews Team' }],
+  creator: 'Myanmar Casino Reviews',
+  publisher: 'Myanmar Casino Reviews',
+  category: 'Online Casino Reviews',
+  verification: {
+    google: '',
+    yandex: '',
+    bing: '',
   },
   title: {
     // 改為緬甸文優先
@@ -49,6 +63,14 @@ export const metadata: Metadata = {
     locale: "my_MM",
     siteName: "Myanmar Casino Reviews",
     url: baseUrl,
+    images: [
+      {
+        url: `${baseUrl}/images/site-logo.png`,
+        width: 1200,
+        height: 630,
+        alt: "Myanmar Casino Reviews - အကောင်းဆုံး အွန်လိုင်း ကာစီနို",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
@@ -73,6 +95,16 @@ export const metadata: Metadata = {
       'en': baseUrl + '/en', // 為未來的英文版預留
     },
   },
+};
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
+    { media: '(prefers-color-scheme: dark)', color: '#1a0b2e' }
+  ],
 };
 
 export default function RootLayout({
@@ -108,6 +140,25 @@ export default function RootLayout({
     }
   };
 
+  const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Myanmar Casino Reviews",
+    "image": `${baseUrl}/images/site-logo.png`,
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "MM",
+      "addressRegion": "Yangon Region"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "16.8661",
+      "longitude": "96.1951"
+    },
+    "url": baseUrl,
+    "priceRange": "$$"
+  };
+
   return (
     <html lang="my" className={`${myanmarFont.variable} ${englishFont.variable}`}>
       <body className={`${myanmarFont.variable} ${englishFont.variable}`}>
@@ -139,6 +190,12 @@ export default function RootLayout({
           type="application/ld+json"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
+        <Script
+          id="local-business-schema"
+          type="application/ld+json"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
         />
         <AgeVerification />
         <Header />
