@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { isExternalLink, trackExternalLinkClick } from "@/lib/utils/analytics";
 
 interface CTAButtonProps {
   href: string;
@@ -20,6 +21,21 @@ export default function CTAButton({
   className = "",
   onClick,
 }: CTAButtonProps) {
+  const handleClick = () => {
+    // 如果是外部連結，追蹤點擊
+    if (isExternalLink(href)) {
+      trackExternalLinkClick(
+        href,
+        typeof children === 'string' ? children : 'CTA Button',
+        'CTAButton'
+      );
+    }
+    
+    // 執行自定義 onClick（如果有的話）
+    if (onClick) {
+      onClick();
+    }
+  };
   const baseStyles = "relative inline-flex items-center justify-center font-bold rounded-lg transition-all duration-300 overflow-hidden group";
   
   const variants = {
@@ -42,7 +58,7 @@ export default function CTAButton({
     >
       <Link
         href={href}
-        onClick={onClick}
+        onClick={handleClick}
         className={`${baseStyles} ${variants[variant]} ${sizes[size]}`}
         target={href.startsWith('http') ? '_blank' : undefined}
         rel={href.startsWith('http') ? 'nofollow sponsored noopener noreferrer' : undefined}

@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import CTAButton from "./CTAButton";
+import { isExternalLink, trackExternalLinkClick } from "@/lib/utils/analytics";
 
 interface GameCardProps {
   game: {
@@ -19,6 +20,12 @@ interface GameCardProps {
 }
 
 export default function GameCard({ game, ctaLink }: GameCardProps) {
+  const handleExternalLinkClick = () => {
+    if (isExternalLink(ctaLink)) {
+      trackExternalLinkClick(ctaLink, game.name, 'GameCard');
+    }
+  };
+  
   return (
     <div className="group relative bg-background-card rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
       {/* Hot Badge */}
@@ -56,6 +63,7 @@ export default function GameCard({ game, ctaLink }: GameCardProps) {
           href={ctaLink}
           className="block w-full"
           rel="nofollow sponsored noopener noreferrer"
+          onClick={handleExternalLinkClick}
         >
           <button className="w-full bg-casino-green-500 hover:bg-casino-green-600 text-white font-semibold py-2.5 px-4 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg hover:shadow-casino-green-500/50 hover:-translate-y-0.5">
             ကစားရန်
@@ -65,4 +73,5 @@ export default function GameCard({ game, ctaLink }: GameCardProps) {
     </div>
   );
 }
+
 

@@ -6,6 +6,7 @@ import Link from "next/link";
 import StarRating from "./StarRating";
 import RankBadge from "./RankBadge";
 import AvailabilityBadge from "./AvailabilityBadge";
+import { isExternalLink, trackExternalLinkClick } from "@/lib/utils/analytics";
 
 interface CasinoCardProps {
   casino: {
@@ -36,6 +37,13 @@ interface CasinoCardProps {
 
 export default function CasinoCard({ casino, rank, index = 0 }: CasinoCardProps) {
   const isTopRanked = rank && rank <= 3;
+  
+  // 處理外部連結點擊追蹤
+  const handleExternalLinkClick = (url: string, location: string) => {
+    if (isExternalLink(url)) {
+      trackExternalLinkClick(url, casino.name, location);
+    }
+  };
   
   // 根据排名选择背景渐变
   const getCardBackground = () => {
@@ -79,6 +87,7 @@ export default function CasinoCard({ casino, rank, index = 0 }: CasinoCardProps)
         <Link
           href={casino.ctaLink}
           className="btn-play-now text-sm py-2 px-6"
+          onClick={() => handleExternalLinkClick(casino.ctaLink, 'CasinoCard-TopButton')}
         >
           PLAY NOW
         </Link>

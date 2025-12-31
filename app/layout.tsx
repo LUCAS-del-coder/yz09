@@ -7,6 +7,7 @@ import Footer from "@/components/layout/Footer";
 import FloatingCTA from "@/components/ui/FloatingCTA";
 import AgeVerification from "@/components/ui/AgeVerification";
 import CookieConsent from "@/components/ui/CookieConsent";
+import ExternalLinkTracker from "@/components/analytics/ExternalLinkTracker";
 
 const myanmarFont = Noto_Sans_Myanmar({
   weight: ["300", "400", "500", "600", "700"],
@@ -117,6 +118,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
         <AgeVerification />
+        <ExternalLinkTracker />
         <Header />
         <main className="min-h-screen">
           {children}
