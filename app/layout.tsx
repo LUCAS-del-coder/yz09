@@ -48,7 +48,6 @@ export const metadata: Metadata = {
   verification: {
     google: '',
     yandex: '',
-    bing: '',
   },
   title: {
     // 改為緬甸文優先
