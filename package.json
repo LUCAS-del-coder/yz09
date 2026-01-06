@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "npm install tailwindcss postcss autoprefixer --save && next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "generate-content": "node scripts/generate-content.js"
   },
   "dependencies": {
     "react": "^18.3.1",

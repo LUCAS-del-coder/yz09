@@ -5,6 +5,7 @@ import Image from "next/image";
 import StarRating from "./StarRating";
 import CTAButton from "./CTAButton";
 import Link from "next/link";
+import CasinoLogo from "./CasinoLogo";
 import { Casino } from "@/types/casino";
 
 interface ComparisonTableProps {
@@ -84,12 +85,13 @@ export default function ComparisonTable({ casinos }: ComparisonTableProps) {
                 <td className="px-6 py-4">
                   <div className="flex items-center gap-3">
                     <div className="w-12 h-12 rounded-lg bg-dark-light overflow-hidden flex-shrink-0">
-                      <Image
+                      <CasinoLogo
                         src={casino.logo}
                         alt={`${casino.name} Casino Logo`}
                         width={48}
                         height={48}
                         className="object-cover"
+                        fallbackImage={casino.hero}
                       />
                     </div>
                     <div>

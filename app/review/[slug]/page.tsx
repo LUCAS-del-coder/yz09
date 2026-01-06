@@ -8,6 +8,8 @@ import ProsCons from "@/components/ui/ProsCons";
 import BonusCard from "@/components/ui/BonusCard";
 import CTAButton from "@/components/ui/CTAButton";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
+import HeroImage from "@/components/ui/HeroImage";
+import CasinoLogo from "@/components/ui/CasinoLogo";
 import { getBaseUrl } from "@/lib/config";
 
 interface PageProps {
@@ -185,12 +187,11 @@ export default function CasinoReviewPage({ params }: PageProps) {
       {/* Hero Section */}
       <section className="relative h-[60vh] min-h-[500px] overflow-hidden">
         <div className="absolute inset-0">
-          <Image
+          <HeroImage
             src={casino.hero}
             alt={`${casino.name} Casino - ${casino.excerpt}`}
-            fill
+            fallbackSrc={casino.logo}
             className="object-cover"
-            priority
           />
           <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/80 to-transparent" />
         </div>
@@ -199,12 +200,14 @@ export default function CasinoReviewPage({ params }: PageProps) {
           <div className="max-w-4xl">
             <div className="flex items-center gap-4 mb-4">
               <div className="w-20 h-20 rounded-xl bg-dark-lighter border-2 border-gold p-2">
-                <Image
+                <CasinoLogo
                   src={casino.logo}
                   alt={`${casino.name} Casino Logo`}
                   width={80}
                   height={80}
                   className="object-contain w-full h-full"
+                  fallbackText={casino.name.charAt(0)}
+                  fallbackImage={casino.hero}
                 />
               </div>
               <div>

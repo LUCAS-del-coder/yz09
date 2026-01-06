@@ -6,6 +6,7 @@ import Link from "next/link";
 import StarRating from "./StarRating";
 import RankBadge from "./RankBadge";
 import AvailabilityBadge from "./AvailabilityBadge";
+import CasinoLogo from "./CasinoLogo";
 
 interface CasinoCardProps {
   casino: {
@@ -89,12 +90,14 @@ export default function CasinoCard({ casino, rank, index = 0 }: CasinoCardProps)
         {/* Left: Logo + Rating */}
         <div className="md:col-span-3 flex flex-col items-center md:items-start">
           <div className="w-28 h-28 md:w-32 md:h-32 rounded-xl bg-white/10 backdrop-blur-md p-4 mb-4 flex items-center justify-center">
-            <Image
+            <CasinoLogo
               src={casino.logo}
               alt={`${casino.name} Casino Logo`}
               width={120}
               height={120}
               className="object-contain w-full h-full"
+              fallbackText={casino.name.charAt(0)}
+              fallbackImage={casino.hero}
             />
           </div>
           <div className={`text-center md:text-left ${textColor}`}>

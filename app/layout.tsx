@@ -180,6 +180,63 @@ export default function RootLayout({
           }}
         />
         <Script
+          id="external-link-tracking"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                // 獲取當前域名
+                const currentHost = window.location.hostname;
+                
+                // 追蹤外部連結點擊的函數
+                function trackOutboundLink(url, linkText) {
+                  // 檢查 gtag 是否已載入
+                  if (typeof gtag !== 'undefined') {
+                    gtag('event', 'click', {
+                      'event_category': 'outbound',
+                      'event_label': url,
+                      'transport_type': 'beacon',
+                      'event_callback': function() {
+                        // 允許連結正常跳轉
+                        return true;
+                      }
+                    });
+                  }
+                }
+                
+                // 監聽所有連結點擊
+                document.addEventListener('click', function(e) {
+                  let target = e.target;
+                  
+                  // 向上查找直到找到 <a> 標籤
+                  while (target && target.tagName !== 'A') {
+                    target = target.parentElement;
+                  }
+                  
+                  if (!target || !target.href) return;
+                  
+                  const href = target.href;
+                  const linkText = target.textContent || target.innerText || '';
+                  
+                  // 檢查是否為外部連結
+                  try {
+                    const url = new URL(href);
+                    const isExternal = url.hostname !== currentHost && 
+                                      (href.startsWith('http://') || href.startsWith('https://'));
+                    
+                    if (isExternal) {
+                      // 追蹤外部連結點擊
+                      trackOutboundLink(href, linkText);
+                    }
+                  } catch (e) {
+                    // 如果 URL 解析失敗，忽略
+                  }
+                }, true);
+              })();
+            `,
+          }}
+        />
+        <Script
           id="website-schema"
           type="application/ld+json"
           strategy="afterInteractive"
