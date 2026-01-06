@@ -87,6 +87,48 @@ export default function Home() {
       <FeaturedGames />
       <LatestBonuses />
       <FAQ />
+
+      {/* SEO 推薦外部平台 */}
+      <section className="py-12 bg-dark-lighter">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto space-y-4 text-gray-200">
+            <h2 className="text-3xl font-bold text-white mb-2">緬甸熱門線上娛樂城推薦</h2>
+            <p className="leading-relaxed">
+              為了讓玩家獲得更優質的體驗，我們精選了兩個在緬甸口碑良好的線上平台，提供豐富的真人娛樂、熱門 slot、
+              以及在地化的支付支援。以下連結均為官方入口，建議收藏。
+            </p>
+            <div className="grid md:grid-cols-2 gap-4">
+              <a
+                href="https://www.shwecasino99.com/"
+                target="_blank"
+                rel="nofollow sponsored noopener noreferrer"
+                className="block p-4 rounded-xl bg-casino-purple-700/30 border border-casino-purple-500/40 hover:border-casino-purple-300 transition-colors"
+              >
+                <h3 className="text-xl font-semibold text-white mb-1">Shwe Casino 99</h3>
+                <p className="text-sm leading-relaxed text-gray-300">
+                  緬甸玩家常用的本地化平台，主打真人賭場與熱門 Pragmatic Play/PG SOFT 夥伴遊戲，並提供
+                  KBZ Pay、Wave Money 等支付方式，適合行動端快速遊玩。
+                </p>
+              </a>
+              <a
+                href="https://www.pv991.com/"
+                target="_blank"
+                rel="nofollow sponsored noopener noreferrer"
+                className="block p-4 rounded-xl bg-casino-purple-700/30 border border-casino-purple-500/40 hover:border-casino-purple-300 transition-colors"
+              >
+                <h3 className="text-xl font-semibold text-white mb-1">PV99</h3>
+                <p className="text-sm leading-relaxed text-gray-300">
+                  聚合 Yes8、Ygn9、Pya777、Mmk99 等多家品牌，提供 slot、捕魚、體育與真人娛樂，並支援
+                  手機版 APP 下載，界面輕量、註冊流程簡單，適合新手與老玩家。
+                </p>
+              </a>
+            </div>
+            <p className="text-sm text-gray-400">
+              建議透過官方入口連結註冊，以確保活動與安全性，並記得理性娛樂。
+            </p>
+          </div>
+        </div>
+      </section>
         {/* AI 自動生成內容 - 2026-01-06 */}
         <section className="py-12 bg-dark-lighter">
           <div className="container mx-auto px-4">
