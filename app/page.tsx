@@ -86,8 +86,18 @@ export default function Home() {
       <LatestBonuses />
       <FAQ />
         {/* AI 自動生成內容 - 2026-01-07 */}
-        <section className="py-12 bg-dark-lighter">
-          <div className="container mx-auto px-4">
+        <section className="py-12 bg-dark-lighter golden-sparkle-bg relative">
+          <div className="golden-particles">
+            <div className="golden-particle"></div>
+            <div className="golden-particle"></div>
+            <div className="golden-particle"></div>
+            <div className="golden-particle"></div>
+            <div className="golden-particle"></div>
+            <div className="golden-particle"></div>
+            <div className="golden-particle"></div>
+            <div className="golden-particle"></div>
+          </div>
+          <div className="container mx-auto px-4 relative z-10">
             <div className="auto-generated-seo-content max-w-4xl mx-auto">
               <h2 className="text-3xl font-bold text-white mb-4">မြန်မာကာစီနို Myanmar Casino Reviews - ကောင်းကင်းလုံခြုံရာ အွန်လိုင်း ကာစီနိုများ</h2>
               <p className="text-gray-300 mb-6 leading-relaxed">မြန်မာကာစီနို Myanmar Casino Reviews သည် မြန်မာနိုင်ငံတွင် ကျော်ကြားသော အွန်လိုင်းကာစီနိုများဖြစ်သော Shwe Casino၊ 888 Casino၊ 777 Casino၊ Win8၊ 999 Casino၊ PGLucky88၊ FaFaFa စသည်တို့ကို သုံးစွဲသူများအတွက် သဘောကျစွာ ဆန်းစစ်ပေးလျက်ရှိပါသည်။ </p>
