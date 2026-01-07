@@ -96,6 +96,12 @@ export default function Home() {
             <div className="golden-particle"></div>
             <div className="golden-particle"></div>
             <div className="golden-particle"></div>
+            <div className="golden-star"></div>
+            <div className="golden-star"></div>
+            <div className="golden-star"></div>
+            <div className="golden-star"></div>
+            <div className="golden-star"></div>
+            <div className="golden-star"></div>
           </div>
           <div className="container mx-auto px-4 relative z-10">
             <div className="auto-generated-seo-content max-w-4xl mx-auto">
