@@ -1,7 +1,6 @@
 import { Metadata } from "next";
 import Hero from "@/components/sections/Hero";
 import FeaturedCasinos from "@/components/sections/FeaturedCasinos";
-import TrustIndicators from "@/components/sections/TrustIndicators";
 import FeaturedGames from "@/components/sections/FeaturedGames";
 import LatestBonuses from "@/components/sections/LatestBonuses";
 import FAQ from "@/components/sections/FAQ";
@@ -82,7 +81,6 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <Hero />
-      <TrustIndicators />
       <FeaturedCasinos />
       <FeaturedGames />
       <LatestBonuses />
