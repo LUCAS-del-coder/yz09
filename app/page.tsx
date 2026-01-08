@@ -130,7 +130,7 @@ export default function Home() {
               <a
                 href="https://www.shwecasino99.com/"
                 target="_blank"
-                rel="nofollow sponsored noopener noreferrer"
+                rel="sponsored noopener noreferrer"
                 className="block p-4 rounded-xl bg-casino-purple-700/30 border border-casino-purple-500/40 hover:border-casino-purple-300 transition-colors"
               >
                 <h3 className="text-xl font-semibold text-white mb-1">Shwe Casino 99</h3>
@@ -142,7 +142,7 @@ export default function Home() {
               <a
                 href="https://www.pv991.com/"
                 target="_blank"
-                rel="nofollow sponsored noopener noreferrer"
+                rel="sponsored noopener noreferrer"
                 className="block p-4 rounded-xl bg-casino-purple-700/30 border border-casino-purple-500/40 hover:border-casino-purple-300 transition-colors"
               >
                 <h3 className="text-xl font-semibold text-white mb-1">PV99</h3>
