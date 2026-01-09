@@ -49,6 +49,16 @@ export const metadata: Metadata = {
     google: '',
     yandex: '',
   },
+  icons: {
+    icon: [
+      { url: '/images/site-logo.png', type: 'image/png' },
+      { url: '/favicon.ico', sizes: 'any' },
+    ],
+    apple: [
+      { url: '/images/site-logo.png', type: 'image/png' },
+    ],
+    shortcut: '/favicon.ico',
+  },
   title: {
     // 改為緬甸文優先
     default: "၂၀၂၅ မြန်မာ့အကောင်းဆုံး Online Casino များ | Myanmar Casino Reviews",
