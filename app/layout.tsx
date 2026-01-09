@@ -51,13 +51,13 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: '/images/site-logo.png', type: 'image/png' },
-      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/images/site-logo.png', type: 'image/png', sizes: '32x32' },
+      { url: '/images/site-logo.png', type: 'image/png', sizes: '16x16' },
     ],
     apple: [
-      { url: '/images/site-logo.png', type: 'image/png' },
+      { url: '/images/site-logo.png', type: 'image/png', sizes: '180x180' },
     ],
-    shortcut: '/favicon.ico',
+    shortcut: '/images/site-logo.png',
   },
   title: {
     // 改為緬甸文優先
