@@ -3,6 +3,7 @@ import Hero from "@/components/sections/Hero";
 import FeaturedCasinos from "@/components/sections/FeaturedCasinos";
 import FeaturedGames from "@/components/sections/FeaturedGames";
 import LatestBonuses from "@/components/sections/LatestBonuses";
+import InternalLinksSection from "@/components/sections/InternalLinksSection";
 import FAQ from "@/components/sections/FAQ";
 import { getBaseUrl } from "@/lib/config";
 
@@ -84,6 +85,7 @@ export default function Home() {
       <FeaturedCasinos />
       <FeaturedGames />
       <LatestBonuses />
+      <InternalLinksSection />
       <FAQ />
         {/* AI 自動生成內容 - 2026-01-13 */}
         <section className="py-12 bg-dark-lighter">

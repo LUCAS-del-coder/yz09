@@ -2,6 +2,7 @@
   "buildCommand": "npm run build",
   "devCommand": "npm run dev",
   "installCommand": "npm install tailwindcss postcss autoprefixer && npm install",
-  "framework": "nextjs"
+  "framework": "nextjs",
+  "regions": ["sin1", "hkg1"]
 }
 

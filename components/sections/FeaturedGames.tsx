@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo } from "react";
+import Link from "next/link";
 import GameCard from "../ui/GameCard";
 import gamesData from "@/data/games.json";
 
@@ -60,12 +61,12 @@ export default function FeaturedGames() {
         </div>
 
         <div className="text-center mt-12">
-          <a
+          <Link
             href="/games"
             className="inline-block px-8 py-4 bg-gradient-to-r from-casino-purple-500 to-casino-purple-600 hover:from-casino-purple-600 hover:to-casino-purple-700 text-white font-semibold rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl"
           >
-            ဂိမ်းအားလုံးကို ကြည့်ရှုရန်
-          </a>
+            ဂိမ်းအားလုံးကို ကြည့်ရှုရန် | View All Games
+          </Link>
         </div>
       </div>
     </section>

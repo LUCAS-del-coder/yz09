@@ -62,7 +62,7 @@ export const metadata: Metadata = {
   title: {
     // 改為緬甸文優先
     default: "၂၀၂၅ မြန်မာ့အကောင်းဆုံး Online Casino များ | Myanmar Casino Reviews",
-    template: "%s | Myanmar Casino Reviews",
+      'en': `${baseUrl}/en`,
   },
   description: "မြန်မာ့အကောင်းဆုံး အွန်လိုင်း ကာစီနို စုံစမ်းစစ်ဆေးချက်များ - Shwe Casino (ရွှေ), 888, 777, Win8, 999, PGLucky88, FaFaFa အကြောင်း ကျွမ်းကျင်သူများ၏ အကဲဖြတ်ချက်များ၊ ဘောနပ်စ်များနှင့် လမ်းညွှန်များ",
   openGraph: {
@@ -100,17 +100,24 @@ export const metadata: Metadata = {
   alternates: {
     canonical: baseUrl,
     languages: {
-      'my-MM': baseUrl,
-      'en': baseUrl + '/en', // 為未來的英文版預留
+      "addressCountry": "MM",
+      "addressRegion": "Yangon Region",
+      "addressLocality": "Yangon"
     },
-  },
-};
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "Customer Service",
+      "availableLanguage": ["my", "en"],
+      "hoursAvailable": "Mo,Tu,We,Th,Fr,Sa,Su 00:00-23:59"
 
-export const viewport: Viewport = {
-  width: 'device-width',
-  initialScale: 1,
-  maximumScale: 5,
-  themeColor: [
+
+
+
+
+
+
+
+
     { media: '(prefers-color-scheme: light)', color: '#ffffff' },
     { media: '(prefers-color-scheme: dark)', color: '#1a0b2e' }
   ],
@@ -145,7 +152,6 @@ export default function RootLayout({
     "description": "မြန်မာ့အကောင်းဆုံး အွန်လိုင်း ကာစီနို စုံစမ်းစစ်ဆေးချက်များ",
     "address": {
       "@type": "PostalAddress",
-      "addressCountry": "MM"
     }
   };
 
@@ -157,7 +163,6 @@ export default function RootLayout({
     "address": {
       "@type": "PostalAddress",
       "addressCountry": "MM",
-      "addressRegion": "Yangon Region"
     },
     "geo": {
       "@type": "GeoCoordinates",

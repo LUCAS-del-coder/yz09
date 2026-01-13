@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import BonusCard from "../ui/BonusCard";
 import casinosData from "@/data/casinos.json";
 
@@ -54,12 +55,12 @@ export default function LatestBonuses() {
         </div>
 
         <div className="text-center mt-12">
-          <a
+          <Link
             href="/bonuses"
             className="inline-block px-8 py-4 bg-gradient-to-r from-gold-dark via-gold to-gold-light text-dark font-bold rounded-lg hover:shadow-lg hover:shadow-gold/50 transition-all"
           >
-            ဘောနပ်စ် အားလုံးကို ကြည့်ရှုရန်
-          </a>
+            ဘောနပ်စ် အားလုံးကို ကြည့်ရှုရန် | View All Bonuses
+          </Link>
         </div>
       </div>
     </section>
