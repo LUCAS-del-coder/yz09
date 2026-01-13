@@ -1,11 +1,5 @@
 import { MetadataRoute } from 'next';
 import casinosData from '@/data/casinos.json';
-<<<<<<< HEAD
-import { getBaseUrl } from '@/lib/config';
-=======
-import gamesData from '@/data/games.json';
-import blogPostsData from '@/data/blog-posts.json';
->>>>>>> 7d7b46e (擴充網站內容結構：從 5 個頁面增加到 50+ 個頁面)
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = getBaseUrl();
