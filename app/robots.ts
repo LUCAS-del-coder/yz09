@@ -1,15 +1,14 @@
 import { MetadataRoute } from 'next';
-import { getBaseUrl } from '@/lib/config';
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = getBaseUrl();
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://yz09.com';
 
   return {
     rules: [
       {
         userAgent: '*',
         allow: '/',
-        disallow: ['/api/', '/admin/'],
+        disallow: ['/api/', '/admin/', '/_next/'],
       },
     ],
     sitemap: `${baseUrl}/sitemap.xml`,

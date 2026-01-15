@@ -1,8 +1,10 @@
 import { MetadataRoute } from 'next';
 import casinosData from '@/data/casinos.json';
+import gamesData from '@/data/games.json';
+import blogPostsData from '@/data/blog-posts.json';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = getBaseUrl();
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://yz09.com';
 
   // Static pages
   const staticPages = [
