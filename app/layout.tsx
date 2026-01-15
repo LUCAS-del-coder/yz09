@@ -7,7 +7,6 @@ import Footer from "@/components/layout/Footer";
 import FloatingCTA from "@/components/ui/FloatingCTA";
 import AgeVerification from "@/components/ui/AgeVerification";
 import CookieConsent from "@/components/ui/CookieConsent";
-import { getBaseUrl } from "@/lib/config";
 
 const myanmarFont = Noto_Sans_Myanmar({
   weight: ["300", "400", "500", "600", "700"],
@@ -25,61 +24,22 @@ const englishFont = Poppins({
   preload: true,
 });
 
-const baseUrl = getBaseUrl();
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://yz09.com';
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
-  // 添加地理定位設定
-  other: {
-    'geo.region': 'MM',
-    'geo.country': 'MM',
-    'geo.placename': 'Myanmar',
-    'geo.position': '16.8661;96.1951',
-    'ICBM': '16.8661, 96.1951',
-    'language': 'my-MM',
-    'content-language': 'my-MM',
-    'apple-mobile-web-app-capable': 'yes',
-    'mobile-web-app-capable': 'yes',
-  },
-  authors: [{ name: 'Myanmar Casino Reviews Team' }],
-  creator: 'Myanmar Casino Reviews',
-  publisher: 'Myanmar Casino Reviews',
-  category: 'Online Casino Reviews',
-  verification: {
-    google: '',
-    yandex: '',
-  },
-  icons: {
-    icon: [
-      { url: '/images/favicon.png', type: 'image/png', sizes: '32x32' },
-      { url: '/images/favicon.png', type: 'image/png', sizes: '16x16' },
-    ],
-    apple: [
-      { url: '/images/favicon.png', type: 'image/png', sizes: '180x180' },
-    ],
-    shortcut: '/images/favicon.png',
-  },
   title: {
-    // 改為緬甸文優先
     default: "၂၀၂၅ မြန်မာ့အကောင်းဆုံး Online Casino များ | Myanmar Casino Reviews",
-      'en': `${baseUrl}/en`,
+    template: "%s | Myanmar Casino Reviews",
   },
   description: "မြန်မာ့အကောင်းဆုံး အွန်လိုင်း ကာစီနို စုံစမ်းစစ်ဆေးချက်များ - Shwe Casino (ရွှေ), 888, 777, Win8, 999, PGLucky88, FaFaFa အကြောင်း ကျွမ်းကျင်သူများ၏ အကဲဖြတ်ချက်များ၊ ဘောနပ်စ်များနှင့် လမ်းညွှန်များ",
   openGraph: {
     title: "၂၀၂၅ မြန်မာ့အကောင်းဆုံး Online Casino များ | Myanmar Casino Reviews",
-    description: "မြန်မာ့အကောင်းဆုံး အွန်လိုင်း ကာစီနို စုံစမ်းစစ်ဆေးချက်များ - ဘောနပ်စ်များ၊ အဆင့်သတ်မှတ်ချက်များနှင့် လမ်းညွှန်များ",
+    description: "မြန်မာ့အကောင်းဆုံး အွန်လိုင်း ကာစီနို စုံစမ်းစစ်ဆေးချက်များ",
     type: "website",
     locale: "my_MM",
     siteName: "Myanmar Casino Reviews",
     url: baseUrl,
-    images: [
-      {
-        url: `${baseUrl}/images/site-logo.png`,
-        width: 1200,
-        height: 630,
-        alt: "Myanmar Casino Reviews - အကောင်းဆုံး အွန်လိုင်း ကာစီနို",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
@@ -100,24 +60,26 @@ export const metadata: Metadata = {
   alternates: {
     canonical: baseUrl,
     languages: {
-      "addressCountry": "MM",
-      "addressRegion": "Yangon Region",
-      "addressLocality": "Yangon"
+      'my-MM': baseUrl,
+      'en': `${baseUrl}/en`,
     },
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "contactType": "Customer Service",
-      "availableLanguage": ["my", "en"],
-      "hoursAvailable": "Mo,Tu,We,Th,Fr,Sa,Su 00:00-23:59"
+  },
+  other: {
+    'geo.region': 'MM',
+    'geo.country': 'MM',
+    'geo.placename': 'Myanmar',
+    'geo.position': '16.8661;96.1951',
+    'ICBM': '16.8661, 96.1951',
+    'language': 'my-MM',
+    'content-language': 'my-MM',
+  },
+};
 
-
-
-
-
-
-
-
-
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: [
     { media: '(prefers-color-scheme: light)', color: '#ffffff' },
     { media: '(prefers-color-scheme: dark)', color: '#1a0b2e' }
   ],
@@ -131,17 +93,10 @@ export default function RootLayout({
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "Myanmar Casino Reviews - မြန်မာ ကာစီနို သုံးသပ်ချက်များ",
+    "name": "Myanmar Casino Reviews",
     "url": baseUrl,
     "description": "မြန်မာ့အကောင်းဆုံး အွန်လိုင်း ကာစီနို စုံစမ်းစစ်ဆေးချက်များ",
     "inLanguage": "my-MM",
-    "audience": {
-      "@type": "Audience",
-      "geographicArea": {
-        "@type": "Country",
-        "name": "Myanmar"
-      }
-    }
   };
 
   const organizationSchema = {
@@ -152,6 +107,15 @@ export default function RootLayout({
     "description": "မြန်မာ့အကောင်းဆုံး အွန်လိုင်း ကာစီနို စုံစမ်းစစ်ဆေးချက်များ",
     "address": {
       "@type": "PostalAddress",
+      "addressCountry": "MM",
+      "addressRegion": "Yangon Region",
+      "addressLocality": "Yangon"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "Customer Service",
+      "availableLanguage": ["my", "en"],
+      "hoursAvailable": "Mo,Tu,We,Th,Fr,Sa,Su 00:00-23:59"
     }
   };
 
@@ -163,6 +127,8 @@ export default function RootLayout({
     "address": {
       "@type": "PostalAddress",
       "addressCountry": "MM",
+      "addressRegion": "Yangon Region",
+      "addressLocality": "Yangon"
     },
     "geo": {
       "@type": "GeoCoordinates",
@@ -190,63 +156,6 @@ export default function RootLayout({
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
               gtag('config', 'G-HRDGFWT9KP');
-            `,
-          }}
-        />
-        <Script
-          id="external-link-tracking"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function() {
-                // 獲取當前域名
-                const currentHost = window.location.hostname;
-                
-                // 追蹤外部連結點擊的函數
-                function trackOutboundLink(url, linkText) {
-                  // 檢查 gtag 是否已載入
-                  if (typeof gtag !== 'undefined') {
-                    gtag('event', 'click', {
-                      'event_category': 'outbound',
-                      'event_label': url,
-                      'transport_type': 'beacon',
-                      'event_callback': function() {
-                        // 允許連結正常跳轉
-                        return true;
-                      }
-                    });
-                  }
-                }
-                
-                // 監聽所有連結點擊
-                document.addEventListener('click', function(e) {
-                  let target = e.target;
-                  
-                  // 向上查找直到找到 <a> 標籤
-                  while (target && target.tagName !== 'A') {
-                    target = target.parentElement;
-                  }
-                  
-                  if (!target || !target.href) return;
-                  
-                  const href = target.href;
-                  const linkText = target.textContent || target.innerText || '';
-                  
-                  // 檢查是否為外部連結
-                  try {
-                    const url = new URL(href);
-                    const isExternal = url.hostname !== currentHost && 
-                                      (href.startsWith('http://') || href.startsWith('https://'));
-                    
-                    if (isExternal) {
-                      // 追蹤外部連結點擊
-                      trackOutboundLink(href, linkText);
-                    }
-                  } catch (e) {
-                    // 如果 URL 解析失敗，忽略
-                  }
-                }, true);
-              })();
             `,
           }}
         />
@@ -280,4 +189,3 @@ export default function RootLayout({
     </html>
   );
 }
-
