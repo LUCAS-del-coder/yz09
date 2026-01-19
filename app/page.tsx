@@ -305,17 +305,17 @@ export default function Home() {
       {/* SEO 推薦外部平台 */}
       <section className="py-12 bg-dark-lighter">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto space-y-4 text-gray-200">
+          <div className="max-w-6xl mx-auto space-y-4 text-gray-200">
             <h2 className="text-3xl font-bold text-white mb-2">緬甸熱門線上娛樂城推薦</h2>
             <p className="leading-relaxed">
-              為了讓玩家獲得更優質的體驗，我們精選了兩個在緬甸口碑良好的線上平台，提供豐富的真人娛樂、熱門 slot、
+              為了讓玩家獲得更優質的體驗，我們精選了多個在緬甸口碑良好的線上平台，提供豐富的真人娛樂、熱門 slot、
               以及在地化的支付支援。以下連結均為官方入口，建議收藏。
             </p>
-            <div className="grid md:grid-cols-2 gap-4">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
               <a
                 href="https://www.shwecasino99.com/"
                 target="_blank"
-                rel="sponsored noopener noreferrer"
+                rel="noopener noreferrer"
                 className="block p-4 rounded-xl bg-casino-purple-700/30 border border-casino-purple-500/40 hover:border-casino-purple-300 transition-colors"
               >
                 <h3 className="text-xl font-semibold text-white mb-1">Shwe Casino 99</h3>
@@ -327,13 +327,85 @@ export default function Home() {
               <a
                 href="https://www.pv991.com/"
                 target="_blank"
-                rel="sponsored noopener noreferrer"
+                rel="noopener noreferrer"
                 className="block p-4 rounded-xl bg-casino-purple-700/30 border border-casino-purple-500/40 hover:border-casino-purple-300 transition-colors"
               >
                 <h3 className="text-xl font-semibold text-white mb-1">PV99</h3>
                 <p className="text-sm leading-relaxed text-gray-300">
                   聚合 Yes8、Ygn9、Pya777、Mmk99 等多家品牌，提供 slot、捕魚、體育與真人娛樂，並支援
                   手機版 APP 下載，界面輕量、註冊流程簡單，適合新手與老玩家。
+                </p>
+              </a>
+              <a
+                href="https://www.myanbetapp.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block p-4 rounded-xl bg-casino-purple-700/30 border border-casino-purple-500/40 hover:border-casino-purple-300 transition-colors"
+              >
+                <h3 className="text-xl font-semibold text-white mb-1">MyanBet App</h3>
+                <p className="text-sm leading-relaxed text-gray-300">
+                  專為緬甸玩家設計的行動應用平台，提供便捷的 APP 下載服務，整合多種熱門遊戲與真人娛樂，
+                  支援本地化支付方式，操作流暢、體驗優質。
+                </p>
+              </a>
+              <a
+                href="https://www.myanbets.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block p-4 rounded-xl bg-casino-purple-700/30 border border-casino-purple-500/40 hover:border-casino-purple-300 transition-colors"
+              >
+                <h3 className="text-xl font-semibold text-white mb-1">MyanBets</h3>
+                <p className="text-sm leading-relaxed text-gray-300">
+                  緬甸知名線上娛樂平台，提供豐富的體育投注、真人賭場與 slot 遊戲選擇，介面友善、
+                  註冊快速，適合各類型玩家使用。
+                </p>
+              </a>
+              <a
+                href="https://www.myancasino.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block p-4 rounded-xl bg-casino-purple-700/30 border border-casino-purple-500/40 hover:border-casino-purple-300 transition-colors"
+              >
+                <h3 className="text-xl font-semibold text-white mb-1">MyanCasino</h3>
+                <p className="text-sm leading-relaxed text-gray-300">
+                  專業的緬甸線上賭場平台，集結多款熱門真人娛樂遊戲，提供優質的遊戲體驗與完善的客戶服務，
+                  深受當地玩家信賴。
+                </p>
+              </a>
+              <a
+                href="https://www.myanslots.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block p-4 rounded-xl bg-casino-purple-700/30 border border-casino-purple-500/40 hover:border-casino-purple-300 transition-colors"
+              >
+                <h3 className="text-xl font-semibold text-white mb-1">MyanSlots</h3>
+                <p className="text-sm leading-relaxed text-gray-300">
+                  專注於 slot 遊戲的娛樂平台，提供數百款熱門老虎機遊戲，包含 Pragmatic Play、PG SOFT
+                  等知名供應商，遊戲種類豐富、獎金豐厚。
+                </p>
+              </a>
+              <a
+                href="https://www.myanslotsapp.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block p-4 rounded-xl bg-casino-purple-700/30 border border-casino-purple-500/40 hover:border-casino-purple-300 transition-colors"
+              >
+                <h3 className="text-xl font-semibold text-white mb-1">MyanSlots App</h3>
+                <p className="text-sm leading-relaxed text-gray-300">
+                  MyanSlots 的行動應用版本，提供便捷的手機 APP 下載，讓玩家隨時隨地享受 slot 遊戲樂趣，
+                  介面優化、載入快速，適合行動玩家使用。
+                </p>
+              </a>
+              <a
+                href="https://www.nepplay.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block p-4 rounded-xl bg-casino-purple-700/30 border border-casino-purple-500/40 hover:border-casino-purple-300 transition-colors"
+              >
+                <h3 className="text-xl font-semibold text-white mb-1">NepPlay</h3>
+                <p className="text-sm leading-relaxed text-gray-300">
+                  多元化的線上娛樂平台，提供 slot、真人娛樂、體育投注等多種遊戲選項，平台穩定、
+                  支付安全，為緬甸玩家提供全方位的娛樂體驗。
                 </p>
               </a>
             </div>
