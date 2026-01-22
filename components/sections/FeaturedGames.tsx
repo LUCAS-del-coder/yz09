@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo } from "react";
+import { useState, useEffect } from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 import GameCard from "../ui/GameCard";
@@ -16,9 +16,18 @@ const brandLinks = [
 export default function FeaturedGames() {
   const t = useTranslations("featuredGames");
   
-  // 随机分配游戏，确保不重复，如果超过游戏数量才重复
-  const shuffledGames = useMemo(() => {
-    // 创建游戏数组的副本
+  // 初始化时使用确定性的顺序（前6个游戏），确保 SSR 和客户端首次渲染一致
+  const gamesToShow = 6;
+  const initialGames = gamesData.slice(0, gamesToShow).map((game, index) => ({
+    ...game,
+    ctaLink: brandLinks[index % brandLinks.length],
+  }));
+  
+  const [gamesWithLinks, setGamesWithLinks] = useState<Array<typeof gamesData[0] & { ctaLink: string }>>(initialGames);
+  
+  useEffect(() => {
+    // 随机分配游戏，确保不重复，如果超过游戏数量才重复
+    // 只在客户端执行，避免 hydration mismatch
     const games = [...gamesData];
     
     // Fisher-Yates 洗牌算法
@@ -27,21 +36,20 @@ export default function FeaturedGames() {
       [games[i], games[j]] = [games[j], games[i]];
     }
     
-    return games;
+    // 如果要显示的游戏数量超过可用游戏数量，则重复使用
+    const displayGames = [];
+    for (let i = 0; i < gamesToShow; i++) {
+      displayGames.push(games[i % games.length]);
+    }
+
+    // 为每个游戏随机分配品牌链接
+    const gamesWithLinksData = displayGames.map((game, index) => ({
+      ...game,
+      ctaLink: brandLinks[index % brandLinks.length],
+    }));
+    
+    setGamesWithLinks(gamesWithLinksData);
   }, []);
-
-  // 如果要显示的游戏数量超过可用游戏数量，则重复使用
-  const gamesToShow = 6;
-  const displayGames = [];
-  for (let i = 0; i < gamesToShow; i++) {
-    displayGames.push(shuffledGames[i % shuffledGames.length]);
-  }
-
-  // 为每个游戏随机分配品牌链接
-  const gamesWithLinks = displayGames.map((game, index) => ({
-    ...game,
-    ctaLink: brandLinks[index % brandLinks.length],
-  }));
 
   return (
     <section className="py-20 bg-dark">

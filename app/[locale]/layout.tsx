@@ -9,6 +9,7 @@ import AgeVerification from "@/components/ui/AgeVerification";
 import CookieConsent from "@/components/ui/CookieConsent";
 import { getBaseUrl } from "@/lib/config";
 import { ReactNode } from 'react';
+import Script from 'next/script';
 
 const baseUrl = getBaseUrl();
 
@@ -30,7 +31,6 @@ export default async function LocaleLayout({
 }) {
   const { locale } = await params;
 
-  console.log('locale layout', locale);
   // Validate locale
   if (!locales.includes(locale as any)) {
     notFound();
@@ -101,7 +101,7 @@ export default async function LocaleLayout({
       <body>
       {/* <LangSetter locale={locale} /> */}
       {/* Google Analytics */}
-      {/* <Script
+      <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-HRDGFWT9KP"
         strategy="afterInteractive"
       />
@@ -134,7 +134,7 @@ export default async function LocaleLayout({
         type="application/ld+json"
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
-      /> */}
+      />
       <NextIntlClientProvider messages={messages}>
         <AgeVerification />
         <Header />

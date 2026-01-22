@@ -67,7 +67,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
       />
       <Hero />
       <FeaturedCasinos />
-      {/* <FeaturedGames /> */}
+      <FeaturedGames />
       <LatestBonuses />
       <InternalLinksSection />
       <FAQ />
@@ -463,8 +463,6 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
             </div>
           </div>
         </section>
-        
-      
     </div>
   );
 }

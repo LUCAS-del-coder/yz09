@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, usePathname } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
@@ -29,7 +29,13 @@ export default function Header() {
     "https://www.pya777.net/m/home?affiliateCode=seom2002",
   ];
 
-  const randomBrandLink = brandLinks[Math.floor(Math.random() * brandLinks.length)];
+  // Use first link as default for SSR consistency, then randomize on client
+  const [randomBrandLink, setRandomBrandLink] = useState(brandLinks[0]);
+
+  useEffect(() => {
+    // Only randomize on client side after hydration
+    setRandomBrandLink(brandLinks[Math.floor(Math.random() * brandLinks.length)]);
+  }, []);
 
   return (
     <header className="sticky top-0 z-50 bg-casino-purple-950/95 backdrop-blur-md border-b border-casino-purple-800/30">
