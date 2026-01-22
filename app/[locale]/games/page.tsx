@@ -86,7 +86,7 @@ export default function GamesPage() {
 
         {/* Featured Games Section */}
         <div className="mb-12">
-          <FeaturedGames />
+          {/* <FeaturedGames /> */}
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">

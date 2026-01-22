@@ -6,6 +6,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import CTAButton from "../ui/CTAButton";
 import SearchBar from "../ui/SearchBar";
+import LanguageSelector from "../ui/LanguageSelector";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -55,13 +56,12 @@ export default function Header() {
           {/* Language Selector & CTA */}
           <div className="flex items-center gap-3 flex-shrink-0">
             {/* Language Selector */}
-            <button className="hidden md:flex items-center gap-2 px-3 py-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors">
-              <span className="text-lg">🇲🇲</span>
-              <span className="text-white text-sm font-medium">MM</span>
-            </button>
+            <div className="hidden md:block">
+              <LanguageSelector variant="desktop" />
+            </div>
 
             {/* CTA Button */}
-            <div className="hidden lg:block">
+            {/* <div className="hidden lg:block">
               <CTAButton
                 href={randomBrandLink}
                 variant="gold"
@@ -69,7 +69,7 @@ export default function Header() {
               >
                 PLAY NOW
               </CTAButton>
-            </div>
+            </div> */}
 
             {/* Mobile Search Icon */}
             <button
@@ -153,6 +153,13 @@ export default function Header() {
                   {link.label}
                 </Link>
               ))}
+              
+              {/* Mobile Language Selector */}
+              <LanguageSelector 
+                variant="mobile" 
+                onSelect={() => setIsMenuOpen(false)} 
+              />
+
               <div className="pt-2">
                 <CTAButton
                   href={randomBrandLink}

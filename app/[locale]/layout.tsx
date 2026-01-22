@@ -2,14 +2,13 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { locales } from '@/i18n/config';
-import Script from "next/script";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import FloatingCTA from "@/components/ui/FloatingCTA";
 import AgeVerification from "@/components/ui/AgeVerification";
 import CookieConsent from "@/components/ui/CookieConsent";
-import LangSetter from "@/components/LangSetter";
 import { getBaseUrl } from "@/lib/config";
+import { ReactNode } from 'react';
 
 const baseUrl = getBaseUrl();
 
@@ -24,11 +23,13 @@ export function generateStaticParams() {
 
 export default async function LocaleLayout({
   children,
-  params: { locale }
+  params
 }: {
-  children: React.ReactNode;
-  params: { locale: string };
+  children: ReactNode;
+  params: Promise<{ locale: string }>;
 }) {
+  const { locale } = await params;
+
   console.log('locale layout', locale);
   // Validate locale
   if (!locales.includes(locale as any)) {
@@ -96,10 +97,11 @@ export default async function LocaleLayout({
   };
 
   return (
-    <>
-      <LangSetter locale={locale} />
+    <html lang='my-MM'>
+      <body>
+      {/* <LangSetter locale={locale} /> */}
       {/* Google Analytics */}
-      <Script
+      {/* <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-HRDGFWT9KP"
         strategy="afterInteractive"
       />
@@ -132,7 +134,7 @@ export default async function LocaleLayout({
         type="application/ld+json"
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
-      />
+      /> */}
       <NextIntlClientProvider messages={messages}>
         <AgeVerification />
         <Header />
@@ -143,6 +145,7 @@ export default async function LocaleLayout({
         <FloatingCTA />
         <CookieConsent />
       </NextIntlClientProvider>
-    </>
+    </body>
+    </html>
   );
 }

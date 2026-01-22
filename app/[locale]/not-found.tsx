@@ -1,5 +1,5 @@
 import CTAButton from "@/components/ui/CTAButton";
-
+import { Link } from "@/i18n/routing";
 
 export default function NotFound() {
   const brandLinks = [

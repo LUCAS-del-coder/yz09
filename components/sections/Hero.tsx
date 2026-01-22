@@ -23,7 +23,7 @@ export default function Hero() {
       <div className="container mx-auto px-4 relative z-10 py-12">
         <div className="grid lg:grid-cols-5 gap-8 items-center">
           {/* Left Content (60%) */}
-          <div className="lg:col-span-3 text-white">
+          {/* <div className="lg:col-span-3 text-white">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
@@ -64,7 +64,7 @@ export default function Hero() {
                 </a>
               </motion.div>
             </motion.div>
-          </div>
+          </div> */}
 
           {/* Right Illustration (40%) */}
           <div className="lg:col-span-2 relative h-64 lg:h-80">
@@ -85,7 +85,8 @@ export default function Hero() {
                   stroke="rgba(255,255,255,0.3)"
                   strokeWidth="4"
                   className="spin-slow"
-                  transform-origin="200 200"
+                  // transform-origin="200 200"
+                  style={{ transformOrigin: "200 200" }}
                 />
                 {/* Inner circles */}
                 <circle cx="200" cy="200" r="120" fill="rgba(139,92,246,0.2)" />

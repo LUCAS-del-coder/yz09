@@ -13,6 +13,8 @@
 //   description: "မြန်မာ့အကောင်းဆုံး အွန်လိုင်း ကာစီနို စုံစမ်းစစ်ဆေးချက်များ",
 // };
 
+import "./globals.css";
+
 export default function RootLayout({
   children,
 }: Readonly<{

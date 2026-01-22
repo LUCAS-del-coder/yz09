@@ -83,7 +83,7 @@ export default function Home() {
       />
       <Hero />
       <FeaturedCasinos />
-      <FeaturedGames />
+      {/* <FeaturedGames /> */}
       <LatestBonuses />
       <InternalLinksSection />
       <FAQ />
@@ -109,14 +109,14 @@ export default function Home() {
               <h2 className="text-3xl font-bold text-white mb-4">မြန်မာနိုင်ငံ Casino အကြံပြုချက် - သင့်စိတ်ကြိုက်ရွေးချယ်လိုက်နိုင်ပါ!</h2>
               <p className="text-gray-300 mb-6 leading-relaxed">ကျွန်ုပ်တို့၏ Myanmar Casino Reviews သည် မြန်မာလူမျိုးများအတွက် အကောင်းဆုံး online casino များကို သင့်ရွေးချယ်ရန်အကြံပြုပေးပါသည်။ Shwe Casino၊ 888 Casino၊ 777 Casino၊ Win8၊ 999 Casino၊ PGLucky88 နှင့် FaFaFa တို့အပါအဝင် လူကြိုက်များဆုံး online slot games များကို ဖော်ပြ ထားပါသည်။ လုံခြုံ၍ စိတ်ချရသောပေးဆောင်မှုစနစ်ကိုလည်း အဓိကထားရှိထားပါသည်။ \</p>
               <h3 className="text-2xl font-bold text-white mb-3 mt-8">&quot;: ကျွန်ုပ်တို့၏ပျော်ရွှင်စရာ online slot games များ&quot;,
-  &quot;gamesParagraph&quot;: &quot;Myanmar Casino Reviews သည် ဖလာသာ၊ 5 LIONS MEGAWAYS၊ Starlight Princess နှင့် Gates of Olympus လို့အပါအဝင် ကြီးမားသော အမျိုးမျိုးသော online slot games များကို ကျွန်ုပ်တို့လျှောက်လှမ်းထားပါသည်။ ဤ games များသည် မြန်မာ့ online casino လူကြိုက်များဆုံး၊ \&quot;Shwe Casino\&quot; ၊ \&quot;Mighty Fu Casino\&quot; နှင့် \&quot;Golden7 Casino\&quot; တို့အပေါ်မှာ အထူးအာရုံစိုက်ထားပါသည်။&quot;,
-  &quot;paymentTitle&quot;: လုံခြုံသောပေးဆောင်မှုစနစ်များ&quot;,
-  &quot;paymentParagraph&quot;: &quot;မြန်မာ Casino Reviews သည် ကုန်ပစ္စည်းနှင့် ဝန်ဆောင်မှုပေးဆောင်မှုတို့အတွက် ဘဏ်လွှဲပေးရေး၊ ကျက်ဒစ်/ဒဘစ်ကတ်နှင့် e-wallet စသည်တို့ကဲ့သို့ သက်ဆိုင်ရာ ပေးဆောင်မှုနည်းလမ်းများကို တင်ဆက်ထားပါသည်။ ဤသို့သော လုံခြုံ၍ စိတ်ချရသောပေးဆောင်မှုစနစ်များဖြင့် \&quot;Shwe Casino\&quot;၊ \&quot;Mighty Fu Casino\&quot;၊ \&quot;Golden7 Casino\&quot; နှင့် \&quot;Shwe Casino App\&quot; တို့ကို ဝယ်ယူနိုင်ပါသည်။ ကျွန်ုပ်တို့၏ Myanmar Casino Reviews အသုံးပြုပါက သင်သည် ပြုလုပ်ရန်အဆင်မပြေရန် ပြဿနာတွေ့ခံရမည်မဟုတ်ပါ။&quot;
-}</h3>
+                &quot;gamesParagraph&quot;: &quot;Myanmar Casino Reviews သည် ဖလာသာ၊ 5 LIONS MEGAWAYS၊ Starlight Princess နှင့် Gates of Olympus လို့အပါအဝင် ကြီးမားသော အမျိုးမျိုးသော online slot games များကို ကျွန်ုပ်တို့လျှောက်လှမ်းထားပါသည်။ ဤ games များသည် မြန်မာ့ online casino လူကြိုက်များဆုံး၊ \&quot;Shwe Casino\&quot; ၊ \&quot;Mighty Fu Casino\&quot; နှင့် \&quot;Golden7 Casino\&quot; တို့အပေါ်မှာ အထူးအာရုံစိုက်ထားပါသည်။&quot;,
+                &quot;paymentTitle&quot;: လုံခြုံသောပေးဆောင်မှုစနစ်များ&quot;,
+                &quot;paymentParagraph&quot;: &quot;မြန်မာ Casino Reviews သည် ကုန်ပစ္စည်းနှင့် ဝန်ဆောင်မှုပေးဆောင်မှုတို့အတွက် ဘဏ်လွှဲပေးရေး၊ ကျက်ဒစ်/ဒဘစ်ကတ်နှင့် e-wallet စသည်တို့ကဲ့သို့ သက်ဆိုင်ရာ ပေးဆောင်မှုနည်းလမ်းများကို တင်ဆက်ထားပါသည်။ ဤသို့သော လုံခြုံ၍ စိတ်ချရသောပေးဆောင်မှုစနစ်များဖြင့် \&quot;Shwe Casino\&quot;၊ \&quot;Mighty Fu Casino\&quot;၊ \&quot;Golden7 Casino\&quot; နှင့် \&quot;Shwe Casino App\&quot; တို့ကို ဝယ်ယူနိုင်ပါသည်။ ကျွန်ုပ်တို့၏ Myanmar Casino Reviews အသုံးပြုပါက သင်သည် ပြုလုပ်ရန်အဆင်မပြေရန် ပြဿနာတွေ့ခံရမည်မဟုတ်ပါ။&quot;
+              </h3>
               <p className="text-gray-300 mb-6 leading-relaxed">Myanmar Casino Reviews သည် ဖလာသာ၊ 5 LIONS MEGAWAYS၊ Starlight Princess နှင့် Gates of Olympus လို့အပါအဝင် ကြီးမားသော အမျိုးမျိုးသော online slot games များကို ကျွန်ုပ်တို့လျှောက်လှမ်းထားပါသည်။ ဤ games များသည် မြန်မာ့ online casino လူကြိုက်များဆုံး၊ \</p>
               <h3 className="text-2xl font-bold text-white mb-3 mt-8">&quot;: လုံခြုံသောပေးဆောင်မှုစနစ်များ&quot;,
-  &quot;paymentParagraph&quot;: &quot;မြန်မာ Casino Reviews သည် ကုန်ပစ္စည်းနှင့် ဝန်ဆောင်မှုပေးဆောင်မှုတို့အတွက် ဘဏ်လွှဲပေးရေး၊ ကျက်ဒစ်/ဒဘစ်ကတ်နှင့် e-wallet စသည်တို့ကဲ့သို့ သက်ဆိုင်ရာ ပေးဆောင်မှုနည်းလမ်းများကို တင်ဆက်ထားပါသည်။ ဤသို့သော လုံခြုံ၍ စိတ်ချရသောပေးဆောင်မှုစနစ်များဖြင့် \&quot;Shwe Casino\&quot;၊ \&quot;Mighty Fu Casino\&quot;၊ \&quot;Golden7 Casino\&quot; နှင့် \&quot;Shwe Casino App\&quot; တို့ကို ဝယ်ယူနိုင်ပါသည်။ ကျွန်ုပ်တို့၏ Myanmar Casino Reviews အသုံးပြုပါက သင်သည် ပြုလုပ်ရန်အဆင်မပြေရန် ပြဿနာတွေ့ခံရမည်မဟုတ်ပါ။&quot;
-}</h3>
+                &quot;paymentParagraph&quot;: &quot;မြန်မာ Casino Reviews သည် ကုန်ပစ္စည်းနှင့် ဝန်ဆောင်မှုပေးဆောင်မှုတို့အတွက် ဘဏ်လွှဲပေးရေး၊ ကျက်ဒစ်/ဒဘစ်ကတ်နှင့် e-wallet စသည်တို့ကဲ့သို့ သက်ဆိုင်ရာ ပေးဆောင်မှုနည်းလမ်းများကို တင်ဆက်ထားပါသည်။ ဤသို့သော လုံခြုံ၍ စိတ်ချရသောပေးဆောင်မှုစနစ်များဖြင့် \&quot;Shwe Casino\&quot;၊ \&quot;Mighty Fu Casino\&quot;၊ \&quot;Golden7 Casino\&quot; နှင့် \&quot;Shwe Casino App\&quot; တို့ကို ဝယ်ယူနိုင်ပါသည်။ ကျွန်ုပ်တို့၏ Myanmar Casino Reviews အသုံးပြုပါက သင်သည် ပြုလုပ်ရန်အဆင်မပြေရန် ပြဿနာတွေ့ခံရမည်မဟုတ်ပါ။&quot;
+              </h3>
               <p className="text-gray-300 mb-6 leading-relaxed">မြန်မာ Casino Reviews သည် ကုန်ပစ္စည်းနှင့် ဝန်ဆောင်မှုပေးဆောင်မှုတို့အတွက် ဘဏ်လွှဲပေးရေး၊ ကျက်ဒစ်/ဒဘစ်ကတ်နှင့် e-wallet စသည်တို့ကဲ့သို့ သက်ဆိုင်ရာ ပေးဆောင်မှုနည်းလမ်းများကို တင်ဆက်ထားပါသည်။ ဤသို့သော လုံခြုံ၍ စိတ်ချရသောပေးဆောင်မှုစနစ်များဖြင့် \</p>
             </div>
           </div>
@@ -146,9 +146,9 @@ export default function Home() {
               <p className="text-gray-300 mb-6 leading-relaxed">ျမန္မာႏုိင္ငံမွ အေကာင္းဆံုးအြန္လိုင္းကာစီႏုိေဖာ္ၾကားခ်က္မ်ားကို ေဖာ္ျပေပးႏုိင္ေသာ Myanmar Casino Reviews ၌ လာေရာက္အေၾကာင္းၾကားႏုိင္ပါသည္။ </p>
               <h3 className="text-2xl font-bold text-white mb-3 mt-8">Myanmar Casino ၌ေဖာ္ျပထားေသာ ကစားပြဲမ်ား</h3>
               <p className="text-gray-300 mb-6 leading-relaxed">&quot;: &quot;&quot;Shwe Casino&quot; အပါအ၀င္ျမန္မာဘာသာျဖင့္ အစုိင္အခဲမ်ားစြာကို ရရွိႏုိင္ေသာ ကစားပြဲမ်ားကို ၾကည့္႐ႈၾကပါ။ သင္လိုခ်င္သည့္ အေကာင္းဆံုး &quot;slot games&quot;မ်ားကိုရရွိႏိုင္ရန္အတြက္ ဤဆိုက္ကိုသြားေရာက္လည္ပတ္ၾကပါ။&quot;,
-  &quot;paymentTitle&quot;: &quot;အေၾကာင္းဆံုး၀န္ေဆာင္မႈမ်ား&quot;,
-  &quot;paymentParagraph&quot;: &quot;Myanmar Casino Reviews တြင္ သင့္ကိုသင္ယံုၾကည္ႏုိင္ေသာ ေငြေၾကးေပးသြင္းႏိုင္မႈနည္းလမ္းမ်ားကို ေဖာ္ျပေပးထားပါသည္။ သင့္အတြက္အထူးခ်ိန္ဖက္ထားေသာ အေကာင့္ကို လ်င္ျမန္စြာဖြင့္လွစ္ႏိုင္ၿပီး ေငြေၾကးလြတ္လပ္စြာ ေပးသြင္းႏိုင္ပါသည္။ MWD777၊ GKK777၊ JDBYG အစရွိေသာ ေငြေပးေခ်မႈျမင့္မားပညာ႐ွင္မ်ားႏွင့္ လက္တြဲ၍ ေဘးကင္းလံုၿခံဳစြာ ေပးသြင္းႏိုင္ပါသည္။&quot;
-}</p>
+                &quot;paymentTitle&quot;: &quot;အေၾကာင္းဆံုး၀န္ေဆာင္မႈမ်ား&quot;,
+                &quot;paymentParagraph&quot;: &quot;Myanmar Casino Reviews တြင္ သင့္ကိုသင္ယံုၾကည္ႏုိင္ေသာ ေငြေၾကးေပးသြင္းႏိုင္မႈနည္းလမ္းမ်ားကို ေဖာ္ျပေပးထားပါသည္။ သင့္အတြက္အထူးခ်ိန္ဖက္ထားေသာ အေကာင့္ကို လ်င္ျမန္စြာဖြင့္လွစ္ႏိုင္ၿပီး ေငြေၾကးလြတ္လပ္စြာ ေပးသြင္းႏိုင္ပါသည္။ MWD777၊ GKK777၊ JDBYG အစရွိေသာ ေငြေပးေခ်မႈျမင့္မားပညာ႐ွင္မ်ားႏွင့္ လက္တြဲ၍ ေဘးကင္းလံုၿခံဳစြာ ေပးသြင္းႏိုင္ပါသည္။&quot;
+              </p>
               <h3 className="text-2xl font-bold text-white mb-3 mt-8">အေၾကာင္းဆံုး၀န္ေဆာင္မႈမ်ား</h3>
               <p className="text-gray-300 mb-6 leading-relaxed">Myanmar Casino Reviews တြင္ သင့္ကိုသင္ယံုၾကည္ႏုိင္ေသာ ေငြေၾကးေပးသြင္းႏိုင္မႈနည္းလမ္းမ်ားကို ေဖာ္ျပေပးထားပါသည္။ သင့္အတြက္အထူးခ်ိန္ဖက္ထားေသာ အေကာင့္ကို လ်င္ျမန္စြာဖြင့္လွစ္ႏိုင္ၿပီး ေငြေၾကးလြတ္လပ္စြာ ေပးသြင္းႏိုင္ပါသည္။ MWD777၊ GKK777၊ JDBYG အစရွိေသာ ေငြေပးေခ်မႈျမင့္မားပညာ႐ွင္မ်ားႏွင့္ လက္တြဲ၍ ေဘးကင္းလံုၿခံဳစြာ ေပးသြင္းႏိုင္ပါသည္။</p>
             </div>
