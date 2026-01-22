@@ -123,8 +123,8 @@ export default async function GameDetailPage({ params }: { params: Promise<{ loc
         {/* H1 標題 - 緬甸語 + 英文 */}
         <h1 className="text-4xl md:text-5xl font-bold mb-6">
           <span className="gradient-gold">{game.nameMm}</span>
-          <span className="text-white"> - အပြည့်အစုံ ဂိမ်း သုံးသပ်ချက်</span>
-          <span className="text-gray-400 text-2xl md:text-3xl block mt-2">| {game.name} Complete Review</span>
+          <span className="text-white"> - {tGames("completeReview")}</span>
+          <span className="text-gray-400 text-2xl md:text-3xl block mt-2">| {game.name} {tGames("completeReview")}</span>
         </h1>
 
         {/* 遊戲主要資訊卡片 */}
@@ -144,7 +144,7 @@ export default async function GameDetailPage({ params }: { params: Promise<{ loc
 
             {/* 第一段 - 緬甸語為主 */}
             <div className="bg-dark-lighter rounded-xl p-6 mb-6">
-              <h2 className="text-2xl font-bold text-white mb-4">ဂိမ်း အကြောင်း | About the Game</h2>
+              <h2 className="text-2xl font-bold text-white mb-4">{tGames("aboutGame")} | About the Game</h2>
               <p className="text-gray-300 leading-relaxed mb-4">
                 {game.descriptionMm || game.description}
               </p>
@@ -155,7 +155,7 @@ export default async function GameDetailPage({ params }: { params: Promise<{ loc
 
             {/* H2: ဂိမ်း အင်္ဂါရပ်များ | Game Features */}
             <div className="bg-dark-lighter rounded-xl p-6 mb-6">
-              <h2 className="text-2xl font-bold text-white mb-4">ဂိမ်း အင်္ဂါရပ်များ | Game Features</h2>
+              <h2 className="text-2xl font-bold text-white mb-4">{tGames("gameFeatures")} | Game Features</h2>
               <div className="grid md:grid-cols-2 gap-4">
                 {game.features?.map((feature: string, index: number) => (
                   <div key={index} className="flex items-center gap-3">
@@ -168,63 +168,63 @@ export default async function GameDetailPage({ params }: { params: Promise<{ loc
 
             {/* H2: အဓိက အင်္ဂါရပ်များ | Key Features */}
             <div className="bg-dark-lighter rounded-xl p-6 mb-6">
-              <h2 className="text-2xl font-bold text-white mb-4">အဓိက အင်္ဂါရပ်များ | Key Features</h2>
+              <h2 className="text-2xl font-bold text-white mb-4">{tGames("keyFeatures")} | Key Features</h2>
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="bg-dark rounded-lg p-4">
-                  <div className="text-sm text-gray-400 mb-1">RTP (ပြန်အမ်းနှုန်း)</div>
+                  <div className="text-sm text-gray-400 mb-1">{tGames("rtp")}</div>
                   <div className="text-2xl font-bold text-gold">{game.rtp}%</div>
-                  <div className="text-xs text-gray-500 mt-1">စျေးကွက်တွင် အမြင့်ဆုံး ပြန်အမ်းနှုန်း</div>
+                  <div className="text-xs text-gray-500 mt-1">{tGames("highestReturnRate")}</div>
                 </div>
                 <div className="bg-dark rounded-lg p-4">
-                  <div className="text-sm text-gray-400 mb-1">အမြင့်ဆုံး အနိုင် (Max Win)</div>
+                  <div className="text-sm text-gray-400 mb-1">{tGames("maxWin")} (Max Win)</div>
                   <div className="text-2xl font-bold text-gold">{game.maxWin}</div>
-                  <div className="text-xs text-gray-500 mt-1">သင်၏ လောင်းကြေး၏ {game.maxWin}</div>
+                  <div className="text-xs text-gray-500 mt-1">{tGames("ofYourBet")} {game.maxWin}</div>
                 </div>
                 <div className="bg-dark rounded-lg p-4">
-                  <div className="text-sm text-gray-400 mb-1">အနည်းဆုံး လောင်းကြေး (Min Bet)</div>
+                  <div className="text-sm text-gray-400 mb-1">{tGames("minBet")} (Min Bet)</div>
                   <div className="text-2xl font-bold text-gold">{game.minBet} MMK</div>
-                  <div className="text-xs text-gray-500 mt-1">အလွန်သက်သာသော စတင်ခြင်း</div>
+                  <div className="text-xs text-gray-500 mt-1">{tGames("veryAffordableStart")}</div>
                 </div>
                 <div className="bg-dark rounded-lg p-4">
-                  <div className="text-sm text-gray-400 mb-1">ပြင်းထန်မှု (Volatility)</div>
+                  <div className="text-sm text-gray-400 mb-1">{tGames("volatility")} (Volatility)</div>
                   <div className="text-2xl font-bold text-gold">{volatilityMM}</div>
-                  <div className="text-xs text-gray-500 mt-1">{game.volatility} volatility</div>
+                  <div className="text-xs text-gray-500 mt-1">{game.volatility} {tGames("volatilityText")}</div>
                 </div>
               </div>
             </div>
 
             {/* H2: ဘယ်လို ကစားမလဲ | How to Play */}
             <div className="bg-dark-lighter rounded-xl p-6 mb-6">
-              <h2 className="text-2xl font-bold text-white mb-4">ဘယ်လို ကစားမလဲ | How to Play</h2>
+              <h2 className="text-2xl font-bold text-white mb-4">{tGames("howToPlay")} | How to Play</h2>
               <ol className="list-decimal list-inside space-y-3 text-gray-300">
-                <li>Shwe Casino 99 တွင် အကောင့်ဖွင့်ပါ (Register at Shwe Casino 99)</li>
-                <li>ငွေသွင်းပါ (Deposit money)</li>
-                <li>{game.nameMm} ဂိမ်းကို ရွေးချယ်ပါ (Select {game.name} game)</li>
-                <li>လောင်းကြေး သတ်မှတ်ပါ (Set your bet amount)</li>
-                <li>စပင်လုပ်ပါ (Spin the reels)</li>
-                <li>အနိုင်ရရှိပါ (Win prizes)</li>
+                <li>{tGames("registerAtCasino")} (Register at Shwe Casino 99)</li>
+                <li>{tGames("depositMoney")} (Deposit money)</li>
+                <li>{tGames("selectGame", { game: game.nameMm })} (Select {game.name} game)</li>
+                <li>{tGames("setBetAmount")} (Set your bet amount)</li>
+                <li>{tGames("spinReels")} (Spin the reels)</li>
+                <li>{tGames("winPrizes")} (Win prizes)</li>
               </ol>
             </div>
 
             {/* H2: အကောင်းဆုံး အကြံပြုချက်များ | Best Tips */}
             <div className="bg-dark-lighter rounded-xl p-6 mb-6">
-              <h2 className="text-2xl font-bold text-white mb-4">အကောင်းဆုံး အကြံပြုချက်များ | Best Tips</h2>
+              <h2 className="text-2xl font-bold text-white mb-4">{tGames("bestTips")} | Best Tips</h2>
               <ul className="space-y-3 text-gray-300">
                 <li className="flex items-start gap-3">
                   <span className="text-gold text-xl">💡</span>
-                  <span>ငွေကြေး စီမံခန့်ခွဲမှု လုပ်ပါ - သင်၏ ဘတ်ဂျက်ကို သတ်မှတ်ပြီး ထိုအတိုင်း လိုက်နာပါ (Manage your budget and stick to it)</span>
+                  <span>{tGames("manageBudget")} (Manage your budget and stick to it)</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-gold text-xl">💡</span>
-                  <span>RTP {game.rtp}% ဖြင့် ဤဂိမ်းသည် စျေးကွက်တွင် အမြင့်ဆုံး ပြန်အမ်းနှုန်း ရရှိသော ဂိမ်းများထဲမှ တစ်ခု ဖြစ်သည် (This game offers one of the highest RTPs in the market)</span>
+                  <span>{tGames("highRtpGame", { rtp: game.rtp })} (This game offers one of the highest RTPs in the market)</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-gold text-xl">💡</span>
-                  <span>{volatilityMM} ပြင်းထန်မှု ရှိသောကြောင့် ကြီးမားသော ဆုလာဘ်များ ရရှိနိုင်သော်လည်း စိတ်ရှည်ရန် လိုအပ်သည် (High volatility means big wins but requires patience)</span>
+                  <span>{tGames("highVolatility", { volatility: volatilityMM })} (High volatility means big wins but requires patience)</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-gold text-xl">💡</span>
-                  <span>အခမဲ့ စမ်းသပ်ကစားခြင်း ဖြင့် ဂိမ်းကို ရင်းနှီးကျွမ်းဝင်စေပါ (Try free play mode first to get familiar)</span>
+                  <span>{tGames("tryFreePlay")} (Try free play mode first to get familiar)</span>
                 </li>
               </ul>
             </div>
@@ -259,7 +259,7 @@ export default async function GameDetailPage({ params }: { params: Promise<{ loc
                 size="lg"
                 className="w-full mb-4"
               >
-                ဂိမ်း ကစားရန် | Play Now
+                {tGames("playNow")} | Play Now
               </CTAButton>
 
               <div className="space-y-3 text-sm">
@@ -291,7 +291,7 @@ export default async function GameDetailPage({ params }: { params: Promise<{ loc
         {/* 相關遊戲推薦 */}
         {relatedGames.length > 0 && (
           <div className="mb-12">
-            <h2 className="text-3xl font-bold text-white mb-6">သင့်အတွက် ထောက်ခံထားသော ဂိမ်းများ | Recommended Games</h2>
+            <h2 className="text-3xl font-bold text-white mb-6">{tGames("recommendedGames")} | Recommended Games</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
               {relatedGames.map((relatedGame: any) => (
                 <Link

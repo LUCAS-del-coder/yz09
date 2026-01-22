@@ -3,7 +3,7 @@ import { Link } from "@/i18n/routing";
 import CTAButton from "@/components/ui/CTAButton";
 import { getTranslations } from "next-intl/server";
 
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://example.com';
+import { getBaseUrl } from "@/lib/config";
 
 const brandLinks = [
   "https://www.yes8.io/m/home?affiliateCode=seom1802",
@@ -11,58 +11,28 @@ const brandLinks = [
   "https://www.pya777.net/m/home?affiliateCode=seom2002",
 ];
 
-export const metadata: Metadata = {
-  title: "VIP အစီအစဉ် | 5 လွှာ အကောင့် စနစ် | Myanmar Casino Reviews",
-  description: "Myanmar Casino Reviews VIP အစီအစဉ်တွင် ပါဝင်ပြီး ဂုဏ်ယူစွာ ခံစားရယူပါ။ 5 လွှာ အကောင့် စနစ်၊ အထူး ဘောနပ်စ်၊ ပိုမိုမြင့်မားသော ပြန်လည်ပေးအပ်မှု၊ ဦးစားပေး ငွေထုတ်ယူမှု၊ မွေးနေ့ လက်ဆောင်ငွေ။ Join VIP program - 5 tier system, exclusive bonuses, higher rebate, priority withdrawal.",
-  keywords: [
-    "VIP အစီအစဉ်",
-    "VIP program Myanmar",
-    "ကာစီနို VIP",
-    "VIP membership",
-    "VIP benefits Myanmar"
-  ].join(", "),
-  openGraph: {
-    title: "VIP အစီအစဉ် | VIP Program Myanmar",
-    locale: 'my_MM',
-    url: `${baseUrl}/promotions/vip-program`,
-  },
-  alternates: {
-    canonical: `${baseUrl}/promotions/vip-program`,
-  }
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "promotions" });
+  const baseUrl = getBaseUrl();
 
-const vipLevels = [
-  {
-    name: "Bronze",
-    nameMm: "ကြေးဝါ",
-    benefits: ["5% ပြန်လည်ပေးအပ်မှု", "VIP ဖောက်သည်ဝန်ဆောင်မှု", "ဦးစားပေး ငွေထုတ်ယူမှု"],
-    requirements: "အနည်းဆုံး 100,000 MMK အပ်ငွေ"
-  },
-  {
-    name: "Silver",
-    nameMm: "ငွေ",
-    benefits: ["8% ပြန်လည်ပေးအပ်မှု", "အထူး ဘောနပ်စ်", "ပိုမိုမြန်ဆန်သော ငွေထုတ်ယူမှု"],
-    requirements: "အနည်းဆုံး 500,000 MMK အပ်ငွေ"
-  },
-  {
-    name: "Gold",
-    nameMm: "ရွှေ",
-    benefits: ["12% ပြန်လည်ပေးအပ်မှု", "အထူး ဘောနပ်စ်", "ပုဂ္ဂိုလ်ရေး ဖောက်သည်ဝန်ဆောင်မှု"],
-    requirements: "အနည်းဆုံး 1,000,000 MMK အပ်ငွေ"
-  },
-  {
-    name: "Platinum",
-    nameMm: "ပတ္တမြား",
-    benefits: ["15% ပြန်လည်ပေးအပ်မှု", "အထူး ဘောနပ်စ်", "အထူး ဖြစ်ရပ်များ ဖိတ်ခေါ်ခြင်း"],
-    requirements: "အနည်းဆုံး 2,500,000 MMK အပ်ငွေ"
-  },
-  {
-    name: "Diamond",
-    nameMm: "စိန်",
-    benefits: ["20% ပြန်လည်ပေးအပ်မှု", "အထူး ဘောနပ်စ်", "အထူး လက်ဆောင်များ"],
-    requirements: "အနည်းဆုံး 5,000,000 MMK အပ်ငွေ"
-  }
-];
+  return {
+    title: t("vipProgramTitle"),
+    description: t("vipProgramDescription"),
+    openGraph: {
+      title: t("vipProgramHeading"),
+      description: t("vipProgramDescription"),
+      locale: locale === 'my' ? 'my_MM' : 'en_US',
+      url: `${baseUrl}/${locale}/promotions/vip-program`,
+    },
+    alternates: {
+      canonical: `${baseUrl}/${locale}/promotions/vip-program`,
+    }
+  };
+}
+
+const vipLevelKeys = ["bronze", "silver", "gold", "platinum", "diamond"];
+const vipLevelNames = ["Bronze", "Silver", "Gold", "Platinum", "Diamond"];
 
 export default async function VIPProgramPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -100,22 +70,25 @@ export default async function VIPProgramPage({ params }: { params: Promise<{ loc
 
         {/* VIP 等級 */}
         <div className="space-y-6 mb-8">
-          {vipLevels.map((level, index) => (
-            <div key={index} className="bg-dark-lighter rounded-xl p-6 border border-gold/20">
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="text-2xl font-bold text-gold">{level.nameMm} | {level.name}</h3>
-                <div className="text-sm text-gray-400">{level.requirements}</div>
+          {vipLevelKeys.map((levelKey, index) => {
+            const levelData = t.raw(`vipLevels.${levelKey}`);
+            return (
+              <div key={levelKey} className="bg-dark-lighter rounded-xl p-6 border border-gold/20">
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="text-2xl font-bold text-gold">{levelData.nameMm} | {vipLevelNames[index]}</h3>
+                  <div className="text-sm text-gray-400">{levelData.requirements}</div>
+                </div>
+                <ul className="space-y-2">
+                  {levelData.benefits.map((benefit: string, idx: number) => (
+                    <li key={idx} className="flex items-center gap-3 text-gray-300">
+                      <span className="text-gold">✓</span>
+                      <span>{benefit}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <ul className="space-y-2">
-                {level.benefits.map((benefit, idx) => (
-                  <li key={idx} className="flex items-center gap-3 text-gray-300">
-                    <span className="text-gold">✓</span>
-                    <span>{benefit}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* VIP 福利詳情 */}

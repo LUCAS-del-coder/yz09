@@ -1,5 +1,7 @@
 "use client";
 
+import { useTranslations } from "next-intl";
+
 interface ProsConsProps {
   pros: string[];
   cons: string[];
@@ -7,6 +9,8 @@ interface ProsConsProps {
 }
 
 export default function ProsCons({ pros, cons, className = "" }: ProsConsProps) {
+  const t = useTranslations("prosCons");
+  
   return (
     <div className={`grid md:grid-cols-2 gap-6 ${className}`}>
       {/* Pros */}
@@ -27,7 +31,7 @@ export default function ProsCons({ pros, cons, className = "" }: ProsConsProps) 
               />
             </svg>
           </div>
-          <h3 className="text-xl font-bold text-green-400">အားသာချက်များ</h3>
+          <h3 className="text-xl font-bold text-green-400">{t("pros")}</h3>
         </div>
         <ul className="space-y-3">
           {pros.map((pro, index) => (
@@ -67,7 +71,7 @@ export default function ProsCons({ pros, cons, className = "" }: ProsConsProps) 
               />
             </svg>
           </div>
-          <h3 className="text-xl font-bold text-red-400">အားနည်းချက်များ</h3>
+          <h3 className="text-xl font-bold text-red-400">{t("cons")}</h3>
         </div>
         <ul className="space-y-3">
           {cons.map((con, index) => (

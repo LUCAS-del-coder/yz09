@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { getBaseUrl } from "@/lib/config";
+import { Link } from "@/i18n/routing";
 
 const baseUrl = getBaseUrl();
 
@@ -41,106 +42,90 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
           <p className="text-sm text-gray-400">{t("lastUpdated")}: {lastUpdated}</p>
 
           <section>
-            <h2 className="text-2xl font-bold text-white mb-4">1. မိတ်ဆက်</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">1. {t("section1.title")}</h2>
             <p className="mb-4">
-              Myanmar Casino Reviews သည် သင်၏ ကိုယ်ရေးလုံခြုံမှုကို အလေးထားပါသည်။
-              ဤ Privacy Policy သည် ကျွန်ုပ်တို့အနေဖြင့် သင်၏ သတင်းအချက်အလက်များကို 
-              မည်သို့ ကောက်ယူ၊ အသုံးပြု၊ သိုလှောင်၊ နှင့် ကာကွယ်သည်ကို ရှင်းလင်းစွာ ဖော်ပြပါသည်။
+              {t("section1.text")}
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-white mb-4">2. ကောက်ယူသော သတင်းအချက်အလက်များ</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">2. {t("section2.title")}</h2>
             <div className="space-y-4">
               <div>
-                <h3 className="text-xl font-semibold text-white mb-2">2.1 အလိုအလျောက် ကောက်ယူသော သတင်းအချက်အလက်များ</h3>
+                <h3 className="text-xl font-semibold text-white mb-2">2.1 {t("section2.subsection1.title")}</h3>
                 <ul className="list-disc list-inside space-y-2 ml-4">
-                  <li>IP Address</li>
-                  <li>Browser Type နှင့် Version</li>
-                  <li>Operating System</li>
-                  <li>Referral URLs</li>
-                  <li>ဝဘ်ဆိုဒ် အသုံးပြုမှု ဒေတာ</li>
-                  <li>Access Times နှင့် Dates</li>
+                  {t.raw("section2.subsection1.items").map((item: string, idx: number) => (
+                    <li key={idx}>{item}</li>
+                  ))}
                 </ul>
               </div>
               <div>
-                <h3 className="text-xl font-semibold text-white mb-2">2.2 Cookie နှင့် Tracking Technologies</h3>
+                <h3 className="text-xl font-semibold text-white mb-2">2.2 {t("section2.subsection2.title")}</h3>
                 <p className="mb-4">
-                  ကျွန်ုပ်တို့သည် Cookie များ၊ Web Beacons များ၊ နှင့် အလားတူ 
-                  tracking technologies များကို အသုံးပြုနိုင်ပါသည်။
+                  {t("section2.subsection2.text")}
                 </p>
               </div>
             </div>
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-white mb-4">3. Cookie အသုံးပြုမှု</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">3. {t("section3.title")}</h2>
             <p className="mb-4">
-              Cookie များသည် သေးငယ်သော text files များ ဖြစ်ပြီး၊ 
-              သင်၏ device ပေါ်တွင် သိုလှောင်ထားပါသည်။
+              {t("section3.text")}
             </p>
             <div className="space-y-4">
               <div>
-                <h3 className="text-xl font-semibold text-white mb-2">ကျွန်ုပ်တို့ အသုံးပြုသော Cookie အမျိုးအစားများ:</h3>
+                <h3 className="text-xl font-semibold text-white mb-2">{t("section3.cookieTypes.title")}</h3>
                 <ul className="list-disc list-inside space-y-2 ml-4">
-                  <li><strong>Essential Cookies</strong>: ဝဘ်ဆိုဒ် လုပ်ဆောင်ရန် လိုအပ်သော cookies</li>
-                  <li><strong>Analytics Cookies</strong>: ဝဘ်ဆိုဒ် အသုံးပြုမှု ကို ဆန်းစစ်ရန်</li>
-                  <li><strong>Functional Cookies</strong>: ဝန်ဆောင်မှု လုပ်ဆောင်မှု ကို မှတ်မိရန်</li>
+                  <li><strong>Essential Cookies</strong>: {t("section3.cookieTypes.essential")}</li>
+                  <li><strong>Analytics Cookies</strong>: {t("section3.cookieTypes.analytics")}</li>
+                  <li><strong>Functional Cookies</strong>: {t("section3.cookieTypes.functional")}</li>
                 </ul>
               </div>
             </div>
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-white mb-4">4. သတင်းအချက်အလက်များ အသုံးပြုမှု</h2>
-            <p className="mb-4">ကျွန်ုပ်တို့သည် ကောက်ယူသော သတင်းအချက်အလက်များကို အောက်ပါ ရည်ရွယ်ချက်များအတွက် အသုံးပြုပါသည်:</p>
+            <h2 className="text-2xl font-bold text-white mb-4">4. {t("section4.title")}</h2>
+            <p className="mb-4">{t("section4.text")}</p>
             <ul className="list-disc list-inside space-y-2 ml-4">
-              <li>ဝဘ်ဆိုဒ် ဝန်ဆောင်မှု ပေးရန်</li>
-              <li>ဝဘ်ဆိုဒ် လုပ်ဆောင်မှု ကောင်းမွန်အောင် ပြုလုပ်ရန်</li>
-              <li>ဝဘ်ဆိုဒ် အသုံးပြုမှု ကို ဆန်းစစ်ရန်</li>
-              <li>သုံးစွဲသူ အတွေ့အကြုံ ကောင်းမွန်အောင် ပြုလုပ်ရန်</li>
+              {t.raw("section4.items").map((item: string, idx: number) => (
+                <li key={idx}>{item}</li>
+              ))}
             </ul>
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-white mb-4">5. တတိယပါတီ ဝန်ဆောင်မှုများ</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">5. {t("section5.title")}</h2>
             <p className="mb-4">
-              ကျွန်ုပ်တို့သည် Google Analytics ကဲ့သို့သော တတိယပါတီ ဝန်ဆောင်မှုများကို 
-              အသုံးပြုနိုင်ပါသည်။ ထိုဝန်ဆောင်မှုများသည် သင်၏ သတင်းအချက်အလက်များကို 
-              ကောက်ယူနိုင်ပါသည်။
+              {t("section5.text1")}
             </p>
             <p className="mb-4">
-              ဤဝန်ဆောင်မှုများ၏ Privacy Policy များကို သက်ဆိုင်ရာ 
-              ဝန်ဆောင်မှု ပေးသော ကုမ္ပဏီများ၏ ဝဘ်ဆိုဒ်များတွင် ကြည့်ရှုနိုင်ပါသည်။
+              {t("section5.text2")}
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-white mb-4">6. သုံးစွဲသူ အခွင့်အရေးများ</h2>
-            <p className="mb-4">သင်၏ သတင်းအချက်အလက်များနှင့် ပတ်သက်၍ သင့်တွင် အောက်ပါ အခွင့်အရေးများ ရှိပါသည်:</p>
+            <h2 className="text-2xl font-bold text-white mb-4">6. {t("section6.title")}</h2>
+            <p className="mb-4">{t("section6.text")}</p>
             <ul className="list-disc list-inside space-y-2 ml-4">
-              <li>သတင်းအချက်အလက်များကို ကြည့်ရှုခွင့်</li>
-              <li>သတင်းအချက်အလက်များကို တောင်းဆိုခွင့်</li>
-              <li>သတင်းအချက်အလက်များကို ပြင်ဆင်ခွင့်</li>
-              <li>သတင်းအချက်အလက်များကို ဖျက်ဆီးခွင့်</li>
-              <li>Cookie အသုံးပြုမှုကို ငြင်းဆိုခွင့်</li>
+              {t.raw("section6.items").map((item: string, idx: number) => (
+                <li key={idx}>{item}</li>
+              ))}
             </ul>
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-white mb-4">7. လုံခြုံရေး</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">7. {t("section7.title")}</h2>
             <p className="mb-4">
-              ကျွန်ုပ်တို့သည် SSL encryption နှင့် အခြား လုံခြုံရေး နည်းလမ်းများကို 
-              အသုံးပြု၍ သင်၏ သတင်းအချက်အလက်များကို ကာကွယ်ရန် ကြိုးစားပါသည်။
+              {t("section7.text")}
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-white mb-4">8. ဆက်သွယ်ရန်</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">8. {t("section8.title")}</h2>
             <p className="mb-4">
-              ဤ Privacy Policy နှင့် ပတ်သက်၍ မေးခွန်းများ ရှိပါက၊ 
-              ကျေးဇူးပြု၍ <a href="/contact" className="text-gold hover:underline">Contact</a> 
-              စာမျက်နှာကို ကြည့်ရှုပါ။
+              {t("section8.text")} <Link href="/contact" className="text-gold hover:underline">{t("section8.link")}</Link> {t("section8.linkText")}
             </p>
           </section>
         </div>

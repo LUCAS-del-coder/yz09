@@ -76,6 +76,7 @@ export default async function CasinoReviewPage({ params }: { params: Promise<{ l
   const casino = casinosData.find((c) => c.slug === slug);
   const baseUrl = getBaseUrl();
   const tCommon = await getTranslations({ locale, namespace: "common" });
+  const tReview = await getTranslations({ locale, namespace: "review" });
 
   if (!casino) {
     notFound();
@@ -172,8 +173,8 @@ export default async function CasinoReviewPage({ params }: { params: Promise<{ l
       />
       <Breadcrumbs
         items={[
-          { label: "ပင်မစာမျက်နှာ", href: "/" },
-          { label: "စုံစမ်းစစ်ဆေးချက်များ", href: "/review/top-myanmar-casinos" },
+          { label: tReview("home"), href: "/" },
+          { label: tReview("reviews"), href: "/review/top-myanmar-casinos" },
           { label: casino.name, href: `/review/${casino.slug}` },
         ]}
       />
@@ -214,10 +215,10 @@ export default async function CasinoReviewPage({ params }: { params: Promise<{ l
             <p className="text-xl text-gray-300 mb-6">{casino.excerpt}</p>
             <div className="flex flex-wrap gap-4">
               <CTAButton href={casino.ctaLink} variant="gold" size="lg">
-                ဒီ Casino မှာ ကစားရန်
+                {tReview("playAtCasino")}
               </CTAButton>
               <CTAButton href={casino.ctaLink} variant="primary" size="lg">
-                ဘောနပ်စ် ရယူရန်
+                {tReview("getBonus")}
               </CTAButton>
             </div>
           </div>
@@ -231,27 +232,27 @@ export default async function CasinoReviewPage({ params }: { params: Promise<{ l
           <div className="grid md:grid-cols-3 gap-4 mb-12">
             <div className="bg-dark-lighter rounded-lg p-6 border border-dark-lightest text-center">
               <div className="text-2xl font-bold text-gold mb-2">{casino.features.games}</div>
-              <div className="text-sm text-gray-400">ဂိမ်းများ</div>
+              <div className="text-sm text-gray-400">{tReview("games")}</div>
             </div>
             <div className="bg-dark-lighter rounded-lg p-6 border border-dark-lightest text-center">
               <div className="text-2xl font-bold text-gold mb-2">{casino.features.providers}</div>
-              <div className="text-sm text-gray-400">ဂိမ်း ထုတ်လုပ်သူများ</div>
+              <div className="text-sm text-gray-400">{tReview("gameProviders")}</div>
             </div>
             <div className="bg-dark-lighter rounded-lg p-6 border border-dark-lightest text-center">
               <div className="text-2xl font-bold text-gold mb-2">{casino.features.withdrawalTime}</div>
-              <div className="text-sm text-gray-400">ငွေထုတ်ယူမှု</div>
+              <div className="text-sm text-gray-400">{tReview("withdrawal")}</div>
             </div>
           </div>
 
           {/* Pros and Cons */}
           <div className="mb-12">
-            <h2 className="text-3xl font-bold text-white mb-6">အားသာချက်များ နှင့် အားနည်းချက်များ</h2>
+            <h2 className="text-3xl font-bold text-white mb-6">{tReview("prosAndCons")}</h2>
             <ProsCons pros={casino.pros} cons={casino.cons} />
           </div>
 
           {/* Bonuses */}
           <div className="mb-12">
-            <h2 className="text-3xl font-bold text-white mb-6">ဘောနပ်စ်များ နှင့် ပရိုမိုးရှင်းများ</h2>
+            <h2 className="text-3xl font-bold text-white mb-6">{tReview("bonusesAndPromotions")}</h2>
             <div className="grid md:grid-cols-2 gap-6">
               {casino.bonuses.map((bonus, index) => (
                 <BonusCard
@@ -268,7 +269,7 @@ export default async function CasinoReviewPage({ params }: { params: Promise<{ l
 
           {/* Game Categories */}
           <div className="mb-12">
-            <h2 className="text-3xl font-bold text-white mb-6">ဂိမ်း အမျိုးအစားများ</h2>
+            <h2 className="text-3xl font-bold text-white mb-6">{tReview("gameCategories")}</h2>
             <div className="grid md:grid-cols-3 gap-4">
               {casino.gameCategories.map((category, index) => (
                 <div
@@ -292,7 +293,7 @@ export default async function CasinoReviewPage({ params }: { params: Promise<{ l
 
           {/* Payment Methods */}
           <div className="mb-12">
-            <h2 className="text-3xl font-bold text-white mb-6">ငွေလွှဲနည်းလမ်းများ</h2>
+            <h2 className="text-3xl font-bold text-white mb-6">{tReview("paymentMethods")}</h2>
             <div className="grid md:grid-cols-4 gap-4">
               {casino.paymentMethods.map((method, index) => (
                 <div
@@ -309,19 +310,17 @@ export default async function CasinoReviewPage({ params }: { params: Promise<{ l
           <div className="bg-gradient-to-br from-dark-lighter to-dark rounded-xl p-8 border border-gold/30 mb-12">
             <h2 className="text-3xl font-bold text-white mb-4 flex items-center gap-3">
               <span className="text-gold">⭐</span>
-              ကျွမ်းကျင်သူ၏ ဆုံးဖြတ်ချက်
+              {tReview("expertVerdict")}
             </h2>
             <p className="text-gray-300 text-lg leading-relaxed mb-6">
-              {casino.name} is one of the best online casinos in Myanmar.
-              ဘောနပ်စ် အများဆုံး၊ ငွေထုတ်ယူမှု မြန်ဆန်၊ နှင့် 24/7 ဖောက်သည်ဝန်ဆောင်မှု ရရှိနိုင်သည်။
-              ဂိမ်း အရည်အသွေး မြင့်မားပြီး မြန်မာဘာသာ ထောက်ပံ့မှု ရှိသည်။
+              {casino.name} {tReview("expertVerdictText")}
             </p>
             <div className="flex flex-wrap gap-4">
               <CTAButton href={casino.ctaLink} variant="gold" size="lg">
-                အကောင့်ဖွင့်ရန်
+                {tReview("openAccount")}
               </CTAButton>
               <CTAButton href={casino.ctaLink} variant="primary" size="lg">
-                ဘောနပ်စ် ရယူရန်
+                {tReview("getBonus")}
               </CTAButton>
             </div>
           </div>
@@ -329,21 +328,21 @@ export default async function CasinoReviewPage({ params }: { params: Promise<{ l
           {/* Security & Support */}
           <div className="grid md:grid-cols-2 gap-6 mb-12">
             <div className="bg-dark-lighter rounded-lg p-6 border border-dark-lightest">
-              <h3 className="text-xl font-bold text-white mb-4">လုံခြုံရေး နှင့် လစ်ဆင်</h3>
+              <h3 className="text-xl font-bold text-white mb-4">{tReview("securityAndLicense")}</h3>
               <p className="text-gray-300 mb-4">{casino.features.license}</p>
               <ul className="space-y-2 text-gray-400 text-sm">
-                <li>✅ SSL လုံခြုံရေး လက်မှတ်</li>
-                <li>✅ လစ်ဆင်ရရှိထားသော ကာစီနို</li>
-                <li>✅ လုံခြုံရေး အထူးကောင်းမွန်</li>
+                <li>✅ {tReview("securityFeatures.ssl")}</li>
+                <li>✅ {tReview("securityFeatures.licensed")}</li>
+                <li>✅ {tReview("securityFeatures.excellent")}</li>
               </ul>
             </div>
             <div className="bg-dark-lighter rounded-lg p-6 border border-dark-lightest">
-              <h3 className="text-xl font-bold text-white mb-4">ဖောက်သည်ဝန်ဆောင်မှု</h3>
+              <h3 className="text-xl font-bold text-white mb-4">{tReview("customerService")}</h3>
               <p className="text-gray-300 mb-4">{casino.features.support}</p>
               <ul className="space-y-2 text-gray-400 text-sm">
-                <li>✅ 24/7 Live Chat</li>
-                <li>✅ မြန်မာဘာသာ ထောက်ပံ့မှု</li>
-                <li>✅ Email ထောက်ပံ့မှု</li>
+                <li>✅ {tReview("supportFeatures.liveChat")}</li>
+                <li>✅ {tReview("supportFeatures.myanmar")}</li>
+                <li>✅ {tReview("supportFeatures.email")}</li>
               </ul>
             </div>
           </div>

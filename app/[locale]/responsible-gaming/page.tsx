@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { getBaseUrl } from "@/lib/config";
+import { Link } from "@/i18n/routing";
 
 const baseUrl = getBaseUrl();
 
@@ -52,107 +53,91 @@ export default async function ResponsibleGamingPage({ params }: { params: Promis
           </div>
 
           <section>
-            <h2 className="text-2xl font-bold text-white mb-4">1. ကျန်းမာရေးနှင့် ညီညွတ်သော ဂိမ်းကစားခြင်း</h2>
-            <p className="mb-4">
-              ဂိမ်းကစားခြင်းသည် <strong>ပျော်ရွှင်မှု</strong> အတွက် ဖြစ်ရမည်၊ 
-              ငွေရှာရန် နည်းလမ်း မဟုတ်ပါ။
-            </p>
+            <h2 className="text-2xl font-bold text-white mb-4">1. {t("section1.title")}</h2>
+            <p className="mb-4" dangerouslySetInnerHTML={{ __html: t("section1.text") }} />
             <div className="space-y-3">
-              <h3 className="text-xl font-semibold text-white">အောက်ပါ အချက်များ ရှိပါက ဂိမ်းကစားခြင်းကို ရပ်တန့်ရန် လိုအပ်ပါသည်:</h3>
+              <h3 className="text-xl font-semibold text-white">{t("section1.subtitle")}</h3>
               <ul className="list-disc list-inside space-y-2 ml-4">
-                <li>ဂိမ်းကစားရန် လိုအပ်သော ငွေကို မရှိဘဲ ငွေချေးယူခြင်း</li>
-                <li>ဂိမ်းကစားရန် ငွေများကို မိသားစု သို့မဟုတ် မိတ်ဆွေ များထံမှ ယူခြင်း</li>
-                <li>ဂိမ်းကစားခြင်းကြောင့် အလုပ်နှင့် မိသားစု တာဝန်များ ပျက်ကွက်ခြင်း</li>
-                <li>ရှုံးနိမ့်မှုများကို ပြန်လည် ရယူရန် ဆက်လက် ဂိမ်းကစားခြင်း</li>
-                <li>ဂိမ်းကစားခြင်းနှင့် ပတ်သက်၍ လျှို့ဝှက်ခြင်း</li>
+                {t.raw("section1.items").map((item: string, idx: number) => (
+                  <li key={idx}>{item}</li>
+                ))}
               </ul>
             </div>
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-white mb-4">2. ကိုယ်ပိုင် ကန့်သတ်ချက်များ သတ်မှတ်ခြင်း</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">2. {t("section2.title")}</h2>
             <div className="space-y-4">
               <div>
-                <h3 className="text-xl font-semibold text-white mb-2">ဘတ်ဂျက် သတ်မှတ်ခြင်း</h3>
+                <h3 className="text-xl font-semibold text-white mb-2">{t("section2.budget.title")}</h3>
                 <p className="mb-4">
-                  ဂိမ်းကစားရန် ငွေ ပမာဏကို ကြိုတင် သတ်မှတ်ပါ။ 
-                  သတ်မှတ်ထားသော ပမာဏကို ကျော်လွန် မသုံးစွဲပါနှင့်။
+                  {t("section2.budget.text")}
                 </p>
               </div>
               <div>
-                <h3 className="text-xl font-semibold text-white mb-2">အချိန် သတ်မှတ်ခြင်း</h3>
+                <h3 className="text-xl font-semibold text-white mb-2">{t("section2.time.title")}</h3>
                 <p className="mb-4">
-                  ဂိမ်းကစားရန် အချိန် ကန့်သတ်ချက်ကို သတ်မှတ်ပါ။
-                  Timer ကို အသုံးပြု၍ အချိန် စီမံခန့်ခွဲပါ။
+                  {t("section2.time.text")}
                 </p>
               </div>
               <div>
-                <h3 className="text-xl font-semibold text-white mb-2">Self-Exclusion (ကိုယ်ပိုင် ဖယ်ရှားခြင်း)</h3>
+                <h3 className="text-xl font-semibold text-white mb-2">{t("section2.selfExclusion.title")}</h3>
                 <p className="mb-4">
-                  ဂိမ်းကစားခြင်းကို ရပ်တန့်ရန် ခက်ခဲပါက၊ 
-                  Self-Exclusion Program များကို အသုံးပြုနိုင်ပါသည်။
+                  {t("section2.selfExclusion.text")}
                 </p>
               </div>
             </div>
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-white mb-4">3. အကူအညီ ရယူရန်</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">3. {t("section3.title")}</h2>
             <p className="mb-4">
-              သင်သည် ဂိမ်းကစားခြင်း စွဲလမ်းမှု ရှိသည်ဟု ထင်မြင်ပါက၊ 
-              အောက်ပါ အကူအညီ ရယူနိုင်သော အဖွဲ့အစည်းများကို ဆက်သွယ်နိုင်ပါသည်:
+              {t("section3.text")}
             </p>
             <div className="grid md:grid-cols-2 gap-4 mt-6">
               <div className="bg-dark rounded-lg p-6 border border-dark-lightest">
-                <h3 className="text-xl font-bold text-white mb-3">GamCare</h3>
-                <p className="text-gray-400 mb-4">ဂိမ်းကစားခြင်း စွဲလမ်းမှု အတွက် အကူအညီ</p>
-                <p className="text-gold font-semibold">Website: www.gamcare.org.uk</p>
-                <p className="text-gold font-semibold">Helpline: 0808 8020 133</p>
+                <h3 className="text-xl font-bold text-white mb-3">{t("section3.gamCare.name")}</h3>
+                <p className="text-gray-400 mb-4">{t("section3.gamCare.description")}</p>
+                <p className="text-gold font-semibold">{t("section3.gamCare.website")}</p>
+                <p className="text-gold font-semibold">{t("section3.gamCare.helpline")}</p>
               </div>
               <div className="bg-dark rounded-lg p-6 border border-dark-lightest">
-                <h3 className="text-xl font-bold text-white mb-3">BeGambleAware</h3>
-                <p className="text-gray-400 mb-4">တာဝန်ယူမှုရှိသော ဂိမ်းကစားခြင်း အဖွဲ့အစည်း</p>
-                <p className="text-gold font-semibold">Website: www.begambleaware.org</p>
-                <p className="text-gold font-semibold">Helpline: 0808 8020 133</p>
+                <h3 className="text-xl font-bold text-white mb-3">{t("section3.beGambleAware.name")}</h3>
+                <p className="text-gray-400 mb-4">{t("section3.beGambleAware.description")}</p>
+                <p className="text-gold font-semibold">{t("section3.beGambleAware.website")}</p>
+                <p className="text-gold font-semibold">{t("section3.beGambleAware.helpline")}</p>
               </div>
               <div className="bg-dark rounded-lg p-6 border border-dark-lightest">
-                <h3 className="text-xl font-bold text-white mb-3">Gamblers Anonymous</h3>
-                <p className="text-gray-400 mb-4">ဂိမ်းကစားသူများ အဖွဲ့အစည်း</p>
-                <p className="text-gold font-semibold">Website: www.gamblersanonymous.org</p>
+                <h3 className="text-xl font-bold text-white mb-3">{t("section3.gamblersAnonymous.name")}</h3>
+                <p className="text-gray-400 mb-4">{t("section3.gamblersAnonymous.description")}</p>
+                <p className="text-gold font-semibold">{t("section3.gamblersAnonymous.website")}</p>
               </div>
               <div className="bg-dark rounded-lg p-6 border border-dark-lightest">
-                <h3 className="text-xl font-bold text-white mb-3">National Problem Gambling Helpline</h3>
-                <p className="text-gray-400 mb-4">အမျိုးသား ဂိမ်းကစားခြင်း ပြဿနာ Helpline</p>
-                <p className="text-gold font-semibold">Helpline: 1-800-522-4700</p>
+                <h3 className="text-xl font-bold text-white mb-3">{t("section3.nationalHelpline.name")}</h3>
+                <p className="text-gray-400 mb-4">{t("section3.nationalHelpline.description")}</p>
+                <p className="text-gold font-semibold">{t("section3.nationalHelpline.helpline")}</p>
               </div>
             </div>
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-white mb-4">4. 18+ အသက်အရွယ်</h2>
-            <p className="mb-4">
-              ဤဝဘ်ဆိုဒ်ကို အသုံးပြုရန် သင်သည် <strong>18 နှစ် သို့မဟုတ် ထို့ထက် ကြီးရမည်</strong>။
-              18 နှစ်အောက် လူများကို ဤဝဘ်ဆိုဒ်ကို အသုံးပြုခွင့် မပေးပါ။
-            </p>
+            <h2 className="text-2xl font-bold text-white mb-4">4. {t("section4.title")}</h2>
+            <p className="mb-4" dangerouslySetInnerHTML={{ __html: t("section4.text") }} />
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-white mb-4">5. အကြံပြုချက်များ</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">5. {t("section5.title")}</h2>
             <ul className="list-disc list-inside space-y-2 ml-4">
-              <li>ဂိမ်းကစားခြင်းကို ပျော်ရွှင်မှု အတွက် သာ သတ်မှတ်ပါ</li>
-              <li>ဘတ်ဂျက် ကန့်သတ်ချက်ကို လိုက်နာပါ</li>
-              <li>အရက်နှင့် မူးယစ်ဆေးဝါး သောက်စားပြီး ဂိမ်းကစားခြင်း မပြုလုပ်ပါနှင့်</li>
-              <li>အနိုင်ရရှိမှု အတွက် ဂိမ်းကစားခြင်း မပြုလုပ်ပါနှင့်</li>
-              <li>စိတ်ဖိစီးမှု သို့မဟုတ် စိတ်ဓာတ်ကျမှု ရှိသော အချိန် ဂိမ်းကစားခြင်း ရှောင်ပါ</li>
+              {t.raw("section5.items").map((item: string, idx: number) => (
+                <li key={idx}>{item}</li>
+              ))}
             </ul>
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-white mb-4">6. ဆက်သွယ်ရန်</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">6. {t("section6.title")}</h2>
             <p className="mb-4">
-              တာဝန်ယူမှုရှိသော ဂိမ်းကစားခြင်းနှင့် ပတ်သက်၍ မေးခွန်းများ ရှိပါက၊ 
-              ကျေးဇူးပြု၍ <a href="/contact" className="text-gold hover:underline">Contact</a> 
-              စာမျက်နှာကို ကြည့်ရှုပါ။
+              {t("section6.text")} <Link href="/contact" className="text-gold hover:underline">{t("section6.link")}</Link> {t("section6.linkText")}
             </p>
           </section>
         </div>
