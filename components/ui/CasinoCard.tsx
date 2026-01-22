@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import StarRating from "./StarRating";
 import RankBadge from "./RankBadge";
 import AvailabilityBadge from "./AvailabilityBadge";

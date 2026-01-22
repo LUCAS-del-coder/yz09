@@ -1,9 +1,13 @@
 import path from 'path';
 import { fileURLToPath } from 'url';
+import createNextIntlPlugin from 'next-intl/plugin';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+// Use absolute path for next-intl config
+const nextIntlConfigPath = path.resolve(__dirname, 'i18n', 'request.ts');
+const withNextIntl = createNextIntlPlugin(nextIntlConfigPath);
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   compress: true,
@@ -48,5 +52,5 @@ const nextConfig = {
   },
 };
 
-export default nextConfig;
+export default withNextIntl(nextConfig);
 

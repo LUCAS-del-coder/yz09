@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import StarRating from "./StarRating";
 import CTAButton from "./CTAButton";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import CasinoLogo from "./CasinoLogo";
 import { Casino } from "@/types/casino";
 

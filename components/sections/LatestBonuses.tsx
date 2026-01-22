@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import BonusCard from "../ui/BonusCard";
 import casinosData from "@/data/casinos.json";
 
