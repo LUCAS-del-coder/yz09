@@ -1,11 +1,13 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 import BonusCard from "../ui/BonusCard";
 import casinosData from "@/data/casinos.json";
 
 export default function LatestBonuses() {
+  const t = useTranslations("latestBonuses");
   const casinos = casinosData;
   const allBonuses = casinos.flatMap((casino) =>
     casino.bonuses.map((bonus) => ({
@@ -33,11 +35,10 @@ export default function LatestBonuses() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            <span className="gradient-gold">နောက်ဆုံးပေါ်</span>{" "}
-            <span className="text-white">ဘောနပ်စ်များ</span>
+            <span className="gradient-gold">{t("heading")}</span>
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            အထူးဘောနပ်စ်များ နှင့် ပရိုမိုးရှင်းများကို ရယူပါ
+            {t("subheading")}
           </p>
         </div>
 
@@ -59,7 +60,7 @@ export default function LatestBonuses() {
             href="/bonuses"
             className="inline-block px-8 py-4 bg-gradient-to-r from-gold-dark via-gold to-gold-light text-dark font-bold rounded-lg hover:shadow-lg hover:shadow-gold/50 transition-all"
           >
-            ဘောနပ်စ် အားလုံးကို ကြည့်ရှုရန် | View All Bonuses
+            {t("viewAll")} | View All Bonuses
           </Link>
         </div>
       </div>

@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { Link } from "@/i18n/routing";
 import CTAButton from "@/components/ui/CTAButton";
+import { getTranslations } from "next-intl/server";
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://example.com';
 
@@ -111,31 +112,33 @@ const paymentMethods = [
   }
 ];
 
-export default function PaymentMethodsPage() {
+export default async function PaymentMethodsPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
   const randomBrandLink = brandLinks[Math.floor(Math.random() * brandLinks.length)];
+
+  const tCommon = await getTranslations({ locale, namespace: "common" });
+  const t = await getTranslations({ locale, namespace: "guidePaymentMethods" });
 
   return (
     <div className="min-h-screen bg-dark py-12">
       <div className="container mx-auto px-4 max-w-4xl">
         <nav className="flex items-center gap-2 text-sm text-gray-400 mb-6">
-          <Link href="/" className="hover:text-gold">首頁</Link>
+          <Link href="/" className="hover:text-gold">{tCommon("home")}</Link>
           <span>/</span>
-          <Link href="/guide" className="hover:text-gold">လမ်းညွှန်</Link>
+          <Link href="/guide" className="hover:text-gold">{tCommon("guide")}</Link>
           <span>/</span>
-          <span className="text-white">ငွေသွင်း ငွေထုတ်</span>
+          <span className="text-white">{t("heading")}</span>
         </nav>
 
         <h1 className="text-4xl md:text-5xl font-bold mb-6">
-          <span className="gradient-gold">ငွေသွင်း ငွေထုတ် နည်းလမ်းများ</span>
+          <span className="gradient-gold">{t("heading")}</span>
           <span className="text-white"> | Payment Methods</span>
         </h1>
 
         <div className="bg-dark-lighter rounded-xl p-6 mb-8">
-          <h2 className="text-2xl font-bold text-white mb-4">ထောက်ပံ့ထားသော ငွေသွင်း နည်းလမ်းများ | Supported Payment Methods</h2>
+          <h2 className="text-2xl font-bold text-white mb-4">{t("supportedMethods")} | Supported Payment Methods</h2>
           <p className="text-gray-300 leading-relaxed">
-            Myanmar Casino Reviews သည် မြန်မာနိုင်ငံတွင် အသုံးပြုနေသော လူကြိုက်များသော 
-            ငွေသွင်း နည်းလမ်းများ အားလုံးကို ထောက်ပံ့ပါသည်။ Wave Money, KBZ Pay, CB Pay, 
-            AYA Pay စသည့် နည်းလမ်းများဖြင့် ငွေသွင်းနိုင်ပြီး ချက်ချင်း ရရှိမည် ဖြစ်သည်။
+            {t("supportedMethodsText")}
           </p>
         </div>
 
@@ -147,25 +150,25 @@ export default function PaymentMethodsPage() {
               
               <div className="grid md:grid-cols-2 gap-4 mb-4">
                 <div className="bg-dark rounded-lg p-4">
-                  <div className="text-sm text-gray-400 mb-1">အနည်းဆုံး ပမာဏ</div>
+                  <div className="text-sm text-gray-400 mb-1">{t("minAmount")}</div>
                   <div className="text-lg font-bold text-white">{method.minAmount}</div>
                 </div>
                 <div className="bg-dark rounded-lg p-4">
-                  <div className="text-sm text-gray-400 mb-1">အများဆုံး ပမာဏ</div>
+                  <div className="text-sm text-gray-400 mb-1">{t("maxAmount")}</div>
                   <div className="text-lg font-bold text-white">{method.maxAmount}</div>
                 </div>
                 <div className="bg-dark rounded-lg p-4">
-                  <div className="text-sm text-gray-400 mb-1">လုပ်ဆောင်ချိန်</div>
+                  <div className="text-sm text-gray-400 mb-1">{t("processingTime")}</div>
                   <div className="text-lg font-bold text-white">{method.processingTime}</div>
                 </div>
                 <div className="bg-dark rounded-lg p-4">
-                  <div className="text-sm text-gray-400 mb-1">လုပ်ဆောင်ခ</div>
+                  <div className="text-sm text-gray-400 mb-1">{t("fee")}</div>
                   <div className="text-lg font-bold text-white">{method.fee}</div>
                 </div>
               </div>
 
               <div className="mt-4">
-                <h4 className="text-lg font-bold text-white mb-3">ငွေသွင်းရန် အဆင့်များ | Deposit Steps</h4>
+                <h4 className="text-lg font-bold text-white mb-3">{t("depositSteps")} | Deposit Steps</h4>
                 <ol className="list-decimal list-inside space-y-2 text-gray-300 ml-4">
                   {method.steps.map((step, idx) => (
                     <li key={idx}>{step}</li>
@@ -178,42 +181,40 @@ export default function PaymentMethodsPage() {
 
         {/* 提款說明 */}
         <div className="bg-dark-lighter rounded-xl p-6 mb-8">
-          <h2 className="text-2xl font-bold text-white mb-4">ငွေထုတ်ယူခြင်း | Withdrawal</h2>
+          <h2 className="text-2xl font-bold text-white mb-4">{t("withdrawal")} | Withdrawal</h2>
           <p className="text-gray-300 leading-relaxed mb-4">
-            ငွေထုတ်ယူရန် သင်သည် အကောင့် အတွင်း ဝင်ရောက်ပြီး "ငွေထုတ်" ကို နှိပ်ပါ။ 
-            ငွေထုတ်ယူရန် နည်းလမ်း ရွေးချယ်ပြီး ငွေထုတ်ယူရန် ပမာဏ ထည့်သွင်းပါ။ 
-            ငွေထုတ်ယူမှု သည် 1-24 နာရီ အတွင်း လုပ်ဆောင်မည် ဖြစ်သည်။
+            {t("withdrawalText")}
           </p>
           <div className="bg-dark rounded-lg p-4 mt-4">
-            <div className="text-sm text-gray-400 mb-1">ငွေထုတ်ယူမှု လုပ်ဆောင်ချိန်</div>
-            <div className="text-2xl font-bold text-gold">1-24 နာရီ</div>
+            <div className="text-sm text-gray-400 mb-1">{t("withdrawalProcessingTime")}</div>
+            <div className="text-2xl font-bold text-gold">{t("withdrawalTimeValue")}</div>
             <div className="text-xs text-gray-500 mt-1">Processing time: 1-24 hours</div>
           </div>
         </div>
 
         {/* 安全性說明 */}
         <div className="bg-dark-lighter rounded-xl p-6 mb-8 border border-green-500/30">
-          <h2 className="text-2xl font-bold text-white mb-4">🛡️ လုံခြုံရေး | Security</h2>
+          <h2 className="text-2xl font-bold text-white mb-4">🛡️ {t("security")} | Security</h2>
           <ul className="space-y-3 text-gray-300">
             <li className="flex items-start gap-3">
               <span className="text-green-400">🔒</span>
-              <span>SSL encryption ဖြင့် လုံခြုံစွာ ကာကွယ်ထားပါသည် (Protected with SSL encryption)</span>
+              <span>{t("securitySsl")} (Protected with SSL encryption)</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-green-400">🔒</span>
-              <span>အကောင့် အချက်အလက် များကို လုံခြုံစွာ သိမ်းဆည်းထားပါသည် (Account info stored securely)</span>
+              <span>{t("securityAccount")} (Account info stored securely)</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-green-400">🔒</span>
-              <span>ငွေသွင်း ငွေထုတ် လုပ်ငန်းများကို 24/7 စောင့်ကြည့်ထားပါသည် (24/7 monitoring)</span>
+              <span>{t("securityMonitoring")} (24/7 monitoring)</span>
             </li>
           </ul>
         </div>
 
         <div className="bg-gradient-to-br from-dark-lighter to-dark rounded-xl p-8 border border-gold/30 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">ငွေသွင်းရန် စတင်ပါ | Start Depositing</h2>
+          <h2 className="text-3xl font-bold text-white mb-4">{t("heading")} {tCommon("playNow")} | Start Depositing</h2>
           <CTAButton href={randomBrandLink} variant="gold" size="lg">
-            အကောင့်ဖွင့်ရန် | Register Now
+            {tCommon("openAccount")}
           </CTAButton>
         </div>
       </div>

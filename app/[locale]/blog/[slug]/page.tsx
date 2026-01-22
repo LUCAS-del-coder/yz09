@@ -1,41 +1,32 @@
 import { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { Link } from "@/i18n/routing";
 import Image from "next/image";
 import blogPostsData from "@/data/blog-posts.json";
+import { getBaseUrl } from "@/lib/config";
 
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://example.com';
+const baseUrl = getBaseUrl();
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const post = blogPostsData.find((p: any) => p.slug === params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }> }): Promise<Metadata> {
+  const { locale, slug } = await params;
+  const post = blogPostsData.find((p: any) => p.slug === slug);
   
   if (!post) {
+    const t = await getTranslations({ locale, namespace: "common" });
     return {
-      title: "ဆောင်းပါး မတွေ့ရှိပါ | Article Not Found | Myanmar Casino Reviews",
+      title: `${t("notFound")} | Article Not Found | Myanmar Casino Reviews`,
     };
   }
 
   return {
-    // ✅ 標題：緬甸語 + 英文
     title: `${post.title} | ${post.titleEn} | Myanmar Casino Reviews`,
-    
-    // ✅ 描述：緬甸語為主
     description: `${post.excerpt} ${post.excerptEn}`,
-    
-    // ✅ 關鍵字
-    keywords: [
-      ...post.tags,
-      "Myanmar casino blog",
-      "online casino news",
-      "casino guide Myanmar"
-    ].join(", "),
-    
-    // ✅ OpenGraph
     openGraph: {
       title: `${post.title} | ${post.titleEn}`,
       description: post.excerpt,
       type: 'article',
-      locale: 'my_MM',
+      locale: locale === 'my' ? 'my_MM' : 'en_US',
       url: `${baseUrl}/blog/${post.slug}`,
       publishedTime: post.publishDate,
       authors: [post.author],
@@ -44,15 +35,21 @@ export async function generateMetadata({ params }: { params: { slug: string } })
         alt: `${post.title} - ${post.titleEn}`
       }] : [],
     },
-    
     alternates: {
       canonical: `${baseUrl}/blog/${post.slug}`,
+      languages: {
+        'my-MM': `${baseUrl}/blog/${post.slug}`,
+        'en-US': `${baseUrl}/en/blog/${post.slug}`,
+      }
     }
   };
 }
 
-export default function BlogPostPage({ params }: { params: { slug: string } }) {
-  const post = blogPostsData.find((p: any) => p.slug === params.slug);
+export default async function BlogPostPage({ params }: { params: Promise<{ locale: string; slug: string }> }) {
+  const { locale, slug } = await params;
+  const post = blogPostsData.find((p: any) => p.slug === slug);
+  const tCommon = await getTranslations({ locale, namespace: "common" });
+  const tBlog = await getTranslations({ locale, namespace: "blog" });
 
   if (!post) {
     notFound();
@@ -84,9 +81,9 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
     <div className="min-h-screen bg-dark py-12">
       <div className="container mx-auto px-4 max-w-4xl">
         <nav className="flex items-center gap-2 text-sm text-gray-400 mb-6">
-          <Link href="/" className="hover:text-gold">首頁</Link>
+          <Link href="/" className="hover:text-gold">{tCommon("home")}</Link>
           <span>/</span>
-          <Link href="/blog" className="hover:text-gold">ဘလော့</Link>
+          <Link href="/blog" className="hover:text-gold">{tBlog("heading")}</Link>
           <span>/</span>
           <span className="text-white">{post.title}</span>
         </nav>
@@ -133,9 +130,9 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
           </div>
 
           <div className="bg-dark-lighter rounded-xl p-6 mt-6">
-            <h2 className="text-2xl font-bold text-white mb-4">ဆောင်းပါး အကြောင်း | About This Article</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">{tBlog("aboutArticle")} | About This Article</h2>
             <p className="text-gray-300 leading-relaxed">
-              {post.content || `${post.title} အကြောင်း အပြည့်အစုံ ဆောင်းပါး။`}
+              {post.content || `${post.title} ${tBlog("fullArticle")}`}
             </p>
           </div>
 
@@ -155,7 +152,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
         {/* 相關文章 */}
         {relatedPosts.length > 0 && (
           <div className="mt-12">
-            <h2 className="text-3xl font-bold text-white mb-6">ဆက်စပ်သော ဆောင်းပါးများ | Related Articles</h2>
+            <h2 className="text-3xl font-bold text-white mb-6">{tBlog("relatedArticles")} | Related Articles</h2>
             <div className="grid md:grid-cols-3 gap-4">
               {relatedPosts.map((relatedPost: any) => (
                 <Link

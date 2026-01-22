@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import StarRating from "./StarRating";
 import CTAButton from "./CTAButton";
@@ -13,6 +14,7 @@ interface ComparisonTableProps {
 }
 
 export default function ComparisonTable({ casinos }: ComparisonTableProps) {
+  const t = useTranslations("comparisonTable");
   const [sortBy, setSortBy] = useState<"rating" | "games">("rating");
 
   const sortedCasinos = [...casinos].sort((a, b) => {
@@ -39,7 +41,7 @@ export default function ComparisonTable({ casinos }: ComparisonTableProps) {
               : "bg-dark-lighter text-gray-400 hover:bg-dark-light"
           }`}
         >
-          အဆင့်သတ်မှတ်ချက်ဖြင့်
+          {t("sortByRating")}
         </button>
         <button
           onClick={() => setSortBy("games")}
@@ -49,7 +51,7 @@ export default function ComparisonTable({ casinos }: ComparisonTableProps) {
               : "bg-dark-lighter text-gray-400 hover:bg-dark-light"
           }`}
         >
-          ဂိမ်းအရေအတွက်ဖြင့်
+          {t("sortByGames")}
         </button>
       </div>
 
@@ -58,19 +60,19 @@ export default function ComparisonTable({ casinos }: ComparisonTableProps) {
           <thead>
             <tr className="bg-dark border-b border-dark-lightest">
               <th className="px-6 py-4 text-left text-sm font-semibold text-gold">
-                ကာစီနို
+                {t("casino")}
               </th>
               <th className="px-6 py-4 text-left text-sm font-semibold text-gold">
-                အဆင့်သတ်မှတ်ချက်
+                {t("rating")}
               </th>
               <th className="px-6 py-4 text-left text-sm font-semibold text-gold">
-                ဂိမ်းများ
+                {t("games")}
               </th>
               <th className="px-6 py-4 text-left text-sm font-semibold text-gold">
-                ငွေထုတ်ယူမှု
+                {t("withdrawal")}
               </th>
               <th className="px-6 py-4 text-left text-sm font-semibold text-gold">
-                လုပ်ဆောင်ချက်
+                {t("action")}
               </th>
             </tr>
           </thead>
@@ -100,7 +102,7 @@ export default function ComparisonTable({ casinos }: ComparisonTableProps) {
                         href={`/review/${casino.slug}`}
                         className="text-sm text-primary hover:underline"
                       >
-                        ပိုမိုလေ့လာရန်
+                        {t("learnMore")}
                       </Link>
                     </div>
                   </div>
@@ -118,7 +120,7 @@ export default function ComparisonTable({ casinos }: ComparisonTableProps) {
                     variant="primary"
                     size="sm"
                   >
-                    ကစားရန်
+                    {t("playNow")}
                   </CTAButton>
                 </td>
               </tr>

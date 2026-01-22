@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import CTAButton from "@/components/ui/CTAButton";
+import { getTranslations } from "next-intl/server";
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://example.com';
 
@@ -70,8 +71,11 @@ const brandLinks = [
   "https://www.pya777.net/m/home?affiliateCode=seom2002",
 ];
 
-export default function PaymentPage() {
+export default async function PaymentPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
   const randomBrandLink = brandLinks[Math.floor(Math.random() * brandLinks.length)];
+  const tCommon = await getTranslations({ locale, namespace: "common" });
+  const t = await getTranslations({ locale, namespace: "payment" });
 
   return (
     <div className="min-h-screen bg-dark py-12">

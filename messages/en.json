@@ -119,19 +119,111 @@
     "tips": "Tips",
     "faq": "Questions",
     "readyToStart": "Ready to Start Playing Now",
-    "readyToStartDescription": "Open an account and get bonus to start playing games"
+    "readyToStartDescription": "Open an account and get bonus to start playing games",
+    "accountOpening": {
+      "title": "How to Open an Account",
+      "step1": "Go to casino website",
+      "step2": "Click Register / Sign Up",
+      "step3": "Enter email, phone number, password",
+      "step4": "Click verification link",
+      "step5": "Account opened successfully"
+    },
+    "deposit": {
+      "title": "How to Deposit",
+      "step1": "Log into your account",
+      "step2": "Click Deposit / Deposit",
+      "step3": "Select payment method (KBZ Pay, Wave Money, etc.)",
+      "step4": "Enter deposit amount",
+      "step5": "Confirm - funds will arrive instantly"
+    },
+    "playingGames": {
+      "title": "How to Play Games",
+      "step1": "Select game category (Slots, Live Casino, etc.)",
+      "step2": "Choose a game",
+      "step3": "Set bet amount",
+      "step4": "Click Play / Play",
+      "step5": "Enjoy your winnings"
+    },
+    "withdrawal": {
+      "title": "How to Withdraw",
+      "step1": "Log into your account",
+      "step2": "Click Withdraw / Withdrawal",
+      "step3": "Select withdrawal method",
+      "step4": "Enter withdrawal amount",
+      "step5": "Confirm - will arrive within 24-48 hours"
+    },
+    "tipBonus": {
+      "title": "How to Use Bonuses",
+      "content": "Use Welcome Bonus and Reload Bonus to play games."
+    },
+    "tipRTP": {
+      "title": "Winning Opportunities",
+      "content": "Choose games with high RTP (Return to Player)."
+    },
+    "tipResponsible": {
+      "title": "Responsible Gaming",
+      "content": "Set a budget and play games. Do not spend unnecessary money."
+    },
+    "tipSecurity": {
+      "title": "Security",
+      "content": "Choose licensed casinos. Use websites with SSL security certificates."
+    },
+    "faq1": {
+      "question": "Is it safe to play online casino?",
+      "answer": "Yes. Licensed casinos are safe. Use websites with SSL security certificates."
+    },
+    "faq2": {
+      "question": "What is needed to get a bonus?",
+      "answer": "Account opening and first deposit are required. Welcome Bonus will be received automatically."
+    },
+    "faq3": {
+      "question": "How long does withdrawal take?",
+      "answer": "Generally completed within 24-48 hours. Some payment methods may be faster."
+    }
   },
   "contact": {
     "title": "Contact Us - Contact Us | Myanmar Casino Reviews",
     "description": "Contact Myanmar Casino Reviews.",
     "heading": "Contact Us",
     "information": "Information",
+    "informationText": "If you would like to contact Myanmar Casino Reviews, please use the following methods.",
     "aboutWebsite": "About Website",
+    "aboutWebsiteText1": "Myanmar Casino Reviews is a free information website that displays the best online casino reviews and information in Myanmar.",
+    "aboutWebsiteText2": "This website does not provide online casino gaming services.",
+    "aboutWebsiteText3": "This website is an information service.",
     "office": "Office",
+    "name": "Name",
+    "nameValue": "Myanmar Casino Reviews",
+    "language": "Language",
+    "languageValue": "Myanmar (Burmese)",
+    "website": "Website",
+    "websiteValue": "Information Only",
     "workingHours": "Working Hours",
+    "websiteHours": "Website",
+    "websiteHoursValue": "Available 24/7",
+    "help": "Help",
+    "helpValue": "Can contact via email",
     "suggestions": "Suggestions",
+    "suggestionsText": "You can contact regarding the following topics:",
+    "suggestionsList": [
+      "Questions about the website",
+      "Questions about information",
+      "About responsible gaming",
+      "Privacy policy",
+      "Terms of service"
+    ],
     "warning": "Warning",
-    "thankYou": "Thank You"
+    "warningTitle": "This website:",
+    "warningList": [
+      "Does not provide online casino gaming services",
+      "Is an information service",
+      "Is for 18+ age only"
+    ],
+    "thankYou": "Thank You",
+    "thankYouText": "Thank you for visiting Myanmar Casino Reviews.",
+    "thankYouLink": "You can also visit the",
+    "responsibleGamingLink": "responsible gaming",
+    "thankYouLinkEnd": "page."
   },
   "privacy": {
     "title": "Privacy Policy - Privacy Policy | Myanmar Casino Reviews",
@@ -162,12 +254,142 @@
     "title": "Blog | Blog - Myanmar Casino Reviews",
     "description": "Online casino news, game reviews, strategy guides and more useful content.",
     "heading": "Blog",
-    "subheading": "Online casino news, game reviews, strategy guides"
+    "subheading": "Online casino news, game reviews, strategy guides",
+    "aboutArticle": "About This Article",
+    "fullArticle": "Full article about",
+    "relatedArticles": "Related Articles"
   },
   "promotions": {
     "welcomeBonusTitle": "Welcome Bonus 100% | Welcome Bonus Up to 50,000 MMK | Myanmar Casino Reviews",
     "welcomeBonusDescription": "Myanmar Casino Reviews Welcome Bonus - First deposit 100% up to 50,000 MMK. Easy to claim, fast approval, low wagering requirements. Register now and get big bonus.",
-    "welcomeBonusHeading": "Welcome Bonus 100%"
+    "welcomeBonusHeading": "Welcome Bonus 100%",
+    "welcomeBonusMax": "Up to 50,000 MMK",
+    "welcomeBonusSubheading": "Double bonus for first deposit",
+    "aboutWelcomeBonus": "About the Bonus",
+    "aboutWelcomeBonusText": "Myanmar Casino Reviews Welcome Bonus is a special bonus for new players who have opened an account. When you make your first deposit, you will receive a 100% bonus up to 50,000 MMK.",
+    "claimRequirements": "Claim Requirements",
+    "claimRequirementsList": [
+      "Must be a new account",
+      "Minimum deposit 1,000 MMK",
+      "Account must be verified",
+      "Must be used within 30 days"
+    ],
+    "wageringRequirements": "Wagering Requirements",
+    "wageringRequirementsText": "To withdraw bonus funds, you must wager the bonus amount 20 times. For example - if you receive a 10,000 MMK bonus, you must wager 200,000 MMK.",
+    "wageringMultiplier": "20x",
+    "bonusAmountMultiplier": "Bonus Amount × 20",
+    "eligibleGames": "Eligible Games",
+    "eligibleGamesText": "Bonus funds can be used in the following games.",
+    "howToClaim": "How to Claim",
+    "howToClaimSteps": [
+      "Register new account at Myanmar Casino Reviews",
+      "Verify your account",
+      "Make first deposit",
+      "Bonus will be credited automatically",
+      "Play games and meet wagering requirements"
+    ],
+    "faq": "FAQ",
+    "faqWhenReceived": "How long does it take to receive the bonus?",
+    "faqWhenReceivedAnswer": "The bonus will be automatically credited within 5 minutes after making a deposit.",
+    "faqHowToUse": "How to use bonus funds?",
+    "faqHowToUseAnswer": "Bonus funds can be used in games such as slots, live casino, etc.",
+    "faqHowToWithdraw": "How to withdraw after meeting wagering requirements?",
+    "faqHowToWithdrawAnswer": "After meeting wagering requirements, you can withdraw bonus funds and winnings.",
+    "claimWelcomeBonus": "Claim Welcome Bonus",
+    "claimWelcomeBonusText": "Register now and get 100% bonus",
+    "dailyBonusTitle": "Daily Bonus | Daily Bonus Myanmar | Myanmar Casino Reviews",
+    "dailyBonusDescription": "Myanmar Casino Reviews Daily Bonus - Daily deposit 10-20% bonus. Check time and requirements, special games of the day, wagering requirements.",
+    "dailyBonusHeading": "Daily Bonus",
+    "dailyBonusPercent": "10-20%",
+    "dailyBonusSubheading": "Daily Deposit Bonus",
+    "aboutDailyBonus": "About Daily Bonus",
+    "aboutDailyBonusText": "Myanmar Casino Reviews offers daily bonuses for loyal players. When you make a daily deposit, you will receive a 10-20% bonus.",
+    "timeAndRequirements": "Time & Requirements",
+    "claimTime": "Claim time: 00:00 - 23:59 (MMT)",
+    "minDeposit": "Minimum deposit: 5,000 MMK",
+    "oncePerDay": "Can claim once per day",
+    "wageringRequirementsDaily": "Wagering Requirements",
+    "wageringTextDaily": "Daily bonus funds require 15x wagering to withdraw.",
+    "wageringMultiplierDaily": "15x",
+    "bonusAmount": "Bonus Amount × 15",
+    "claimDailyBonus": "Claim Daily Bonus",
+    "vipProgramTitle": "VIP Program | 5 Tier Account System | Myanmar Casino Reviews",
+    "vipProgramDescription": "Join Myanmar Casino Reviews VIP program and enjoy exclusive benefits. 5 tier account system, exclusive bonuses, higher rebate, priority withdrawal, birthday gift money.",
+    "vipProgramHeading": "VIP Program",
+    "aboutVipProgram": "About VIP Program",
+    "aboutVipProgramText": "Myanmar Casino Reviews VIP program is a special program designed for loyal players. With a 5-tier account system, you will receive higher bonuses, faster withdrawals, and exclusive customer service.",
+    "vipExclusiveBenefits": "VIP Exclusive Benefits",
+    "higherRebate": "Higher Rebate",
+    "higherRebateText": "The higher the VIP level, the higher the rebate rate",
+    "priorityWithdrawal": "Priority Withdrawal",
+    "priorityWithdrawalText": "VIP accounts will receive priority processing for withdrawals",
+    "personalService": "Personal Customer Service",
+    "personalServiceText": "VIP accounts will receive personal customer service",
+    "birthdayGift": "Birthday Gift Money",
+    "birthdayGiftText": "VIP accounts will receive special gift money on their birthday",
+    "joinVipProgram": "Join VIP Program"
+  },
+  "guidePaymentMethods": {
+    "title": "Deposit and Withdrawal Methods | Payment Methods Guide Myanmar | Myanmar Casino Reviews",
+    "description": "Myanmar Casino Reviews supports popular deposit methods like Wave Money, KBZ Pay, CB Pay, AYA Pay. Instant deposit, 1-24h withdrawal processing. Secure and convenient methods.",
+    "heading": "Deposit and Withdrawal Methods",
+    "supportedMethods": "Supported Payment Methods",
+    "supportedMethodsText": "Myanmar Casino Reviews supports all popular deposit methods used in Myanmar. You can deposit using methods like Wave Money, KBZ Pay, CB Pay, AYA Pay and will receive instantly.",
+    "minAmount": "Minimum Amount",
+    "maxAmount": "Maximum Amount",
+    "processingTime": "Processing Time",
+    "fee": "Fee",
+    "depositSteps": "Deposit Steps",
+    "withdrawal": "Withdrawal",
+    "withdrawalText": "To withdraw, you need to log into your account and click \"Withdraw\". Select a withdrawal method and enter the withdrawal amount. Withdrawals will be processed within 1-24 hours.",
+    "withdrawalProcessingTime": "Withdrawal Processing Time",
+    "withdrawalTimeValue": "1-24 hours",
+    "security": "Security",
+    "securitySsl": "Protected with SSL encryption",
+    "securityAccount": "Account info stored securely",
+    "securityMonitoring": "24/7 monitoring"
+  },
+  "guideResponsibleGaming": {
+    "title": "Responsible Gaming | Responsible Gaming | Myanmar Casino Reviews",
+    "description": "Myanmar Casino Reviews promotes responsible gaming. Self-assessment, gaming limits, self-exclusion options.",
+    "heading": "Responsible Gaming",
+    "whatIsResponsibleGaming": "What is Responsible Gaming?",
+    "whatIsText": "Responsible gaming means using online casino for entertainment only while maintaining control over your budget and time. Myanmar Casino Reviews is committed to providing a safe and healthy gaming experience.",
+    "selfAssessment": "Self-Assessment",
+    "selfAssessmentText": "Ask yourself the following questions to assess your gaming habits.",
+    "selfAssessmentQuestions": [
+      "Do you spend more than your budget on gaming?",
+      "Can you control your gaming time?",
+      "Do you sacrifice work and family time for gaming?",
+      "Do you borrow money to gamble?"
+    ],
+    "settingLimits": "Setting Gaming Limits",
+    "depositLimit": "Deposit Limit",
+    "depositLimitText": "Set daily, weekly, monthly deposit amounts",
+    "betLimit": "Bet Limit",
+    "betLimitText": "Set bet amount per game",
+    "timeLimit": "Time Limit",
+    "timeLimitText": "Set daily gaming time",
+    "selfExclusion": "Self-Exclusion",
+    "selfExclusionText": "If you feel you cannot control your gaming, you can use the self-exclusion option. With this option, you can close your account for 7 days, 30 days, 90 days, or 1 year.",
+    "selfExclusionImportant": "Important",
+    "selfExclusionImportantText": "After using the self-exclusion option, you can only reopen your account after the specified time has passed.",
+    "problemGamblingSigns": "Problem Gambling Signs",
+    "problemGamblingList": [
+      "Spending more than budget",
+      "Neglecting work and family",
+      "Borrowing money to gamble",
+      "Hiding gambling activities"
+    ],
+    "gettingHelp": "Getting Help",
+    "gettingHelpText": "If you feel you have a gambling problem, you can use the following methods to get help.",
+    "gettingHelpList": [
+      "Myanmar Casino Reviews customer service: 24/7 help",
+      "Gambling help websites",
+      "Mental health professionals"
+    ],
+    "healthyGaming": "Healthy Gaming",
+    "healthyGamingText": "Use online casino for entertainment only and play responsibly"
   },
   "guideHowToPlay": {
     "title": "How to Play Online Casino - Beginner's Guide | How to Play Guide | Myanmar Casino Reviews",
@@ -178,5 +400,80 @@
     "title": "Page Not Found",
     "description": "The page you are looking for could not be found.",
     "backToHome": "Back to Home"
+  },
+  "footer": {
+    "disclaimer": "Disclaimer",
+    "disclaimerText": "Myanmar Casino Reviews is an information website and does not provide online casino gaming services. This website is for 18+ age only.",
+    "responsibleGaming": "Responsible Gaming",
+    "terms": "Terms of Service",
+    "privacy": "Privacy Policy",
+    "about": "Myanmar Casino Reviews",
+    "aboutText": "Best online casino reviews in Myanmar. Highest bonuses, fast withdrawals, 24/7 service.",
+    "quickLinks": "Quick Links",
+    "casinoReviews": "Casino Reviews",
+    "legal": "Legal",
+    "responsibleGambling": "RESPONSIBLE GAMBLING",
+    "ageRestricted": "Age Restricted",
+    "copyright": "All rights reserved.",
+    "ageRestriction": "18+ age only allowed to play games.",
+    "shweCasino": "Shwe Casino",
+    "casino888": "888 Casino",
+    "casino777": "777 Casino",
+    "win8Casino": "Win8 Casino"
+  },
+  "ageVerification": {
+    "title": "Age Verification",
+    "text": "This website is for adults over 18 years old. Are you over 18 years old?",
+    "no": "No",
+    "yes": "Yes"
+  },
+  "cookieConsent": {
+    "title": "Cookie Policy",
+    "text": "We use cookies to improve user experience and analyze website usage.",
+    "moreInfo": "For more information about cookie usage, please visit",
+    "privacyPolicy": "Privacy Policy",
+    "reject": "Reject",
+    "accept": "Accept"
+  },
+  "bonusCard": {
+    "claimBonus": "Claim Bonus"
+  },
+  "latestBonuses": {
+    "heading": "Latest Bonuses",
+    "subheading": "Get special bonuses and promotions",
+    "viewAll": "View All Bonuses"
+  },
+  "floatingCTA": {
+    "text": "Open Account and Get Bonus"
+  },
+  "hero": {
+    "title": "2025 Best",
+    "title2": "Online Casinos",
+    "description": "Expert reviews about Shwe Casino, 888 Casino, 777 Casino, Win8, 999 Casino",
+    "description2": "Compare bonuses, games and ratings for Myanmar players"
+  },
+  "featuredGames": {
+    "heading": "Hot Games",
+    "subheading": "Best online casino games in Myanmar - from PG Soft, Pragmatic Play, and other top game providers"
+  },
+  "internalLinks": {
+    "heading": "Useful Links",
+    "subheading": "Everything you're looking for at Myanmar Casino Reviews",
+    "games": "Games",
+    "bonuses": "Bonuses",
+    "guides": "Guides",
+    "blog": "Blog"
+  },
+  "comparisonTable": {
+    "casino": "Casino",
+    "rating": "Rating",
+    "games": "Games",
+    "bonus": "Bonus",
+    "withdrawal": "Withdrawal",
+    "action": "Action",
+    "sortByRating": "Sort by Rating",
+    "sortByGames": "Sort by Games",
+    "learnMore": "Learn More",
+    "playNow": "Play Now"
   }
 }

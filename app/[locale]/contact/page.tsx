@@ -39,52 +39,49 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
           <section>
             <h2 className="text-2xl font-bold text-white mb-4">{t("information")}</h2>
             <p className="mb-4">
-              Myanmar Casino Reviews နှင့် ဆက်သွယ်လိုပါက၊ 
-              ကျေးဇူးပြု၍ အောက်ပါ နည်းလမ်းများကို အသုံးပြုပါ။
+              {t("informationText")}
             </p>
           </section>
 
           <section>
             <h2 className="text-2xl font-bold text-white mb-4">{t("aboutWebsite")}</h2>
             <p className="mb-4">
-              Myanmar Casino Reviews သည် မြန်မာ့အကောင်းဆုံး အွန်လိုင်း ကာစီနို 
-              စုံစမ်းစစ်ဆေးချက်များ နှင့် အချက်အလက်များကို ပြသသော အခမဲ့ 
-              သတင်းအချက်အလက် ဝဘ်ဆိုဒ် ဖြစ်သည်။
+              {t("aboutWebsiteText1")}
             </p>
             <p className="mb-4">
-              ဤဝဘ်ဆိုဒ်သည် အွန်လိုင်း ကာစီနို ကစားရန် ဝန်ဆောင်မှု မပေးပါ။
-              ဤဝဘ်ဆိုဒ်သည် အချက်အလက် ပေးသော ဝန်ဆောင်မှု ဖြစ်ပါသည်။
+              {t("aboutWebsiteText2")}
+            </p>
+            <p className="mb-4">
+              {t("aboutWebsiteText3")}
             </p>
           </section>
 
           <section>
             <h2 className="text-2xl font-bold text-white mb-4">{t("office")}</h2>
             <div className="bg-dark rounded-lg p-6 border border-dark-lightest">
-              <p className="mb-2"><strong className="text-white">အမည်:</strong> Myanmar Casino Reviews</p>
-              <p className="mb-2"><strong className="text-white">ဘာသာစကား:</strong> မြန်မာ (Burmese)</p>
-              <p className="mb-2"><strong className="text-white">ဝဘ်ဆိုဒ်:</strong> <span className="text-gold">Information Only</span></p>
+              <p className="mb-2"><strong className="text-white">{t("name")}:</strong> {t("nameValue")}</p>
+              <p className="mb-2"><strong className="text-white">{t("language")}:</strong> {t("languageValue")}</p>
+              <p className="mb-2"><strong className="text-white">{t("website")}:</strong> <span className="text-gold">{t("websiteValue")}</span></p>
             </div>
           </section>
 
           <section>
             <h2 className="text-2xl font-bold text-white mb-4">{t("workingHours")}</h2>
             <div className="bg-dark rounded-lg p-6 border border-dark-lightest">
-              <p className="mb-2"><strong className="text-white">ဝဘ်ဆိုဒ်:</strong> 24/7 အချိန်မရွေး အသုံးပြုနိုင်ပါသည်</p>
-              <p className="mb-2"><strong className="text-white">အကူအညီ:</strong> အီးမေးလ် နှင့် ဆက်သွယ်နိုင်ပါသည်</p>
+              <p className="mb-2"><strong className="text-white">{t("websiteHours")}:</strong> {t("websiteHoursValue")}</p>
+              <p className="mb-2"><strong className="text-white">{t("help")}:</strong> {t("helpValue")}</p>
             </div>
           </section>
 
           <section>
             <h2 className="text-2xl font-bold text-white mb-4">{t("suggestions")}</h2>
             <p className="mb-4">
-              သင်သည် အောက်ပါ အကြောင်းအရာများနှင့် ပတ်သက်၍ ဆက်သွယ်နိုင်ပါသည်:
+              {t("suggestionsText")}
             </p>
             <ul className="list-disc list-inside space-y-2 ml-4">
-              <li>ဝဘ်ဆိုဒ် အကြောင်း မေးခွန်းများ</li>
-              <li>အချက်အလက်များ နှင့် ပတ်သက်သော မေးခွန်းများ</li>
-              <li>တာဝန်ယူမှုရှိသော ဂိမ်းကစားခြင်း အကြောင်း</li>
-              <li>ကိုယ်ရေးလုံခြုံမှု မူဝါဒ</li>
-              <li>အသုံးပြုရန် စည်းမျဉ်းများ</li>
+              {t.raw("suggestionsList").map((item: string, index: number) => (
+                <li key={index}>{item}</li>
+              ))}
             </ul>
           </section>
 
@@ -92,12 +89,12 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
             <h2 className="text-2xl font-bold text-white mb-4">{t("warning")}</h2>
             <div className="bg-red-900/20 border border-red-500/50 rounded-lg p-6">
               <p className="text-white mb-2">
-                <strong>⚠️ ဤဝဘ်ဆိုဒ်သည်:</strong>
+                <strong>⚠️ {t("warningTitle")}</strong>
               </p>
               <ul className="list-disc list-inside space-y-2 ml-4 text-white">
-                <li>အွန်လိုင်း ကာစီနို ကစားရန် ဝန်ဆောင်မှု <strong>မပေးပါ</strong></li>
-                <li>အချက်အလက် ပေးသော ဝန်ဆောင်မှု ဖြစ်ပါသည်</li>
-                <li>18+ အသက်အရွယ် သာရှိသူများအတွက် ဖြစ်ပါသည်</li>
+                {t.raw("warningList").map((item: string, index: number) => (
+                  <li key={index}>{item}</li>
+                ))}
               </ul>
             </div>
           </section>
@@ -105,11 +102,10 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
           <section>
             <h2 className="text-2xl font-bold text-white mb-4">{t("thankYou")}</h2>
             <p className="mb-4">
-              Myanmar Casino Reviews ကို လည်ပတ်ကြည့်ရှုသော အတွက် ကျေးဇူးတင်လိုက်ပါသည်။
+              {t("thankYouText")}
             </p>
             <p>
-              သင်သည် <a href="/responsible-gaming" className="text-gold hover:underline">တာဝန်ယူမှုရှိသော ဂိမ်းကစားခြင်း</a> 
-              စာမျက်နှာကို လည်း ကြည့်ရှုနိုင်ပါသည်။
+              {t("thankYouLink")} <a href="/responsible-gaming" className="text-gold hover:underline">{t("responsibleGamingLink")}</a> {t("thankYouLinkEnd")}
             </p>
           </section>
         </div>

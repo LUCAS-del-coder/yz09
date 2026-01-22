@@ -1,11 +1,13 @@
 import { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import { Link } from "@/i18n/routing";
 import CTAButton from "@/components/ui/CTAButton";
 import gamesData from "@/data/games.json";
+import { getBaseUrl } from "@/lib/config";
 
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://example.com';
+const baseUrl = getBaseUrl();
 
 const brandLinks = [
   "https://www.yes8.io/m/home?affiliateCode=seom1802",
@@ -20,75 +22,49 @@ const volatilityMap: Record<string, string> = {
   "low": "နည်းသော"
 };
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const game = gamesData.find((g: any) => g.slug === params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }> }): Promise<Metadata> {
+  const { locale, slug } = await params;
+  const game = gamesData.find((g: any) => g.slug === slug);
+  const baseUrl = getBaseUrl();
   
   if (!game) {
+    const t = await getTranslations({ locale, namespace: "common" });
     return {
-      title: "ဂိမ်း မတွေ့ရှိပါ | Game Not Found | Myanmar Casino Reviews",
+      title: `${t("notFound")} | Game Not Found | Myanmar Casino Reviews`,
     };
   }
 
   const volatilityMM = volatilityMap[game.volatility] || game.volatility;
   
   return {
-    // ✅ 標題：緬甸語 + 英文
     title: `${game.nameMm} - ဂိမ်း အပြည့်အစုံ သုံးသပ်ချက် | ${game.name} Review | Myanmar Casino Reviews`,
-    
-    // ✅ 描述：緬甸語為主（100字）+ 英文補充（30字）
     description: `${game.nameMm} ဆလော့ ဂိမ်းကို Myanmar Casino Reviews တွင် ကစားပါ။ RTP ${game.rtp}%၊ ${volatilityMM} ပြင်းထန်မှု၊ အမြင့်ဆုံး ဆုငွေ ${game.maxWin}။ ${game.provider} ၏ အကောင်းဆုံး ဂိမ်း။ Play ${game.name} slot - RTP ${game.rtp}%, Max win ${game.maxWin}, ${game.provider} game.`,
-    
-    // ✅ 關鍵字：緬甸語 60% + 混合 20% + 英文 20%
-    keywords: [
-      // 緬甸語核心（60%）
-      game.nameMm,
-      `${game.nameMm} ဂိမ်း`,
-      "ဆလော့ ဂိမ်း မြန်မာ",
-      "အွန်လိုင်း ကာစီနို",
-      "ရွှေ ကာစီနို ဂိမ်းများ",
-      `${game.provider} ဂိမ်းများ`,
-      "အွန်လိုင်း ဆလော့",
-      "မြန်မာ ကာစီနို ဂိမ်းများ",
-      
-      // 混合關鍵字（20%）
-      `${game.name} Myanmar`,
-      `${game.provider} Myanmar`,
-      "online slots Myanmar",
-      `${game.nameMm} online`,
-      
-      // 英文關鍵字（20%）
-      `${game.name} slot`,
-      `${game.provider} games`,
-      "Myanmar Casino Reviews",
-      "online casino games"
-    ].join(", "),
-    
-    // ✅ OpenGraph：使用緬甸語
     openGraph: {
       title: `${game.nameMm} | ${game.name} | Myanmar Casino Reviews`,
       description: `${game.nameMm} - RTP ${game.rtp}%၊ အမြင့်ဆုံး ${game.maxWin}၊ ${game.provider} ဂိမ်း`,
       type: 'article',
-      locale: 'my_MM',
+      locale: locale === 'my' ? 'my_MM' : 'en_US',
       url: `${baseUrl}/games/${game.slug}`,
       images: game.images && game.images.length > 0 ? [{
         url: `${baseUrl}${game.images[0]}`,
         alt: `${game.nameMm} - ${game.name} Screenshot`
       }] : [],
     },
-    
-    // ✅ 其他重要設定
     alternates: {
       canonical: `${baseUrl}/games/${game.slug}`,
       languages: {
         'my-MM': `${baseUrl}/games/${game.slug}`,
-        'en': `${baseUrl}/en/games/${game.slug}`
+        'en-US': `${baseUrl}/en/games/${game.slug}`
       }
     }
   };
 }
 
-export default function GameDetailPage({ params }: { params: { slug: string } }) {
-  const game = gamesData.find((g: any) => g.slug === params.slug);
+export default async function GameDetailPage({ params }: { params: Promise<{ locale: string; slug: string }> }) {
+  const { locale, slug } = await params;
+  const tCommon = await getTranslations({ locale, namespace: "common" });
+  const tGames = await getTranslations({ locale, namespace: "games" });
+  const game = gamesData.find((g: any) => g.slug === slug);
   const randomBrandLink = brandLinks[Math.floor(Math.random() * brandLinks.length)];
 
   if (!game) {
@@ -99,6 +75,14 @@ export default function GameDetailPage({ params }: { params: { slug: string } })
   const relatedGames = gamesData.filter((g: any) => 
     game.relatedGames?.includes(g.slug) && g.slug !== game.slug
   ).slice(0, 4);
+  
+  const getCategoryLabel = (category: string) => {
+    if (category === 'slots') return tGames("slots");
+    if (category === 'live-casino') return tGames("liveCasino");
+    if (category === 'fishing') return tGames("fishing");
+    if (category === 'table-games') return tGames("tableGames");
+    return category;
+  };
 
   // Schema.org 結構化數據
   const gameSchema = {
@@ -125,15 +109,12 @@ export default function GameDetailPage({ params }: { params: { slug: string } })
       <div className="container mx-auto px-4">
         {/* 麵包屑導航 */}
         <nav className="flex items-center gap-2 text-sm text-gray-400 mb-6">
-          <Link href="/" className="hover:text-gold">首頁</Link>
+          <Link href="/" className="hover:text-gold">{tCommon("home")}</Link>
           <span>/</span>
-          <Link href="/games" className="hover:text-gold">ဂိမ်းများ</Link>
+          <Link href="/games" className="hover:text-gold">{tCommon("games")}</Link>
           <span>/</span>
           <Link href={`/games/${game.category}`} className="hover:text-gold">
-            {game.category === 'slots' ? 'စလော့ဂိမ်းများ' : 
-             game.category === 'live-casino' ? 'လိုင်ဗ် ကာစီနို' :
-             game.category === 'fishing' ? 'ငါးဖမ်းဂိမ်းများ' :
-             game.category === 'table-games' ? 'စားပွဲဂိမ်းများ' : game.category}
+            {getCategoryLabel(game.category)}
           </Link>
           <span>/</span>
           <span className="text-white">{game.nameMm}</span>

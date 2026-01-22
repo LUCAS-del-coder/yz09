@@ -11,12 +11,7 @@ import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import HeroImage from "@/components/ui/HeroImage";
 import CasinoLogo from "@/components/ui/CasinoLogo";
 import { getBaseUrl } from "@/lib/config";
-
-interface PageProps {
-  params: {
-    slug: string;
-  };
-}
+import { getTranslations } from "next-intl/server";
 
 export async function generateStaticParams() {
   return casinosData.map((casino) => ({
@@ -24,13 +19,15 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const casino = casinosData.find((c) => c.slug === params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }> }): Promise<Metadata> {
+  const { locale, slug } = await params;
+  const casino = casinosData.find((c) => c.slug === slug);
   const baseUrl = getBaseUrl();
 
   if (!casino) {
+    const t = await getTranslations({ locale, namespace: "common" });
     return {
-      title: "Casino Not Found",
+      title: `${t("notFound")} | Casino Not Found`,
     };
   }
 
@@ -44,20 +41,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: `${casino.name} Review 2025 | ${casino.name} vs ${competitors}`,
     description: `Comprehensive ${casino.name} review for Myanmar players. Compare with Shwe Casino, 888, 777, Win8. Rating: ${casino.rating}/5. Bonuses, games, withdrawal times & expert analysis.`,
-    keywords: [
-      casino.name,
-      `${casino.name} Myanmar`,
-      `${casino.name} review`,
-      `${casino.name} bonus`,
-      "Shwe Casino alternative",
-      `888 Casino vs ${casino.name}`,
-      "Myanmar online casino",
-      "ကာစီနို မြန်မာ"
-    ].join(", "),
     openGraph: {
       title: `${casino.name} Review | Compare with Shwe, 888, 777 Casinos`,
       description: `Expert ${casino.name} review. Rating: ${casino.rating}/5. Compare bonuses & features vs Shwe Casino, 888, 777, Win8. Best for Myanmar players.`,
       type: "article",
+      locale: locale === 'my' ? 'my_MM' : 'en_US',
       url: `${baseUrl}/review/${casino.slug}`,
       images: [
         {
@@ -75,13 +63,19 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     },
     alternates: {
       canonical: `${baseUrl}/review/${casino.slug}`,
+      languages: {
+        'my-MM': `${baseUrl}/review/${casino.slug}`,
+        'en-US': `${baseUrl}/en/review/${casino.slug}`,
+      }
     },
   };
 }
 
-export default function CasinoReviewPage({ params }: PageProps) {
-  const casino = casinosData.find((c) => c.slug === params.slug);
+export default async function CasinoReviewPage({ params }: { params: Promise<{ locale: string; slug: string }> }) {
+  const { locale, slug } = await params;
+  const casino = casinosData.find((c) => c.slug === slug);
   const baseUrl = getBaseUrl();
+  const tCommon = await getTranslations({ locale, namespace: "common" });
 
   if (!casino) {
     notFound();

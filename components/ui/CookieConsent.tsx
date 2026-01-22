@@ -2,9 +2,11 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 
 export default function CookieConsent() {
+  const t = useTranslations("cookieConsent");
   const [showBanner, setShowBanner] = useState(false);
 
   useEffect(() => {
@@ -44,18 +46,17 @@ export default function CookieConsent() {
               <div className="flex-1">
                 <div className="flex items-center gap-3 mb-2">
                   <span className="text-2xl">🍪</span>
-                  <h3 className="text-lg font-bold text-white">Cookie မူဝါဒ</h3>
+                  <h3 className="text-lg font-bold text-white">{t("title")}</h3>
                 </div>
                 <p className="text-gray-300 text-sm mb-2">
-                  ကျွန်ုပ်တို့သည် Cookie များကို အသုံးပြု၍ သုံးစွဲသူ အတွေ့အကြုံ ကောင်းမွန်အောင် 
-                  ပြုလုပ်ပြီး ဝဘ်ဆိုဒ် အသုံးပြုမှု ကို ဆန်းစစ်ပါသည်။
+                  {t("text")}
                 </p>
                 <p className="text-gray-400 text-xs">
-                  Cookie အသုံးပြုမှု အကြောင်း ပိုမို သိရှိလိုပါက၊ 
+                  {t("moreInfo")}{" "}
                   <Link href="/privacy" className="text-gold hover:underline ml-1">
-                    Privacy Policy
+                    {t("privacyPolicy")}
                   </Link>
-                  ကို ကြည့်ရှုပါ။
+                  .
                 </p>
               </div>
               <div className="flex gap-3 flex-shrink-0">
@@ -63,13 +64,13 @@ export default function CookieConsent() {
                   onClick={handleReject}
                   className="px-4 py-2 bg-dark-light hover:bg-dark text-white rounded-lg transition-colors text-sm font-medium"
                 >
-                  ငြင်းဆို
+                  {t("reject")}
                 </button>
                 <button
                   onClick={handleAccept}
                   className="px-6 py-2 bg-gradient-to-r from-gold-dark via-gold to-gold-light text-dark font-bold rounded-lg hover:shadow-lg hover:shadow-gold/50 transition-all text-sm"
                 >
-                  လက်ခံပါ
+                  {t("accept")}
                 </button>
               </div>
             </div>

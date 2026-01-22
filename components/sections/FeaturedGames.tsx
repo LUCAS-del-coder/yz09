@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo } from "react";
+import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 import GameCard from "../ui/GameCard";
 import gamesData from "@/data/games.json";
@@ -13,6 +14,8 @@ const brandLinks = [
 ];
 
 export default function FeaturedGames() {
+  const t = useTranslations("featuredGames");
+  
   // 随机分配游戏，确保不重复，如果超过游戏数量才重复
   const shuffledGames = useMemo(() => {
     // 创建游戏数组的副本
@@ -45,12 +48,11 @@ export default function FeaturedGames() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            <span className="gradient-gold">ဟော့ဂိမ်းများ</span>{" "}
+            <span className="gradient-gold">{t("heading")}</span>{" "}
             <span className="text-white">Hot Games</span>
           </h2>
           <p className="text-gray-400 text-lg max-w-3xl mx-auto">
-            မြန်မာ့အကောင်းဆုံး အွန်လိုင်း ကာစီနို ဂိမ်းများ - PG Soft, Pragmatic Play, 
-            နှင့် အခြား ထိပ်တန်း ဂိမ်းထုတ်လုပ်သူများထံမှ
+            {t("subheading")}
           </p>
         </div>
 

@@ -39,40 +39,38 @@ export default async function WelcomeBonusPage({ params }: { params: Promise<{ l
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "promotions" });
   const tCommon = await getTranslations({ locale, namespace: "common" });
+  const tGames = await getTranslations({ locale, namespace: "games" });
   const randomBrandLink = brandLinks[Math.floor(Math.random() * brandLinks.length)];
 
   return (
     <div className="min-h-screen bg-dark py-12">
       <div className="container mx-auto px-4 max-w-4xl">
         <nav className="flex items-center gap-2 text-sm text-gray-400 mb-6">
-          <Link href="/" className="hover:text-gold">首頁</Link>
+          <Link href="/" className="hover:text-gold">{tCommon("home")}</Link>
           <span>/</span>
-          <Link href="/bonuses" className="hover:text-gold">ဘောနပ်စ်များ</Link>
+          <Link href="/bonuses" className="hover:text-gold">{tCommon("bonuses")}</Link>
           <span>/</span>
-          <span className="text-white">ကြိုဆို ဘောနပ်စ်</span>
+          <span className="text-white">{t("welcomeBonusHeading")}</span>
         </nav>
 
         <h1 className="text-4xl md:text-5xl font-bold mb-6">
-          <span className="gradient-gold">ကြိုဆို ဘောနပ်စ် 100%</span>
+          <span className="gradient-gold">{t("welcomeBonusHeading")}</span>
           <span className="text-white"> | Welcome Bonus</span>
         </h1>
 
         {/* 獎金總覽 */}
         <div className="bg-gradient-to-br from-gold/20 to-gold/10 rounded-xl p-8 border border-gold/30 mb-8 text-center">
           <div className="text-6xl font-bold text-gold mb-4">100%</div>
-          <div className="text-3xl font-bold text-white mb-2">အမြင့်ဆုံး 50,000 MMK</div>
-          <p className="text-gray-300 text-lg">ပထမဆုံး အပ်ငွေ အတွက် နှစ်ဆ ဘောနပ်စ်</p>
+          <div className="text-3xl font-bold text-white mb-2">{t("welcomeBonusMax")}</div>
+          <p className="text-gray-300 text-lg">{t("welcomeBonusSubheading")}</p>
         </div>
 
         {/* 內容區塊 */}
         <div className="space-y-6 mb-8">
           <div className="bg-dark-lighter rounded-xl p-6">
-            <h2 className="text-2xl font-bold text-white mb-4">ဘောနပ်စ် အကြောင်း | About the Bonus</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">{t("aboutWelcomeBonus")} | About the Bonus</h2>
             <p className="text-gray-300 leading-relaxed mb-4">
-              Myanmar Casino Reviews ကြိုဆို ဘောနပ်စ် သည် အကောင့်အသစ် ဖွင့်လှစ်ထားသော 
-              ကစားသမားများ အတွက် အထူး ဘောနပ်စ် ဖြစ်သည်။ သင်သည် ပထမဆုံး အပ်ငွေ 
-              ပြုလုပ်သောအခါ 100% ဘောနပ်စ် ရရှိမည် ဖြစ်ပြီး အမြင့်ဆုံး 50,000 MMK 
-              အထိ ရရှိနိုင်ပါသည်။
+              {t("aboutWelcomeBonusText")}
             </p>
             <p className="text-gray-400 text-sm">
               The welcome bonus is a special offer for new players. When you make your first deposit, 
@@ -81,48 +79,36 @@ export default async function WelcomeBonusPage({ params }: { params: Promise<{ l
           </div>
 
           <div className="bg-dark-lighter rounded-xl p-6">
-            <h2 className="text-2xl font-bold text-white mb-4">လက်ခံရရှိရန် လိုအပ်ချက်များ | Claim Requirements</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">{t("claimRequirements")} | Claim Requirements</h2>
             <ul className="space-y-3 text-gray-300">
-              <li className="flex items-start gap-3">
-                <span className="text-gold text-xl">✓</span>
-                <span>အကောင့် အသစ် ဖွင့်လှစ်ရမည် (Must be a new account)</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-gold text-xl">✓</span>
-                <span>အနည်းဆုံး 1,000 MMK အပ်ငွေ ပြုလုပ်ရမည် (Minimum deposit 1,000 MMK)</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-gold text-xl">✓</span>
-                <span>ဘောနပ်စ် ရယူရန် အကောင့် အတည်ပြုရမည် (Account must be verified)</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-gold text-xl">✓</span>
-                <span>ဘောနပ်စ် ရယူပြီးနောက် 30 ရက်အတွင်း အသုံးပြုရမည် (Must be used within 30 days)</span>
-              </li>
+              {t.raw("claimRequirementsList").map((requirement: string, index: number) => (
+                <li key={index} className="flex items-start gap-3">
+                  <span className="text-gold text-xl">✓</span>
+                  <span>{requirement}</span>
+                </li>
+              ))}
             </ul>
           </div>
 
           <div className="bg-dark-lighter rounded-xl p-6">
-            <h2 className="text-2xl font-bold text-white mb-4">လောင်းကြေး လိုအပ်ချက် | Wagering Requirements</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">{t("wageringRequirements")} | Wagering Requirements</h2>
             <p className="text-gray-300 leading-relaxed mb-4">
-              ဘောနပ်စ် ငွေကို ငွေထုတ်ယူရန် သင်သည် ဘောနပ်စ် ပမာဏကို 20 ဆ 
-              လောင်းကြေး ပြုလုပ်ရမည် ဖြစ်သည်။ ဥပမာ - 10,000 MMK ဘောနပ်စ် 
-              ရရှိပါက 200,000 MMK လောင်းကြေး ပြုလုပ်ရမည်။
+              {t("wageringRequirementsText")}
             </p>
             <div className="bg-dark rounded-lg p-4">
-              <div className="text-sm text-gray-400 mb-2">လောင်းကြေး လိုအပ်ချက်</div>
-              <div className="text-2xl font-bold text-gold">20x</div>
-              <div className="text-xs text-gray-500 mt-1">ဘောနပ်စ် ပမာဏ × 20</div>
+              <div className="text-sm text-gray-400 mb-2">{t("wageringRequirements")}</div>
+              <div className="text-2xl font-bold text-gold">{t("wageringMultiplier")}</div>
+              <div className="text-xs text-gray-500 mt-1">{t("bonusAmountMultiplier")}</div>
             </div>
           </div>
 
           <div className="bg-dark-lighter rounded-xl p-6">
-            <h2 className="text-2xl font-bold text-white mb-4">အသုံးပြုနိုင်သော ဂိမ်းများ | Eligible Games</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">{t("eligibleGames")} | Eligible Games</h2>
             <p className="text-gray-300 leading-relaxed mb-4">
-              ဘောနပ်စ် ငွေကို အောက်ပါ ဂိမ်းများတွင် အသုံးပြုနိုင်ပါသည်။
+              {t("eligibleGamesText")}
             </p>
             <div className="grid md:grid-cols-2 gap-3">
-              {["စလော့ ဂိမ်းများ", "လိုင်ဗ် ကာစီနို", "ငါးဖမ်းဂိမ်းများ", "စားပွဲဂိမ်းများ"].map((game, index) => (
+              {[tGames("slots"), tGames("liveCasino"), tGames("fishing"), tGames("tableGames")].map((game, index) => (
                 <div key={index} className="flex items-center gap-2 text-gray-300">
                   <span className="text-gold">✓</span>
                   <span>{game}</span>
@@ -132,30 +118,28 @@ export default async function WelcomeBonusPage({ params }: { params: Promise<{ l
           </div>
 
           <div className="bg-dark-lighter rounded-xl p-6">
-            <h2 className="text-2xl font-bold text-white mb-4">ဘယ်လို ရယူမလဲ | How to Claim</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">{t("howToClaim")} | How to Claim</h2>
             <ol className="list-decimal list-inside space-y-3 text-gray-300">
-              <li>Myanmar Casino Reviews တွင် အကောင့် အသစ် ဖွင့်လှစ်ပါ (Register new account)</li>
-              <li>အကောင့် အတည်ပြုပါ (Verify your account)</li>
-              <li>ပထမဆုံး အပ်ငွေ ပြုလုပ်ပါ (Make first deposit)</li>
-              <li>ဘောနပ်စ် အလိုအလျောက် ရရှိမည် (Bonus will be credited automatically)</li>
-              <li>ဂိမ်း ကစားပြီး လောင်းကြေး လိုအပ်ချက် ပြည့်မီပါ (Play games and meet wagering requirements)</li>
+              {t.raw("howToClaimSteps").map((step: string, index: number) => (
+                <li key={index}>{step}</li>
+              ))}
             </ol>
           </div>
 
           <div className="bg-dark-lighter rounded-xl p-6">
-            <h2 className="text-2xl font-bold text-white mb-4">အမေးများသော မေးခွန်းများ | FAQ</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">{t("faq")} | FAQ</h2>
             <div className="space-y-4">
               <div>
-                <h3 className="text-lg font-bold text-white mb-2">ဘောနပ်စ် ဘယ်လောက် ကြာမှ ရရှိမလဲ?</h3>
-                <p className="text-gray-300">ဘောနပ်စ် သည် အပ်ငွေ ပြုလုပ်ပြီးနောက် 5 မိနစ်အတွင်း အလိုအလျောက် ရရှိမည် ဖြစ်သည်။</p>
+                <h3 className="text-lg font-bold text-white mb-2">{t("faqWhenReceived")}</h3>
+                <p className="text-gray-300">{t("faqWhenReceivedAnswer")}</p>
               </div>
               <div>
-                <h3 className="text-lg font-bold text-white mb-2">ဘောနပ်စ် ငွေကို ဘယ်လို အသုံးပြုမလဲ?</h3>
-                <p className="text-gray-300">ဘောနပ်စ် ငွေကို စလော့၊ လိုင်ဗ် ကာစီနို စသည့် ဂိမ်းများတွင် အသုံးပြုနိုင်ပါသည်။</p>
+                <h3 className="text-lg font-bold text-white mb-2">{t("faqHowToUse")}</h3>
+                <p className="text-gray-300">{t("faqHowToUseAnswer")}</p>
               </div>
               <div>
-                <h3 className="text-lg font-bold text-white mb-2">လောင်းကြေး လိုအပ်ချက် ပြည့်မီပြီးနောက် ဘယ်လို ငွေထုတ်ယူမလဲ?</h3>
-                <p className="text-gray-300">လောင်းကြေး လိုအပ်ချက် ပြည့်မီပြီးနောက် သင်သည် ဘောနပ်စ် ငွေနှင့် အနိုင်ရရှိသော ငွေကို ငွေထုတ်ယူနိုင်ပါသည်။</p>
+                <h3 className="text-lg font-bold text-white mb-2">{t("faqHowToWithdraw")}</h3>
+                <p className="text-gray-300">{t("faqHowToWithdrawAnswer")}</p>
               </div>
             </div>
           </div>
@@ -164,13 +148,13 @@ export default async function WelcomeBonusPage({ params }: { params: Promise<{ l
         {/* CTA */}
         <div className="bg-gradient-to-br from-dark-lighter to-dark rounded-xl p-8 border border-gold/30 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">
-            ကြိုဆို ဘောနပ်စ် ရယူရန် | Claim Welcome Bonus
+            {t("claimWelcomeBonus")} | Claim Welcome Bonus
           </h2>
           <p className="text-gray-300 mb-6 text-lg">
-            အခုပဲ စာရင်းသွင်းပြီး 100% ဘောနပ်စ် ရယူပါ
+            {t("claimWelcomeBonusText")}
           </p>
           <CTAButton href={randomBrandLink} variant="gold" size="lg">
-            အကောင့်ဖွင့်ရန် | Register Now
+            {tCommon("openAccount")}
           </CTAButton>
         </div>
       </div>

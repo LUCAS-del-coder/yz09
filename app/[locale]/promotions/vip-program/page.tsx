@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { Link } from "@/i18n/routing";
 import CTAButton from "@/components/ui/CTAButton";
+import { getTranslations } from "next-intl/server";
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://example.com';
 
@@ -63,32 +64,33 @@ const vipLevels = [
   }
 ];
 
-export default function VIPProgramPage() {
+export default async function VIPProgramPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "promotions" });
+  const tCommon = await getTranslations({ locale, namespace: "common" });
+  
   const randomBrandLink = brandLinks[Math.floor(Math.random() * brandLinks.length)];
 
   return (
     <div className="min-h-screen bg-dark py-12">
       <div className="container mx-auto px-4 max-w-4xl">
         <nav className="flex items-center gap-2 text-sm text-gray-400 mb-6">
-          <Link href="/" className="hover:text-gold">首頁</Link>
+          <Link href="/" className="hover:text-gold">{tCommon("home")}</Link>
           <span>/</span>
-          <Link href="/bonuses" className="hover:text-gold">ဘောနပ်စ်များ</Link>
+          <Link href="/bonuses" className="hover:text-gold">{tCommon("bonuses")}</Link>
           <span>/</span>
-          <span className="text-white">VIP အစီအစဉ်</span>
+          <span className="text-white">{t("vipProgramHeading")}</span>
         </nav>
 
         <h1 className="text-4xl md:text-5xl font-bold mb-6">
-          <span className="gradient-gold">VIP အစီအစဉ်</span>
+          <span className="gradient-gold">{t("vipProgramHeading")}</span>
           <span className="text-white"> | VIP Program</span>
         </h1>
 
         <div className="bg-dark-lighter rounded-xl p-6 mb-8">
-          <h2 className="text-2xl font-bold text-white mb-4">VIP အစီအစဉ် အကြောင်း | About VIP Program</h2>
+          <h2 className="text-2xl font-bold text-white mb-4">{t("aboutVipProgram")} | About VIP Program</h2>
           <p className="text-gray-300 leading-relaxed mb-4">
-            Myanmar Casino Reviews VIP အစီအစဉ် သည် သစ္စာရှိသော ကစားသမားများ 
-            အတွက် ဒီဇိုင်းထုတ်ထားသော အထူး အစီအစဉ် ဖြစ်သည်။ 5 လွှာ အကောင့် 
-            စနစ် ဖြင့် သင်သည် ပိုမိုမြင့်မားသော ဘောနပ်စ်၊ ပိုမိုမြန်ဆန်သော 
-            ငွေထုတ်ယူမှု၊ နှင့် အထူး ဖောက်သည်ဝန်ဆောင်မှု ရရှိမည် ဖြစ်သည်။
+            {t("aboutVipProgramText")}
           </p>
           <p className="text-gray-400 text-sm">
             The VIP program is designed for loyal players with a 5-tier system offering 
@@ -118,31 +120,31 @@ export default function VIPProgramPage() {
 
         {/* VIP 福利詳情 */}
         <div className="bg-dark-lighter rounded-xl p-6 mb-8">
-          <h2 className="text-2xl font-bold text-white mb-4">VIP အထူး ခံစားခွင့်များ | VIP Exclusive Benefits</h2>
+          <h2 className="text-2xl font-bold text-white mb-4">{t("vipExclusiveBenefits")} | VIP Exclusive Benefits</h2>
           <div className="grid md:grid-cols-2 gap-4">
             <div className="bg-dark rounded-lg p-4">
-              <h4 className="text-gold font-bold mb-2">ပိုမိုမြင့်မားသော ပြန်လည်ပေးအပ်မှု</h4>
-              <p className="text-gray-300 text-sm">VIP အဆင့် မြင့်လာလေ ပြန်လည်ပေးအပ်မှု နှုန်း ပိုမိုမြင့်မားလာလေ</p>
+              <h4 className="text-gold font-bold mb-2">{t("higherRebate")}</h4>
+              <p className="text-gray-300 text-sm">{t("higherRebateText")}</p>
             </div>
             <div className="bg-dark rounded-lg p-4">
-              <h4 className="text-gold font-bold mb-2">ဦးစားပေး ငွေထုတ်ယူမှု</h4>
-              <p className="text-gray-300 text-sm">VIP အကောင့်များသည် ငွေထုတ်ယူမှု အတွက် ဦးစားပေး လုပ်ဆောင်ခြင်း ရရှိမည်</p>
+              <h4 className="text-gold font-bold mb-2">{t("priorityWithdrawal")}</h4>
+              <p className="text-gray-300 text-sm">{t("priorityWithdrawalText")}</p>
             </div>
             <div className="bg-dark rounded-lg p-4">
-              <h4 className="text-gold font-bold mb-2">ပုဂ္ဂိုလ်ရေး ဖောက်သည်ဝန်ဆောင်မှု</h4>
-              <p className="text-gray-300 text-sm">VIP အကောင့်များသည် ပုဂ္ဂိုလ်ရေး ဖောက်သည်ဝန်ဆောင်မှု ရရှိမည်</p>
+              <h4 className="text-gold font-bold mb-2">{t("personalService")}</h4>
+              <p className="text-gray-300 text-sm">{t("personalServiceText")}</p>
             </div>
             <div className="bg-dark rounded-lg p-4">
-              <h4 className="text-gold font-bold mb-2">မွေးနေ့ လက်ဆောင်ငွေ</h4>
-              <p className="text-gray-300 text-sm">VIP အကောင့်များသည် မွေးနေ့တွင် အထူး လက်ဆောင်ငွေ ရရှိမည်</p>
+              <h4 className="text-gold font-bold mb-2">{t("birthdayGift")}</h4>
+              <p className="text-gray-300 text-sm">{t("birthdayGiftText")}</p>
             </div>
           </div>
         </div>
 
         <div className="bg-gradient-to-br from-dark-lighter to-dark rounded-xl p-8 border border-gold/30 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">VIP အစီအစဉ် ပါဝင်ရန် | Join VIP Program</h2>
+          <h2 className="text-3xl font-bold text-white mb-4">{t("joinVipProgram")} | Join VIP Program</h2>
           <CTAButton href={randomBrandLink} variant="gold" size="lg">
-            အကောင့်ဖွင့်ရန် | Register Now
+            {tCommon("openAccount")}
           </CTAButton>
         </div>
       </div>

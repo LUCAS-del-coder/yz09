@@ -1,43 +1,51 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 
 export default function InternalLinksSection() {
+  const t = useTranslations("internalLinks");
+  const tGames = useTranslations("games");
+  const tCommon = useTranslations("common");
+  const tPromotions = useTranslations("promotions");
+  const tBlog = useTranslations("blog");
+  const tGuide = useTranslations("guide");
+  
   const linkCategories = [
     {
-      title: "ဂိမ်းများ | Games",
+      title: `${t("games")} | Games`,
       links: [
-        { href: "/games/slots", label: "စလော့ ဂိမ်းများ | Slot Games" },
-        { href: "/games/live-casino", label: "လိုင်ဗ် ကာစီနို | Live Casino" },
-        { href: "/games/fishing", label: "ငါးဖမ်းဂိမ်းများ | Fishing Games" },
-        { href: "/games/table-games", label: "စားပွဲဂိမ်းများ | Table Games" },
+        { href: "/games/slots", label: `${tGames("slots")} | Slot Games` },
+        { href: "/games/live-casino", label: `${tGames("liveCasino")} | Live Casino` },
+        { href: "/games/fishing", label: `${tGames("fishing")} | Fishing Games` },
+        { href: "/games/table-games", label: `${tGames("tableGames")} | Table Games` },
       ]
     },
     {
-      title: "ဘောနပ်စ်များ | Bonuses",
+      title: `${t("bonuses")} | Bonuses`,
       links: [
-        { href: "/promotions/welcome-bonus", label: "ကြိုဆို ဘောနပ်စ် | Welcome Bonus" },
-        { href: "/promotions/daily-bonus", label: "နေ့စဉ် ဘောနပ်စ် | Daily Bonus" },
-        { href: "/promotions/vip-program", label: "VIP အစီအစဉ် | VIP Program" },
-        { href: "/bonuses", label: "ဘောနပ်စ်အားလုံး | All Bonuses" },
+        { href: "/promotions/welcome-bonus", label: `${tPromotions("welcomeBonusHeading")} | Welcome Bonus` },
+        { href: "/promotions/daily-bonus", label: `${tPromotions("dailyBonusHeading")} | Daily Bonus` },
+        { href: "/promotions/vip-program", label: `${tPromotions("vipProgramHeading")} | VIP Program` },
+        { href: "/bonuses", label: `${tCommon("bonuses")} | All Bonuses` },
       ]
     },
     {
-      title: "လမ်းညွှန် | Guides",
+      title: `${t("guides")} | Guides`,
       links: [
-        { href: "/guide/how-to-play", label: "ကစားနည်း | How to Play" },
-        { href: "/guide/payment-methods", label: "ငွေသွင်း ငွေထုတ် | Payment Methods" },
-        { href: "/guide/responsible-gaming", label: "တာဝန်ယူမှု | Responsible Gaming" },
-        { href: "/guide", label: "လမ်းညွှန်အားလုံး | All Guides" },
+        { href: "/guide/how-to-play", label: `How to Play | How to Play` },
+        { href: "/guide/payment-methods", label: `${tCommon("payment")} | Payment Methods` },
+        { href: "/guide/responsible-gaming", label: `Responsible Gaming | Responsible Gaming` },
+        { href: "/guide", label: `${tCommon("guide")} | All Guides` },
       ]
     },
     {
-      title: "ဘလော့ | Blog",
+      title: `${t("blog")} | Blog`,
       links: [
-        { href: "/blog", label: "ဘလော့ | Blog" },
-        { href: "/blog/top-10-slot-games-2025", label: "အကောင်းဆုံး ဆလော့ 10 မျိုး | Top 10 Slots" },
-        { href: "/blog/how-to-choose-online-casino", label: "ကာစီနို ရွေးချယ်နည်း | Choose Casino" },
-        { href: "/blog/pragmatic-play-complete-guide", label: "Pragmatic Play လမ်းညွှန် | Pragmatic Guide" },
+        { href: "/blog", label: `${tBlog("heading")} | Blog` },
+        { href: "/blog/top-10-slot-games-2025", label: `Top 10 Slots | Top 10 Slots` },
+        { href: "/blog/how-to-choose-online-casino", label: `Choose Casino | Choose Casino` },
+        { href: "/blog/pragmatic-play-complete-guide", label: `Pragmatic Guide | Pragmatic Guide` },
       ]
     }
   ];
@@ -47,11 +55,11 @@ export default function InternalLinksSection() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            <span className="gradient-gold">အသုံးဝင်သော လင့်ခ်များ</span>
+            <span className="gradient-gold">{t("heading")}</span>
             <span className="text-white"> | Useful Links</span>
           </h2>
           <p className="text-gray-400 text-lg max-w-3xl mx-auto">
-            Myanmar Casino Reviews တွင် သင်ရှာဖွေနေသော အကြောင်းအရာ အားလုံး
+            {t("subheading")}
           </p>
         </div>
 
