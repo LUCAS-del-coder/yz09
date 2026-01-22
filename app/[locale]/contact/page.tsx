@@ -1,25 +1,43 @@
 import { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
+import { getBaseUrl } from "@/lib/config";
 
-export const metadata: Metadata = {
-  title: "ဆက်သွယ်ရန် - Contact Us | Myanmar Casino Reviews",
-  description: "Myanmar Casino Reviews နှင့် ဆက်သွယ်ရန်။",
-  robots: {
-    index: false,
-    follow: true,
-  },
-};
+const baseUrl = getBaseUrl();
 
-export default function ContactPage() {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "contact" });
+
+  return {
+    title: t("title"),
+    description: t("description"),
+    robots: {
+      index: false,
+      follow: true,
+    },
+    alternates: {
+      canonical: `${baseUrl}/contact`,
+      languages: {
+        'my-MM': `${baseUrl}/contact`,
+        'en-US': `${baseUrl}/en/contact`,
+      }
+    },
+  };
+}
+
+export default async function ContactPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "contact" });
   return (
     <div className="min-h-screen bg-dark py-12">
       <div className="container mx-auto px-4 max-w-4xl">
         <h1 className="text-4xl font-bold text-white mb-8">
-          <span className="gradient-gold">ဆက်သွယ်ရန်</span>
+          <span className="gradient-gold">{t("heading")}</span>
         </h1>
 
         <div className="bg-dark-lighter rounded-xl p-8 border border-dark-lightest space-y-6 text-gray-300">
           <section>
-            <h2 className="text-2xl font-bold text-white mb-4">အချက်အလက်များ</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">{t("information")}</h2>
             <p className="mb-4">
               Myanmar Casino Reviews နှင့် ဆက်သွယ်လိုပါက၊ 
               ကျေးဇူးပြု၍ အောက်ပါ နည်းလမ်းများကို အသုံးပြုပါ။
@@ -27,7 +45,7 @@ export default function ContactPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-white mb-4">ဝဘ်ဆိုဒ် အကြောင်း</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">{t("aboutWebsite")}</h2>
             <p className="mb-4">
               Myanmar Casino Reviews သည် မြန်မာ့အကောင်းဆုံး အွန်လိုင်း ကာစီနို 
               စုံစမ်းစစ်ဆေးချက်များ နှင့် အချက်အလက်များကို ပြသသော အခမဲ့ 
@@ -40,7 +58,7 @@ export default function ContactPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-white mb-4">ရုံးချုပ်</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">{t("office")}</h2>
             <div className="bg-dark rounded-lg p-6 border border-dark-lightest">
               <p className="mb-2"><strong className="text-white">အမည်:</strong> Myanmar Casino Reviews</p>
               <p className="mb-2"><strong className="text-white">ဘာသာစကား:</strong> မြန်မာ (Burmese)</p>
@@ -49,7 +67,7 @@ export default function ContactPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-white mb-4">အလုပ်လုပ်ချိန်</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">{t("workingHours")}</h2>
             <div className="bg-dark rounded-lg p-6 border border-dark-lightest">
               <p className="mb-2"><strong className="text-white">ဝဘ်ဆိုဒ်:</strong> 24/7 အချိန်မရွေး အသုံးပြုနိုင်ပါသည်</p>
               <p className="mb-2"><strong className="text-white">အကူအညီ:</strong> အီးမေးလ် နှင့် ဆက်သွယ်နိုင်ပါသည်</p>
@@ -57,7 +75,7 @@ export default function ContactPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-white mb-4">အကြံပြုချက်များ</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">{t("suggestions")}</h2>
             <p className="mb-4">
               သင်သည် အောက်ပါ အကြောင်းအရာများနှင့် ပတ်သက်၍ ဆက်သွယ်နိုင်ပါသည်:
             </p>
@@ -71,7 +89,7 @@ export default function ContactPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-white mb-4">သတိပေးချက်</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">{t("warning")}</h2>
             <div className="bg-red-900/20 border border-red-500/50 rounded-lg p-6">
               <p className="text-white mb-2">
                 <strong>⚠️ ဤဝဘ်ဆိုဒ်သည်:</strong>
@@ -85,7 +103,7 @@ export default function ContactPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-white mb-4">ကျေးဇူးတင်လိုက်ပါသည်</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">{t("thankYou")}</h2>
             <p className="mb-4">
               Myanmar Casino Reviews ကို လည်ပတ်ကြည့်ရှုသော အတွက် ကျေးဇူးတင်လိုက်ပါသည်။
             </p>

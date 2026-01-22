@@ -1,21 +1,39 @@
 import { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 import CTAButton from "@/components/ui/CTAButton";
 import FeaturedGames from "@/components/sections/FeaturedGames";
+import { getBaseUrl } from "@/lib/config";
 
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://example.com';
+const baseUrl = getBaseUrl();
 
-export const metadata: Metadata = {
-  title: "ဂိမ်းအမျိုးအစားများ - Myanmar Casino Reviews",
-  description: "မြန်မာ့အကောင်းဆုံး အွန်လိုင်း ကာစီနို ဂိမ်းအမျိုးအစားများ။",
-  alternates: {
-    canonical: `${baseUrl}/games`,
-  },
-  openGraph: {
-    title: "ဂိမ်းအမျိုးအစားများ",
-    description: "မြန်မာ့အကောင်းဆုံး အွန်လိုင်း ကာစီနို ဂိမ်းအမျိုးအစားများ။",
-    url: `${baseUrl}/games`,
-  },
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "gamesPage" });
+
+  return {
+    title: t("title"),
+    description: t("description"),
+    alternates: {
+      canonical: `${baseUrl}/games`,
+      languages: {
+        'my-MM': `${baseUrl}/games`,
+        'en-US': `${baseUrl}/en/games`,
+      }
+    },
+    openGraph: {
+      title: t("title"),
+      description: t("description"),
+      url: `${baseUrl}/games`,
+      locale: locale === 'my' ? 'my_MM' : 'en_US',
+    },
+  };
+}
+
+const brandLinks = [
+  "https://www.yes8.io/m/home?affiliateCode=seom1802",
+  "https://www.ygn9.net/m/home?affiliateCode=seom1902",
+  "https://www.pya777.net/m/home?affiliateCode=seom2002",
+];
 
 const gameCategories = [
   {
@@ -62,13 +80,11 @@ const gameCategories = [
   },
 ];
 
-const brandLinks = [
-  "https://www.yes8.io/m/home?affiliateCode=seom1802",
-  "https://www.ygn9.net/m/home?affiliateCode=seom1902",
-  "https://www.pya777.net/m/home?affiliateCode=seom2002",
-];
-
-export default function GamesPage() {
+export default async function GamesPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "gamesPage" });
+  const tCommon = await getTranslations({ locale, namespace: "common" });
+  
   const randomBrandLink = brandLinks[Math.floor(Math.random() * brandLinks.length)];
 
   return (
@@ -76,11 +92,10 @@ export default function GamesPage() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="gradient-gold">ဂိမ်း</span>{" "}
-            <span className="text-white">အမျိုးအစားများ</span>
+            <span className="gradient-gold">{t("heading")}</span>
           </h1>
           <p className="text-gray-400 text-lg max-w-3xl mx-auto">
-            မြန်မာ့အကောင်းဆုံး အွန်လိုင်း ကာစီနို ဂိမ်းအမျိုးအစားများ
+            {t("subheading")}
           </p>
         </div>
 
@@ -112,7 +127,7 @@ export default function GamesPage() {
                 size="md"
                 className="w-full"
               >
-                ဂိမ်း ကစားရန်
+                {t("playGame")}
               </CTAButton>
             </div>
           ))}
@@ -120,13 +135,13 @@ export default function GamesPage() {
 
         <div className="bg-gradient-to-br from-dark-lighter to-dark rounded-xl p-8 border border-gold/30 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">
-            ဂိမ်းများကို အခုပဲ စတင် ကစားပါ
+            {t("startPlaying")}
           </h2>
           <p className="text-gray-300 mb-6 text-lg">
-            ဘောနပ်စ် ရယူပြီး ဂိမ်းများကို စတင် ကစားပါ
+            {t("startPlayingDescription")}
           </p>
           <CTAButton href={randomBrandLink} variant="gold" size="lg">
-            အကောင့်ဖွင့်ရန်
+            {tCommon("openAccount")}
           </CTAButton>
         </div>
       </div>

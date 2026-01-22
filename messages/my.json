@@ -1,15 +1,182 @@
 {
   "common": {
-    "siteName": "Myanmar Casino Reviews",
     "home": "ပင်မစာမျက်နှာ",
-    "reviews": "သုံးသပ်ချက်များ",
-    "games": "ဂိမ်းများ",
+    "compare": "ကာစီနို နှိုင်းယှဉ်ချက်",
     "bonuses": "ဘောနပ်စ်များ",
+    "games": "ဂိမ်းများ",
+    "payment": "ငွေလွှဲနည်းလမ်းများ",
     "guide": "လမ်းညွှန်",
-    "contact": "ဆက်သွယ်ရန်"
+    "playNow": "ကစားရန်",
+    "register": "မှတ်ပုံတင်ရန်",
+    "viewAll": "အားလုံးကို ကြည့်ရှုရန်",
+    "search": "ရှာဖွေရန်",
+    "language": "ဘာသာစကား",
+    "myanmar": "မြန်မာ",
+    "english": "အင်္ဂလိပ်",
+    "notFound": "စာမျက်နှာ မတွေ့ရှိပါ",
+    "notFoundDescription": "သင်ရှာဖွေနေသော စာမျက်နှာကို မတွေ့ရှိပါ။",
+    "backToHome": "ပင်မစာမျက်နှာသို့ ပြန်သွားရန်",
+    "openAccount": "အကောင့်ဖွင့်ရန်",
+    "about": "အကြောင်း",
+    "contact": "ဆက်သွယ်ရန်",
+    "privacy": "ကိုယ်ရေးလုံခြုံမှု မူဝါဒ",
+    "terms": "ဝန်ဆောင်မှု စည်းမျဉ်းများ"
   },
-  "metadata": {
+  "home": {
     "title": "၂၀၂၅ မြန်မာ့အကောင်းဆုံး Online Casino များ | Myanmar Casino Reviews",
-    "description": "မြန်မာ့အကောင်းဆုံး အွန်လိုင်း ကာစီနို စုံစမ်းစစ်ဆေးချက်များ - Shwe Casino (ရွှေ), 888, 777, Win8, 999, PGLucky88, FaFaFa အကြောင်း ကျွမ်းကျင်သူများ၏ အကဲဖြတ်ချက်များ၊ ဘောနပ်စ်များနှင့် လမ်းညွှန်များ"
+    "description": "မြန်မာနိုင်ငံအတွက် နံပါတ် ၁ ကာစီနို သုံးသပ်ချက် ဝဘ်ဆိုဒ် - Shwe Casino, 888 Casino, 777 Casino, Win8, 999 Casino, PGLucky88 နှင့် FaFaFa ကို နှိုင်းယှဉ်ပါ။ မြန်မာ ကစားသမားများအတွက် ကျွမ်းကျင်သူ သုံးသပ်ချက်များ၊ ဘောနပ်စ်များနှင့် အဆင့်သတ်မှတ်ချက်များ။",
+    "hotGames": "ဟော့ဂိမ်းများ",
+    "featuredCasinos": "ထင်ရှားသော ကာစီနိုများ",
+    "latestBonuses": "နောက်ဆုံး ဘောနပ်စ်များ"
+  },
+  "games": {
+    "title": "အွန်လိုင်း ကာစီနို ဂိမ်းများ",
+    "slots": "စလော့ဂိမ်းများ",
+    "liveCasino": "လိုက်ကာစီနို",
+    "fishing": "ငါးဖမ်းဂိမ်းများ",
+    "tableGames": "စားပွဲဂိမ်းများ",
+    "viewAllGames": "ဂိမ်းအားလုံးကို ကြည့်ရှုရန် | View All Games",
+    "playSlots": "စလော့ဂိမ်းများကို အခုပဲ စတင် ကစားပါ",
+    "startPlaying": "စလော့ ဂိမ်းများကို အခုပဲ စတင် ကစားပါ",
+    "getBonus": "ဘောနပ်စ် ရယူပြီး စလော့ ဂိမ်းများကို စတင် ကစားပါ",
+    "slotsTitle": "စလော့ဂိမ်းများ | 500+ Slot Games Myanmar | Myanmar Casino Reviews",
+    "slotsDescription": "Myanmar Casino Reviews တွင် 500+ ဆလော့ ဂိမ်းများ ကစားနိုင်ပါသည်။ Pragmatic Play, PG Soft, BGaming ၏ အကောင်းဆုံး ဂိမ်းများ။ အမြင့်ဆုံး RTP, အခမဲ့ စမ်းသပ်ခြင်း, ငွေစစ် ကစားခြင်း ရရှိနိုင်ပါသည်။ Play 500+ slot games - Top providers, Free play available, Real money betting.",
+    "slotsBreadcrumbHome": "ပင်မစာမျက်နှာ",
+    "slotsBreadcrumbGames": "ဂိမ်းများ",
+    "slotsBreadcrumbSlots": "စလော့ဂိမ်းများ",
+    "slotsHeading": "စလော့ဂိမ်းများ",
+    "slotsSubheading": "Myanmar Casino Reviews တွင် 500+ ဆလော့ ဂိမ်းများ ကစားနိုင်ပါသည်။ Pragmatic Play, PG Soft, BGaming စသည့် ထိပ်တန်း ဂိမ်းထုတ်လုပ်သူများ၏ အကောင်းဆုံး ဂိမ်းများ။",
+    "slotsAboutTitle": "စလော့ ဂိမ်းများ အကြောင်း | About Slot Games",
+    "slotsAboutDescription": "စလော့ဂိမ်းများသည် အလွန်ရေပန်းစားသော ကာစီနို ဂိမ်းများ ဖြစ်သည်။ ၎င်းတို့တွင် အမျိုးမျိုးသော အကြောင်းအရာများ၊ ဘောနပ်စ် အင်္ဂါရပ်များနှင့် မြင့်မားသော RTP နှုန်းများ ပါဝင်သည်။",
+    "slotsCTA": "စလော့ ဂိမ်းများကို အခုပဲ စတင် ကစားပါ",
+    "slotsCTADescription": "ဘောနပ်စ် ရယူပြီး စလော့ ဂိမ်းများကို စတင် ကစားပါ",
+    "liveCasinoTitle": "လိုင်ဗ် ကာစီနို | Live Casino Myanmar | Myanmar Casino Reviews",
+    "liveCasinoDescription": "လက်တွေ့ ကာစီနို အတွေ့အကြုံကို ရယူပါ။ ပရော်ဖက်ရှင်နယ် ဒိုင်လာ၊ HD လိုင်ဗ်၊ 24/7 လည်ပတ်မှု။ ဘာကရာ၊ ရူလက်တ်၊ ဒရာဂွန် တိုကာ စသည့် ရွေးချယ်စရာ များစွာ။",
+    "liveCasinoHeading": "လိုင်ဗ် ကာစီနို",
+    "liveCasinoSubheading": "လက်တွေ့ ကာစီနို အတွေ့အကြုံကို ရယူပါ။ ပရော်ဖက်ရှင်နယ် ဒိုင်လာ၊ HD လိုင်ဗ်၊ 24/7 လည်ပတ်မှု။",
+    "fishingTitle": "ငါးဖမ်းဂိမ်းများ | Fishing Games Myanmar | Myanmar Casino Reviews",
+    "fishingDescription": "စိတ်လှုပ်ရှားဖွယ် ငါးဖမ်းဂိမ်း အတွေ့အကြုံ။ မျိုးကွဲများစွာ၊ ကြွယ်ဝသော ဆုလာဘ်များ၊ ရိုးရှင်းသော ကစားနည်း။ Myanmar Casino Reviews တွင် အခုပဲ ငါးဖမ်းခရီးကို စတင်ပါ။",
+    "fishingHeading": "ငါးဖမ်းဂိမ်းများ",
+    "fishingSubheading": "စိတ်လှုပ်ရှားဖွယ် ငါးဖမ်းဂိမ်း အတွေ့အကြုံ။ မျိုးကွဲများစွာ၊ ကြွယ်ဝသော ဆုလာဘ်များ၊ ရိုးရှင်းသော ကစားနည်း။",
+    "tableGamesTitle": "စားပွဲဂိမ်းများ | Table Games Myanmar | Myanmar Casino Reviews",
+    "tableGamesDescription": "ဂန္ထဝင် စားပွဲဂိမ်းများ အွန်လိုင်း ကစားပါ။ ပိုကာ၊ 21 ပွိုင့်၊ ရူလက်တ်၊ ဆိုင်ဘော စသည့် ဂိမ်းများ။ စည်းမျဉ်းများ သင်ယူပါ၊ နည်းဗျူဟာ ကျွမ်းကျင်ပါ။",
+    "tableGamesHeading": "စားပွဲဂိမ်းများ",
+    "tableGamesSubheading": "ဂန္ထဝင် စားပွဲဂိမ်းများ အွန်လိုင်း ကစားပါ။ ပိုကာ၊ 21 ပွိုင့်၊ ရူလက်တ်၊ ဆိုင်ဘော စသည့် ဂိမ်းများ။"
+  },
+  "gamesPage": {
+    "title": "ဂိမ်းအမျိုးအစားများ - Myanmar Casino Reviews",
+    "description": "မြန်မာ့အကောင်းဆုံး အွန်လိုင်း ကာစီနို ဂိမ်းအမျိုးအစားများ။",
+    "heading": "ဂိမ်း အမျိုးအစားများ",
+    "subheading": "မြန်မာ့အကောင်းဆုံး အွန်လိုင်း ကာစီနို ဂိမ်းအမျိုးအစားများ",
+    "startPlaying": "ဂိမ်းများကို အခုပဲ စတင် ကစားပါ",
+    "startPlayingDescription": "ဘောနပ်စ် ရယူပြီး ဂိမ်းများကို စတင် ကစားပါ",
+    "playGame": "ဂိမ်း ကစားရန်"
+  },
+  "bonuses": {
+    "title": "ဘောနပ်စ် နှင့် ပရိုမိုးရှင်းများ - Myanmar Casino Reviews",
+    "description": "မြန်မာ့အကောင်းဆုံး အွန်လိုင်း ကာစီနို ဘောနပ်စ်များ နှင့် ပရိုမိုးရှင်းများ။",
+    "heading": "ဘောနပ်စ် နှင့် ပရိုမိုးရှင်းများ",
+    "subheading": "အထူးဘောနပ်စ်များ နှင့် ပရိုမိုးရှင်းများကို ရယူပါ",
+    "howToUse": "ဘောနပ်စ် အသုံးပြုနည်း",
+    "howToUseDescription": "ဘောနပ်စ်များသည် အကောင့်ဖွင့်လှစ်ပြီး ငွေဖြည့်သွင်းမှုအတွက် အထူးပရိုမိုးရှင်းများ ဖြစ်သည်။",
+    "welcomeBonus": "အကောင့်ဖွင့်လှစ်ပြီး ပထမဆုံးအကြိမ် ငွေဖြည့်သွင်းမှုအတွက် Welcome Bonus",
+    "reloadBonus": "ပုံမှန် ငွေဖြည့်သွင်းမှုအတွက် Reload Bonus",
+    "freeSpins": "အထူးအစီအစဉ်များအတွက် Free Spins",
+    "vipBonus": "VIP အစီအစဉ်များအတွက် အထူးဘောနပ်စ်များ"
+  },
+  "compare": {
+    "title": "Compare Myanmar Casinos | Shwe vs 888 vs 777 vs Win8 vs 999",
+    "description": "Side-by-side comparison of Myanmar's top casinos: Shwe Casino, 888 Casino, 777 Casino, Win8, 999 Casino, PGLucky88, FaFaFa. Compare bonuses, games, payouts & ratings.",
+    "heading": "ကာစီနိုများ နှိုင်းယှဉ်ချက်",
+    "subheading": "မြန်မာ့ထိပ်တန်း အွန်လိုင်း ကာစီနိုများ နှိုင်းယှဉ်ချက်: Shwe Casino, 888 Casino, 777 Casino, Win8, 999 Casino, PGLucky88 နှင့် FaFaFa Casino။ အဆင့်သတ်မှတ်ချက်များ၊ ဘောနပ်စ်များ၊ ဂိမ်းများ၊ ငွေထုတ်ယူမှုများနှင့် အင်္ဂါရပ်များကို နှိုင်းယှဉ်ပါ။",
+    "howToChoose": "သင့်အတွက် အကောင်းဆုံး ကာစီနို ရွေးချယ်နည်း",
+    "considerBonuses": "🎁 ဘောနပ်စ်များကို ထည့်သွင်းစဉ်းစားပါ",
+    "considerBonusesText": "Welcome bonus, reload bonus နှင့် VIP အစီအစဉ်များကို နှိုင်းယှဉ်ပါ။ Win8 သည် အမြင့်ဆုံး welcome bonus (200%) ကို ပပ်ပြီး 888 Casino တွင် အကောင်းဆုံး ဆက်လက်ပရိုမိုးရှင်းများ ရှိသည်။",
+    "checkWithdrawal": "⚡ ငွေထုတ်ယူမှု အမြန်နှုန်းကို စစ်ဆေးပါ",
+    "checkWithdrawalText": "Shwe Casino, 888 Casino နှင့် Win8 အပါအဝင် ထိပ်တန်း ကာစီနိုအားလုံးသည် 1 နာရီအတွင်း ငွေထုတ်ယူမှု ပေးအပ်သည်။",
+    "gameSelection": "🎮 ဂိမ်း ရွေးချယ်မှု",
+    "gameSelectionText": "999 Casino တွင် အများဆုံး ဂိမ်းများ (1000+) ရှိပြီး PGLucky88 သည် PG Soft ဂိမ်းများတွင် အထူးပြုထားသည်။",
+    "paymentMethods": "💳 ငွေပေးချေမှု နည်းလမ်းများ",
+    "paymentMethodsText": "ထိပ်တန်း ကာစီနိုအားလုံးသည် KBZ Pay နှင့် Wave Money ကို ထောက်ပံ့ထားပြီး မြန်မာ ကစားသမားများအတွက် ငွေဖြည့်သွင်းမှု လျင်မြန်စွာ ပြုလုပ်နိုင်သည်။"
+  },
+  "payment": {
+    "title": "ငွေလွှဲနည်းလမ်းများ - Myanmar Casino Reviews",
+    "description": "မြန်မာ့အကောင်းဆုံး အွန်လိုင်း ကာစီနို ငွေလွှဲနည်းလမ်းများ။",
+    "heading": "ငွေလွှဲနည်းလမ်းများ",
+    "subheading": "မြန်မာ့အကောင်းဆုံး အွန်လိုင်း ကာစီနို ငွေလွှဲနည်းလမ်းများ",
+    "withdrawal": "ငွေထုတ်ယူမှု",
+    "withdrawalDescription": "ငွေထုတ်ယူမှုသည် 1 နာရီအတွင်း ပြီးမြောက်သည်။",
+    "maxWithdrawal": "အများဆုံး ထုတ်ယူမှု: တစ်ရက်လျှင် 10,000,000 MMK",
+    "withdrawalTime": "ငွေထုတ်ယူမှု အချိန်: Within 1 hour",
+    "noTax": "အခွန်မယူပါ",
+    "startDepositing": "ငွေဖြည့်သွင်းပြီး ဂိမ်း ကစားရန် အခုပဲ စတင်ပါ"
+  },
+  "guide": {
+    "title": "အစပြုသူများအတွက် လမ်းညွှန် - Myanmar Casino Reviews",
+    "description": "အွန်လိုင်း ကာစီနို အစပြုသူများအတွက် လမ်းညွှန်။",
+    "heading": "အစပြုသူများအတွက် လမ်းညွှန်",
+    "subheading": "အွန်လိုင်း ကာစီနို အစပြုသူများအတွက် အပြည့်အစုံ လမ်းညွှန်",
+    "tips": "အကြံပြုချက်များ",
+    "faq": "မေးခွန်းများ",
+    "readyToStart": "အခုပဲ စတင် ကစားရန် အဆင်သင့် ဖြစ်ပါပြီ",
+    "readyToStartDescription": "အကောင့်ဖွင့်လှစ်ပြီး ဘောနပ်စ် ရယူကာ ဂိမ်း ကစားရန် စတင်ပါ"
+  },
+  "contact": {
+    "title": "ဆက်သွယ်ရန် - Contact Us | Myanmar Casino Reviews",
+    "description": "Myanmar Casino Reviews နှင့် ဆက်သွယ်ရန်။",
+    "heading": "ဆက်သွယ်ရန်",
+    "information": "အချက်အလက်များ",
+    "aboutWebsite": "ဝဘ်ဆိုဒ် အကြောင်း",
+    "office": "ရုံးချုပ်",
+    "workingHours": "အလုပ်လုပ်ချိန်",
+    "suggestions": "အကြံပြုချက်များ",
+    "warning": "သတိပေးချက်",
+    "thankYou": "ကျေးဇူးတင်လိုက်ပါသည်"
+  },
+  "privacy": {
+    "title": "ကိုယ်ရေးလုံခြုံမှု - Privacy Policy | Myanmar Casino Reviews",
+    "description": "Myanmar Casino Reviews ကိုယ်ရေးလုံခြုံမှု မူဝါဒ။",
+    "heading": "ကိုယ်ရေးလုံခြုံမှု မူဝါဒ",
+    "lastUpdated": "နောက်ဆုံးအပ်ဒိတ်"
+  },
+  "terms": {
+    "title": "အသုံးပြုရန် စည်းမျဉ်းများ - Terms of Service | Myanmar Casino Reviews",
+    "description": "Myanmar Casino Reviews အသုံးပြုရန် စည်းမျဉ်းများ။",
+    "heading": "အသုံးပြုရန် စည်းမျဉ်းများ",
+    "lastUpdated": "နောက်ဆုံးအပ်ဒိတ်"
+  },
+  "responsibleGaming": {
+    "title": "တာဝန်ယူမှုရှိသော ဂိမ်းကစားခြင်း - Responsible Gaming | Myanmar Casino Reviews",
+    "description": "တာဝန်ယူမှုရှိသော ဂိမ်းကစားခြင်း လမ်းညွှန် နှင့် အကူအညီ။",
+    "heading": "တာဝန်ယူမှုရှိသော ဂိမ်းကစားခြင်း",
+    "warning": "သတိပေးချက်",
+    "warningText": "ဂိမ်းကစားခြင်းသည် စွဲလမ်းနိုင်ပြီး ပျော်ရွှင်မှု အတွက် သာရှိရမည်။ ငွေကြေး ပြဿနာများ၊ စိတ်ပိုင်းဆိုင်ရာ ထိခိုက်မှုများ သို့မဟုတ် မိသားစု ပြဿနာများ ဖြစ်ပေါ်ပါက ဂိမ်းကစားခြင်းကို ရပ်တန့်ရန် လိုအပ်ပါသည်။"
+  },
+  "review": {
+    "topCasinosTitle": "မြန်မာ့ အကောင်းဆုံး ကာစီနို နှိုင်းယှဉ်ချက် - Myanmar Casino Reviews",
+    "topCasinosDescription": "မြန်မာ့အကောင်းဆုံး အွန်လိုင်း ကာစီနို များကို နှိုင်းယှဉ်ချက်။ ဘောနပ်စ်၊ ဂိမ်းများ၊ ငွေလွှဲနည်းလမ်းများ။",
+    "topCasinosHeading": "မြန်မာ့ အကောင်းဆုံး ကာစီနို နှိုင်းယှဉ်ချက်",
+    "topCasinosSubheading": "အကောင်းဆုံး အွန်လိုင်း ကာစီနို များကို အဆင့်သတ်မှတ်ချက်၊ ဘောနပ်စ်၊ ဂိမ်းများ၊ နှင့် ငွေလွှဲနည်းလမ်းများဖြင့် နှိုင်းယှဉ်ကြည့်ပါ။"
+  },
+  "blog": {
+    "title": "ဘလော့ | Blog - Myanmar Casino Reviews",
+    "description": "အွန်လိုင်း ကာစီနို သတင်းများ၊ ဂိမ်း သုံးသပ်ချက်များ၊ နည်းဗျူဟာ လမ်းညွှန်များ နှင့် အခြား အသုံးဝင်သော အကြောင်းအရာများ။",
+    "heading": "ဘလော့",
+    "subheading": "အွန်လိုင်း ကာစီနို သတင်းများ၊ ဂိမ်း သုံးသပ်ချက်များ၊ နည်းဗျူဟာ လမ်းညွှန်များ"
+  },
+  "promotions": {
+    "welcomeBonusTitle": "ကြိုဆို ဘောနပ်စ် 100% | Welcome Bonus အမြင့်ဆုံး 50,000 MMK | Myanmar Casino Reviews",
+    "welcomeBonusDescription": "Myanmar Casino Reviews ကြိုဆို ဘောနပ်စ် - ပထမဆုံး အပ်ငွေ 100% အမြင့်ဆုံး 50,000 MMK။ အလွယ်တကူ ရယူနိုင်၊ မြန်ဆန်သော အတည်ပြုချက်၊ နည်းသော လောင်းကြေး လိုအပ်ချက်များ။ အခုပဲ စာရင်းသွင်းပြီး ကြီးမားသော ဘောနပ်စ် ရယူပါ။",
+    "welcomeBonusHeading": "ကြိုဆို ဘောနပ်စ် 100%"
+  },
+  "guideHowToPlay": {
+    "title": "အွန်လိုင်း ကာစီနို ကစားနည်း - အစပြုသူများ အတွက် လမ်းညွှန် | How to Play Guide | Myanmar Casino Reviews",
+    "description": "Myanmar Casino Reviews တွင် အွန်လိုင်း ကာစီနို ဘယ်လို ကစားရမလဲ သိရှိလိုပါသလား။ အကောင့်ဖွင့်ခြင်း၊ ငွေသွင်းခြင်း၊ ဂိမ်းရွေးခြင်း၊ ငွေထုတ်ခြင်း အဆင့်ဆင့် မြန်မာဘာသာဖြင့် ရှင်းပြထားပါသည်။",
+    "heading": "အွန်လိုင်း ကာစီနို ကစားနည်း"
+  },
+  "notFound": {
+    "title": "စာမျက်နှာ မတွေ့ရှိပါ",
+    "description": "သင်ရှာဖွေနေသော စာမျက်နှာကို မတွေ့ရှိပါ။",
+    "backToHome": "ပင်မစာမျက်နှာသို့ ပြန်သွားရန်"
   }
 }

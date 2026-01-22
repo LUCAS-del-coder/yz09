@@ -1,40 +1,47 @@
 import { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/routing";
 import Image from "next/image";
 import blogPostsData from "@/data/blog-posts.json";
+import { getBaseUrl } from "@/lib/config";
 
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://example.com';
+const baseUrl = getBaseUrl();
 
-export const metadata: Metadata = {
-  title: "ဘလော့ | Blog - Myanmar Casino Reviews",
-  description: "အွန်လိုင်း ကာစီနို သတင်းများ၊ ဂိမ်း သုံးသပ်ချက်များ၊ နည်းဗျူဟာ လမ်းညွှန်များ နှင့် အခြား အသုံးဝင်သော အကြောင်းအရာများ။ Online casino news, game reviews, strategy guides and more useful content.",
-  keywords: [
-    "ကာစီနို ဘလော့",
-    "အွန်လိုင်း ကာစီနို သတင်းများ",
-    "ဂိမ်း သုံးသပ်ချက်",
-    "casino blog Myanmar",
-    "online casino news"
-  ].join(", "),
-  openGraph: {
-    title: "ဘလော့ | Blog - Myanmar Casino Reviews",
-    locale: 'my_MM',
-    url: `${baseUrl}/blog`,
-  },
-  alternates: {
-    canonical: `${baseUrl}/blog`,
-  }
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "blog" });
 
-export default function BlogPage() {
+  return {
+    title: t("title"),
+    description: t("description"),
+    openGraph: {
+      title: t("title"),
+      description: t("description"),
+      locale: locale === 'my' ? 'my_MM' : 'en_US',
+      url: `${baseUrl}/blog`,
+    },
+    alternates: {
+      canonical: `${baseUrl}/blog`,
+      languages: {
+        'my-MM': `${baseUrl}/blog`,
+        'en-US': `${baseUrl}/en/blog`,
+      }
+    }
+  };
+}
+
+export default async function BlogPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "blog" });
   return (
     <div className="min-h-screen bg-dark py-12">
       <div className="container mx-auto px-4 max-w-6xl">
         <h1 className="text-4xl md:text-5xl font-bold mb-6">
-          <span className="gradient-gold">ဘလော့</span>
+          <span className="gradient-gold">{t("heading")}</span>
           <span className="text-white"> | Blog</span>
         </h1>
         <p className="text-gray-400 text-lg mb-8">
-          အွန်လိုင်း ကာစီနို သတင်းများ၊ ဂိမ်း သုံးသပ်ချက်များ၊ နည်းဗျူဟာ လမ်းညွှန်များ
+          {t("subheading")}
         </p>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">

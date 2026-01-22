@@ -1,43 +1,46 @@
 import { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 import ComparisonTable from "@/components/ui/ComparisonTable";
 import casinosData from "@/data/casinos.json";
+import { getBaseUrl } from "@/lib/config";
 
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://example.com';
+const baseUrl = getBaseUrl();
 
-export const metadata: Metadata = {
-  title: "Compare Myanmar Casinos | Shwe vs 888 vs 777 vs Win8 vs 999",
-  description: "Side-by-side comparison of Myanmar's top casinos: Shwe Casino, 888 Casino, 777 Casino, Win8, 999 Casino, PGLucky88, FaFaFa. Compare bonuses, games, payouts & ratings.",
-  keywords: [
-    "Shwe Casino vs 888 Casino",
-    "777 Casino vs Win8",
-    "Myanmar casino comparison",
-    "best casino Myanmar 2025",
-    "ရွှေ vs ၈၈၈ ကာစီနို"
-  ].join(", "),
-  alternates: {
-    canonical: `${baseUrl}/compare`,
-  },
-  openGraph: {
-    title: "Compare Myanmar Casinos | Shwe vs 888 vs 777",
-    description: "Compare bonuses, games, payouts & ratings of Myanmar's top casinos",
-    url: `${baseUrl}/compare`,
-  },
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "compare" });
 
-export default function ComparePage() {
+  return {
+    title: t("title"),
+    description: t("description"),
+    alternates: {
+      canonical: `${baseUrl}/compare`,
+      languages: {
+        'my-MM': `${baseUrl}/compare`,
+        'en-US': `${baseUrl}/en/compare`,
+      }
+    },
+    openGraph: {
+      title: t("title"),
+      description: t("description"),
+      url: `${baseUrl}/compare`,
+      locale: locale === 'my' ? 'my_MM' : 'en_US',
+    },
+  };
+}
+
+export default async function ComparePage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "compare" });
   return (
     <div className="min-h-screen bg-background-light py-12">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold mb-4 text-dark">
-            <span className="gradient-purple">Compare Myanmar Casinos</span>
+            <span className="gradient-purple">{t("heading")}</span>
           </h1>
           <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-            Side-by-side comparison of Myanmar's top online casinos:{" "}
-            <strong>Shwe Casino</strong>, <strong>888 Casino</strong>,{" "}
-            <strong>777 Casino</strong>, <strong>Win8</strong>,{" "}
-            <strong>999 Casino</strong>, <strong>PGLucky88</strong> and{" "}
-            <strong>FaFaFa Casino</strong>. Compare ratings, bonuses, games, payouts and features.
+            {t("subheading")}
           </p>
         </div>
 
@@ -45,36 +48,31 @@ export default function ComparePage() {
 
         <div className="mt-12 bg-white rounded-xl p-8 shadow-lg">
           <h2 className="text-2xl font-bold text-dark mb-4">
-            How to Choose the Best Casino for You
+            {t("howToChoose")}
           </h2>
           <div className="grid md:grid-cols-2 gap-6 text-gray-600">
             <div>
-              <h3 className="font-semibold text-dark mb-2">🎁 Consider Bonuses</h3>
+              <h3 className="font-semibold text-dark mb-2">{t("considerBonuses")}</h3>
               <p>
-                Compare welcome bonuses, reload bonuses, and VIP programs. 
-                <strong>Win8</strong> offers the highest welcome bonus (200%), while 
-                <strong>888 Casino</strong> has the best ongoing promotions.
+                {t("considerBonusesText")}
               </p>
             </div>
             <div>
-              <h3 className="font-semibold text-dark mb-2">⚡ Check Withdrawal Speed</h3>
+              <h3 className="font-semibold text-dark mb-2">{t("checkWithdrawal")}</h3>
               <p>
-                All top casinos including <strong>Shwe Casino</strong>, <strong>888 Casino</strong>, 
-                and <strong>Win8</strong> offer withdrawals within 1 hour.
+                {t("checkWithdrawalText")}
               </p>
             </div>
             <div>
-              <h3 className="font-semibold text-dark mb-2">🎮 Game Selection</h3>
+              <h3 className="font-semibold text-dark mb-2">{t("gameSelection")}</h3>
               <p>
-                <strong>999 Casino</strong> has the most games (1000+), while 
-                <strong>PGLucky88</strong> specializes in PG Soft games.
+                {t("gameSelectionText")}
               </p>
             </div>
             <div>
-              <h3 className="font-semibold text-dark mb-2">💳 Payment Methods</h3>
+              <h3 className="font-semibold text-dark mb-2">{t("paymentMethods")}</h3>
               <p>
-                All top casinos support <strong>KBZ Pay</strong> and <strong>Wave Money</strong>, 
-                making deposits quick and easy for Myanmar players.
+                {t("paymentMethodsText")}
               </p>
             </div>
           </div>

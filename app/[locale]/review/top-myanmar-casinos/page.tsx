@@ -1,34 +1,46 @@
 import { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 import ComparisonTable from "@/components/ui/ComparisonTable";
 import casinosData from "@/data/casinos.json";
+import { getBaseUrl } from "@/lib/config";
 
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://example.com';
+const baseUrl = getBaseUrl();
 
-export const metadata: Metadata = {
-  title: "မြန်မာ့ အကောင်းဆုံး ကာစီနို နှိုင်းယှဉ်ချက် - Myanmar Casino Reviews",
-  description: "မြန်မာ့အကောင်းဆုံး အွန်လိုင်း ကာစီနို များကို နှိုင်းယှဉ်ချက်။ ဘောနပ်စ်၊ ဂိမ်းများ၊ ငွေလွှဲနည်းလမ်းများ။",
-  alternates: {
-    canonical: `${baseUrl}/review/top-myanmar-casinos`,
-  },
-  openGraph: {
-    title: "မြန်မာ့ အကောင်းဆုံး ကာစီနို နှိုင်းယှဉ်ချက်",
-    description: "မြန်မာ့အကောင်းဆုံး အွန်လိုင်း ကာစီနို များကို နှိုင်းယှဉ်ချက်။",
-    url: `${baseUrl}/review/top-myanmar-casinos`,
-  },
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "review" });
 
-export default function ComparisonPage() {
+  return {
+    title: t("topCasinosTitle"),
+    description: t("topCasinosDescription"),
+    alternates: {
+      canonical: `${baseUrl}/review/top-myanmar-casinos`,
+      languages: {
+        'my-MM': `${baseUrl}/review/top-myanmar-casinos`,
+        'en-US': `${baseUrl}/en/review/top-myanmar-casinos`,
+      }
+    },
+    openGraph: {
+      title: t("topCasinosTitle"),
+      description: t("topCasinosDescription"),
+      url: `${baseUrl}/review/top-myanmar-casinos`,
+      locale: locale === 'my' ? 'my_MM' : 'en_US',
+    },
+  };
+}
+
+export default async function ComparisonPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "review" });
   return (
     <div className="min-h-screen bg-dark py-12">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="gradient-gold">မြန်မာ့ အကောင်းဆုံး</span>{" "}
-            <span className="text-white">ကာစီနို နှိုင်းယှဉ်ချက်</span>
+            <span className="gradient-gold">{t("topCasinosHeading")}</span>
           </h1>
           <p className="text-gray-400 text-lg max-w-3xl mx-auto">
-            အကောင်းဆုံး အွန်လိုင်း ကာစီနို များကို အဆင့်သတ်မှတ်ချက်၊ ဘောနပ်စ်၊
-            ဂိမ်းများ၊ နှင့် ငွေလွှဲနည်းလမ်းများဖြင့် နှိုင်းယှဉ်ကြည့်ပါ။
+            {t("topCasinosSubheading")}
           </p>
         </div>
 

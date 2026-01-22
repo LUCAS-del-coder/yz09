@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Link, usePathname } from "@/i18n/routing";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import CTAButton from "../ui/CTAButton";
@@ -11,14 +12,15 @@ import LanguageSelector from "../ui/LanguageSelector";
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
+  const t = useTranslations("common");
 
   const navLinks = [
-    { href: "/", label: "ပင်မစာမျက်နှာ", icon: "🏠" },
-    { href: "/review/top-myanmar-casinos", label: "ကာစီနို နှိုင်းယှဉ်ချက်", icon: "⭐" },
-    { href: "/bonuses", label: "ဘောနပ်စ်များ", icon: "🎁" },
-    { href: "/games", label: "ဂိမ်းများ", icon: "🎮" },
-    { href: "/payment", label: "ငွေလွှဲနည်းလမ်းများ", icon: "💳" },
-    { href: "/guide", label: "လမ်းညွှန်", icon: "📖" },
+    { href: "/", label: t("home"), icon: "🏠" },
+    { href: "/review/top-myanmar-casinos", label: t("compare"), icon: "⭐" },
+    { href: "/bonuses", label: t("bonuses"), icon: "🎁" },
+    { href: "/games", label: t("games"), icon: "🎮" },
+    { href: "/payment", label: t("payment"), icon: "💳" },
+    { href: "/guide", label: t("guide"), icon: "📖" },
   ];
 
   const brandLinks = [

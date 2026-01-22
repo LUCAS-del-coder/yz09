@@ -1,8 +1,10 @@
 import { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/routing";
 import CTAButton from "@/components/ui/CTAButton";
+import { getBaseUrl } from "@/lib/config";
 
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://example.com';
+const baseUrl = getBaseUrl();
 
 const brandLinks = [
   "https://www.yes8.io/m/home?affiliateCode=seom1802",
@@ -10,46 +12,48 @@ const brandLinks = [
   "https://www.pya777.net/m/home?affiliateCode=seom2002",
 ];
 
-export const metadata: Metadata = {
-  title: "အွန်လိုင်း ကာစီနို ကစားနည်း - အစပြုသူများ အတွက် လမ်းညွှန် | How to Play Guide | Myanmar Casino Reviews",
-  description: "Myanmar Casino Reviews တွင် အွန်လိုင်း ကာစီနို ဘယ်လို ကစားရမလဲ သိရှိလိုပါသလား။ အကောင့်ဖွင့်ခြင်း၊ ငွေသွင်းခြင်း၊ ဂိမ်းရွေးခြင်း၊ ငွေထုတ်ခြင်း အဆင့်ဆင့် မြန်မာဘာသာဖြင့် ရှင်းပြထားပါသည်။ Learn how to play at Myanmar Casino Reviews - Step by step guide in Myanmar language.",
-  keywords: [
-    "ကာစီနို ကစားနည်း",
-    "အွန်လိုင်း ကာစီနို လမ်းညွှန်",
-    "Myanmar Casino အသုံးပြုနည်း",
-    "ကာစီနို ဘယ်လို စမလဲ",
-    "အကောင့် ဖွင့်နည်း",
-    "ငွေ သွင်းနည်း မြန်မာ",
-    "how to play casino Myanmar",
-    "Myanmar Casino 99 guide",
-    "online casino tutorial"
-  ].join(", "),
-  openGraph: {
-    title: "အွန်လိုင်း ကာစီနို ကစားနည်း | How to Play Guide",
-    locale: 'my_MM',
-    url: `${baseUrl}/guide/how-to-play`,
-  },
-  alternates: {
-    canonical: `${baseUrl}/guide/how-to-play`,
-  }
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "guideHowToPlay" });
 
-export default function HowToPlayPage() {
+  return {
+    title: t("title"),
+    description: t("description"),
+    openGraph: {
+      title: t("title"),
+      description: t("description"),
+      locale: locale === 'my' ? 'my_MM' : 'en_US',
+      url: `${baseUrl}/guide/how-to-play`,
+    },
+    alternates: {
+      canonical: `${baseUrl}/guide/how-to-play`,
+      languages: {
+        'my-MM': `${baseUrl}/guide/how-to-play`,
+        'en-US': `${baseUrl}/en/guide/how-to-play`,
+      }
+    }
+  };
+}
+
+export default async function HowToPlayPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "guideHowToPlay" });
+  const tCommon = await getTranslations({ locale, namespace: "common" });
   const randomBrandLink = brandLinks[Math.floor(Math.random() * brandLinks.length)];
 
   return (
     <div className="min-h-screen bg-dark py-12">
       <div className="container mx-auto px-4 max-w-4xl">
         <nav className="flex items-center gap-2 text-sm text-gray-400 mb-6">
-          <Link href="/" className="hover:text-gold">首頁</Link>
+          <Link href="/" className="hover:text-gold">{tCommon("home")}</Link>
           <span>/</span>
-          <Link href="/guide" className="hover:text-gold">လမ်းညွှန်</Link>
+          <Link href="/guide" className="hover:text-gold">{tCommon("guide")}</Link>
           <span>/</span>
-          <span className="text-white">ကစားနည်း</span>
+          <span className="text-white">{t("heading")}</span>
         </nav>
 
         <h1 className="text-4xl md:text-5xl font-bold mb-6">
-          <span className="gradient-gold">အွန်လိုင်း ကာစီနို ကစားနည်း</span>
+          <span className="gradient-gold">{t("heading")}</span>
           <span className="text-white"> | How to Play Guide</span>
         </h1>
 

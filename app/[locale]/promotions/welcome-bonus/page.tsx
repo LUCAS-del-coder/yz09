@@ -1,8 +1,10 @@
 import { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/routing";
 import CTAButton from "@/components/ui/CTAButton";
+import { getBaseUrl } from "@/lib/config";
 
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://example.com';
+const baseUrl = getBaseUrl();
 
 const brandLinks = [
   "https://www.yes8.io/m/home?affiliateCode=seom1802",
@@ -10,40 +12,33 @@ const brandLinks = [
   "https://www.pya777.net/m/home?affiliateCode=seom2002",
 ];
 
-export const metadata: Metadata = {
-  // ✅ 標題：緬甸語 + 英文
-  title: "ကြိုဆို ဘောနပ်စ် 100% | Welcome Bonus အမြင့်ဆုံး 50,000 MMK | Myanmar Casino Reviews",
-  
-  // ✅ 描述：緬甸語為主
-  description: "Myanmar Casino Reviews ကြိုဆို ဘောနပ်စ် - ပထမဆုံး အပ်ငွေ 100% အမြင့်ဆုံး 50,000 MMK။ အလွယ်တကူ ရယူနိုင်၊ မြန်ဆန်သော အတည်ပြုချက်၊ နည်းသော လောင်းကြေး လိုအပ်ချက်များ။ အခုပဲ စာရင်းသွင်းပြီး ကြီးမားသော ဘောနပ်စ် ရယူပါ။ Get 100% welcome bonus up to 50,000 MMK - Easy claim, low wagering requirements.",
-  
-  // ✅ 關鍵字
-  keywords: [
-    "ကြိုဆို ဘောနပ်စ်",
-    "ကာစီနို ဘောနပ်စ် မြန်မာ",
-    "ပထမဆုံး အပ်ငွေ ဘောနပ်စ်",
-    "Myanmar Casino ဘောနပ်စ်",
-    "အခမဲ့ ဘောနပ်စ် 2025",
-    "100% ဘောနပ်စ်",
-    "welcome bonus Myanmar",
-    "casino bonus 100%",
-    "Myanmar casino promotion",
-    "first deposit bonus"
-  ].join(", "),
-  
-  openGraph: {
-    title: "ကြိုဆို ဘောနပ်စ် 100% | Welcome Bonus Myanmar",
-    description: "ပထမဆုံး အပ်ငွေ 100% အမြင့်ဆုံး 50,000 MMK",
-    locale: 'my_MM',
-    url: `${baseUrl}/promotions/welcome-bonus`,
-  },
-  
-  alternates: {
-    canonical: `${baseUrl}/promotions/welcome-bonus`,
-  }
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "promotions" });
 
-export default function WelcomeBonusPage() {
+  return {
+    title: t("welcomeBonusTitle"),
+    description: t("welcomeBonusDescription"),
+    openGraph: {
+      title: t("welcomeBonusTitle"),
+      description: t("welcomeBonusDescription"),
+      locale: locale === 'my' ? 'my_MM' : 'en_US',
+      url: `${baseUrl}/promotions/welcome-bonus`,
+    },
+    alternates: {
+      canonical: `${baseUrl}/promotions/welcome-bonus`,
+      languages: {
+        'my-MM': `${baseUrl}/promotions/welcome-bonus`,
+        'en-US': `${baseUrl}/en/promotions/welcome-bonus`,
+      }
+    }
+  };
+}
+
+export default async function WelcomeBonusPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "promotions" });
+  const tCommon = await getTranslations({ locale, namespace: "common" });
   const randomBrandLink = brandLinks[Math.floor(Math.random() * brandLinks.length)];
 
   return (

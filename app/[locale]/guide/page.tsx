@@ -96,11 +96,10 @@ export default function GuidePage() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="gradient-gold">အစပြုသူများအတွက်</span>{" "}
-            <span className="text-white">လမ်းညွှန်</span>
+            <span className="gradient-gold">{t("heading")}</span>
           </h1>
           <p className="text-gray-400 text-lg max-w-3xl mx-auto">
-            အွန်လိုင်း ကာစီနို အစပြုသူများအတွက် အပြည့်အစုံ လမ်းညွှန်
+            {t("subheading")}
           </p>
         </div>
 
@@ -134,7 +133,7 @@ export default function GuidePage() {
         {/* Tips */}
         <div className="mb-12">
           <h2 className="text-3xl font-bold text-white mb-8 text-center">
-            <span className="gradient-gold">အကြံပြုချက်များ</span>
+            <span className="gradient-gold">{t("tips")}</span>
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
             {tips.map((tip, index) => (
@@ -153,7 +152,7 @@ export default function GuidePage() {
         {/* FAQ */}
         <div className="bg-dark-lighter rounded-xl p-8 border border-dark-lightest mb-12">
           <h2 className="text-3xl font-bold text-white mb-6 text-center">
-            မေးခွန်းများ
+            {t("faq")}
           </h2>
           <div className="space-y-6">
             <div>
@@ -188,13 +187,13 @@ export default function GuidePage() {
 
         <div className="bg-gradient-to-br from-dark-lighter to-dark rounded-xl p-8 border border-gold/30 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">
-            အခုပဲ စတင် ကစားရန် အဆင်သင့် ဖြစ်ပါပြီ
+            {t("readyToStart")}
           </h2>
           <p className="text-gray-300 mb-6 text-lg">
-            အကောင့်ဖွင့်လှစ်ပြီး ဘောနပ်စ် ရယူကာ ဂိမ်း ကစားရန် စတင်ပါ
+            {t("readyToStartDescription")}
           </p>
           <CTAButton href={randomBrandLink} variant="gold" size="lg">
-            အကောင့်ဖွင့်ရန်
+            {tCommon("openAccount")}
           </CTAButton>
         </div>
       </div>

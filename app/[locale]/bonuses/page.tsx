@@ -1,23 +1,37 @@
 import { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 import BonusCard from "@/components/ui/BonusCard";
 import casinosData from "@/data/casinos.json";
+import { getBaseUrl } from "@/lib/config";
 
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://example.com';
+const baseUrl = getBaseUrl();
 
-export const metadata: Metadata = {
-  title: "ဘောနပ်စ် နှင့် ပရိုမိုးရှင်းများ - Myanmar Casino Reviews",
-  description: "မြန်မာ့အကောင်းဆုံး အွန်လိုင်း ကာစီနို ဘောနပ်စ်များ နှင့် ပရိုမိုးရှင်းများ။",
-  alternates: {
-    canonical: `${baseUrl}/bonuses`,
-  },
-  openGraph: {
-    title: "ဘောနပ်စ် နှင့် ပရိုမိုးရှင်းများ",
-    description: "မြန်မာ့အကောင်းဆုံး အွန်လိုင်း ကာစီနို ဘောနပ်စ်များ နှင့် ပရိုမိုးရှင်းများ။",
-    url: `${baseUrl}/bonuses`,
-  },
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "bonuses" });
 
-export default function BonusesPage() {
+  return {
+    title: t("title"),
+    description: t("description"),
+    alternates: {
+      canonical: `${baseUrl}/bonuses`,
+      languages: {
+        'my-MM': `${baseUrl}/bonuses`,
+        'en-US': `${baseUrl}/en/bonuses`,
+      }
+    },
+    openGraph: {
+      title: t("title"),
+      description: t("description"),
+      url: `${baseUrl}/bonuses`,
+      locale: locale === 'my' ? 'my_MM' : 'en_US',
+    },
+  };
+}
+
+export default async function BonusesPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "bonuses" });
   const casinos = casinosData;
   const brandLinks = [
     "https://www.yes8.io/m/home?affiliateCode=seom1802",
@@ -41,11 +55,10 @@ export default function BonusesPage() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="gradient-gold">ဘောနပ်စ်</span>{" "}
-            <span className="text-white">နှင့် ပရိုမိုးရှင်းများ</span>
+            <span className="gradient-gold">{t("heading")}</span>
           </h1>
           <p className="text-gray-400 text-lg max-w-3xl mx-auto">
-            အထူးဘောနပ်စ်များ နှင့် ပရိုမိုးရှင်းများကို ရယူပါ
+            {t("subheading")}
           </p>
         </div>
 
@@ -64,17 +77,17 @@ export default function BonusesPage() {
 
         <div className="bg-dark-lighter rounded-xl p-8 border border-dark-lightest">
           <h2 className="text-2xl font-bold text-white mb-4">
-            ဘောနပ်စ် အသုံးပြုနည်း
+            {t("howToUse")}
           </h2>
           <div className="space-y-4 text-gray-300">
             <p>
-              ဘောနပ်စ်များသည် အကောင့်ဖွင့်လှစ်ပြီး ငွေဖြည့်သွင်းမှုအတွက် အထူးပရိုမိုးရှင်းများ ဖြစ်သည်။
+              {t("howToUseDescription")}
             </p>
             <ul className="list-disc list-inside space-y-2 ml-4">
-              <li>အကောင့်ဖွင့်လှစ်ပြီး ပထမဆုံးအကြိမ် ငွေဖြည့်သွင်းမှုအတွက် Welcome Bonus</li>
-              <li>ပုံမှန် ငွေဖြည့်သွင်းမှုအတွက် Reload Bonus</li>
-              <li>အထူးအစီအစဉ်များအတွက် Free Spins</li>
-              <li>VIP အစီအစဉ်များအတွက် အထူးဘောနပ်စ်များ</li>
+              <li>{t("welcomeBonus")}</li>
+              <li>{t("reloadBonus")}</li>
+              <li>{t("freeSpins")}</li>
+              <li>{t("vipBonus")}</li>
             </ul>
           </div>
         </div>

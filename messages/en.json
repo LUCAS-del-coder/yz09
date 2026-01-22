@@ -1,15 +1,182 @@
 {
   "common": {
-    "siteName": "Myanmar Casino Reviews",
     "home": "Home",
-    "reviews": "Reviews",
-    "games": "Games",
+    "compare": "Compare Casinos",
     "bonuses": "Bonuses",
+    "games": "Games",
+    "payment": "Payment Methods",
     "guide": "Guide",
-    "contact": "Contact"
+    "playNow": "Play Now",
+    "register": "Register",
+    "viewAll": "View All",
+    "search": "Search",
+    "language": "Language",
+    "myanmar": "Myanmar",
+    "english": "English",
+    "notFound": "Page Not Found",
+    "notFoundDescription": "The page you are looking for could not be found.",
+    "backToHome": "Back to Home",
+    "openAccount": "Open Account",
+    "about": "About",
+    "contact": "Contact",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
   },
-  "metadata": {
+  "home": {
     "title": "2025 Best Online Casinos in Myanmar | Myanmar Casino Reviews",
-    "description": "Best online casino reviews in Myanmar - Expert reviews, bonuses and guides for Shwe Casino, 888, 777, Win8, 999, PGLucky88, FaFaFa"
+    "description": "Number 1 casino review website for Myanmar - Compare Shwe Casino, 888 Casino, 777 Casino, Win8, 999 Casino, PGLucky88 and FaFaFa. Expert reviews, bonuses and ratings for Myanmar players.",
+    "hotGames": "Hot Games",
+    "featuredCasinos": "Featured Casinos",
+    "latestBonuses": "Latest Bonuses"
+  },
+  "games": {
+    "title": "Online Casino Games",
+    "slots": "Slot Games",
+    "liveCasino": "Live Casino",
+    "fishing": "Fishing Games",
+    "tableGames": "Table Games",
+    "viewAllGames": "View All Games | View All Games",
+    "playSlots": "Play Slots Now",
+    "startPlaying": "Start Playing Slots Now",
+    "getBonus": "Get Bonus and Start Playing Slots",
+    "slotsTitle": "Slot Games | 500+ Slot Games Myanmar | Myanmar Casino Reviews",
+    "slotsDescription": "Play 500+ slot games at Myanmar Casino Reviews. Best games from top providers like Pragmatic Play, PG Soft, BGaming. Highest RTP, free play available, real money betting. Play 500+ slot games - Top providers, Free play available, Real money betting.",
+    "slotsBreadcrumbHome": "Home",
+    "slotsBreadcrumbGames": "Games",
+    "slotsBreadcrumbSlots": "Slot Games",
+    "slotsHeading": "Slot Games",
+    "slotsSubheading": "Play 500+ slot games at Myanmar Casino Reviews. Best games from top providers like Pragmatic Play, PG Soft, BGaming.",
+    "slotsAboutTitle": "About Slot Games | About Slot Games",
+    "slotsAboutDescription": "Slot games are the most popular casino games. They feature various themes, bonus features, and high RTP rates.",
+    "slotsCTA": "Start Playing Slots Now",
+    "slotsCTADescription": "Get Bonus and Start Playing Slots",
+    "liveCasinoTitle": "Live Casino | Live Casino Myanmar | Myanmar Casino Reviews",
+    "liveCasinoDescription": "Experience real casino with professional dealers, HD live streaming, 24/7 operation. Baccarat, Roulette, Dragon Tiger and more options.",
+    "liveCasinoHeading": "Live Casino",
+    "liveCasinoSubheading": "Experience real casino with professional dealers, HD live streaming, 24/7 operation.",
+    "fishingTitle": "Fishing Games | Fishing Games Myanmar | Myanmar Casino Reviews",
+    "fishingDescription": "Most exciting fishing game experience. Multiple themes, rich prizes, simple gameplay. Start your fishing journey at Myanmar Casino Reviews now.",
+    "fishingHeading": "Fishing Games",
+    "fishingSubheading": "Most exciting fishing game experience. Multiple themes, rich prizes, simple gameplay.",
+    "tableGamesTitle": "Table Games | Table Games Myanmar | Myanmar Casino Reviews",
+    "tableGamesDescription": "Play classic table games online - Poker, Blackjack, Roulette, Sic Bo. Learn rules, master strategies, become an expert at Myanmar Casino Reviews.",
+    "tableGamesHeading": "Table Games",
+    "tableGamesSubheading": "Play classic table games online - Poker, Blackjack, Roulette, Sic Bo."
+  },
+  "gamesPage": {
+    "title": "Game Categories - Myanmar Casino Reviews",
+    "description": "Best online casino game categories in Myanmar.",
+    "heading": "Game Categories",
+    "subheading": "Best online casino game categories in Myanmar",
+    "startPlaying": "Start Playing Games Now",
+    "startPlayingDescription": "Get Bonus and Start Playing Games",
+    "playGame": "Play Game"
+  },
+  "bonuses": {
+    "title": "Bonuses and Promotions - Myanmar Casino Reviews",
+    "description": "Best online casino bonuses and promotions in Myanmar.",
+    "heading": "Bonuses and Promotions",
+    "subheading": "Get special bonuses and promotions",
+    "howToUse": "How to Use Bonuses",
+    "howToUseDescription": "Bonuses are special promotions for account opening and deposits.",
+    "welcomeBonus": "Welcome Bonus for account opening and first deposit",
+    "reloadBonus": "Reload Bonus for regular deposits",
+    "freeSpins": "Free Spins for special programs",
+    "vipBonus": "Special bonuses for VIP programs"
+  },
+  "compare": {
+    "title": "Compare Myanmar Casinos | Shwe vs 888 vs 777 vs Win8 vs 999",
+    "description": "Side-by-side comparison of Myanmar's top casinos: Shwe Casino, 888 Casino, 777 Casino, Win8, 999 Casino, PGLucky88, FaFaFa. Compare bonuses, games, payouts & ratings.",
+    "heading": "Compare Myanmar Casinos",
+    "subheading": "Side-by-side comparison of Myanmar's top online casinos: Shwe Casino, 888 Casino, 777 Casino, Win8, 999 Casino, PGLucky88 and FaFaFa Casino. Compare ratings, bonuses, games, payouts and features.",
+    "howToChoose": "How to Choose the Best Casino for You",
+    "considerBonuses": "Consider Bonuses",
+    "considerBonusesText": "Compare welcome bonuses, reload bonuses, and VIP programs. Win8 offers the highest welcome bonus (200%), while 888 Casino has the best ongoing promotions.",
+    "checkWithdrawal": "Check Withdrawal Speed",
+    "checkWithdrawalText": "All top casinos including Shwe Casino, 888 Casino, and Win8 offer withdrawals within 1 hour.",
+    "gameSelection": "Game Selection",
+    "gameSelectionText": "999 Casino has the most games (1000+), while PGLucky88 specializes in PG Soft games.",
+    "paymentMethods": "Payment Methods",
+    "paymentMethodsText": "All top casinos support KBZ Pay and Wave Money, making deposits quick and easy for Myanmar players."
+  },
+  "payment": {
+    "title": "Payment Methods - Myanmar Casino Reviews",
+    "description": "Best online casino payment methods in Myanmar.",
+    "heading": "Payment Methods",
+    "subheading": "Best online casino payment methods in Myanmar",
+    "withdrawal": "Withdrawals",
+    "withdrawalDescription": "Withdrawals are completed within 1 hour.",
+    "maxWithdrawal": "Maximum withdrawal: 10,000,000 MMK per day",
+    "withdrawalTime": "Withdrawal time: Within 1 hour",
+    "noTax": "No tax",
+    "startDepositing": "Start Depositing and Playing Games Now"
+  },
+  "guide": {
+    "title": "Beginner's Guide - Myanmar Casino Reviews",
+    "description": "Guide for online casino beginners.",
+    "heading": "Beginner's Guide",
+    "subheading": "Complete guide for online casino beginners",
+    "tips": "Tips",
+    "faq": "Questions",
+    "readyToStart": "Ready to Start Playing Now",
+    "readyToStartDescription": "Open an account and get bonus to start playing games"
+  },
+  "contact": {
+    "title": "Contact Us - Contact Us | Myanmar Casino Reviews",
+    "description": "Contact Myanmar Casino Reviews.",
+    "heading": "Contact Us",
+    "information": "Information",
+    "aboutWebsite": "About Website",
+    "office": "Office",
+    "workingHours": "Working Hours",
+    "suggestions": "Suggestions",
+    "warning": "Warning",
+    "thankYou": "Thank You"
+  },
+  "privacy": {
+    "title": "Privacy Policy - Privacy Policy | Myanmar Casino Reviews",
+    "description": "Myanmar Casino Reviews Privacy Policy.",
+    "heading": "Privacy Policy",
+    "lastUpdated": "Last Updated"
+  },
+  "terms": {
+    "title": "Terms of Service - Terms of Service | Myanmar Casino Reviews",
+    "description": "Myanmar Casino Reviews Terms of Service.",
+    "heading": "Terms of Service",
+    "lastUpdated": "Last Updated"
+  },
+  "responsibleGaming": {
+    "title": "Responsible Gaming - Responsible Gaming | Myanmar Casino Reviews",
+    "description": "Responsible gaming guide and help.",
+    "heading": "Responsible Gaming",
+    "warning": "Warning",
+    "warningText": "Gaming can be addictive and should only be for entertainment. If financial problems, psychological impacts, or family problems occur, you need to stop gaming."
+  },
+  "review": {
+    "topCasinosTitle": "Best Myanmar Casinos Comparison - Myanmar Casino Reviews",
+    "topCasinosDescription": "Compare best online casinos in Myanmar. Bonuses, games, payment methods.",
+    "topCasinosHeading": "Best Myanmar Casinos Comparison",
+    "topCasinosSubheading": "Compare best online casinos by ratings, bonuses, games, and payment methods."
+  },
+  "blog": {
+    "title": "Blog | Blog - Myanmar Casino Reviews",
+    "description": "Online casino news, game reviews, strategy guides and more useful content.",
+    "heading": "Blog",
+    "subheading": "Online casino news, game reviews, strategy guides"
+  },
+  "promotions": {
+    "welcomeBonusTitle": "Welcome Bonus 100% | Welcome Bonus Up to 50,000 MMK | Myanmar Casino Reviews",
+    "welcomeBonusDescription": "Myanmar Casino Reviews Welcome Bonus - First deposit 100% up to 50,000 MMK. Easy to claim, fast approval, low wagering requirements. Register now and get big bonus.",
+    "welcomeBonusHeading": "Welcome Bonus 100%"
+  },
+  "guideHowToPlay": {
+    "title": "How to Play Online Casino - Beginner's Guide | How to Play Guide | Myanmar Casino Reviews",
+    "description": "Want to know how to play online casino at Myanmar Casino Reviews? Step by step guide in Myanmar language for account opening, deposits, game selection, withdrawals.",
+    "heading": "How to Play Online Casino"
+  },
+  "notFound": {
+    "title": "Page Not Found",
+    "description": "The page you are looking for could not be found.",
+    "backToHome": "Back to Home"
   }
 }

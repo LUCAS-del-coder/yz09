@@ -78,10 +78,10 @@ export default function PaymentPage() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="gradient-gold">ငွေလွှဲနည်းလမ်းများ</span>
+            <span className="gradient-gold">{t("heading")}</span>
           </h1>
           <p className="text-gray-400 text-lg max-w-3xl mx-auto">
-            မြန်မာ့အကောင်းဆုံး အွန်လိုင်း ကာစီနို ငွေလွှဲနည်းလမ်းများ
+            {t("subheading")}
           </p>
         </div>
 
@@ -119,25 +119,25 @@ export default function PaymentPage() {
         </div>
 
         <div className="bg-dark-lighter rounded-xl p-8 border border-dark-lightest mb-12">
-          <h2 className="text-2xl font-bold text-white mb-4">ငွေထုတ်ယူမှု</h2>
+          <h2 className="text-2xl font-bold text-white mb-4">{t("withdrawal")}</h2>
           <div className="space-y-4 text-gray-300">
             <p>
-              ငွေထုတ်ယူမှုသည် 1 နာရီအတွင်း ပြီးမြောက်သည်။
+              {t("withdrawalDescription")}
             </p>
             <ul className="list-disc list-inside space-y-2 ml-4">
-              <li>အများဆုံး ထုတ်ယူမှု: တစ်ရက်လျှင် 10,000,000 MMK</li>
-              <li>ငွေထုတ်ယူမှု အချိန်: Within 1 hour</li>
-              <li>အခွန်မယူပါ</li>
+              <li>{t("maxWithdrawal")}</li>
+              <li>{t("withdrawalTime")}</li>
+              <li>{t("noTax")}</li>
             </ul>
           </div>
         </div>
 
         <div className="bg-gradient-to-br from-dark-lighter to-dark rounded-xl p-8 border border-gold/30 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">
-            ငွေဖြည့်သွင်းပြီး ဂိမ်း ကစားရန် အခုပဲ စတင်ပါ
+            {t("startDepositing")}
           </h2>
           <CTAButton href={randomBrandLink} variant="gold" size="lg">
-            အကောင့်ဖွင့်ရန်
+            {tCommon("openAccount")}
           </CTAButton>
         </div>
       </div>
