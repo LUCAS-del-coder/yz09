@@ -607,19 +607,8 @@
     "vipProgramTitle": "VIP Program | 5 Tier Account System | Myanmar Casino Reviews",
     "vipProgramDescription": "Join Myanmar Casino Reviews VIP program and enjoy exclusive benefits. 5 tier account system, exclusive bonuses, higher rebate, priority withdrawal, birthday gift money.",
     "vipProgramHeading": "VIP Program",
-    "vipProgramTitle": "VIP Program | 5 Tier Account System | Myanmar Casino Reviews",
-    "vipProgramDescription": "Join Myanmar Casino Reviews VIP program and enjoy exclusive benefits. 5 tier account system, exclusive bonuses, higher rebate, priority withdrawal, birthday gift money. Join VIP program - 5 tier system, exclusive bonuses, higher rebate, priority withdrawal.",
-    "aboutVipProgram": "About VIP Program",
-    "aboutVipProgramText": "The VIP program is designed for loyal players with a 5-tier system offering higher bonuses, faster withdrawals, and exclusive customer service.",
-    "vipExclusiveBenefits": "VIP Exclusive Benefits",
     "higherRebate": "Higher Rebate",
-    "higherRebateText": "Get higher rebate rates as you level up in the VIP program",
     "priorityWithdrawal": "Priority Withdrawal",
-    "priorityWithdrawalText": "Faster withdrawal processing for VIP members",
-    "personalService": "Personal Service",
-    "personalServiceText": "Dedicated customer service for VIP members",
-    "birthdayGift": "Birthday Gift",
-    "birthdayGiftText": "Special birthday gift money for VIP members",
     "joinVipProgram": "Join VIP Program",
     "vipLevels": {
       "bronze": {
@@ -647,19 +636,16 @@
         "benefits": ["20% rebate", "Exclusive bonus", "Special gifts"],
         "requirements": "Minimum 5,000,000 MMK deposit"
       }
-    }
+    },
     "aboutVipProgram": "About VIP Program",
     "aboutVipProgramText": "Myanmar Casino Reviews VIP program is a special program designed for loyal players. With a 5-tier account system, you will receive higher bonuses, faster withdrawals, and exclusive customer service.",
     "vipExclusiveBenefits": "VIP Exclusive Benefits",
-    "higherRebate": "Higher Rebate",
     "higherRebateText": "The higher the VIP level, the higher the rebate rate",
-    "priorityWithdrawal": "Priority Withdrawal",
     "priorityWithdrawalText": "VIP accounts will receive priority processing for withdrawals",
     "personalService": "Personal Customer Service",
     "personalServiceText": "VIP accounts will receive personal customer service",
     "birthdayGift": "Birthday Gift Money",
-    "birthdayGiftText": "VIP accounts will receive special gift money on their birthday",
-    "joinVipProgram": "Join VIP Program"
+    "birthdayGiftText": "VIP accounts will receive special gift money on their birthday"
   },
   "guidePaymentMethods": {
     "title": "Deposit and Withdrawal Methods | Payment Methods Guide Myanmar | Myanmar Casino Reviews",

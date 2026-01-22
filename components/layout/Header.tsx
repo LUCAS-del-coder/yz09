@@ -63,7 +63,7 @@ export default function Header() {
             </div>
 
             {/* CTA Button */}
-            {/* <div className="hidden lg:block">
+            <div className="hidden lg:block">
               <CTAButton
                 href={randomBrandLink}
                 variant="gold"
@@ -71,7 +71,7 @@ export default function Header() {
               >
                 PLAY NOW
               </CTAButton>
-            </div> */}
+            </div>
 
             {/* Mobile Search Icon */}
             <button

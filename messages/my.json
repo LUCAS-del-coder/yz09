@@ -581,19 +581,8 @@
     "vipProgramTitle": "VIP အစီအစဉ် | 5 လွှာ အကောင့် စနစ် | Myanmar Casino Reviews",
     "vipProgramDescription": "Myanmar Casino Reviews VIP အစီအစဉ်တွင် ပါဝင်ပြီး ဂုဏ်ယူစွာ ခံစားရယူပါ။ 5 လွှာ အကောင့် စနစ်၊ အထူး ဘောနပ်စ်၊ ပိုမိုမြင့်မားသော ပြန်လည်ပေးအပ်မှု၊ ဦးစားပေး ငွေထုတ်ယူမှု၊ မွေးနေ့ လက်ဆောင်ငွေ။",
     "vipProgramHeading": "VIP အစီအစဉ်",
-    "vipProgramTitle": "VIP အစီအစဉ် | 5 လွှာ အကောင့် စနစ် | Myanmar Casino Reviews",
-    "vipProgramDescription": "Myanmar Casino Reviews VIP အစီအစဉ်တွင် ပါဝင်ပြီး ဂုဏ်ယူစွာ ခံစားရယူပါ။ 5 လွှာ အကောင့် စနစ်၊ အထူး ဘောနပ်စ်၊ ပိုမိုမြင့်မားသော ပြန်လည်ပေးအပ်မှု၊ ဦးစားပေး ငွေထုတ်ယူမှု၊ မွေးနေ့ လက်ဆောင်ငွေ။ Join VIP program - 5 tier system, exclusive bonuses, higher rebate, priority withdrawal.",
-    "aboutVipProgram": "VIP အစီအစဉ် အကြောင်း",
-    "aboutVipProgramText": "VIP အစီအစဉ်သည် သစ္စာရှိသော ကစားသမားများအတွက် ဒီဇိုင်းထုတ်ထားပြီး 5 လွှာ စနစ်ဖြင့် ပိုမိုမြင့်မားသော ဘောနပ်စ်၊ ပိုမိုမြန်ဆန်သော ငွေထုတ်ယူမှု၊ နှင့် အထူး ဖောက်သည်ဝန်ဆောင်မှု ပေးပါသည်။",
-    "vipExclusiveBenefits": "VIP အထူး အကျိုးခံစားခွင့်များ",
     "higherRebate": "ပိုမိုမြင့်မားသော ပြန်လည်ပေးအပ်မှု",
-    "higherRebateText": "VIP အစီအစဉ်တွင် အဆင့်မြင့်လာသည်နှင့်အမျှ ပိုမိုမြင့်မားသော ပြန်လည်ပေးအပ်မှု နှုန်းများ ရရှိပါ",
     "priorityWithdrawal": "ဦးစားပေး ငွေထုတ်ယူမှု",
-    "priorityWithdrawalText": "VIP အဖွဲ့ဝင်များအတွက် ပိုမိုမြန်ဆန်သော ငွေထုတ်ယူမှု လုပ်ငန်းစဉ်",
-    "personalService": "ပုဂ္ဂိုလ်ရေး ဝန်ဆောင်မှု",
-    "personalServiceText": "VIP အဖွဲ့ဝင်များအတွက် အထူး ဖောက်သည်ဝန်ဆောင်မှု",
-    "birthdayGift": "မွေးနေ့ လက်ဆောင်ငွေ",
-    "birthdayGiftText": "VIP အဖွဲ့ဝင်များအတွက် အထူး မွေးနေ့ လက်ဆောင်ငွေ",
     "joinVipProgram": "VIP အစီအစဉ် ပါဝင်ရန်",
     "vipLevels": {
       "bronze": {
@@ -621,19 +610,16 @@
         "benefits": ["20% ပြန်လည်ပေးအပ်မှု", "အထူး ဘောနပ်စ်", "အထူး လက်ဆောင်များ"],
         "requirements": "အနည်းဆုံး 5,000,000 MMK အပ်ငွေ"
       }
-    }
+    },
     "aboutVipProgram": "VIP အစီအစဉ် အကြောင်း",
     "aboutVipProgramText": "Myanmar Casino Reviews VIP အစီအစဉ် သည် သစ္စာရှိသော ကစားသမားများ အတွက် ဒီဇိုင်းထုတ်ထားသော အထူး အစီအစဉ် ဖြစ်သည်။ 5 လွှာ အကောင့် စနစ် ဖြင့် သင်သည် ပိုမိုမြင့်မားသော ဘောနပ်စ်၊ ပိုမိုမြန်ဆန်သော ငွေထုတ်ယူမှု၊ နှင့် အထူး ဖောက်သည်ဝန်ဆောင်မှု ရရှိမည် ဖြစ်သည်။",
     "vipExclusiveBenefits": "VIP အထူး ခံစားခွင့်များ",
-    "higherRebate": "ပိုမိုမြင့်မားသော ပြန်လည်ပေးအပ်မှု",
     "higherRebateText": "VIP အဆင့် မြင့်လာလေ ပြန်လည်ပေးအပ်မှု နှုန်း ပိုမိုမြင့်မားလာလေ",
-    "priorityWithdrawal": "ဦးစားပေး ငွေထုတ်ယူမှု",
     "priorityWithdrawalText": "VIP အကောင့်များသည် ငွေထုတ်ယူမှု အတွက် ဦးစားပေး လုပ်ဆောင်ခြင်း ရရှိမည်",
     "personalService": "ပုဂ္ဂိုလ်ရေး ဖောက်သည်ဝန်ဆောင်မှု",
     "personalServiceText": "VIP အကောင့်များသည် ပုဂ္ဂိုလ်ရေး ဖောက်သည်ဝန်ဆောင်မှု ရရှိမည်",
     "birthdayGift": "မွေးနေ့ လက်ဆောင်ငွေ",
-    "birthdayGiftText": "VIP အကောင့်များသည် မွေးနေ့တွင် အထူး လက်ဆောင်ငွေ ရရှိမည်",
-    "joinVipProgram": "VIP အစီအစဉ် ပါဝင်ရန်"
+    "birthdayGiftText": "VIP အကောင့်များသည် မွေးနေ့တွင် အထူး လက်ဆောင်ငွေ ရရှိမည်"
   },
   "guidePaymentMethods": {
     "title": "ငွေသွင်း ငွေထုတ် နည်းလမ်းများ | Payment Methods Guide Myanmar | Myanmar Casino Reviews",
