@@ -1,16 +1,26 @@
 "use client";
 
+import { useState, useEffect } from "react";
+import { useTranslations } from "next-intl";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import CTAButton from "../ui/CTAButton";
 
-export default function Hero() {
-  const brandLinks = [
-    "https://www.yes8.io/m/home?affiliateCode=seom1802",
-    "https://www.ygn9.net/m/home?affiliateCode=seom1902",
-    "https://www.pya777.net/m/home?affiliateCode=seom2002",
-  ];
+const brandLinks = [
+  "https://www.yes8.io/m/home?affiliateCode=seom1802",
+  "https://www.ygn9.net/m/home?affiliateCode=seom1902",
+  "https://www.pya777.net/m/home?affiliateCode=seom2002",
+];
 
-  const randomBrandLink = brandLinks[Math.floor(Math.random() * brandLinks.length)];
+export default function Hero() {
+  const t = useTranslations("hero");
+
+  // Fix hydration issue by only randomizing on client
+  const [randomBrandLink, setRandomBrandLink] = useState(brandLinks[0]);
+  
+  useEffect(() => {
+    setRandomBrandLink(brandLinks[Math.floor(Math.random() * brandLinks.length)]);
+  }, []);
 
   return (
     <section className="relative min-h-[60vh] flex items-center overflow-hidden bg-gradient-to-br from-casino-purple-950 via-casino-purple-800 to-casino-purple-900">
@@ -30,17 +40,17 @@ export default function Hero() {
               transition={{ duration: 0.8 }}
             >
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                <span className="gradient-gold">၂၀၂၅ မြန်မာ့အကောင်းဆုံး</span>
+                <span className="gradient-gold">{t("title")}</span>
                 <br />
-                Online Casino များ
+                {t("title2")}
               </h1>
               <p className="text-lg md:text-xl text-white/90 mb-6 leading-relaxed">
-                <strong>Shwe Casino</strong>, <strong>888 Casino</strong>,{" "}
-                <strong>777 Casino</strong>, <strong>Win8</strong>, <strong>999 Casino</strong>{" "}
-                အကြောင်း ကျွမ်းကျင်သူများ၏ သုံးသပ်ချက်များ
+                {t.rich("description", {
+                  strong: (chunks) => <strong>{chunks}</strong>,
+                })}
                 <br />
                 <span className="text-gold font-semibold">
-                  မြန်မာ ကစားသမားများအတွက် ဘောနပ်စ်များ၊ ဂိမ်းများနှင့် အဆင့်သတ်မှတ်ချက်များ နှိုင်းယှဉ်ပါ
+                  {t("description2")}
                 </span>
               </p>
               <motion.div
@@ -54,56 +64,27 @@ export default function Hero() {
                   variant="gold"
                   size="lg"
                 >
-                  ယခု ကစားပါ
+                  {t("playNow")}
                 </CTAButton>
                 <a
                   href="#casinos"
                   className="px-8 py-4 bg-white/10 backdrop-blur-md hover:bg-white/20 text-white rounded-lg font-semibold transition-colors border border-white/20"
                 >
-                  သုံးသပ်ချက်များ ကြည့်ပါ
+                  {t("viewReviews")}
                 </a>
               </motion.div>
             </motion.div>
           </div>
 
-          {/* Right Illustration (40%) */}
+          {/* Right Illustration (40%)*/}
           <div className="lg:col-span-2 relative h-64 lg:h-80">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8, rotate: -10 }}
-              animate={{ opacity: 1, scale: 1, rotate: 0 }}
-              transition={{ delay: 0.5, duration: 0.8 }}
-              className="relative w-full h-full float-3d"
-            >
-              {/* 3D 轮盘 SVG */}
-              <svg viewBox="0 0 400 400" className="w-full h-full">
-                {/* Outer ring */}
-                <circle
-                  cx="200"
-                  cy="200"
-                  r="180"
-                  fill="none"
-                  stroke="rgba(255,255,255,0.3)"
-                  strokeWidth="4"
-                  className="spin-slow"
-                  transform-origin="200 200"
-                />
-                {/* Inner circles */}
-                <circle cx="200" cy="200" r="120" fill="rgba(139,92,246,0.2)" />
-                <circle cx="200" cy="200" r="60" fill="rgba(233,75,139,0.3)" />
-                {/* Chips */}
-                <g>
-                  <circle cx="100" cy="100" r="25" fill="#FFD700" opacity="0.8">
-                    <animate attributeName="cy" values="100;90;100" dur="3s" repeatCount="indefinite" />
-                  </circle>
-                  <circle cx="300" cy="150" r="25" fill="#00D95F" opacity="0.8">
-                    <animate attributeName="cy" values="150;140;150" dur="3.5s" repeatCount="indefinite" />
-                  </circle>
-                  <circle cx="150" cy="300" r="25" fill="#E94B8B" opacity="0.8">
-                    <animate attributeName="cy" values="300;290;300" dur="2.5s" repeatCount="indefinite" />
-                  </circle>
-                </g>
-              </svg>
-            </motion.div>
+            <Image
+              src="/images/hero-casino.png"
+              alt={t("image-alt")}
+              width={400}
+              height={400}
+              className="h-full mx-auto"
+            />
           </div>
         </div>
       </div>
@@ -127,4 +108,3 @@ export default function Hero() {
     </section>
   );
 }
-

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 
 interface FilterOption {
   value: string;
@@ -23,6 +24,7 @@ export default function FilterSidebar({
   onFilterChange,
   className = ""
 }: FilterSidebarProps) {
+  const t = useTranslations("filterSidebar");
   const [selectedProviders, setSelectedProviders] = useState<string[]>([]);
   const [selectedVolatility, setSelectedVolatility] = useState<string[]>([]);
   const [rtpMin, setRtpMin] = useState(rtpRange?.min || 0);
@@ -64,13 +66,13 @@ export default function FilterSidebar({
   return (
     <aside className={`bg-dark-lighter rounded-xl p-6 border border-dark-lightest ${className}`}>
       <div className="flex items-center justify-between mb-6">
-        <h3 className="text-xl font-bold text-white">စစ်ထုတ်ရန် | Filters</h3>
+        <h3 className="text-xl font-bold text-white">{t("filters")}</h3>
         {(selectedProviders.length > 0 || selectedVolatility.length > 0 || rtpMin > (rtpRange?.min || 0) || rtpMax < (rtpRange?.max || 100)) && (
           <button
             onClick={clearFilters}
             className="text-sm text-gold hover:text-gold/80 transition-colors"
           >
-            အားလုံး ရှင်းလင်းရန် | Clear All
+            {t("clearAll")}
           </button>
         )}
       </div>
@@ -78,7 +80,7 @@ export default function FilterSidebar({
       {/* Providers Filter */}
       {providers.length > 0 && (
         <div className="mb-6">
-          <h4 className="text-lg font-semibold text-white mb-3">ဂိမ်း ထုတ်လုပ်သူ | Providers</h4>
+          <h4 className="text-lg font-semibold text-white mb-3">{t("providers")}</h4>
           <div className="space-y-2">
             {providers.map((provider) => (
               <label
@@ -106,10 +108,10 @@ export default function FilterSidebar({
       {/* RTP Range Filter */}
       {rtpRange && (
         <div className="mb-6">
-          <h4 className="text-lg font-semibold text-white mb-3">RTP (ပြန်အမ်းနှုန်း) | RTP Range</h4>
+          <h4 className="text-lg font-semibold text-white mb-3">{t("rtpRange")}</h4>
           <div className="space-y-3">
             <div className="flex items-center gap-2">
-              <label className="text-gray-300 text-sm w-16">အနည်းဆုံး:</label>
+              <label className="text-gray-300 text-sm w-16">{t("min")}</label>
               <input
                 type="number"
                 min={rtpRange.min}
@@ -121,7 +123,7 @@ export default function FilterSidebar({
               <span className="text-gray-400 text-sm">%</span>
             </div>
             <div className="flex items-center gap-2">
-              <label className="text-gray-300 text-sm w-16">အများဆုံး:</label>
+              <label className="text-gray-300 text-sm w-16">{t("max")}</label>
               <input
                 type="number"
                 min={rtpRange.min}
@@ -139,7 +141,7 @@ export default function FilterSidebar({
       {/* Volatility Filter */}
       {volatility.length > 0 && (
         <div className="mb-6">
-          <h4 className="text-lg font-semibold text-white mb-3">ပြင်းထန်မှု | Volatility</h4>
+          <h4 className="text-lg font-semibold text-white mb-3">{t("volatility")}</h4>
           <div className="space-y-2">
             {volatility.map((vol) => (
               <label

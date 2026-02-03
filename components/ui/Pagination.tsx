@@ -1,6 +1,7 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
+import { useTranslations } from "next-intl";
 
 interface PaginationProps {
   currentPage: number;
@@ -15,6 +16,8 @@ export default function Pagination({
   baseUrl,
   className = "" 
 }: PaginationProps) {
+  const t = useTranslations("pagination");
+  
   const getPageUrl = (page: number) => {
     if (page === 1) return baseUrl;
     return `${baseUrl}?page=${page}`;
@@ -53,7 +56,7 @@ export default function Pagination({
   return (
     <nav 
       className={`flex items-center justify-center gap-2 ${className}`}
-      aria-label="Pagination"
+      aria-label={t("ariaLabel")}
     >
       {/* Previous Button */}
       {currentPage > 1 ? (
@@ -61,11 +64,11 @@ export default function Pagination({
           href={getPageUrl(currentPage - 1)}
           className="px-4 py-2 bg-dark-lighter rounded-lg text-white hover:bg-gold/20 border border-dark-lightest transition-colors"
         >
-          ← ရှေ့
+          ← {t("previous")}
         </Link>
       ) : (
         <span className="px-4 py-2 bg-dark-lighter rounded-lg text-gray-500 border border-dark-lightest cursor-not-allowed">
-          ← ရှေ့
+          ← {t("previous")}
         </span>
       )}
 
@@ -105,11 +108,11 @@ export default function Pagination({
           href={getPageUrl(currentPage + 1)}
           className="px-4 py-2 bg-dark-lighter rounded-lg text-white hover:bg-gold/20 border border-dark-lightest transition-colors"
         >
-          နောက် →
+          {t("next")} →
         </Link>
       ) : (
         <span className="px-4 py-2 bg-dark-lighter rounded-lg text-gray-500 border border-dark-lightest cursor-not-allowed">
-          နောက် →
+          {t("next")} →
         </span>
       )}
     </nav>

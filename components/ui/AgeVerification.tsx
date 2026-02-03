@@ -2,8 +2,10 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 export default function AgeVerification() {
+  const t = useTranslations("ageVerification");
   const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
@@ -39,24 +41,23 @@ export default function AgeVerification() {
           >
             <div className="text-6xl mb-4">🎰</div>
             <h2 className="text-2xl font-bold text-white mb-4">
-              အသက်အတည်ပြုခြင်း
+              {t("title")}
             </h2>
             <p className="text-gray-300 mb-6">
-              ဤဝဘ်ဆိုဒ်သည် 18 နှစ်အထက် အရွယ်ရောက်ပြီးသူများအတွက် ဖြစ်သည်။
-              သင့်အသက်သည် 18 နှစ်အထက် ဖြစ်ပါသလား?
+              {t("text")}
             </p>
             <div className="flex gap-4">
               <button
                 onClick={handleDeny}
                 className="flex-1 px-6 py-3 bg-dark-light hover:bg-dark text-white rounded-lg transition-colors"
               >
-                မဟုတ်ပါ
+                {t("no")}
               </button>
               <button
                 onClick={handleConfirm}
                 className="flex-1 px-6 py-3 bg-gradient-to-r from-gold-dark via-gold to-gold-light text-dark font-bold rounded-lg hover:shadow-lg hover:shadow-gold/50 transition-all"
               >
-                ဟုတ်ပါ
+                {t("yes")}
               </button>
             </div>
           </motion.div>

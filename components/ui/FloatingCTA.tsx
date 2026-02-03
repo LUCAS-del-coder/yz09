@@ -2,9 +2,11 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTranslations } from "next-intl";
 import CTAButton from "./CTAButton";
 
 export default function FloatingCTA() {
+  const t = useTranslations("floatingCTA");
   const [isVisible, setIsVisible] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -56,7 +58,7 @@ export default function FloatingCTA() {
               size="lg"
               className="w-full"
             >
-              အကောင့်ဖွင့်ပြီး ဘောနပ်စ်ရယူပါ
+              {t("text")}
             </CTAButton>
           </div>
         </motion.div>

@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 import CTAButton from "./CTAButton";
 
 interface BonusCardProps {
@@ -18,6 +19,8 @@ export default function BonusCard({
   ctaLink,
   index = 0,
 }: BonusCardProps) {
+  const t = useTranslations("bonusCard");
+  
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.9 }}
@@ -45,7 +48,7 @@ export default function BonusCard({
           size="md"
           className="w-full"
         >
-          ဘောနပ်စ် ရယူရန်
+          {t("claimBonus")}
         </CTAButton>
       </div>
     </motion.div>

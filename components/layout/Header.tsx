@@ -1,24 +1,27 @@
 "use client";
 
-import { useState } from "react";
-import Link from "next/link";
+import { useState, useEffect } from "react";
+import { Link, usePathname } from "@/i18n/routing";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import CTAButton from "../ui/CTAButton";
 import SearchBar from "../ui/SearchBar";
+import LanguageSelector from "../ui/LanguageSelector";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
+  const t = useTranslations("common");
 
   const navLinks = [
-    { href: "/", label: "ပင်မစာမျက်နှာ", icon: "🏠" },
-    { href: "/review/top-myanmar-casinos", label: "ကာစီနို နှိုင်းယှဉ်ချက်", icon: "⭐" },
-    { href: "/bonuses", label: "ဘောနပ်စ်များ", icon: "🎁" },
-    { href: "/games", label: "ဂိမ်းများ", icon: "🎮" },
-    { href: "/payment", label: "ငွေလွှဲနည်းလမ်းများ", icon: "💳" },
-    { href: "/guide", label: "လမ်းညွှန်", icon: "📖" },
+    { href: "/", label: t("home"), icon: "🏠" },
+    { href: "/review/top-myanmar-casinos", label: t("compare"), icon: "⭐" },
+    { href: "/bonuses", label: t("bonuses"), icon: "🎁" },
+    { href: "/games", label: t("games"), icon: "🎮" },
+    { href: "/blog", label: t("blog"), icon: "📝" },
+    { href: "/payment", label: t("payment"), icon: "💳" },
+    { href: "/guide", label: t("guide"), icon: "📖" },
   ];
 
   const brandLinks = [
@@ -27,7 +30,13 @@ export default function Header() {
     "https://www.pya777.net/m/home?affiliateCode=seom2002",
   ];
 
-  const randomBrandLink = brandLinks[Math.floor(Math.random() * brandLinks.length)];
+  // Use first link as default for SSR consistency, then randomize on client
+  const [randomBrandLink, setRandomBrandLink] = useState(brandLinks[0]);
+
+  useEffect(() => {
+    // Only randomize on client side after hydration
+    setRandomBrandLink(brandLinks[Math.floor(Math.random() * brandLinks.length)]);
+  }, []);
 
   return (
     <header className="sticky top-0 z-50 bg-casino-purple-950/95 backdrop-blur-md border-b border-casino-purple-800/30">
@@ -50,16 +59,15 @@ export default function Header() {
 
           {/* Search Bar - Desktop */}
           <div className="hidden md:flex flex-1 max-w-2xl mx-4">
-            <SearchBar placeholder="Search for casinos, games and more" />
+            <SearchBar placeholder={t("searchPlaceholder")} />
           </div>
 
           {/* Language Selector & CTA */}
           <div className="flex items-center gap-3 flex-shrink-0">
             {/* Language Selector */}
-            <button className="hidden md:flex items-center gap-2 px-3 py-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors">
-              <span className="text-lg">🇲🇲</span>
-              <span className="text-white text-sm font-medium">MM</span>
-            </button>
+            <div className="hidden md:block">
+              <LanguageSelector variant="desktop" />
+            </div>
 
             {/* CTA Button */}
             <div className="hidden lg:block">
@@ -68,7 +76,7 @@ export default function Header() {
                 variant="gold"
                 size="sm"
               >
-                PLAY NOW
+                {t("playNow")}
               </CTAButton>
             </div>
 
@@ -126,7 +134,7 @@ export default function Header() {
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden pb-4"
           >
-            <SearchBar placeholder="Search casinos, games..." />
+            <SearchBar placeholder={t("searchPlaceholder")} />
           </motion.div>
         )}
 
@@ -154,6 +162,13 @@ export default function Header() {
                   {link.label}
                 </Link>
               ))}
+              
+              {/* Mobile Language Selector */}
+              <LanguageSelector 
+                variant="mobile" 
+                onSelect={() => setIsMenuOpen(false)} 
+              />
+
               <div className="pt-2">
                 <CTAButton
                   href={randomBrandLink}
@@ -161,7 +176,7 @@ export default function Header() {
                   size="md"
                   className="w-full"
                 >
-                  PLAY NOW
+                  {t("playNow")}
                 </CTAButton>
               </div>
             </nav>

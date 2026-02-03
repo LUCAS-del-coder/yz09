@@ -1,43 +1,50 @@
 "use client";
 
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/routing";
 
 export default function InternalLinksSection() {
+  const t = useTranslations("internalLinks");
+  const tGames = useTranslations("games");
+  const tCommon = useTranslations("common");
+  const tPromotions = useTranslations("promotions");
+  const tBlog = useTranslations("blog");
+
   const linkCategories = [
     {
-      title: "ဂိမ်းများ | Games",
+      title: `${t("games")}`,
       links: [
-        { href: "/games/slots", label: "စလော့ ဂိမ်းများ | Slot Games" },
-        { href: "/games/live-casino", label: "လိုင်ဗ် ကာစီနို | Live Casino" },
-        { href: "/games/fishing", label: "ငါးဖမ်းဂိမ်းများ | Fishing Games" },
-        { href: "/games/table-games", label: "စားပွဲဂိမ်းများ | Table Games" },
+        { href: "/games/slots", label: `${tGames("slots")}` },
+        { href: "/games/live-casino", label: `${tGames("liveCasino")}` },
+        { href: "/games/fishing", label: `${tGames("fishing")}` },
+        { href: "/games/table-games", label: `${tGames("tableGames")}` },
       ]
     },
     {
-      title: "ဘောနပ်စ်များ | Bonuses",
+      title: `${t("bonuses")}`,
       links: [
-        { href: "/promotions/welcome-bonus", label: "ကြိုဆို ဘောနပ်စ် | Welcome Bonus" },
-        { href: "/promotions/daily-bonus", label: "နေ့စဉ် ဘောနပ်စ် | Daily Bonus" },
-        { href: "/promotions/vip-program", label: "VIP အစီအစဉ် | VIP Program" },
-        { href: "/bonuses", label: "ဘောနပ်စ်အားလုံး | All Bonuses" },
+        { href: "/promotions/welcome-bonus", label: `${tPromotions("welcomeBonusHeading")}` },
+        { href: "/promotions/daily-bonus", label: `${tPromotions("dailyBonusHeading")}` },
+        { href: "/promotions/vip-program", label: `${tPromotions("vipProgramHeading")}` },
+        { href: "/bonuses", label: `${tCommon("bonuses")}` },
       ]
     },
     {
-      title: "လမ်းညွှန် | Guides",
+      title: t("guides"),
       links: [
-        { href: "/guide/how-to-play", label: "ကစားနည်း | How to Play" },
-        { href: "/guide/payment-methods", label: "ငွေသွင်း ငွေထုတ် | Payment Methods" },
-        { href: "/guide/responsible-gaming", label: "တာဝန်ယူမှု | Responsible Gaming" },
-        { href: "/guide", label: "လမ်းညွှန်အားလုံး | All Guides" },
+        { href: "/guide/how-to-play", label: t("howToPlay") },
+        { href: "/guide/payment-methods", label: t("paymentMethods") },
+        { href: "/guide/responsible-gaming", label: t("responsibleGaming") },
+        { href: "/guide", label: t("allGuides") },
       ]
     },
     {
-      title: "ဘလော့ | Blog",
+      title: t("blog"),
       links: [
-        { href: "/blog", label: "ဘလော့ | Blog" },
-        { href: "/blog/top-10-slot-games-2025", label: "အကောင်းဆုံး ဆလော့ 10 မျိုး | Top 10 Slots" },
-        { href: "/blog/how-to-choose-online-casino", label: "ကာစီနို ရွေးချယ်နည်း | Choose Casino" },
-        { href: "/blog/pragmatic-play-complete-guide", label: "Pragmatic Play လမ်းညွှန် | Pragmatic Guide" },
+        { href: "/blog", label: tBlog("heading") },
+        { href: "/blog/top-10-slot-games-2025", label: t("top10Slots") },
+        { href: "/blog/how-to-choose-online-casino", label: t("chooseCasino") },
+        { href: "/blog/pragmatic-play-complete-guide", label: t("pragmaticGuide") },
       ]
     }
   ];
@@ -47,11 +54,11 @@ export default function InternalLinksSection() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            <span className="gradient-gold">အသုံးဝင်သော လင့်ခ်များ</span>
-            <span className="text-white"> | Useful Links</span>
+            <span className="gradient-gold">{t("heading")}</span>
+            {/* <span className="text-white"> | Useful Links</span> */}
           </h2>
           <p className="text-gray-400 text-lg max-w-3xl mx-auto">
-            Myanmar Casino Reviews တွင် သင်ရှာဖွေနေသော အကြောင်းအရာ အားလုံး
+            {t("subheading")}
           </p>
         </div>
 
