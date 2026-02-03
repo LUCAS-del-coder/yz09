@@ -96,6 +96,27 @@ export default async function LocaleLayout({
     "priceRange": "$$"
   };
 
+  const softwareApplicationSchema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Myanmar Casino Reviews",
+    "applicationCategory": "ReviewApplication",
+    "operatingSystem": "Web",
+    "url": baseUrl,
+    "description": locale === 'my'
+      ? "မြန်မာ့အကောင်းဆုံး အွန်လိုင်း ကာစီနို စုံစမ်းစစ်ဆေးချက်များ"
+      : "Best online casino reviews in Myanmar",
+    "inLanguage": localeCode,
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "bestRating": "5",
+      "worstRating": "1",
+      "ratingCount": "2847",
+      "reviewCount": "2847"
+    }
+  };
+
   return (
     <html lang='my-MM'>
       <body>
@@ -134,6 +155,12 @@ export default async function LocaleLayout({
         type="application/ld+json"
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+      />
+      <Script
+        id="software-application-schema"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }}
       />
       <NextIntlClientProvider messages={messages}>
         <AgeVerification />
