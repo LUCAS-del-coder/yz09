@@ -339,7 +339,6 @@ function updateIndexFile(aiContent, contentType) {
       if (contentType === 'all' && (content.mainTitle || content.mainParagraph)) {
         // 生成結構化的新內容區塊（適配 Next.js JSX）
         newContent = `
-        {/* AI 自動生成內容 - ${timestamp} */}
         <section className="py-12 bg-dark-lighter">
           <div className="container mx-auto px-4">
             <div className="auto-generated-seo-content max-w-4xl mx-auto">
@@ -372,7 +371,6 @@ function updateIndexFile(aiContent, contentType) {
         }
         
         newContent = `
-        {/* AI 自動生成內容 - ${timestamp} */}
         <section className="py-12 bg-dark-lighter">
           <div className="container mx-auto px-4">
             <div className="auto-generated-seo-content max-w-4xl mx-auto">
