@@ -54,7 +54,6 @@ export default async function DailyBonusPage({ params }: { params: Promise<{ loc
 
         <h1 className="text-4xl md:text-5xl font-bold mb-6">
           <span className="gradient-gold">{t("dailyBonusHeading")}</span>
-          <span className="text-white"> | Daily Bonus</span>
         </h1>
 
         <div className="bg-gradient-to-br from-gold/20 to-gold/10 rounded-xl p-8 border border-gold/30 mb-8 text-center">
@@ -64,14 +63,14 @@ export default async function DailyBonusPage({ params }: { params: Promise<{ loc
 
         <div className="space-y-6 mb-8">
           <div className="bg-dark-lighter rounded-xl p-6">
-            <h2 className="text-2xl font-bold text-white mb-4">{t("aboutDailyBonus")} | About Daily Bonus</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">{t("aboutDailyBonus")}</h2>
             <p className="text-gray-300 leading-relaxed">
               {t("aboutDailyBonusText")}
             </p>
           </div>
 
           <div className="bg-dark-lighter rounded-xl p-6">
-            <h2 className="text-2xl font-bold text-white mb-4">{t("timeAndRequirements")} | Time & Requirements</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">{t("timeAndRequirements")}</h2>
             <ul className="space-y-3 text-gray-300">
               <li className="flex items-start gap-3">
                 <span className="text-gold text-xl">🕐</span>
@@ -89,7 +88,7 @@ export default async function DailyBonusPage({ params }: { params: Promise<{ loc
           </div>
 
           <div className="bg-dark-lighter rounded-xl p-6">
-            <h2 className="text-2xl font-bold text-white mb-4">{t("wageringRequirementsDaily")} | Wagering Requirements</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">{t("wageringRequirementsDaily")}</h2>
             <p className="text-gray-300 mb-4">
               {t("wageringTextDaily")}
             </p>
@@ -101,7 +100,7 @@ export default async function DailyBonusPage({ params }: { params: Promise<{ loc
         </div>
 
         <div className="bg-gradient-to-br from-dark-lighter to-dark rounded-xl p-8 border border-gold/30 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">{t("claimDailyBonus")} | Claim Daily Bonus</h2>
+          <h2 className="text-3xl font-bold text-white mb-4">{t("claimDailyBonus")}</h2>
           <CTAButton href={randomBrandLink} variant="gold" size="lg">
             {tCommon("openAccount")}
           </CTAButton>

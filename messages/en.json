@@ -1,5 +1,6 @@
 {
   "common": {
+    "searchPlaceholder": "Search for casinos, games and more",
     "home": "Home",
     "compare": "Compare Casinos",
     "bonuses": "Bonuses",
@@ -20,11 +21,49 @@
     "about": "About",
     "contact": "Contact",
     "privacy": "Privacy Policy",
-    "terms": "Terms of Service"
+    "terms": "Terms of Service",
+    "blog": "Blog"
+  },
+  "rankBadge": {
+    "top1": "#1 Top Rated Casino",
+    "top2": "#2 Top Rated Casino",
+    "top3": "#3 Top Rated Casino",
+    "default": "#{rank} Casino"
+  },
+  "casinoCard": {
+    "payout": "Payout",
+    "speed": "Speed",
+    "games": "Games",
+    "within1Hour": "Within 1 hour",
+    "bonus": "BONUS",
+    "moreDetails": "+ More details"
+  },
+  "availabilityBadge": {
+    "availableIn": "Available in {country}"
+  },
+  "gameCard": {
+    "hotGame": "Hot Game",
+    "playNow": "Play Now"
+  },
+  "homeFaq": {
+    "heading": "Frequently Asked Questions",
+    "subheading": "Common questions about Myanmar online casinos",
+    "question1": "Which is better: Shwe Casino or 888 Casino?",
+    "answer1": "Both Shwe Casino (rating 4.9/5) and 888 Casino (4.7/5) are excellent choices for Myanmar players. Shwe Casino ranks #1 with the best overall rating, while 888 Casino offers higher bonuses (150% vs 100%). Both casinos offer withdrawals within 1 hour.",
+    "question2": "Is 777 Casino safe for Myanmar players?",
+    "answer2": "Yes, 777 Casino is licensed by the Malta Gaming Authority and is one of the safest options for Myanmar players. It ranks highly alongside Shwe Casino and 888 Casino.",
+    "question3": "What are the best casino bonuses in Myanmar 2025?",
+    "answer3": "Win8 Casino offers 200% up to 400,000 MMK, 888 Casino offers 150% up to 600,000 MMK, and Shwe Casino offers 100% up to 500,000 MMK. All casinos support KBZ Pay and Wave Money.",
+    "question4": "Which casinos accept KBZ Pay and Wave Money?",
+    "answer4": "All top Myanmar casinos accept KBZ Pay and Wave Money including Shwe Casino, 888 Casino, 777 Casino, Win8, 999 Casino, PGLucky88, and FaFaFa Casino.",
+    "question5": "How does Win8 compare to 999 Casino?",
+    "answer5": "Win8 and 999 Casino both offer excellent game selections and bonuses. Both casinos offer withdrawals within 1 hour. Both are highly rated for Myanmar players.",
+    "question6": "Are PGLucky88 and FaFaFa Casino legitimate?",
+    "answer6": "Yes, both PGLucky88 and FaFaFa Casino are legitimate online casinos licensed and regulated. They offer secure payment methods, fair games, and good customer support for Myanmar players."
   },
   "home": {
-    "title": "2025 Best Online Casinos in Myanmar | Myanmar Casino Reviews",
-    "description": "Number 1 casino review website for Myanmar - Compare Shwe Casino, 888 Casino, 777 Casino, Win8, 999 Casino, PGLucky88 and FaFaFa. Expert reviews, bonuses and ratings for Myanmar players.",
+    "title": "2025 Best Online Casinos in Myanmar | Shwe Casino, 888 Casino, 777 Casino, Win8, 999 Casino",
+    "description": "Number 1 casino review website for Myanmar - Compare Shwe Casino, 888 Casino, 777 Casino, Win8, 999 Casino. Expert reviews, bonuses and ratings for Myanmar players.",
     "hotGames": "Hot Games",
     "featuredCasinos": "Featured Casinos",
     "latestBonuses": "Latest Bonuses"
@@ -54,6 +93,8 @@
     "liveCasinoDescription": "Experience real casino with professional dealers, HD live streaming, 24/7 operation. Baccarat, Roulette, Dragon Tiger and more options.",
     "liveCasinoHeading": "Live Casino",
     "liveCasinoSubheading": "Experience real casino with professional dealers, HD live streaming, 24/7 operation.",
+    "rtpWithValue": "RTP: {rtp}%",
+    "liveDealer": "Live Dealer",
     "fishingTitle": "Fishing Games | Fishing Games Myanmar | Myanmar Casino Reviews",
     "fishingDescription": "Most exciting fishing game experience. Multiple themes, rich prizes, simple gameplay. Start your fishing journey at Myanmar Casino Reviews now.",
     "fishingHeading": "Fishing Games",
@@ -100,37 +141,37 @@
     "categories": {
       "slots": {
         "name": "Slots",
-        "nameMm": "စလော့ဂိမ်းများ",
+        "nameMm": "Slot Games",
         "description": "Colorful slot games - PG Soft, Pragmatic Play, Microgaming",
         "features": ["Jackpot games", "Free Spins", "Bonus Rounds", "Myanmar language support"]
       },
       "liveCasino": {
         "name": "Live Casino",
-        "nameMm": "လိုင်းဗ် ကာစီနို",
+        "nameMm": "Live Casino",
         "description": "Real casino experience - real dealers from live studios",
         "features": ["Blackjack", "Baccarat", "Roulette", "Dragon Tiger"]
       },
       "sportsBetting": {
         "name": "Sports Betting",
-        "nameMm": "အားကစား လောင်းကစား",
+        "nameMm": "Sports Betting",
         "description": "Sports betting worldwide",
         "features": ["Football", "Basketball", "Tennis", "Boxing"]
       },
       "fishing": {
         "name": "Fishing",
-        "nameMm": "ငါးဖမ်းဂိမ်းများ",
+        "nameMm": "Fishing",
         "description": "Water-themed fishing games - high winning opportunities",
         "features": ["PG Fishing", "PP Fishing", "JILI Fishing", "Big Win Potential"]
       },
       "poker": {
         "name": "Poker",
-        "nameMm": "ပိုကာ",
+        "nameMm": "Poker",
         "description": "Poker games - Texas Hold'em, Omaha",
         "features": ["Tournaments", "Cash Games", "Sit & Go", "Private Tables"]
       },
       "lottery": {
         "name": "Lottery",
-        "nameMm": "လော့စာရေးဂိမ်းများ",
+        "nameMm": "Lottery",
         "description": "Lottery games - available daily",
         "features": ["Daily Draws", "Big Prizes", "Easy to Play", "Instant Results"]
       }
@@ -176,6 +217,9 @@
     "startDepositing": "Start Depositing and Playing Games Now",
     "maxAmount": "Maximum:",
     "time": "Time:",
+    "processingTimeInstant": "Instant",
+    "processingTime5_15": "5-15 minutes",
+    "processingTime10_30": "10-30 minutes",
     "paymentMethods": {
       "kbzPay": {
         "description": "Most popular payment method in Myanmar",
@@ -542,7 +586,7 @@
     }
   },
   "blog": {
-    "title": "Blog | Blog - Myanmar Casino Reviews",
+    "title": "Blog - Myanmar Casino Reviews",
     "description": "Online casino news, game reviews, strategy guides and more useful content.",
     "heading": "Blog",
     "subheading": "Online casino news, game reviews, strategy guides",
@@ -662,6 +706,7 @@
     "withdrawalText": "To withdraw, you need to log into your account and click \"Withdraw\". Select a withdrawal method and enter the withdrawal amount. Withdrawals will be processed within 1-24 hours.",
     "withdrawalProcessingTime": "Withdrawal Processing Time",
     "withdrawalTimeValue": "1-24 hours",
+    "processingTimeNote": "Processing time: 1-24 hours",
     "security": "Security",
     "securitySsl": "Protected with SSL encryption",
     "securityAccount": "Account info stored securely",
@@ -788,6 +833,7 @@
       "text": "After registration, verify your account by clicking the verification link sent to your email or entering the code received via SMS."
     },
     "step3": {
+      "tipLabel": "Tip",
       "title": "First Deposit",
       "step1": "Log in to your account",
       "step2": "Click \"Deposit\" or \"ငွေသွင်း\"",
@@ -896,13 +942,38 @@
   },
   "hero": {
     "title": "2025 Best",
-    "title2": "Online Casinos",
-    "description": "Expert reviews about Shwe Casino, 888 Casino, 777 Casino, Win8, 999 Casino",
-    "description2": "Compare bonuses, games and ratings for Myanmar players"
+    "title2": "Online Casinos in Myanmar",
+    "image-alt": "Myanmar Online Casino - Shwe Casino, Lion Boss Casino, Fishing Casino, MWD777, GKK777, Golden7 Casino, Mighty Fu Casino Slots Game - Best Casino Games in Myanmar 2025",
+    "description": "Expert reviews about <strong>Shwe Casino</strong>, <strong>888 Casino</strong>, <strong>777 Casino</strong>, <strong>Win8</strong>, <strong>999 Casino</strong>",
+    "description2": "Compare bonuses, games and ratings for Myanmar players",
+    "playNow": "Play Now",
+    "viewReviews": "View Reviews"
   },
   "featuredGames": {
     "heading": "Hot Games",
-    "subheading": "Best online casino games in Myanmar - from PG Soft, Pragmatic Play, and other top game providers"
+    "subheading": "Best online casino games in Myanmar - from PG Soft, Pragmatic Play, and other top game providers",
+    "viewAllGames": "View All Games"
+  },
+  "filterSidebar": {
+    "filters": "Filters",
+    "clearAll": "Clear All",
+    "providers": "Providers",
+    "rtpRange": "RTP Range",
+    "min": "Min:",
+    "max": "Max:",
+    "volatility": "Volatility"
+  },
+  "featuredCasinos": {
+    "heading": "Top Rated Myanmar Casinos 2025",
+    "subheading": "We've reviewed and ranked Myanmar's most popular online casinos including <strong>Shwe Casino</strong>, <strong>888 Casino</strong>, <strong>777 Casino</strong>, <strong>Win8</strong>, <strong>999 Casino</strong>, <strong>PGLucky88</strong> and <strong>FaFaFa Casino</strong>. Compare ratings, bonuses and features.",
+    "shweCasino": "Shwe Casino",
+    "casino888": "888 Casino",
+    "casino777": "777 Casino",
+    "win8": "Win8",
+    "casino999": "999 Casino",
+    "pglucky88": "PGLucky88",
+    "fafafaCasino": "FaFaFa Casino",
+    "viewAllCasinos": "View All Casinos"
   },
   "internalLinks": {
     "heading": "Useful Links",
@@ -910,7 +981,14 @@
     "games": "Games",
     "bonuses": "Bonuses",
     "guides": "Guides",
-    "blog": "Blog"
+    "blog": "Blog",
+    "howToPlay": "How to Play",
+    "paymentMethods": "Payment Methods",
+    "responsibleGaming": "Responsible Gaming",
+    "allGuides": "All Guides",
+    "top10Slots": "Top 10 Slots",
+    "chooseCasino": "Choose Casino",
+    "pragmaticGuide": "Pragmatic Guide"
   },
   "comparisonTable": {
     "casino": "Casino",
@@ -950,5 +1028,149 @@
   "prosCons": {
     "pros": "Pros",
     "cons": "Cons"
+  },
+  "casinos": {
+    "shwe-casino": {
+      "excerpt": "Best online casino in Myanmar - Highest bonuses and fastest withdrawals",
+      "pros": [
+        "Highest bonuses - 100% up to 500,000 MMK",
+        "Fast withdrawals - Within 1 hour",
+        "24/7 customer service",
+        "Myanmar language support",
+        "KBZ Pay, Wave Money supported"
+      ],
+      "cons": [
+        "Some games only in English",
+        "Limited license information"
+      ],
+      "bonuses": {
+        "welcome": {
+          "amount": "100% up to 500,000 MMK",
+          "description": "For first deposit"
+        },
+        "reload": {
+          "amount": "50% up to 200,000 MMK",
+          "description": "For regular deposits"
+        }
+      }
+    },
+    "777-casino": {
+      "excerpt": "Licensed and trusted casino - 777 brand",
+      "pros": [
+        "Licensed casino",
+        "Excellent security",
+        "Wide variety of games",
+        "Good mobile app performance"
+      ],
+      "cons": [
+        "Bonus amount slightly lower",
+        "Withdrawal may take slightly longer"
+      ],
+      "bonuses": {
+        "welcome": {
+          "amount": "75% up to 300,000 MMK",
+          "description": "For first deposit"
+        }
+      }
+    },
+    "888-casino": {
+      "excerpt": "888 brand - World-famous casino experience",
+      "pros": [
+        "World-famous brand",
+        "High quality games",
+        "Many bonuses",
+        "VIP program available"
+      ],
+      "cons": [
+        "Documentation required for account opening",
+        "Withdrawal may take slightly longer"
+      ],
+      "bonuses": {
+        "welcome": {
+          "amount": "150% up to 600,000 MMK",
+          "description": "For first deposit"
+        },
+        "freeSpins": {
+          "amount": "100 Free Spins",
+          "description": "Special bonus"
+        }
+      }
+    },
+    "win8-casino": {
+      "excerpt": "Highest winning chances - Win8 Casino",
+      "pros": [
+        "High winning opportunities",
+        "Many bonuses",
+        "Fast withdrawals",
+        "Good mobile app"
+      ],
+      "cons": [
+        "Security slightly weaker",
+        "Customer service slightly slow"
+      ],
+      "bonuses": {
+        "welcome": {
+          "amount": "200% up to 400,000 MMK",
+          "description": "For first deposit"
+        }
+      }
+    },
+    "999-casino": {
+      "excerpt": "999 brand - Success number",
+      "pros": [
+        "Large bonuses",
+        "Wide variety of games",
+        "Fast deposits",
+        "Special programs available"
+      ],
+      "cons": [
+        "No license verification",
+        "Customer service hours limited"
+      ],
+      "bonuses": {
+        "welcome": {
+          "amount": "100% + 100 Free Spins",
+          "description": "For first deposit"
+        }
+      }
+    },
+    "pglucky88-casino": {
+      "excerpt": "Complete PG Soft games available - Lucky88",
+      "pros": [
+        "Complete PG Soft games available",
+        "High quality games",
+        "Many bonuses",
+        "Good for mobile use"
+      ],
+      "cons": [
+        "Some games only in English",
+        "Withdrawal may take slightly longer"
+      ],
+      "bonuses": {
+        "welcome": {
+          "amount": "88% up to 888,888 MMK",
+          "description": "For first deposit"
+        }
+      }
+    },
+    "fafafa-casino": {
+      "excerpt": "FaFaFa - Most popular casino in Myanmar",
+      "pros": [
+        "Good Myanmar language support",
+        "Many bonuses",
+        "Fast deposits",
+        "Good customer service"
+      ],
+      "cons": [
+        "Slightly fewer games",
+        "Limited license information"
+      ],
+      "bonuses": {
+        "welcome": {
+          "amount": "150% up to 300,000 MMK",
+          "description": "For first deposit"
+        }
+      }
+    }
   }
 }

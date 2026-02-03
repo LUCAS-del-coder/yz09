@@ -1,11 +1,15 @@
 "use client";
 
+import { useTranslations } from "next-intl";
+
 interface RankBadgeProps {
   rank: number;
   className?: string;
 }
 
 export default function RankBadge({ rank, className = "" }: RankBadgeProps) {
+  const t = useTranslations("rankBadge");
+
   const getRankColor = () => {
     switch (rank) {
       case 1:
@@ -22,13 +26,13 @@ export default function RankBadge({ rank, className = "" }: RankBadgeProps) {
   const getRankText = () => {
     switch (rank) {
       case 1:
-        return "#1 Top Rated Casino";
+        return t("top1");
       case 2:
-        return "#2 Top Rated Casino";
+        return t("top2");
       case 3:
-        return "#3 Top Rated Casino";
+        return t("top3");
       default:
-        return `#${rank} Casino`;
+        return t("default", { rank });
     }
   };
 

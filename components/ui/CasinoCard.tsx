@@ -7,6 +7,7 @@ import StarRating from "./StarRating";
 import RankBadge from "./RankBadge";
 import AvailabilityBadge from "./AvailabilityBadge";
 import CasinoLogo from "./CasinoLogo";
+import { useTranslations } from "next-intl";
 
 interface CasinoCardProps {
   casino: {
@@ -37,6 +38,8 @@ interface CasinoCardProps {
 
 export default function CasinoCard({ casino, rank, index = 0 }: CasinoCardProps) {
   const isTopRanked = rank && rank <= 3;
+  const t = useTranslations("common");
+  const tCard = useTranslations("casinoCard");
   
   // 根据排名选择背景渐变
   const getCardBackground = () => {
@@ -81,7 +84,7 @@ export default function CasinoCard({ casino, rank, index = 0 }: CasinoCardProps)
           href={casino.ctaLink}
           className="btn-play-now text-sm py-2 px-6"
         >
-          PLAY NOW
+          {t("playNow")}
         </Link>
       </div>
 
@@ -123,7 +126,7 @@ export default function CasinoCard({ casino, rank, index = 0 }: CasinoCardProps)
               </div>
             )}
             <div className="inline-block px-3 py-1 bg-casino-purple-600/20 text-casino-purple-700 dark:text-casino-purple-300 rounded-full text-xs font-semibold">
-              BONUS
+              {tCard("bonus")}
             </div>
           </div>
 
@@ -137,23 +140,23 @@ export default function CasinoCard({ casino, rank, index = 0 }: CasinoCardProps)
           <div className="grid grid-cols-3 gap-4">
             <div>
               <div className={`text-xs ${isTopRanked ? "text-white/70" : "text-gray-500"} mb-1`}>
-                💰 Payout
+                💰 {tCard("payout")}
               </div>
               <div className={`font-bold ${textColor}`}>
-                {casino.features.withdrawalTime || "Within 1 hour"}
+                {casino.features.withdrawalTime || tCard("within1Hour")}
               </div>
             </div>
             <div>
               <div className={`text-xs ${isTopRanked ? "text-white/70" : "text-gray-500"} mb-1`}>
-                ⏱️ Speed
+                ⏱️ {tCard("speed")}
               </div>
               <div className={`font-bold ${textColor}`}>
-                {casino.features.withdrawalTime || "Within 1 hour"}
+                {casino.features.withdrawalTime || tCard("within1Hour")}
               </div>
             </div>
             <div>
               <div className={`text-xs ${isTopRanked ? "text-white/70" : "text-gray-500"} mb-1`}>
-                🎮 Games
+                🎮 {tCard("games")}
               </div>
               <div className={`font-bold ${textColor}`}>
                 {casino.features.games}+
@@ -172,7 +175,7 @@ export default function CasinoCard({ casino, rank, index = 0 }: CasinoCardProps)
                 : "bg-casino-purple-100 hover:bg-casino-purple-200 text-casino-purple-800"
             }`}
           >
-            + More details
+            {tCard("moreDetails")}
           </Link>
         </div>
       </div>
@@ -185,7 +188,7 @@ export default function CasinoCard({ casino, rank, index = 0 }: CasinoCardProps)
             isTopRanked ? "text-white/80 hover:text-white" : "text-casino-purple-600 hover:text-casino-purple-700"
           }`}
         >
-          + More details
+          {tCard("moreDetails")}
         </Link>
       </div>
     </motion.div>

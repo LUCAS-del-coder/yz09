@@ -1,0 +1,371 @@
+[
+  {
+    "id": "shwe-casino",
+    "name": "Shwe Casino",
+    "nameMm": "ရွှေ ကာစီနို",
+    "slug": "shwe-casino",
+    "rating": 4.9,
+    "featured": true,
+    "ctaLink": "https://www.yes8.io/m/home?affiliateCode=seom1802",
+    "ctaBrand": "Yes8",
+    "logo": "/images/casinos/shwe-logo.png",
+    "hero": "/images/casinos/shwe-hero.jpg",
+    "excerpt": "Best online casino in Myanmar - Highest bonuses and fastest withdrawals",
+    "pros": [
+      "Highest bonuses - 100% up to 500,000 MMK",
+      "Fast withdrawals - Within 1 hour",
+      "24/7 customer service",
+      "Myanmar language support",
+      "KBZ Pay, Wave Money supported"
+    ],
+    "cons": [
+      "Some games only in English",
+      "Limited license information"
+    ],
+    "features": {
+      "games": "1000+",
+      "providers": "50+",
+      "minDeposit": "1000 MMK",
+      "withdrawalTime": "Within 1 hour",
+      "support": "24/7 Live Chat",
+      "license": "Curacao Gaming License"
+    },
+    "bonuses": [
+      {
+        "type": "Welcome Bonus",
+        "amount": "100% up to 500,000 MMK",
+        "description": "For first deposit"
+      },
+      {
+        "type": "Reload Bonus",
+        "amount": "50% up to 200,000 MMK",
+        "description": "For regular deposits"
+      }
+    ],
+    "paymentMethods": [
+      "KBZ Pay",
+      "Wave Money",
+      "CB Pay",
+      "AYA Pay",
+      "Visa",
+      "Mastercard"
+    ],
+    "gameCategories": [
+      "Slots",
+      "Live Casino",
+      "Sports Betting",
+      "Fishing",
+      "Poker"
+    ]
+  },
+  {
+    "id": "777-casino",
+    "name": "777 Casino",
+    "nameMm": "၇၇၇ ကာစီနို",
+    "slug": "777-casino",
+    "rating": 4.8,
+    "featured": true,
+    "ctaLink": "https://www.ygn9.net/m/home?affiliateCode=seom1902",
+    "ctaBrand": "Ygn9",
+    "logo": "/images/casinos/777-logo.png",
+    "hero": "/images/casinos/777-hero.jpg",
+    "excerpt": "Licensed and trusted casino - 777 brand",
+    "pros": [
+      "Licensed casino",
+      "Excellent security",
+      "Wide variety of games",
+      "Good mobile app performance"
+    ],
+    "cons": [
+      "Bonus amount slightly lower",
+      "Withdrawal may take slightly longer"
+    ],
+    "features": {
+      "games": "800+",
+      "providers": "40+",
+      "minDeposit": "2000 MMK",
+      "withdrawalTime": "Within 1 hour",
+      "support": "24/7 Email & Chat",
+      "license": "Malta Gaming Authority"
+    },
+    "bonuses": [
+      {
+        "type": "Welcome Bonus",
+        "amount": "75% up to 300,000 MMK",
+        "description": "For first deposit"
+      }
+    ],
+    "paymentMethods": [
+      "KBZ Pay",
+      "Wave Money",
+      "AYA Pay",
+      "Visa",
+      "Mastercard",
+      "Bank Transfer"
+    ],
+    "gameCategories": [
+      "Slots",
+      "Live Casino",
+      "Sports Betting",
+      "Fishing"
+    ]
+  },
+  {
+    "id": "888-casino",
+    "name": "888 Casino",
+    "nameMm": "၈၈၈ ကာစီနို",
+    "slug": "888-casino",
+    "rating": 4.7,
+    "featured": true,
+    "ctaLink": "https://www.pya777.net/m/home?affiliateCode=seom2002",
+    "ctaBrand": "Pya777",
+    "logo": "/images/casinos/888-logo.png",
+    "hero": "/images/casinos/888-hero.jpg",
+    "excerpt": "888 brand - World-famous casino experience",
+    "pros": [
+      "World-famous brand",
+      "High quality games",
+      "Many bonuses",
+      "VIP program available"
+    ],
+    "cons": [
+      "Documentation required for account opening",
+      "Withdrawal may take slightly longer"
+    ],
+    "features": {
+      "games": "1200+",
+      "providers": "60+",
+      "minDeposit": "1000 MMK",
+      "withdrawalTime": "Within 1 hour",
+      "support": "24/7 Live Chat & Phone",
+      "license": "UK Gambling Commission"
+    },
+    "bonuses": [
+      {
+        "type": "Welcome Bonus",
+        "amount": "150% up to 600,000 MMK",
+        "description": "For first deposit"
+      },
+      {
+        "type": "Free Spins",
+        "amount": "100 Free Spins",
+        "description": "Special bonus"
+      }
+    ],
+    "paymentMethods": [
+      "KBZ Pay",
+      "Wave Money",
+      "CB Pay",
+      "Visa",
+      "Mastercard",
+      "Cryptocurrency"
+    ],
+    "gameCategories": [
+      "Slots",
+      "Live Casino",
+      "Sports Betting",
+      "Fishing",
+      "Poker",
+      "Lottery"
+    ]
+  },
+  {
+    "id": "win8-casino",
+    "name": "Win8 Casino",
+    "nameMm": "ဝင်၈ ကာစီနို",
+    "slug": "win8-casino",
+    "rating": 4.6,
+    "featured": false,
+    "ctaLink": "https://www.mmk99.net/m/home?affiliateCode=seom2102",
+    "ctaBrand": "Mmk99",
+    "logo": "/images/casinos/win8-logo.png",
+    "hero": "/images/casinos/win8-hero.jpg",
+    "excerpt": "Highest winning chances - Win8 Casino",
+    "pros": [
+      "High winning opportunities",
+      "Many bonuses",
+      "Fast withdrawals",
+      "Good mobile app"
+    ],
+    "cons": [
+      "Security slightly weaker",
+      "Customer service slightly slow"
+    ],
+    "features": {
+      "games": "900+",
+      "providers": "45+",
+      "minDeposit": "1000 MMK",
+      "withdrawalTime": "Within 1 hour",
+      "support": "Live Chat (Business Hours)",
+      "license": "Curacao eGaming"
+    },
+    "bonuses": [
+      {
+        "type": "Welcome Bonus",
+        "amount": "200% up to 400,000 MMK",
+        "description": "For first deposit"
+      }
+    ],
+    "paymentMethods": [
+      "KBZ Pay",
+      "Wave Money",
+      "CB Pay",
+      "AYA Pay"
+    ],
+    "gameCategories": [
+      "Slots",
+      "Live Casino",
+      "Sports Betting",
+      "Fishing"
+    ]
+  },
+  {
+    "id": "999-casino",
+    "name": "999 Casino",
+    "nameMm": "၉၉၉ ကာစီနို",
+    "slug": "999-casino",
+    "rating": 4.5,
+    "featured": false,
+    "ctaLink": "https://www.kbz999.net/m/home?affiliateCode=seom2202",
+    "ctaBrand": "Kbz999",
+    "logo": "/images/casinos/999-logo.png",
+    "hero": "/images/casinos/999-hero.jpg",
+    "excerpt": "999 brand - Success number",
+    "pros": [
+      "Large bonuses",
+      "Wide variety of games",
+      "Fast deposits",
+      "Special programs available"
+    ],
+    "cons": [
+      "No license verification",
+      "Customer service hours limited"
+    ],
+    "features": {
+      "games": "700+",
+      "providers": "35+",
+      "minDeposit": "1000 MMK",
+      "withdrawalTime": "Within 1 hour",
+      "support": "Email & Live Chat",
+      "license": "Pending License"
+    },
+    "bonuses": [
+      {
+        "type": "Welcome Bonus",
+        "amount": "100% + 100 Free Spins",
+        "description": "For first deposit"
+      }
+    ],
+    "paymentMethods": [
+      "KBZ Pay",
+      "Wave Money",
+      "CB Pay",
+      "AYA Pay"
+    ],
+    "gameCategories": [
+      "Slots",
+      "Live Casino",
+      "Sports Betting"
+    ]
+  },
+  {
+    "id": "pglucky88-casino",
+    "name": "PGLucky88 Casino",
+    "nameMm": "PG Lucky88 ကာစီနို",
+    "slug": "pglucky88-casino",
+    "rating": 4.4,
+    "featured": false,
+    "ctaLink": "https://www.mmk123.net/m/home?affiliateCode=seom2302",
+    "ctaBrand": "Mmk123",
+    "logo": "/images/casinos/pglucky88-logo.png",
+    "hero": "/images/casinos/pglucky88-hero.jpg",
+    "excerpt": "Complete PG Soft games available - Lucky88",
+    "pros": [
+      "Complete PG Soft games available",
+      "High quality games",
+      "Many bonuses",
+      "Good for mobile use"
+    ],
+    "cons": [
+      "Some games only in English",
+      "Withdrawal may take slightly longer"
+    ],
+    "features": {
+      "games": "850+",
+      "providers": "40+",
+      "minDeposit": "1000 MMK",
+      "withdrawalTime": "Within 1 hour",
+      "support": "24/7 Live Chat",
+      "license": "Curacao Gaming License"
+    },
+    "bonuses": [
+      {
+        "type": "Welcome Bonus",
+        "amount": "88% up to 888,888 MMK",
+        "description": "For first deposit"
+      }
+    ],
+    "paymentMethods": [
+      "KBZ Pay",
+      "Wave Money",
+      "CB Pay",
+      "AYA Pay",
+      "Visa"
+    ],
+    "gameCategories": [
+      "Slots",
+      "Live Casino",
+      "Fishing",
+      "Arcade"
+    ]
+  },
+  {
+    "id": "fafafa-casino",
+    "name": "FaFaFa Casino",
+    "nameMm": "ဖဖဖ ကာစီနို",
+    "slug": "fafafa-casino",
+    "rating": 4.3,
+    "featured": false,
+    "ctaLink": "https://www.yes8.io/m/home?affiliateCode=seom1802",
+    "ctaBrand": "Yes8",
+    "logo": "/images/casinos/fafafa-logo.png",
+    "hero": "/images/casinos/fafafa-hero.jpg",
+    "excerpt": "FaFaFa - Most popular casino in Myanmar",
+    "pros": [
+      "Good Myanmar language support",
+      "Many bonuses",
+      "Fast deposits",
+      "Good customer service"
+    ],
+    "cons": [
+      "Slightly fewer games",
+      "Limited license information"
+    ],
+    "features": {
+      "games": "600+",
+      "providers": "30+",
+      "minDeposit": "1000 MMK",
+      "withdrawalTime": "Within 1 hour",
+      "support": "Live Chat & Phone",
+      "license": "Curacao eGaming"
+    },
+    "bonuses": [
+      {
+        "type": "Welcome Bonus",
+        "amount": "150% up to 300,000 MMK",
+        "description": "For first deposit"
+      }
+    ],
+    "paymentMethods": [
+      "KBZ Pay",
+      "Wave Money",
+      "CB Pay",
+      "AYA Pay"
+    ],
+    "gameCategories": [
+      "Slots",
+      "Live Casino",
+      "Sports Betting"
+    ]
+  }
+]

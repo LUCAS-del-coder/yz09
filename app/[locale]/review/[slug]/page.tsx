@@ -2,7 +2,6 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Script from "next/script";
-import casinosData from "@/data/casinos.json";
 import StarRating from "@/components/ui/StarRating";
 import ProsCons from "@/components/ui/ProsCons";
 import BonusCard from "@/components/ui/BonusCard";
@@ -12,16 +11,19 @@ import HeroImage from "@/components/ui/HeroImage";
 import CasinoLogo from "@/components/ui/CasinoLogo";
 import { getBaseUrl } from "@/lib/config";
 import { getTranslations } from "next-intl/server";
+import { getCasinos, getCasinoBySlug } from "@/lib/get-casinos";
+import casinosEn from "@/data/casinos-en.json";
 
 export async function generateStaticParams() {
-  return casinosData.map((casino) => ({
+  // Use English data for static params (slug is the same in both languages)
+  return casinosEn.map((casino) => ({
     slug: casino.slug,
   }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }> }): Promise<Metadata> {
   const { locale, slug } = await params;
-  const casino = casinosData.find((c) => c.slug === slug);
+  const casino = getCasinoBySlug(slug, locale);
   const baseUrl = getBaseUrl();
 
   if (!casino) {
@@ -31,9 +33,10 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     };
   }
 
-  // 建立競品對比關鍵字
-  const competitors = casinosData
-    .filter(c => c.slug !== casino.slug)
+  // Get competitor names (use English for competitor names in metadata)
+  const casinosEn = getCasinos('en');
+  const competitors = casinosEn
+    .filter(c => c.slug !== slug)
     .slice(0, 3)
     .map(c => c.name)
     .join(", ");
@@ -73,7 +76,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 export default async function CasinoReviewPage({ params }: { params: Promise<{ locale: string; slug: string }> }) {
   const { locale, slug } = await params;
-  const casino = casinosData.find((c) => c.slug === slug);
+  const casino = getCasinoBySlug(slug, locale);
   const baseUrl = getBaseUrl();
   const tCommon = await getTranslations({ locale, namespace: "common" });
   const tReview = await getTranslations({ locale, namespace: "review" });

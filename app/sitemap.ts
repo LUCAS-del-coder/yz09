@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
-import casinosData from '@/data/casinos.json';
+import casinosEn from '@/data/casinos-en.json';
 import gamesData from '@/data/games.json';
-import blogPostsData from '@/data/blog-posts.json';
+import { getBlogPostBySlug, getBlogPosts } from '@/lib/get-blog-posts';
 import { locales, defaultLocale } from '@/i18n/config';
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -51,8 +51,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...createSitemapEntries('/guide/responsible-gaming', new Date(), 'monthly', 0.7),
   ];
 
-  // Dynamic casino review pages
-  const casinoPages: MetadataRoute.Sitemap = casinosData.flatMap((casino) =>
+  // Dynamic casino review pages (slug is the same in both languages)
+  const casinoPages: MetadataRoute.Sitemap = casinosEn.flatMap((casino) =>
     createSitemapEntries(`/review/${casino.slug}`, new Date(), 'weekly', 0.8)
   );
 
@@ -72,15 +72,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Blog pages
   const blogListPage: MetadataRoute.Sitemap = createSitemapEntries('/blog', new Date(), 'daily', 0.8);
 
-  // Dynamic blog post pages
-  const blogPostPages: MetadataRoute.Sitemap = blogPostsData.flatMap((post: any) =>
-    createSitemapEntries(
-      `/blog/${post.slug}`,
-      new Date(post.lastModified || post.publishDate),
-      'weekly',
-      0.7
-    )
-  );
+  // Dynamic blog post pages (each slug has entries for all locales)
+  const blogPostsEn = getBlogPosts('en');
+  const blogPostsMy = getBlogPosts('my');
+  const allBlogSlugs = [...new Set([...blogPostsEn.map((p) => p.slug), ...blogPostsMy.map((p) => p.slug)])];
+  const blogPostPages: MetadataRoute.Sitemap = allBlogSlugs.flatMap((slug) => {
+    const post = getBlogPostBySlug(slug, 'my') ?? getBlogPostBySlug(slug, 'en');
+    const lastMod = post ? new Date(post.lastModified || post.publishDate) : new Date();
+    return createSitemapEntries(`/blog/${slug}`, lastMod, 'weekly', 0.7);
+  });
 
   return [
     ...staticPages,

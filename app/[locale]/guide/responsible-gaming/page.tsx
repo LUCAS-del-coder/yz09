@@ -54,24 +54,18 @@ export default async function ResponsibleGamingPage({ params }: { params: Promis
 
         <h1 className="text-4xl md:text-5xl font-bold mb-6">
           <span className="gradient-gold">{t("heading")}</span>
-          <span className="text-white"> | Responsible Gaming</span>
         </h1>
 
         <div className="space-y-8 mb-8">
           <div className="bg-dark-lighter rounded-xl p-6">
-            <h2 className="text-2xl font-bold text-white mb-4">{t("whatIsResponsibleGaming")} | What is Responsible Gaming?</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">{t("whatIsResponsibleGaming")}</h2>
             <p className="text-gray-300 leading-relaxed mb-4">
               {t("whatIsText")}
-            </p>
-            <p className="text-gray-400 text-sm">
-              Responsible gaming means using online casino for entertainment only while maintaining 
-              control over your budget and time. Myanmar Casino Reviews is committed to providing 
-              a safe and healthy gaming experience.
             </p>
           </div>
 
           <div className="bg-dark-lighter rounded-xl p-6">
-            <h2 className="text-2xl font-bold text-white mb-4">{t("selfAssessment")} | Self-Assessment</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">{t("selfAssessment")}</h2>
             <p className="text-gray-300 leading-relaxed mb-4">
               {t("selfAssessmentText")}
             </p>
@@ -85,7 +79,7 @@ export default async function ResponsibleGamingPage({ params }: { params: Promis
           </div>
 
           <div className="bg-dark-lighter rounded-xl p-6">
-            <h2 className="text-2xl font-bold text-white mb-4">{t("settingLimits")} | Setting Gaming Limits</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">{t("settingLimits")}</h2>
             <div className="grid md:grid-cols-3 gap-4">
               <div className="bg-dark rounded-lg p-4">
                 <h3 className="text-gold font-bold mb-2">{t("depositLimit")}</h3>
@@ -103,7 +97,7 @@ export default async function ResponsibleGamingPage({ params }: { params: Promis
           </div>
 
           <div className="bg-dark-lighter rounded-xl p-6">
-            <h2 className="text-2xl font-bold text-white mb-4">{t("selfExclusion")} | Self-Exclusion</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">{t("selfExclusion")}</h2>
             <p className="text-gray-300 leading-relaxed mb-4">
               {t("selfExclusionText")}
             </p>
@@ -116,7 +110,7 @@ export default async function ResponsibleGamingPage({ params }: { params: Promis
           </div>
 
           <div className="bg-dark-lighter rounded-xl p-6 border border-red-500/30">
-            <h2 className="text-2xl font-bold text-white mb-4">{t("problemGamblingSigns")} | Problem Gambling Signs</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">{t("problemGamblingSigns")}</h2>
             <ul className="space-y-3 text-gray-300">
               {t.raw("problemGamblingList").map((item: string, index: number) => (
                 <li key={index} className="flex items-start gap-3">
@@ -128,7 +122,7 @@ export default async function ResponsibleGamingPage({ params }: { params: Promis
           </div>
 
           <div className="bg-dark-lighter rounded-xl p-6 border border-green-500/30">
-            <h2 className="text-2xl font-bold text-white mb-4">{t("gettingHelp")} | Getting Help</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">{t("gettingHelp")}</h2>
             <p className="text-gray-300 leading-relaxed mb-4">
               {t("gettingHelpText")}
             </p>
@@ -144,7 +138,7 @@ export default async function ResponsibleGamingPage({ params }: { params: Promis
         </div>
 
         <div className="bg-gradient-to-br from-dark-lighter to-dark rounded-xl p-8 border border-gold/30 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">{t("healthyGaming")} | Healthy Gaming</h2>
+          <h2 className="text-3xl font-bold text-white mb-4">{t("healthyGaming")}</h2>
           <p className="text-gray-300 mb-6 text-lg">
             {t("healthyGamingText")}
           </p>

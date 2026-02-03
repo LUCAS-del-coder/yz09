@@ -1,8 +1,8 @@
 import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import ComparisonTable from "@/components/ui/ComparisonTable";
-import casinosData from "@/data/casinos.json";
 import { getBaseUrl } from "@/lib/config";
+import { getCasinos } from "@/lib/get-casinos";
 
 const baseUrl = getBaseUrl();
 
@@ -32,6 +32,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 export default async function ComparisonPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "review" });
+  const casinos = getCasinos(locale);
+  
   return (
     <div className="min-h-screen bg-dark py-12">
       <div className="container mx-auto px-4">
@@ -44,7 +46,7 @@ export default async function ComparisonPage({ params }: { params: Promise<{ loc
           </p>
         </div>
 
-        <ComparisonTable casinos={casinosData} />
+        <ComparisonTable casinos={casinos} />
       </div>
     </div>
   );

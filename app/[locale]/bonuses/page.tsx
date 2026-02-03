@@ -1,8 +1,8 @@
 import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import BonusCard from "@/components/ui/BonusCard";
-import casinosData from "@/data/casinos.json";
 import { getBaseUrl } from "@/lib/config";
+import { getCasinos } from "@/lib/get-casinos";
 
 const baseUrl = getBaseUrl();
 
@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 export default async function BonusesPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "bonuses" });
-  const casinos = casinosData;
+  const casinos = getCasinos(locale);
   const brandLinks = [
     "https://www.yes8.io/m/home?affiliateCode=seom1802",
     "https://www.ygn9.net/m/home?affiliateCode=seom1902",

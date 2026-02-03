@@ -9,43 +9,42 @@ export default function InternalLinksSection() {
   const tCommon = useTranslations("common");
   const tPromotions = useTranslations("promotions");
   const tBlog = useTranslations("blog");
-  const tGuide = useTranslations("guide");
-  
+
   const linkCategories = [
     {
-      title: `${t("games")} | Games`,
+      title: `${t("games")}`,
       links: [
-        { href: "/games/slots", label: `${tGames("slots")} | Slot Games` },
-        { href: "/games/live-casino", label: `${tGames("liveCasino")} | Live Casino` },
-        { href: "/games/fishing", label: `${tGames("fishing")} | Fishing Games` },
-        { href: "/games/table-games", label: `${tGames("tableGames")} | Table Games` },
+        { href: "/games/slots", label: `${tGames("slots")}` },
+        { href: "/games/live-casino", label: `${tGames("liveCasino")}` },
+        { href: "/games/fishing", label: `${tGames("fishing")}` },
+        { href: "/games/table-games", label: `${tGames("tableGames")}` },
       ]
     },
     {
-      title: `${t("bonuses")} | Bonuses`,
+      title: `${t("bonuses")}`,
       links: [
-        { href: "/promotions/welcome-bonus", label: `${tPromotions("welcomeBonusHeading")} | Welcome Bonus` },
-        { href: "/promotions/daily-bonus", label: `${tPromotions("dailyBonusHeading")} | Daily Bonus` },
-        { href: "/promotions/vip-program", label: `${tPromotions("vipProgramHeading")} | VIP Program` },
-        { href: "/bonuses", label: `${tCommon("bonuses")} | All Bonuses` },
+        { href: "/promotions/welcome-bonus", label: `${tPromotions("welcomeBonusHeading")}` },
+        { href: "/promotions/daily-bonus", label: `${tPromotions("dailyBonusHeading")}` },
+        { href: "/promotions/vip-program", label: `${tPromotions("vipProgramHeading")}` },
+        { href: "/bonuses", label: `${tCommon("bonuses")}` },
       ]
     },
     {
-      title: `${t("guides")} | Guides`,
+      title: t("guides"),
       links: [
-        { href: "/guide/how-to-play", label: `How to Play | How to Play` },
-        { href: "/guide/payment-methods", label: `${tCommon("payment")} | Payment Methods` },
-        { href: "/guide/responsible-gaming", label: `Responsible Gaming | Responsible Gaming` },
-        { href: "/guide", label: `${tCommon("guide")} | All Guides` },
+        { href: "/guide/how-to-play", label: t("howToPlay") },
+        { href: "/guide/payment-methods", label: t("paymentMethods") },
+        { href: "/guide/responsible-gaming", label: t("responsibleGaming") },
+        { href: "/guide", label: t("allGuides") },
       ]
     },
     {
-      title: `${t("blog")} | Blog`,
+      title: t("blog"),
       links: [
-        { href: "/blog", label: `${tBlog("heading")} | Blog` },
-        { href: "/blog/top-10-slot-games-2025", label: `Top 10 Slots | Top 10 Slots` },
-        { href: "/blog/how-to-choose-online-casino", label: `Choose Casino | Choose Casino` },
-        { href: "/blog/pragmatic-play-complete-guide", label: `Pragmatic Guide | Pragmatic Guide` },
+        { href: "/blog", label: tBlog("heading") },
+        { href: "/blog/top-10-slot-games-2025", label: t("top10Slots") },
+        { href: "/blog/how-to-choose-online-casino", label: t("chooseCasino") },
+        { href: "/blog/pragmatic-play-complete-guide", label: t("pragmaticGuide") },
       ]
     }
   ];
@@ -56,7 +55,7 @@ export default function InternalLinksSection() {
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             <span className="gradient-gold">{t("heading")}</span>
-            <span className="text-white"> | Useful Links</span>
+            {/* <span className="text-white"> | Useful Links</span> */}
           </h2>
           <p className="text-gray-400 text-lg max-w-3xl mx-auto">
             {t("subheading")}

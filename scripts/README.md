@@ -11,9 +11,27 @@
   └── auto-content-update.yml    # GitHub Actions 工作流
 
 scripts/
-  ├── generate-content.js         # 內容生成腳本
-  └── README.md                   # 本說明文件
+  ├── generate-content.js           # 內容生成腳本
+  ├── transform-posts-to-blog.js   # 將 scraped posts.json 轉換為 blog-posts.json
+  ├── split-blog-posts-by-locale.js # 將 blog-posts.json 拆成 blog-posts-en / blog-posts-my
+  ├── translate-blog-posts-en.js    # 將 blog-posts-en.json 緬文內容翻譯成英文 (需 ANTHROPIC_API_KEY)
+  └── README.md                     # 本說明文件
 ```
+
+## 📰 Blog 文章轉換 (transform-posts)
+
+當你有新的 scraped blog 資料在 `data/posts.json` 時：
+
+1. 執行轉換腳本：
+```bash
+npm run transform-posts
+```
+
+2. 腳本會：
+   - 將外部連結 (mm7.tech) 轉為內部連結 `/blog/blog-{id}`
+   - 清除 excerpt 中的 `[...]` 截斷
+   - 保留 content_html 用於完整文章顯示
+   - 生成 URL-safe slugs (blog-5160, blog-5129 等)
 
 ## 🚀 使用方法
 
@@ -89,6 +107,38 @@ npm run generate-content
 2. **內容審核**：生成的內容需要人工審核，確保符合網站要求
 3. **版本控制**：建議在提交前檢查生成的內容
 4. **關鍵字驗證**：腳本會自動驗證關鍵字使用情況，但建議人工檢查
+
+## 🌐 Blog 英文翻譯 (translate-blog-en)
+
+將 `data/blog-posts-en.json` 中的緬甸文內容翻譯成英文，使用 Anthropic Claude API。
+
+1. 設置環境變數：
+```bash
+export ANTHROPIC_API_KEY="your-api-key-here"
+```
+
+2. 翻譯全部文章：
+```bash
+npm run translate-blog-en
+```
+
+3. 僅翻譯前 N 篇（測試用）：
+```bash
+LIMIT=3 npm run translate-blog-en
+```
+
+4. **僅翻譯 content_html**（標題、摘要、內文已是英文時使用，省 API 呼叫）：
+```bash
+# Linux / macOS / Git Bash
+npm run translate-blog-en:html
+# 或
+CONTENT_HTML_ONLY=1 npm run translate-blog-en
+
+# Windows CMD
+set CONTENT_HTML_ONLY=1 && npm run translate-blog-en
+```
+
+翻譯後會直接寫回 `data/blog-posts-en.json`。預設會翻譯標題、摘要、內文與 HTML 內文，標籤會對應為英文（如 Slots, Casino）。使用 `CONTENT_HTML_ONLY=1` 時只會翻譯仍含緬文的 `content_html`。
 
 ## 🔗 相關文檔
 

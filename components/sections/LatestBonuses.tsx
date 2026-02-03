@@ -1,14 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { Link } from "@/i18n/routing";
 import BonusCard from "../ui/BonusCard";
-import casinosData from "@/data/casinos.json";
+import { getCasinos } from "@/lib/get-casinos";
 
 export default function LatestBonuses() {
   const t = useTranslations("latestBonuses");
-  const casinos = casinosData;
+  const locale = useLocale();
+  const casinos = getCasinos(locale);
   const allBonuses = casinos.flatMap((casino) =>
     casino.bonuses.map((bonus) => ({
       ...bonus,
@@ -60,7 +61,7 @@ export default function LatestBonuses() {
             href="/bonuses"
             className="inline-block px-8 py-4 bg-gradient-to-r from-gold-dark via-gold to-gold-light text-dark font-bold rounded-lg hover:shadow-lg hover:shadow-gold/50 transition-all"
           >
-            {t("viewAll")} | View All Bonuses
+            {t("viewAll")}
           </Link>
         </div>
       </div>

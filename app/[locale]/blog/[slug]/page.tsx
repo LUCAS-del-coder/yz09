@@ -3,14 +3,14 @@ import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { Link } from "@/i18n/routing";
 import Image from "next/image";
-import blogPostsData from "@/data/blog-posts.json";
+import { getBlogPostBySlug, getBlogPosts } from "@/lib/get-blog-posts";
 import { getBaseUrl } from "@/lib/config";
 
 const baseUrl = getBaseUrl();
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }> }): Promise<Metadata> {
   const { locale, slug } = await params;
-  const post = blogPostsData.find((p: any) => p.slug === slug);
+  const post = getBlogPostBySlug(slug, locale);
   
   if (!post) {
     const t = await getTranslations({ locale, namespace: "common" });
@@ -20,10 +20,10 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   }
 
   return {
-    title: `${post.title} | ${post.titleEn} | Myanmar Casino Reviews`,
-    description: `${post.excerpt} ${post.excerptEn}`,
+    title: `${post.title} | Myanmar Casino Reviews`,
+    description: post.excerpt,
     openGraph: {
-      title: `${post.title} | ${post.titleEn}`,
+      title: post.title,
       description: post.excerpt,
       type: 'article',
       locale: locale === 'my' ? 'my_MM' : 'en_US',
@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       authors: [post.author],
       images: post.featuredImage ? [{
         url: `${baseUrl}${post.featuredImage}`,
-        alt: `${post.title} - ${post.titleEn}`
+        alt: post.title
       }] : [],
     },
     alternates: {
@@ -47,7 +47,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 export default async function BlogPostPage({ params }: { params: Promise<{ locale: string; slug: string }> }) {
   const { locale, slug } = await params;
-  const post = blogPostsData.find((p: any) => p.slug === slug);
+  const post = getBlogPostBySlug(slug, locale);
+  const blogPostsData = getBlogPosts(locale);
   const tCommon = await getTranslations({ locale, namespace: "common" });
   const tBlog = await getTranslations({ locale, namespace: "blog" });
 
@@ -60,7 +61,6 @@ export default async function BlogPostPage({ params }: { params: Promise<{ local
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "headline": post.title,
-    "alternateName": post.titleEn,
     "description": post.excerpt,
     "author": {
       "@type": "Person",
@@ -69,12 +69,12 @@ export default async function BlogPostPage({ params }: { params: Promise<{ local
     "datePublished": post.publishDate,
     "dateModified": post.lastModified,
     "image": post.featuredImage ? `${baseUrl}${post.featuredImage}` : undefined,
-    "inLanguage": "my-MM"
+    "inLanguage": locale === "my" ? "my-MM" : "en-US"
   };
 
-  // 相關文章
+  // Related posts
   const relatedPosts = blogPostsData
-    .filter((p: any) => p.id !== post.id && p.category === post.category)
+    .filter((p) => p.id !== post.id && p.category === post.category)
     .slice(0, 3);
 
   return (
@@ -88,10 +88,9 @@ export default async function BlogPostPage({ params }: { params: Promise<{ local
           <span className="text-white">{post.title}</span>
         </nav>
 
-        {/* H1 標題 */}
+        {/* H1 */}
         <h1 className="text-4xl md:text-5xl font-bold mb-4">
           <span className="gradient-gold">{post.title}</span>
-          <span className="text-gray-400 text-2xl md:text-3xl block mt-2">| {post.titleEn}</span>
         </h1>
 
         {/* 文章資訊 */}
@@ -110,7 +109,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ local
           <div className="relative w-full h-64 md:h-96 rounded-xl overflow-hidden mb-8">
             <Image
               src={post.featuredImage}
-              alt={`${post.title} - ${post.titleEn}`}
+              alt={post.title}
               fill
               className="object-cover"
               priority
@@ -121,24 +120,28 @@ export default async function BlogPostPage({ params }: { params: Promise<{ local
         {/* 文章內容 */}
         <article className="prose prose-invert max-w-none mb-8">
           <div className="bg-dark-lighter rounded-xl p-6">
-            <p className="text-gray-300 leading-relaxed text-lg mb-4">
+            <p className="text-gray-300 leading-relaxed text-lg">
               {post.excerpt}
-            </p>
-            <p className="text-gray-400 text-sm">
-              {post.excerptEn}
             </p>
           </div>
 
           <div className="bg-dark-lighter rounded-xl p-6 mt-6">
-            <h2 className="text-2xl font-bold text-white mb-4">{tBlog("aboutArticle")} | About This Article</h2>
-            <p className="text-gray-300 leading-relaxed">
-              {post.content || `${post.title} ${tBlog("fullArticle")}`}
-            </p>
+            <h2 className="text-2xl font-bold text-white mb-4">{tBlog("aboutArticle")}</h2>
+            {post.content_html ? (
+              <div
+                className="blog-content text-gray-300 leading-relaxed [&_.headsingle]:hidden [&_h2]:text-xl [&_h2]:font-bold [&_h2]:mt-6 [&_h2]:mb-3 [&_p]:mb-4 [&_img]:max-w-full [&_img]:rounded-lg [&_img]:my-4"
+                dangerouslySetInnerHTML={{ __html: post.content_html }}
+              />
+            ) : (
+              <p className="text-gray-300 leading-relaxed">
+                {post.content || `${post.title} ${tBlog("fullArticle")}`}
+              </p>
+            )}
           </div>
 
           {/* 標籤 */}
           <div className="flex flex-wrap gap-2 mt-6">
-            {post.tags.map((tag: string, index: number) => (
+            {(Array.isArray(post.tags) ? post.tags : []).map((tag: string, index: number) => (
               <span
                 key={index}
                 className="px-3 py-1 bg-dark-lighter rounded-full text-sm text-gray-300 border border-dark-lightest"
@@ -152,7 +155,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ local
         {/* 相關文章 */}
         {relatedPosts.length > 0 && (
           <div className="mt-12">
-            <h2 className="text-3xl font-bold text-white mb-6">{tBlog("relatedArticles")} | Related Articles</h2>
+            <h2 className="text-3xl font-bold text-white mb-6">{tBlog("relatedArticles")}</h2>
             <div className="grid md:grid-cols-3 gap-4">
               {relatedPosts.map((relatedPost: any) => (
                 <Link

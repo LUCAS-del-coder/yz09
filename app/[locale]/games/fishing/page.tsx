@@ -57,11 +57,10 @@ export default async function FishingPage({ params }: { params: Promise<{ locale
 
         <h1 className="text-4xl md:text-5xl font-bold mb-4">
           <span className="gradient-gold">{t("fishingHeading")}</span>
-          <span className="text-white"> | Fishing Games</span>
         </h1>
 
         <div className="bg-dark-lighter rounded-xl p-6 mb-8">
-          <h2 className="text-2xl font-bold text-white mb-4">{t("fishingHeading")} {tCommon("about")} | About Fishing Games</h2>
+          <h2 className="text-2xl font-bold text-white mb-4">{t("fishingHeading")}</h2>
           <p className="text-gray-300 leading-relaxed">
             {t("fishingSubheading")}
           </p>
@@ -93,7 +92,7 @@ export default async function FishingPage({ params }: { params: Promise<{ locale
         </div>
 
         <div className="bg-gradient-to-br from-dark-lighter to-dark rounded-xl p-8 border border-gold/30 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">{t("fishingHeading")} {tCommon("playNow")} | Play Fishing Games</h2>
+          <h2 className="text-3xl font-bold text-white mb-4">{t("fishingHeading")}</h2>
           <CTAButton href={randomBrandLink} variant="gold" size="lg">
             {tCommon("openAccount")}
           </CTAButton>

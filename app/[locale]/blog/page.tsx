@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/routing";
 import Image from "next/image";
-import blogPostsData from "@/data/blog-posts.json";
+import { getBlogPosts } from "@/lib/get-blog-posts";
 import { getBaseUrl } from "@/lib/config";
 
 const baseUrl = getBaseUrl();
@@ -33,19 +33,20 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 export default async function BlogPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "blog" });
+  const blogPostsData = getBlogPosts(locale);
   return (
     <div className="min-h-screen bg-dark py-12">
       <div className="container mx-auto px-4 max-w-6xl">
         <h1 className="text-4xl md:text-5xl font-bold mb-6">
           <span className="gradient-gold">{t("heading")}</span>
-          <span className="text-white"> | Blog</span>
+          <span className="text-white"></span>
         </h1>
-        <p className="text-gray-400 text-lg mb-8">
+        {/* <p className="text-gray-400 text-lg mb-8">
           {t("subheading")}
-        </p>
+        </p> */}
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {blogPostsData.map((post: any) => (
+          {blogPostsData.map((post) => (
             <Link
               key={post.id}
               href={`/blog/${post.slug}`}
@@ -55,14 +56,14 @@ export default async function BlogPage({ params }: { params: Promise<{ locale: s
                 <div className="relative w-full h-48">
                   <Image
                     src={post.featuredImage}
-                    alt={`${post.title} - ${post.titleEn}`}
+                    alt={post.title}
                     fill
                     className="object-cover group-hover:scale-110 transition-transform"
                   />
                 </div>
               )}
               <div className="p-6">
-                <div className="text-sm text-gold mb-2">{post.category} | {post.categoryEn}</div>
+                <div className="text-sm text-gold mb-2">{post.category}</div>
                 <h2 className="text-xl font-bold text-white mb-2 line-clamp-2">{post.title}</h2>
                 <p className="text-gray-400 text-sm mb-4 line-clamp-2">{post.excerpt}</p>
                 <div className="flex items-center justify-between text-xs text-gray-500">

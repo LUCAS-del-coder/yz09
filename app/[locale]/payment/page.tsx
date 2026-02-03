@@ -26,11 +26,11 @@ const paymentMethodKeys = ["kbzPay", "waveMoney", "cbPay", "ayaPay", "visaMaster
 const paymentMethodIcons = ["💳", "📱", "🏦", "💼", "💳"];
 const paymentMethodNames = ["KBZ Pay", "Wave Money", "CB Pay", "AYA Pay", "Visa / Mastercard"];
 const paymentMethodLimits = [
-  { min: "1000 MMK", max: "10,000,000 MMK", time: "လက်ငင်း" },
-  { min: "1000 MMK", max: "5,000,000 MMK", time: "လက်ငင်း" },
-  { min: "2000 MMK", max: "20,000,000 MMK", time: "5-15 မိနစ်" },
-  { min: "1000 MMK", max: "10,000,000 MMK", time: "လက်ငင်း" },
-  { min: "5,000 MMK", max: "50,000,000 MMK", time: "10-30 မိနစ်" }
+  { min: "1000 MMK", max: "10,000,000 MMK", timeKey: "processingTimeInstant" },
+  { min: "1000 MMK", max: "5,000,000 MMK", timeKey: "processingTimeInstant" },
+  { min: "2000 MMK", max: "20,000,000 MMK", timeKey: "processingTime5_15" },
+  { min: "1000 MMK", max: "10,000,000 MMK", timeKey: "processingTimeInstant" },
+  { min: "5,000 MMK", max: "50,000,000 MMK", timeKey: "processingTime10_30" }
 ];
 
 const brandLinks = [
@@ -76,7 +76,7 @@ export default async function PaymentPage({ params }: { params: Promise<{ locale
                   </div>
                   <div>
                     <span className="text-sm text-gray-400">{t("time")}:</span>
-                    <span className="text-gold font-semibold ml-2">{paymentMethodLimits[index].time}</span>
+                    <span className="text-gold font-semibold ml-2">{t(paymentMethodLimits[index].timeKey)}</span>
                   </div>
                 </div>
 

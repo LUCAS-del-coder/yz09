@@ -60,11 +60,10 @@ export default async function PaymentMethodsPage({ params }: { params: Promise<{
 
         <h1 className="text-4xl md:text-5xl font-bold mb-6">
           <span className="gradient-gold">{t("heading")}</span>
-          <span className="text-white"> | Payment Methods</span>
         </h1>
 
         <div className="bg-dark-lighter rounded-xl p-6 mb-8">
-          <h2 className="text-2xl font-bold text-white mb-4">{t("supportedMethods")} | Supported Payment Methods</h2>
+          <h2 className="text-2xl font-bold text-white mb-4">{t("supportedMethods")}</h2>
           <p className="text-gray-300 leading-relaxed">
             {t("supportedMethodsText")}
           </p>
@@ -98,7 +97,7 @@ export default async function PaymentMethodsPage({ params }: { params: Promise<{
                 </div>
 
                 <div className="mt-4">
-                  <h4 className="text-lg font-bold text-white mb-3">{t("depositSteps")} | Deposit Steps</h4>
+                  <h4 className="text-lg font-bold text-white mb-3">{t("depositSteps")}</h4>
                   <ol className="list-decimal list-inside space-y-2 text-gray-300 ml-4">
                     {methodData.steps.map((step: string, idx: number) => (
                       <li key={idx}>{step}</li>
@@ -112,38 +111,38 @@ export default async function PaymentMethodsPage({ params }: { params: Promise<{
 
         {/* 提款說明 */}
         <div className="bg-dark-lighter rounded-xl p-6 mb-8">
-          <h2 className="text-2xl font-bold text-white mb-4">{t("withdrawal")} | Withdrawal</h2>
+          <h2 className="text-2xl font-bold text-white mb-4">{t("withdrawal")}</h2>
           <p className="text-gray-300 leading-relaxed mb-4">
             {t("withdrawalText")}
           </p>
           <div className="bg-dark rounded-lg p-4 mt-4">
             <div className="text-sm text-gray-400 mb-1">{t("withdrawalProcessingTime")}</div>
             <div className="text-2xl font-bold text-gold">{t("withdrawalTimeValue")}</div>
-            <div className="text-xs text-gray-500 mt-1">Processing time: 1-24 hours</div>
+            <div className="text-xs text-gray-500 mt-1">{t("processingTimeNote")}</div>
           </div>
         </div>
 
         {/* 安全性說明 */}
         <div className="bg-dark-lighter rounded-xl p-6 mb-8 border border-green-500/30">
-          <h2 className="text-2xl font-bold text-white mb-4">🛡️ {t("security")} | Security</h2>
+          <h2 className="text-2xl font-bold text-white mb-4">🛡️ {t("security")}</h2>
           <ul className="space-y-3 text-gray-300">
             <li className="flex items-start gap-3">
               <span className="text-green-400">🔒</span>
-              <span>{t("securitySsl")} (Protected with SSL encryption)</span>
+              <span>{t("securitySsl")}</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-green-400">🔒</span>
-              <span>{t("securityAccount")} (Account info stored securely)</span>
+              <span>{t("securityAccount")}</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-green-400">🔒</span>
-              <span>{t("securityMonitoring")} (24/7 monitoring)</span>
+              <span>{t("securityMonitoring")}</span>
             </li>
           </ul>
         </div>
 
         <div className="bg-gradient-to-br from-dark-lighter to-dark rounded-xl p-8 border border-gold/30 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">{t("heading")} {tCommon("playNow")} | Start Depositing</h2>
+          <h2 className="text-3xl font-bold text-white mb-4">{t("heading")}</h2>
           <CTAButton href={randomBrandLink} variant="gold" size="lg">
             {tCommon("openAccount")}
           </CTAButton>

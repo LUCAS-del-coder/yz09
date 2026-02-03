@@ -2,37 +2,83 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import createNextIntlPlugin from 'next-intl/plugin';
 
-
 const withNextIntl = createNextIntlPlugin('./i18n/request.ts');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   compress: true,
   poweredByHeader: false,
+  
+  // Performance optimizations for faster compilation
+  swcMinify: true,
+  
+  // Faster development builds
+  typescript: {
+    // Skip type checking during build (faster, but less safe)
+    // You can still run `tsc --noEmit` separately
+    ignoreBuildErrors: false,
+  },
+  
   images: {
-    // Next.js 14 本地圖片不需要 remotePatterns，但可以配置外部圖片域名
-    // 本地 public 目錄下的圖片可以直接使用
     formats: ['image/avif', 'image/webp'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     minimumCacheTTL: 60,
-    // 允許未優化的圖片（如果需要）
-    // unoptimized: false,
   },
+  
   experimental: {
-    optimizePackageImports: ['framer-motion'],
+    optimizePackageImports: ['framer-motion', 'next-intl'],
+    // Faster refresh
+    optimizeCss: true,
   },
+  
   eslint: {
     ignoreDuringBuilds: true,
   },
-  webpack: (config) => {
+  
+  // Optimized webpack config for faster compilation
+  webpack: (config, { dev, isServer }) => {
+    // Alias configuration
     config.resolve.alias = {
       ...config.resolve.alias,
       '@': path.resolve(__dirname),
     };
-    config.resolve.extensions.push('.ts', '.tsx', '.js', '.jsx', '.json');
+    
+    // Faster builds in development
+    if (dev) {
+      // Reduce file watching overhead
+      config.watchOptions = {
+        poll: 1000,
+        aggregateTimeout: 300,
+        ignored: [
+          '**/node_modules',
+          '**/.git',
+          '**/.next',
+          '**/public',
+        ],
+      };
+      
+      // Faster source maps in dev
+      config.devtool = 'eval-cheap-module-source-map';
+    }
+    
+    // Optimize JSON imports (large translation files)
+    config.module.rules.push({
+      test: /\.json$/,
+      type: 'json',
+    });
+    
+    // Cache optimization
+    if (!isServer) {
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+        fs: false,
+      };
+    }
+    
     return config;
   },
+  
   async headers() {
     return [
       {

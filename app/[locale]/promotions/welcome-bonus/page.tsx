@@ -55,7 +55,6 @@ export default async function WelcomeBonusPage({ params }: { params: Promise<{ l
 
         <h1 className="text-4xl md:text-5xl font-bold mb-6">
           <span className="gradient-gold">{t("welcomeBonusHeading")}</span>
-          <span className="text-white"> | Welcome Bonus</span>
         </h1>
 
         {/* 獎金總覽 */}
@@ -68,18 +67,14 @@ export default async function WelcomeBonusPage({ params }: { params: Promise<{ l
         {/* 內容區塊 */}
         <div className="space-y-6 mb-8">
           <div className="bg-dark-lighter rounded-xl p-6">
-            <h2 className="text-2xl font-bold text-white mb-4">{t("aboutWelcomeBonus")} | About the Bonus</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">{t("aboutWelcomeBonus")}</h2>
             <p className="text-gray-300 leading-relaxed mb-4">
               {t("aboutWelcomeBonusText")}
-            </p>
-            <p className="text-gray-400 text-sm">
-              The welcome bonus is a special offer for new players. When you make your first deposit, 
-              you'll receive a 100% bonus up to 50,000 MMK.
             </p>
           </div>
 
           <div className="bg-dark-lighter rounded-xl p-6">
-            <h2 className="text-2xl font-bold text-white mb-4">{t("claimRequirements")} | Claim Requirements</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">{t("claimRequirements")}</h2>
             <ul className="space-y-3 text-gray-300">
               {t.raw("claimRequirementsList").map((requirement: string, index: number) => (
                 <li key={index} className="flex items-start gap-3">
@@ -91,7 +86,7 @@ export default async function WelcomeBonusPage({ params }: { params: Promise<{ l
           </div>
 
           <div className="bg-dark-lighter rounded-xl p-6">
-            <h2 className="text-2xl font-bold text-white mb-4">{t("wageringRequirements")} | Wagering Requirements</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">{t("wageringRequirements")}</h2>
             <p className="text-gray-300 leading-relaxed mb-4">
               {t("wageringRequirementsText")}
             </p>
@@ -103,7 +98,7 @@ export default async function WelcomeBonusPage({ params }: { params: Promise<{ l
           </div>
 
           <div className="bg-dark-lighter rounded-xl p-6">
-            <h2 className="text-2xl font-bold text-white mb-4">{t("eligibleGames")} | Eligible Games</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">{t("eligibleGames")}</h2>
             <p className="text-gray-300 leading-relaxed mb-4">
               {t("eligibleGamesText")}
             </p>
@@ -118,7 +113,7 @@ export default async function WelcomeBonusPage({ params }: { params: Promise<{ l
           </div>
 
           <div className="bg-dark-lighter rounded-xl p-6">
-            <h2 className="text-2xl font-bold text-white mb-4">{t("howToClaim")} | How to Claim</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">{t("howToClaim")}</h2>
             <ol className="list-decimal list-inside space-y-3 text-gray-300">
               {t.raw("howToClaimSteps").map((step: string, index: number) => (
                 <li key={index}>{step}</li>
@@ -127,7 +122,7 @@ export default async function WelcomeBonusPage({ params }: { params: Promise<{ l
           </div>
 
           <div className="bg-dark-lighter rounded-xl p-6">
-            <h2 className="text-2xl font-bold text-white mb-4">{t("faq")} | FAQ</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">{t("faq")}</h2>
             <div className="space-y-4">
               <div>
                 <h3 className="text-lg font-bold text-white mb-2">{t("faqWhenReceived")}</h3>
@@ -148,7 +143,7 @@ export default async function WelcomeBonusPage({ params }: { params: Promise<{ l
         {/* CTA */}
         <div className="bg-gradient-to-br from-dark-lighter to-dark rounded-xl p-8 border border-gold/30 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">
-            {t("claimWelcomeBonus")} | Claim Welcome Bonus
+            {t("claimWelcomeBonus")}
           </h2>
           <p className="text-gray-300 mb-6 text-lg">
             {t("claimWelcomeBonusText")}

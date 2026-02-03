@@ -57,11 +57,10 @@ export default async function TableGamesPage({ params }: { params: Promise<{ loc
 
         <h1 className="text-4xl md:text-5xl font-bold mb-4">
           <span className="gradient-gold">{t("tableGamesHeading")}</span>
-          <span className="text-white"> | Table Games</span>
         </h1>
 
         <div className="bg-dark-lighter rounded-xl p-6 mb-8">
-          <h2 className="text-2xl font-bold text-white mb-4">{t("tableGamesHeading")} {tCommon("about")} | About Table Games</h2>
+          <h2 className="text-2xl font-bold text-white mb-4">{t("tableGamesHeading")}</h2>
           <p className="text-gray-300 leading-relaxed">
             {t("tableGamesSubheading")}
           </p>
@@ -93,7 +92,7 @@ export default async function TableGamesPage({ params }: { params: Promise<{ loc
         </div>
 
         <div className="bg-gradient-to-br from-dark-lighter to-dark rounded-xl p-8 border border-gold/30 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">{t("tableGamesHeading")} {tCommon("playNow")} | Play Table Games</h2>
+          <h2 className="text-3xl font-bold text-white mb-4">{t("tableGamesHeading")}</h2>
           <CTAButton href={randomBrandLink} variant="gold" size="lg">
             {tCommon("openAccount")}
           </CTAButton>

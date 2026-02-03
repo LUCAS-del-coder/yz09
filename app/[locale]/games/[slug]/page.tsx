@@ -144,7 +144,7 @@ export default async function GameDetailPage({ params }: { params: Promise<{ loc
 
             {/* 第一段 - 緬甸語為主 */}
             <div className="bg-dark-lighter rounded-xl p-6 mb-6">
-              <h2 className="text-2xl font-bold text-white mb-4">{tGames("aboutGame")} | About the Game</h2>
+              <h2 className="text-2xl font-bold text-white mb-4">{tGames("aboutGame")}</h2>
               <p className="text-gray-300 leading-relaxed mb-4">
                 {game.descriptionMm || game.description}
               </p>
@@ -155,7 +155,7 @@ export default async function GameDetailPage({ params }: { params: Promise<{ loc
 
             {/* H2: ဂိမ်း အင်္ဂါရပ်များ | Game Features */}
             <div className="bg-dark-lighter rounded-xl p-6 mb-6">
-              <h2 className="text-2xl font-bold text-white mb-4">{tGames("gameFeatures")} | Game Features</h2>
+              <h2 className="text-2xl font-bold text-white mb-4">{tGames("gameFeatures")}</h2>
               <div className="grid md:grid-cols-2 gap-4">
                 {game.features?.map((feature: string, index: number) => (
                   <div key={index} className="flex items-center gap-3">
@@ -168,7 +168,7 @@ export default async function GameDetailPage({ params }: { params: Promise<{ loc
 
             {/* H2: အဓိက အင်္ဂါရပ်များ | Key Features */}
             <div className="bg-dark-lighter rounded-xl p-6 mb-6">
-              <h2 className="text-2xl font-bold text-white mb-4">{tGames("keyFeatures")} | Key Features</h2>
+              <h2 className="text-2xl font-bold text-white mb-4">{tGames("keyFeatures")}</h2>
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="bg-dark rounded-lg p-4">
                   <div className="text-sm text-gray-400 mb-1">{tGames("rtp")}</div>
@@ -176,17 +176,17 @@ export default async function GameDetailPage({ params }: { params: Promise<{ loc
                   <div className="text-xs text-gray-500 mt-1">{tGames("highestReturnRate")}</div>
                 </div>
                 <div className="bg-dark rounded-lg p-4">
-                  <div className="text-sm text-gray-400 mb-1">{tGames("maxWin")} (Max Win)</div>
+                  <div className="text-sm text-gray-400 mb-1">{tGames("maxWin")}</div>
                   <div className="text-2xl font-bold text-gold">{game.maxWin}</div>
                   <div className="text-xs text-gray-500 mt-1">{tGames("ofYourBet")} {game.maxWin}</div>
                 </div>
                 <div className="bg-dark rounded-lg p-4">
-                  <div className="text-sm text-gray-400 mb-1">{tGames("minBet")} (Min Bet)</div>
+                  <div className="text-sm text-gray-400 mb-1">{tGames("minBet")}</div>
                   <div className="text-2xl font-bold text-gold">{game.minBet} MMK</div>
                   <div className="text-xs text-gray-500 mt-1">{tGames("veryAffordableStart")}</div>
                 </div>
                 <div className="bg-dark rounded-lg p-4">
-                  <div className="text-sm text-gray-400 mb-1">{tGames("volatility")} (Volatility)</div>
+                  <div className="text-sm text-gray-400 mb-1">{tGames("volatility")}</div>
                   <div className="text-2xl font-bold text-gold">{volatilityMM}</div>
                   <div className="text-xs text-gray-500 mt-1">{game.volatility} {tGames("volatilityText")}</div>
                 </div>
@@ -195,36 +195,36 @@ export default async function GameDetailPage({ params }: { params: Promise<{ loc
 
             {/* H2: ဘယ်လို ကစားမလဲ | How to Play */}
             <div className="bg-dark-lighter rounded-xl p-6 mb-6">
-              <h2 className="text-2xl font-bold text-white mb-4">{tGames("howToPlay")} | How to Play</h2>
+              <h2 className="text-2xl font-bold text-white mb-4">{tGames("howToPlay")}</h2>
               <ol className="list-decimal list-inside space-y-3 text-gray-300">
-                <li>{tGames("registerAtCasino")} (Register at Shwe Casino 99)</li>
-                <li>{tGames("depositMoney")} (Deposit money)</li>
-                <li>{tGames("selectGame", { game: game.nameMm })} (Select {game.name} game)</li>
-                <li>{tGames("setBetAmount")} (Set your bet amount)</li>
-                <li>{tGames("spinReels")} (Spin the reels)</li>
-                <li>{tGames("winPrizes")} (Win prizes)</li>
+                <li>{tGames("registerAtCasino")}</li>
+                <li>{tGames("depositMoney")}</li>
+                <li>{tGames("selectGame", { game: game.nameMm })}</li>
+                <li>{tGames("setBetAmount")}</li>
+                <li>{tGames("spinReels")}</li>
+                <li>{tGames("winPrizes")}</li>
               </ol>
             </div>
 
             {/* H2: အကောင်းဆုံး အကြံပြုချက်များ | Best Tips */}
             <div className="bg-dark-lighter rounded-xl p-6 mb-6">
-              <h2 className="text-2xl font-bold text-white mb-4">{tGames("bestTips")} | Best Tips</h2>
+              <h2 className="text-2xl font-bold text-white mb-4">{tGames("bestTips")}</h2>
               <ul className="space-y-3 text-gray-300">
                 <li className="flex items-start gap-3">
                   <span className="text-gold text-xl">💡</span>
-                  <span>{tGames("manageBudget")} (Manage your budget and stick to it)</span>
+                  <span>{tGames("manageBudget")}</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-gold text-xl">💡</span>
-                  <span>{tGames("highRtpGame", { rtp: game.rtp })} (This game offers one of the highest RTPs in the market)</span>
+                  <span>{tGames("highRtpGame", { rtp: game.rtp })}</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-gold text-xl">💡</span>
-                  <span>{tGames("highVolatility", { volatility: volatilityMM })} (High volatility means big wins but requires patience)</span>
+                  <span>{tGames("highVolatility", { volatility: volatilityMM })}</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-gold text-xl">💡</span>
-                  <span>{tGames("tryFreePlay")} (Try free play mode first to get familiar)</span>
+                  <span>{tGames("tryFreePlay")}</span>
                 </li>
               </ul>
             </div>
@@ -259,7 +259,7 @@ export default async function GameDetailPage({ params }: { params: Promise<{ loc
                 size="lg"
                 className="w-full mb-4"
               >
-                {tGames("playNow")} | Play Now
+                {tGames("playNow")}
               </CTAButton>
 
               <div className="space-y-3 text-sm">
@@ -291,7 +291,7 @@ export default async function GameDetailPage({ params }: { params: Promise<{ loc
         {/* 相關遊戲推薦 */}
         {relatedGames.length > 0 && (
           <div className="mb-12">
-            <h2 className="text-3xl font-bold text-white mb-6">{tGames("recommendedGames")} | Recommended Games</h2>
+            <h2 className="text-3xl font-bold text-white mb-6">{tGames("recommendedGames")}</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
               {relatedGames.map((relatedGame: any) => (
                 <Link

@@ -61,7 +61,6 @@ export default async function SlotsPage({ params }: { params: Promise<{ locale: 
         {/* H1 Heading */}
         <h1 className="text-4xl md:text-5xl font-bold mb-4">
           <span className="gradient-gold">{t("slotsHeading")}</span>
-          <span className="text-white"> | Slot Games</span>
         </h1>
         <p className="text-gray-400 text-lg mb-8">
           {t("slotsSubheading")}

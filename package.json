@@ -4,10 +4,16 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "dev:turbo": "next dev --turbo",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "generate-content": "node scripts/generate-content.js"
+    "generate-content": "node scripts/generate-content.js",
+    "transform-posts": "node scripts/transform-posts-to-blog.js",
+    "translate-blog-en": "node scripts/translate-blog-posts-en.js",
+    "translate-blog-en:html": "CONTENT_HTML_ONLY=1 node scripts/translate-blog-posts-en.js",
+    "clean": "rm -rf .next && rm -rf node_modules/.cache",
+    "clean:win": "if exist .next rmdir /s /q .next && if exist node_modules\\.cache rmdir /s /q node_modules\\.cache"
   },
   "dependencies": {
     "@types/node": "^22.3.0",
@@ -24,6 +30,7 @@
     "react-dom": "^19",
     "sharp": "^0.33.2",
     "tailwindcss": "^3.4.7",
+    "translate": "^3.0.1",
     "typescript": "^5.5.4"
   },
   "devDependencies": {

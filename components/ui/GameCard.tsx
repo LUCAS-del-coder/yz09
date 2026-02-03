@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 import CTAButton from "./CTAButton";
 
@@ -19,14 +20,15 @@ interface GameCardProps {
 }
 
 export default function GameCard({ game, ctaLink }: GameCardProps) {
+  const t = useTranslations("gameCard");
+
   return (
     <div className="group relative bg-background-card rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
       {/* Hot Badge */}
       {game.hot && (
         <div className="absolute top-3 left-3 z-10 bg-red-500 text-white px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1 shadow-lg">
           <span>🔥</span>
-          <span className="hidden sm:inline">ဟော့ဂိမ်း</span>
-          <span className="sm:hidden">HOT</span>
+          <span className="hidden sm:inline">{t("hotGame")}</span>
         </div>
       )}
 
@@ -64,7 +66,7 @@ export default function GameCard({ game, ctaLink }: GameCardProps) {
           rel="nofollow sponsored noopener noreferrer"
         >
           <button className="w-full bg-casino-green-500 hover:bg-casino-green-600 text-white font-semibold py-2.5 px-4 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg hover:shadow-casino-green-500/50 hover:-translate-y-0.5">
-            ကစားရန်
+            {t("playNow")}
           </button>
         </Link>
       </div>

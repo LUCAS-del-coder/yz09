@@ -1,15 +1,19 @@
 "use client";
 
 import Image from "next/image";
-import casinosData from "@/data/casinos.json";
+import { useLocale } from "next-intl";
+import { getCasinos } from "@/lib/get-casinos";
 
 export default function DebugImagesPage() {
+  const locale = useLocale();
+  const casinos = getCasinos(locale);
+  
   return (
     <div className="min-h-screen bg-dark p-8">
       <h1 className="text-3xl font-bold text-white mb-8">圖片調試頁面</h1>
       
       <div className="space-y-8">
-        {casinosData.map((casino) => (
+        {casinos.map((casino) => (
           <div key={casino.id} className="bg-dark-lighter p-6 rounded-lg">
             <h2 className="text-xl font-bold text-white mb-4">{casino.name}</h2>
             

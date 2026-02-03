@@ -19,6 +19,7 @@ export default function Header() {
     { href: "/review/top-myanmar-casinos", label: t("compare"), icon: "⭐" },
     { href: "/bonuses", label: t("bonuses"), icon: "🎁" },
     { href: "/games", label: t("games"), icon: "🎮" },
+    { href: "/blog", label: t("blog"), icon: "📝" },
     { href: "/payment", label: t("payment"), icon: "💳" },
     { href: "/guide", label: t("guide"), icon: "📖" },
   ];
@@ -58,7 +59,7 @@ export default function Header() {
 
           {/* Search Bar - Desktop */}
           <div className="hidden md:flex flex-1 max-w-2xl mx-4">
-            <SearchBar placeholder="Search for casinos, games and more" />
+            <SearchBar placeholder={t("searchPlaceholder")} />
           </div>
 
           {/* Language Selector & CTA */}
@@ -75,7 +76,7 @@ export default function Header() {
                 variant="gold"
                 size="sm"
               >
-                PLAY NOW
+                {t("playNow")}
               </CTAButton>
             </div>
 
@@ -133,7 +134,7 @@ export default function Header() {
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden pb-4"
           >
-            <SearchBar placeholder="Search casinos, games..." />
+            <SearchBar placeholder={t("searchPlaceholder")} />
           </motion.div>
         )}
 
@@ -175,7 +176,7 @@ export default function Header() {
                   size="md"
                   className="w-full"
                 >
-                  PLAY NOW
+                  {t("playNow")}
                 </CTAButton>
               </div>
             </nav>

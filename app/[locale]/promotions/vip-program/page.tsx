@@ -54,17 +54,12 @@ export default async function VIPProgramPage({ params }: { params: Promise<{ loc
 
         <h1 className="text-4xl md:text-5xl font-bold mb-6">
           <span className="gradient-gold">{t("vipProgramHeading")}</span>
-          <span className="text-white"> | VIP Program</span>
         </h1>
 
         <div className="bg-dark-lighter rounded-xl p-6 mb-8">
-          <h2 className="text-2xl font-bold text-white mb-4">{t("aboutVipProgram")} | About VIP Program</h2>
+          <h2 className="text-2xl font-bold text-white mb-4">{t("aboutVipProgram")}</h2>
           <p className="text-gray-300 leading-relaxed mb-4">
             {t("aboutVipProgramText")}
-          </p>
-          <p className="text-gray-400 text-sm">
-            The VIP program is designed for loyal players with a 5-tier system offering 
-            higher bonuses, faster withdrawals, and exclusive customer service.
           </p>
         </div>
 
@@ -93,7 +88,7 @@ export default async function VIPProgramPage({ params }: { params: Promise<{ loc
 
         {/* VIP 福利詳情 */}
         <div className="bg-dark-lighter rounded-xl p-6 mb-8">
-          <h2 className="text-2xl font-bold text-white mb-4">{t("vipExclusiveBenefits")} | VIP Exclusive Benefits</h2>
+          <h2 className="text-2xl font-bold text-white mb-4">{t("vipExclusiveBenefits")}</h2>
           <div className="grid md:grid-cols-2 gap-4">
             <div className="bg-dark rounded-lg p-4">
               <h4 className="text-gold font-bold mb-2">{t("higherRebate")}</h4>
@@ -115,7 +110,7 @@ export default async function VIPProgramPage({ params }: { params: Promise<{ loc
         </div>
 
         <div className="bg-gradient-to-br from-dark-lighter to-dark rounded-xl p-8 border border-gold/30 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">{t("joinVipProgram")} | Join VIP Program</h2>
+          <h2 className="text-3xl font-bold text-white mb-4">{t("joinVipProgram")} {tCommon("joinVipProgram")}</h2>
           <CTAButton href={randomBrandLink} variant="gold" size="lg">
             {tCommon("openAccount")}
           </CTAButton>
