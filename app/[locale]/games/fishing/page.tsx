@@ -4,9 +4,7 @@ import { Link } from "@/i18n/routing";
 import Image from "next/image";
 import CTAButton from "@/components/ui/CTAButton";
 import gamesData from "@/data/games.json";
-import { getBaseUrl } from "@/lib/config";
-
-const baseUrl = getBaseUrl();
+import { getCanonicalUrl, getAlternateLanguages } from "@/lib/config";
 
 const brandLinks = [
   "https://www.yes8.io/m/home?affiliateCode=seom1802",
@@ -17,23 +15,21 @@ const brandLinks = [
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "games" });
+  const canonical = getCanonicalUrl('/games/fishing', locale);
 
   return {
     title: t("fishingTitle"),
     description: t("fishingDescription"),
+    alternates: {
+      canonical,
+      languages: getAlternateLanguages('/games/fishing'),
+    },
     openGraph: {
       title: t("fishingTitle"),
       description: t("fishingDescription"),
       locale: locale === 'my' ? 'my_MM' : 'en_US',
-      url: `${baseUrl}/games/fishing`,
+      url: canonical,
     },
-    alternates: {
-      canonical: `${baseUrl}/games/fishing`,
-      languages: {
-        'my-MM': `${baseUrl}/games/fishing`,
-        'en-US': `${baseUrl}/en/games/fishing`,
-      }
-    }
   };
 }
 
