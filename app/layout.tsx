@@ -1,19 +1,13 @@
-// Root layout - minimal, just for metadata
-// import type { Metadata } from "next";
-// import { getBaseUrl } from "@/lib/config";
-
-// const baseUrl = getBaseUrl();
-
-// export const metadata: Metadata = {
-//   metadataBase: new URL(baseUrl),
-//   title: {
-//     default: "၂၀၂၅ မြန်မာ့အကောင်းဆုံး Online Casino များ | Myanmar Casino Reviews",
-//     template: "%s | Myanmar Casino Reviews",
-//   },
-//   description: "မြန်မာ့အကောင်းဆုံး အွန်လိုင်း ကာစီနို စုံစမ်းစစ်ဆေးချက်များ",
-// };
-
+import type { Metadata } from "next";
 import "./globals.css";
+
+export const metadata: Metadata = {
+  icons: {
+    icon: "/images/favicon.png",
+    shortcut: "/images/favicon.png",
+    apple: "/images/favicon.png",
+  },
+};
 
 export default function RootLayout({
   children,

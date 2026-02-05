@@ -1,8 +1,6 @@
 import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
-import { getBaseUrl } from "@/lib/config";
-
-const baseUrl = getBaseUrl();
+import { getCanonicalUrl, getAlternateLanguages } from "@/lib/config";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -16,11 +14,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       follow: true,
     },
     alternates: {
-      canonical: `${baseUrl}/contact`,
-      languages: {
-        'my-MM': `${baseUrl}/contact`,
-        'en-US': `${baseUrl}/en/contact`,
-      }
+      canonical: getCanonicalUrl('/contact', locale),
+      languages: getAlternateLanguages('/contact'),
     },
   };
 }

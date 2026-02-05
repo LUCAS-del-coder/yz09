@@ -17,8 +17,6 @@
     "isolatedModules": true,
     "jsx": "react-jsx",
     "incremental": true,
-    // Performance optimizations
-    "assumeChangesOnlyAffectDirectDependencies": true,
     "plugins": [
       {
         "name": "next"
@@ -36,14 +34,11 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
+    "app/**/*",
+    "components/**/*",
     ".next/dev/types/**/*.ts"
   ],
   "exclude": [
-    "node_modules",
-    ".next",
-    "out",
-    "dist",
-    "build",
-    "public"
+    "node_modules"
   ]
 }

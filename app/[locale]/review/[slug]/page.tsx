@@ -9,7 +9,7 @@ import CTAButton from "@/components/ui/CTAButton";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import HeroImage from "@/components/ui/HeroImage";
 import CasinoLogo from "@/components/ui/CasinoLogo";
-import { getBaseUrl } from "@/lib/config";
+import { getBaseUrl, getCanonicalUrl, getAlternateLanguages } from "@/lib/config";
 import { getTranslations } from "next-intl/server";
 import { getCasinos, getCasinoBySlug } from "@/lib/get-casinos";
 import casinosEn from "@/data/casinos-en.json";
@@ -44,12 +44,16 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return {
     title: `${casino.name} Review 2025 | ${casino.name} vs ${competitors}`,
     description: `Comprehensive ${casino.name} review for Myanmar players. Compare with Shwe Casino, 888, 777, Win8. Rating: ${casino.rating}/5. Bonuses, games, withdrawal times & expert analysis.`,
+    alternates: {
+      canonical: getCanonicalUrl(`/review/${casino.slug}`, locale),
+      languages: getAlternateLanguages(`/review/${casino.slug}`),
+    },
     openGraph: {
       title: `${casino.name} Review | Compare with Shwe, 888, 777 Casinos`,
       description: `Expert ${casino.name} review. Rating: ${casino.rating}/5. Compare bonuses & features vs Shwe Casino, 888, 777, Win8. Best for Myanmar players.`,
       type: "article",
       locale: locale === 'my' ? 'my_MM' : 'en_US',
-      url: `${baseUrl}/review/${casino.slug}`,
+      url: getCanonicalUrl(`/review/${casino.slug}`, locale),
       images: [
         {
           url: `${baseUrl}/images/casinos/${casino.slug}-hero.jpg`,
@@ -63,13 +67,6 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       card: "summary_large_image",
       title: `${casino.name} Review`,
       description: casino.excerpt,
-    },
-    alternates: {
-      canonical: `${baseUrl}/review/${casino.slug}`,
-      languages: {
-        'my-MM': `${baseUrl}/review/${casino.slug}`,
-        'en-US': `${baseUrl}/en/review/${casino.slug}`,
-      }
     },
   };
 }

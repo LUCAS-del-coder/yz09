@@ -2,9 +2,7 @@ import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/routing";
 import CTAButton from "@/components/ui/CTAButton";
-import { getBaseUrl } from "@/lib/config";
-
-const baseUrl = getBaseUrl();
+import { getCanonicalUrl, getAlternateLanguages } from "@/lib/config";
 
 const brandLinks = [
   "https://www.yes8.io/m/home?affiliateCode=seom1802",
@@ -15,23 +13,21 @@ const brandLinks = [
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "guideHowToPlay" });
+  const canonical = getCanonicalUrl('/guide/how-to-play', locale);
 
   return {
     title: t("title"),
     description: t("description"),
+    alternates: {
+      canonical,
+      languages: getAlternateLanguages('/guide/how-to-play'),
+    },
     openGraph: {
       title: t("title"),
       description: t("description"),
       locale: locale === 'my' ? 'my_MM' : 'en_US',
-      url: `${baseUrl}/guide/how-to-play`,
+      url: canonical,
     },
-    alternates: {
-      canonical: `${baseUrl}/guide/how-to-play`,
-      languages: {
-        'my-MM': `${baseUrl}/guide/how-to-play`,
-        'en-US': `${baseUrl}/en/guide/how-to-play`,
-      }
-    }
   };
 }
 

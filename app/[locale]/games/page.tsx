@@ -2,28 +2,24 @@ import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import CTAButton from "@/components/ui/CTAButton";
 import FeaturedGames from "@/components/sections/FeaturedGames";
-import { getBaseUrl } from "@/lib/config";
-
-const baseUrl = getBaseUrl();
+import { getCanonicalUrl, getAlternateLanguages } from "@/lib/config";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "gamesPage" });
+  const canonical = getCanonicalUrl('/games', locale);
 
   return {
     title: t("title"),
     description: t("description"),
     alternates: {
-      canonical: `${baseUrl}/games`,
-      languages: {
-        'my-MM': `${baseUrl}/games`,
-        'en-US': `${baseUrl}/en/games`,
-      }
+      canonical,
+      languages: getAlternateLanguages('/games'),
     },
     openGraph: {
       title: t("title"),
       description: t("description"),
-      url: `${baseUrl}/games`,
+      url: canonical,
       locale: locale === 'my' ? 'my_MM' : 'en_US',
     },
   };

@@ -5,9 +5,7 @@ import Image from "next/image";
 import { Link } from "@/i18n/routing";
 import CTAButton from "@/components/ui/CTAButton";
 import gamesData from "@/data/games.json";
-import { getBaseUrl } from "@/lib/config";
-
-const baseUrl = getBaseUrl();
+import { getBaseUrl, getCanonicalUrl, getAlternateLanguages } from "@/lib/config";
 
 const brandLinks = [
   "https://www.yes8.io/m/home?affiliateCode=seom1802",
@@ -35,28 +33,26 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   }
 
   const volatilityMM = volatilityMap[game.volatility] || game.volatility;
-  
+  const path = `/games/${game.slug}`;
+
   return {
     title: `${game.nameMm} - ဂိမ်း အပြည့်အစုံ သုံးသပ်ချက် | ${game.name} Review | Myanmar Casino Reviews`,
     description: `${game.nameMm} ဆလော့ ဂိမ်းကို Myanmar Casino Reviews တွင် ကစားပါ။ RTP ${game.rtp}%၊ ${volatilityMM} ပြင်းထန်မှု၊ အမြင့်ဆုံး ဆုငွေ ${game.maxWin}။ ${game.provider} ၏ အကောင်းဆုံး ဂိမ်း။ Play ${game.name} slot - RTP ${game.rtp}%, Max win ${game.maxWin}, ${game.provider} game.`,
+    alternates: {
+      canonical: getCanonicalUrl(path, locale),
+      languages: getAlternateLanguages(path),
+    },
     openGraph: {
       title: `${game.nameMm} | ${game.name} | Myanmar Casino Reviews`,
       description: `${game.nameMm} - RTP ${game.rtp}%၊ အမြင့်ဆုံး ${game.maxWin}၊ ${game.provider} ဂိမ်း`,
       type: 'article',
       locale: locale === 'my' ? 'my_MM' : 'en_US',
-      url: `${baseUrl}/games/${game.slug}`,
+      url: getCanonicalUrl(path, locale),
       images: game.images && game.images.length > 0 ? [{
         url: `${baseUrl}${game.images[0]}`,
         alt: `${game.nameMm} - ${game.name} Screenshot`
       }] : [],
     },
-    alternates: {
-      canonical: `${baseUrl}/games/${game.slug}`,
-      languages: {
-        'my-MM': `${baseUrl}/games/${game.slug}`,
-        'en-US': `${baseUrl}/en/games/${game.slug}`
-      }
-    }
   };
 }
 

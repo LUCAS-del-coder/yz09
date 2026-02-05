@@ -3,30 +3,26 @@ import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/routing";
 import Image from "next/image";
 import { getBlogPosts } from "@/lib/get-blog-posts";
-import { getBaseUrl } from "@/lib/config";
-
-const baseUrl = getBaseUrl();
+import { getCanonicalUrl, getAlternateLanguages } from "@/lib/config";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "blog" });
+  const canonical = getCanonicalUrl('/blog', locale);
 
   return {
     title: t("title"),
     description: t("description"),
+    alternates: {
+      canonical,
+      languages: getAlternateLanguages('/blog'),
+    },
     openGraph: {
       title: t("title"),
       description: t("description"),
       locale: locale === 'my' ? 'my_MM' : 'en_US',
-      url: `${baseUrl}/blog`,
+      url: canonical,
     },
-    alternates: {
-      canonical: `${baseUrl}/blog`,
-      languages: {
-        'my-MM': `${baseUrl}/blog`,
-        'en-US': `${baseUrl}/en/blog`,
-      }
-    }
   };
 }
 
@@ -53,12 +49,13 @@ export default async function BlogPage({ params }: { params: Promise<{ locale: s
               className="bg-dark-lighter rounded-xl overflow-hidden hover:border-gold/50 border border-dark-lightest transition-all group"
             >
               {post.featuredImage && (
-                <div className="relative w-full h-48">
+                <div className="relative w-full h-48 bg-dark-lightest">
                   <Image
                     src={post.featuredImage}
                     alt={post.title}
                     fill
                     className="object-cover group-hover:scale-110 transition-transform"
+                    unoptimized={post.featuredImage.startsWith('http')}
                   />
                 </div>
               )}
