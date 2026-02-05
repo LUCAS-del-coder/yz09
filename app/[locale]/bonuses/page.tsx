@@ -1,29 +1,25 @@
 import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import BonusCard from "@/components/ui/BonusCard";
-import { getBaseUrl } from "@/lib/config";
+import { getCanonicalUrl, getAlternateLanguages } from "@/lib/config";
 import { getCasinos } from "@/lib/get-casinos";
-
-const baseUrl = getBaseUrl();
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "bonuses" });
+  const canonical = getCanonicalUrl('/bonuses', locale);
 
   return {
     title: t("title"),
     description: t("description"),
     alternates: {
-      canonical: `${baseUrl}/bonuses`,
-      languages: {
-        'my-MM': `${baseUrl}/bonuses`,
-        'en-US': `${baseUrl}/en/bonuses`,
-      }
+      canonical,
+      languages: getAlternateLanguages('/bonuses'),
     },
     openGraph: {
       title: t("title"),
       description: t("description"),
-      url: `${baseUrl}/bonuses`,
+      url: canonical,
       locale: locale === 'my' ? 'my_MM' : 'en_US',
     },
   };

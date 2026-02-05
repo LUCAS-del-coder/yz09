@@ -1,23 +1,24 @@
 import { Metadata } from "next";
 import CTAButton from "@/components/ui/CTAButton";
 import { getTranslations } from "next-intl/server";
-import { getBaseUrl } from "@/lib/config";
+import { getCanonicalUrl, getAlternateLanguages } from "@/lib/config";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "payment" });
-  const baseUrl = getBaseUrl();
+  const canonical = getCanonicalUrl('/payment', locale);
 
   return {
     title: t("title"),
     description: t("description"),
     alternates: {
-      canonical: `${baseUrl}/${locale}/payment`,
+      canonical,
+      languages: getAlternateLanguages('/payment'),
     },
     openGraph: {
       title: t("heading"),
       description: t("description"),
-      url: `${baseUrl}/${locale}/payment`,
+      url: canonical,
     },
   };
 }

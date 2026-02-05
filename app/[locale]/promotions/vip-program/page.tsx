@@ -3,7 +3,7 @@ import { Link } from "@/i18n/routing";
 import CTAButton from "@/components/ui/CTAButton";
 import { getTranslations } from "next-intl/server";
 
-import { getBaseUrl } from "@/lib/config";
+import { getCanonicalUrl, getAlternateLanguages } from "@/lib/config";
 
 const brandLinks = [
   "https://www.yes8.io/m/home?affiliateCode=seom1802",
@@ -14,20 +14,21 @@ const brandLinks = [
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "promotions" });
-  const baseUrl = getBaseUrl();
+  const canonical = getCanonicalUrl('/promotions/vip-program', locale);
 
   return {
     title: t("vipProgramTitle"),
     description: t("vipProgramDescription"),
+    alternates: {
+      canonical,
+      languages: getAlternateLanguages('/promotions/vip-program'),
+    },
     openGraph: {
       title: t("vipProgramHeading"),
       description: t("vipProgramDescription"),
       locale: locale === 'my' ? 'my_MM' : 'en_US',
-      url: `${baseUrl}/${locale}/promotions/vip-program`,
+      url: canonical,
     },
-    alternates: {
-      canonical: `${baseUrl}/${locale}/promotions/vip-program`,
-    }
   };
 }
 

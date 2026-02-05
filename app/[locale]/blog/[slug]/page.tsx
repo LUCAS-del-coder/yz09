@@ -4,14 +4,13 @@ import { notFound } from "next/navigation";
 import { Link } from "@/i18n/routing";
 import Image from "next/image";
 import { getBlogPostBySlug, getBlogPosts } from "@/lib/get-blog-posts";
-import { getBaseUrl } from "@/lib/config";
-
-const baseUrl = getBaseUrl();
+import { getBaseUrl, getCanonicalUrl, getAlternateLanguages } from "@/lib/config";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }> }): Promise<Metadata> {
   const { locale, slug } = await params;
   const post = getBlogPostBySlug(slug, locale);
-  
+  const baseUrl = getBaseUrl();
+
   if (!post) {
     const t = await getTranslations({ locale, namespace: "common" });
     return {
@@ -19,29 +18,29 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     };
   }
 
+  const path = `/blog/${post.slug}`;
+  const canonical = getCanonicalUrl(path, locale);
+
   return {
     title: `${post.title} | Myanmar Casino Reviews`,
     description: post.excerpt,
+    alternates: {
+      canonical,
+      languages: getAlternateLanguages(path),
+    },
     openGraph: {
       title: post.title,
       description: post.excerpt,
       type: 'article',
       locale: locale === 'my' ? 'my_MM' : 'en_US',
-      url: `${baseUrl}/blog/${post.slug}`,
+      url: canonical,
       publishedTime: post.publishDate,
       authors: [post.author],
       images: post.featuredImage ? [{
-        url: `${baseUrl}${post.featuredImage}`,
+        url: post.featuredImage.startsWith('http') ? post.featuredImage : `${baseUrl}${post.featuredImage}`,
         alt: post.title
       }] : [],
     },
-    alternates: {
-      canonical: `${baseUrl}/blog/${post.slug}`,
-      languages: {
-        'my-MM': `${baseUrl}/blog/${post.slug}`,
-        'en-US': `${baseUrl}/en/blog/${post.slug}`,
-      }
-    }
   };
 }
 

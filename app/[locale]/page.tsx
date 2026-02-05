@@ -6,9 +6,7 @@ import FeaturedGames from "@/components/sections/FeaturedGames";
 import LatestBonuses from "@/components/sections/LatestBonuses";
 import InternalLinksSection from "@/components/sections/InternalLinksSection";
 import FAQ from "@/components/sections/FAQ";
-import { getBaseUrl } from "@/lib/config";
-
-const baseUrl = getBaseUrl();
+import { getBaseUrl, getCanonicalUrl, getAlternateLanguages } from "@/lib/config";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -18,16 +16,13 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     title: t("title"),
     description: t("description"),
     alternates: {
-      canonical: baseUrl,
-      languages: {
-        'my-MM': baseUrl,
-        'en-US': `${baseUrl}/en`,
-      }
+      canonical: getCanonicalUrl('', locale),
+      languages: getAlternateLanguages(''),
     },
     openGraph: {
       title: t("title"),
       description: t("description"),
-      url: baseUrl,
+      url: getCanonicalUrl('', locale),
       locale: locale === 'my' ? 'my_MM' : 'en_US',
     },
   };
