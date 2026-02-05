@@ -49,7 +49,7 @@ export default async function BlogPage({ params }: { params: Promise<{ locale: s
               className="bg-dark-lighter rounded-xl overflow-hidden hover:border-gold/50 border border-dark-lightest transition-all group"
             >
               {post.featuredImage && (
-                <div className="relative w-full h-48 bg-dark-lightest">
+                <div className="relative w-full h-48 bg-dark-lightest"> 
                   <Image
                     src={post.featuredImage}
                     alt={post.title}
