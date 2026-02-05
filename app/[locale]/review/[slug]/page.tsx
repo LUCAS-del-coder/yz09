@@ -105,6 +105,22 @@ export default async function CasinoReviewPage({ params }: { params: Promise<{ l
       "@type": "Offer",
       "availability": "https://schema.org/InStock",
       "priceCurrency": "MMK",
+      "price": "0",
+      "priceValidUntil": new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toISOString().split("T")[0],
+      "shippingDetails": {
+        "@type": "ShippingDeliveryTime",
+        "handlingTime": {
+          "@type": "QuantitativeValue",
+          "minValue": 0,
+          "maxValue": 0,
+          "unitCode": "DAY"
+        }
+      },
+      "hasMerchantReturnPolicy": {
+        "@type": "MerchantReturnPolicy",
+        "applicableCountry": "MM",
+        "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
+      }
     },
   };
 
