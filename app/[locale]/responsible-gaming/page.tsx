@@ -1,9 +1,7 @@
 import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
-import { getBaseUrl } from "@/lib/config";
+import { getCanonicalUrl, getAlternateLanguages } from "@/lib/config";
 import { Link } from "@/i18n/routing";
-
-const baseUrl = getBaseUrl();
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -17,11 +15,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       follow: true,
     },
     alternates: {
-      canonical: `${baseUrl}/responsible-gaming`,
-      languages: {
-        'my-MM': `${baseUrl}/responsible-gaming`,
-        'en-US': `${baseUrl}/en/responsible-gaming`,
-      }
+      canonical: getCanonicalUrl('/responsible-gaming', locale),
+      languages: getAlternateLanguages('/responsible-gaming'),
     },
   };
 }
