@@ -46,6 +46,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 export default async function BlogPostPage({ params }: { params: Promise<{ locale: string; slug: string }> }) {
   const { locale, slug } = await params;
+  const baseUrl = getBaseUrl();
   const post = getBlogPostBySlug(slug, locale);
   const blogPostsData = getBlogPosts(locale);
   const tCommon = await getTranslations({ locale, namespace: "common" });
@@ -67,7 +68,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ local
     },
     "datePublished": post.publishDate,
     "dateModified": post.lastModified,
-    "image": post.featuredImage ? `${baseUrl}${post.featuredImage}` : undefined,
+    "image": post.featuredImage ? (post.featuredImage.startsWith('http') ? post.featuredImage : `${baseUrl}${post.featuredImage}`) : undefined,
     "inLanguage": locale === "my" ? "my-MM" : "en-US"
   };
 
