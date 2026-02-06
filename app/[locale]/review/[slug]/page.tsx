@@ -228,7 +228,10 @@ export default async function CasinoReviewPage({ params }: { params: Promise<{ l
                 <StarRating rating={casino.rating} size="lg" />
               </div>
             </div>
-            <p className="text-xl text-gray-300 mb-6">{casino.excerpt}</p>
+            <div
+              className="text-xl text-gray-300 mb-6 prose prose-invert max-w-none [&_h2]:text-2xl [&_h3]:text-xl [&_h4]:text-lg [&_p]:mb-4 [&_ul]:list-disc [&_ul]:pl-6 [&_a]:text-gold [&_a]:underline"
+              dangerouslySetInnerHTML={{ __html: casino.excerpt }}
+            />
             <div className="flex flex-wrap gap-4">
               <CTAButton href={casino.ctaLink} variant="gold" size="lg">
                 {tReview("playAtCasino")}
@@ -328,9 +331,10 @@ export default async function CasinoReviewPage({ params }: { params: Promise<{ l
               <span className="text-gold">⭐</span>
               {tReview("expertVerdict")}
             </h2>
-            <p className="text-gray-300 text-lg leading-relaxed mb-6">
-              {casino.name} {tReview("expertVerdictText")}
-            </p>
+            <div
+              className="review-excerpt prose prose-invert max-w-none text-gray-300 [&_h2]:text-2xl [&_h2]:mt-6 [&_h2]:mb-3 [&_h3]:text-xl [&_h3]:mt-4 [&_h3]:mb-2 [&_h4]:text-lg [&_h4]:mt-3 [&_h4]:mb-2 [&_p]:mb-4 [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:mb-4 [&_a]:text-gold [&_a]:underline hover:[&_a]:text-gold/80"
+              dangerouslySetInnerHTML={{ __html: casino.excerpt1 ?? casino.excerpt }}
+            />
             <div className="flex flex-wrap gap-4">
               <CTAButton href={casino.ctaLink} variant="gold" size="lg">
                 {tReview("openAccount")}
