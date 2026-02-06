@@ -10,6 +10,7 @@ export interface Casino {
   logo: string;
   hero: string;
   excerpt: string;
+  excerpt1?: string;
   pros: string[];
   cons: string[];
   features: {

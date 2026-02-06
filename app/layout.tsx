@@ -7,6 +7,9 @@ export const metadata: Metadata = {
     shortcut: "/images/favicon.png",
     apple: "/images/favicon.png",
   },
+  verification: {
+    google: "NXckRye6Vpw_8pZKm7oO3C7lqrSTr413-taVEYy-4Jk",
+  },
 };
 
 export default function RootLayout({
