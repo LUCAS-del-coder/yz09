@@ -32,6 +32,12 @@ const nextConfig = {
     config.resolve.extensions.push('.ts', '.tsx', '.js', '.jsx', '.json');
     return config;
   },
+  async rewrites() {
+    return [
+      // Serve default locale at root so / returns 200 (indexable); avoids "page redirects" in Search Console
+      { source: '/', destination: '/my' },
+    ];
+  },
   async headers() {
     return [
       {

@@ -7,17 +7,6 @@
 /public/images/casinos/
 ```
 
-## 📝 需要的 Logo 文件
-
-根據 `data/casinos.json` 配置，你需要準備以下 logo 文件：
-
-1. **Shwe Casino**: `/public/images/casinos/shwe-logo.png`
-2. **777 Casino**: `/public/images/casinos/777-logo.png`
-3. **888 Casino**: `/public/images/casinos/888-logo.png`
-4. **Win8 Casino**: `/public/images/casinos/win8-logo.png`
-5. **999 Casino**: `/public/images/casinos/999-logo.png`
-6. **PGLucky88 Casino**: `/public/images/casinos/pglucky88-logo.png`
-7. **FaFaFa Casino**: `/public/images/casinos/fafafa-logo.png`
 
 ## 🖼️ 圖片規格建議
 

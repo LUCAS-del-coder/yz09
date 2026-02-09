@@ -6,15 +6,7 @@ const path = require('path');
 // 需要的圖片列表
 const requiredImages = {
   casinos: {
-    logos: [
-      'shwe-logo.png',
-      '777-logo.png',
-      '888-logo.png',
-      'win8-logo.png',
-      '999-logo.png',
-      'pglucky88-logo.png',
-      'fafafa-logo.png'
-    ],
+    
     heroes: [
       'shwe-hero.jpg',
       '777-hero.jpg',
