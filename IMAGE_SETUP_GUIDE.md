@@ -17,15 +17,6 @@ public/
 
 ### 需要的 Casino Logo（PNG 格式，透明背景）
 
-請將以下 Logo 放入 `public/images/casinos/` 目錄：
-
-1. **shwe-logo.png** - Shwe Casino Logo
-2. **777-logo.png** - 777 Casino Logo
-3. **888-logo.png** - 888 Casino Logo
-4. **win8-logo.png** - Win8 Casino Logo
-5. **999-logo.png** - 999 Casino Logo
-6. **pglucky88-logo.png** - PGLucky88 Casino Logo
-7. **fafafa-logo.png** - FaFaFa Casino Logo
 
 **Logo 要求：**
 - 格式：PNG（透明背景）
