@@ -46,6 +46,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     createSitemapEntry('/payment', new Date(), 'monthly', 0.7),
     createSitemapEntry('/guide', new Date(), 'monthly', 0.7),
     createSitemapEntry('/review/top-myanmar-casinos', new Date(), 'daily', 0.9),
+    createSitemapEntry('/promotions', new Date(), 'weekly', 0.9),
     createSitemapEntry('/promotions/welcome-bonus', new Date(), 'weekly', 0.9),
     createSitemapEntry('/promotions/daily-bonus', new Date(), 'weekly', 0.8),
     createSitemapEntry('/promotions/vip-program', new Date(), 'monthly', 0.8),

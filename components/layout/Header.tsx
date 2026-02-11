@@ -17,7 +17,7 @@ export default function Header() {
   const navLinks = [
     { href: "/", label: t("home"), icon: "🏠" },
     { href: "/review/top-myanmar-casinos", label: t("compare"), icon: "⭐" },
-    { href: "/bonuses", label: t("bonuses"), icon: "🎁" },
+    { href: "/promotions", label: t("bonuses"), icon: "🎁" },
     { href: "/games", label: t("games"), icon: "🎮" },
     { href: "/blog", label: t("blog"), icon: "📝" },
     { href: "/payment", label: t("payment"), icon: "💳" },
