@@ -1006,9 +1006,31 @@
     "viewReviews": "View Reviews"
   },
   "featuredGames": {
-    "heading": "Hot Games",
-    "subheading": "Best online casino games in Myanmar - from PG Soft, Pragmatic Play, and other top game providers",
-    "viewAllGames": "View All Games"
+    "heading": "Best Real Money Casino Games",
+    "subheading": "A wide range of immersive and engaging online casino games that cater to Myanmar players. Enjoy classic casino games like high-RTP slots, baccarat, and roulette, as well as innovative new options that keep the thrill alive.",
+    "viewAllGames": "View All Games",
+    "categories": {
+      "slotGame": {
+        "title": "Slot Games",
+        "description": "Slot game enthusiasts in Myanmar can enjoy exciting gameplay with engaging graphics and rewarding features. Whether you're a beginner or a pro, our slot games offer endless fun and opportunities to win. With strategic spins and high-RTP slots, you'll boost your chances of hitting big rewards."
+      },
+      "fishingGame": {
+        "title": "Fishing Games",
+        "description": "Fishing games offer countless theme scenes and unique winning features. All real-money fishing games feature amazing sound effects and high-quality animation graphics. By honing your virtual bullet, stake and shooting strategically, you could shoot impressive rewards."
+      },
+      "sportsBetting": {
+        "title": "Sports Betting",
+        "description": "Sports betting covers popular sports such as soccer, football, basketball, and many more. Explore different types of bets, from Myanmar Odds, Moneylines and Handicap to Mix Parlay, Virtual Sport and Over/Under, giving you endless possibilities."
+      },
+      "liveCasino": {
+        "title": "Live Casino",
+        "description": "Live casino offers an enjoyable, fair, premium, and transparent online betting environment. With low-latency video streaming and real-time interaction, you'll feel right at the casino table, playing with professional live dealers."
+      },
+      "keno": {
+        "title": "Keno",
+        "description": "KENO games are simple and fast, letting you pick up to 10 lucky numbers or choosing Big/Small, and watch quick draws unfold. With frequent draws and flexible betting options, you're always just moments away from a potential win."
+      }
+    }
   },
   "filterSidebar": {
     "filters": "Filters",
