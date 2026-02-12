@@ -15,11 +15,9 @@
     "description": "Shwe Bonanza 是 Pragmatic Play 專為緬甸市場打造的老虎機遊戲，以緬甸傳統文化為主題，結合現代遊戲機制。遊戲採用 Megaways 機制，最多可達 117,649 種獲勝方式。",
     "descriptionMm": "Shwe Bonanza သည် Pragmatic Play မှ မြန်မာဈေးကွက်အတွက် ထုတ်လုပ်ထားသော slot ဂိမ်းတစ်ခုဖြစ်ပြီး မြန်မာရိုးရာယဉ်ကျေးမှုကို အခြေခံထားသည်။ Megaways စနစ်ကို အသုံးပြုထားပြီး 117,649 ခုအထိ အနိုင်ရရှိနိုင်သော နည်းလမ်းများ ရှိသည်။",
     "images": [
-      "/images/games/shwe-bonanza-1.jpg",
-      "/images/games/shwe-bonanza-2.jpg",
-      "/images/games/shwe-bonanza-3.jpg"
+      "/images/games/shwe-bonanza-1.webp"
     ],
-    "thumbnail": "/images/games/shwe-bonanza-thumb.jpg",
+    "thumbnail": "/images/games/shwe-bonanza-thumb.webp",
     "rating": 4.8,
     "popularity": 98,
     "releaseDate": "2024-01-15",
@@ -42,10 +40,9 @@
     "description": "Starlight Princess 是一款動漫風格的老虎機遊戲，以魔法公主為主題。遊戲具有高波動性和高 RTP，適合追求大獎的玩家。",
     "descriptionMm": "Starlight Princess သည် anime စတိုင်ဖြင့် ဒီဇိုင်းထုတ်ထားသော slot ဂိမ်းတစ်ခုဖြစ်ပြီး မှော်အတတ်ပညာရှင််းသမီးကို အခြေခံထားသည်။ မြင့်မားသော volatility နှင့် RTP ရှိပြီး ကြီးမားသော ဆုလာဘ်ကို ရှာဖွေနေသော ကစားသမားများအတွက် သင့်တော်သည်။",
     "images": [
-      "/images/games/starlight-princess-1.jpg",
-      "/images/games/starlight-princess-2.jpg"
+      "/images/games/starlight-princess-1.webp"
     ],
-    "thumbnail": "/images/games/starlight-princess-thumb.jpg",
+    "thumbnail": "/images/games/starlight-princess-thumb.webp",
     "rating": 4.7,
     "popularity": 95,
     "releaseDate": "2023-11-20",
@@ -68,9 +65,9 @@
     "description": "5 Lions Megaways 結合了東方文化元素和 Megaways 機制，提供多達 200,704 種獲勝方式。",
     "descriptionMm": "5 Lions Megaways သည် အရှေ့တိုင်းယဉ်ကျေးမှုဒြပ်စင်များနှင့် Megaways စနစ်ကို ပေါင်းစပ်ထားပြီး 200,704 ခုအထိ အနိုင်ရရှိနိုင်သော နည်းလမ်းများ ပေးသည်။",
     "images": [
-      "/images/games/5-lions-megaways-1.jpg"
+      "/images/games/5-lions-megaways-1.webp"
     ],
-    "thumbnail": "/images/games/5-lions-megaways-thumb.jpg",
+    "thumbnail": "/images/games/5-lions-megaways-thumb.webp",
     "rating": 4.6,
     "popularity": 92,
     "releaseDate": "2024-03-10",
@@ -93,10 +90,10 @@
     "description": "Gates of Olympus 以希臘神話為背景，玩家將面對宙斯和他的閃電。遊戲具有高波動性和巨大的獲勝潛力。",
     "descriptionMm": "Gates of Olympus သည် ဂရိဒဏ္ဍာရီကို အခြေခံထားပြီး ကစားသမားများသည် Zeus နှင့် သူ၏ လျှပ်စစ်ဓာတ်ကို ရင်ဆိုင်ရမည်။ မြင့်မားသော volatility နှင့် ကြီးမားသော အနိုင်ရရှိမှု အလားအလာ ရှိသည်။",
     "images": [
-      "/images/games/gates-of-olympus-1.jpg",
-      "/images/games/gates-of-olympus-2.jpg"
+      "/images/games/gates-of-olympus-1.webp",
+      "/images/games/gates-of-olympus-2.webp"
     ],
-    "thumbnail": "/images/games/gates-of-olympus-thumb.jpg",
+    "thumbnail": "/images/games/gates-of-olympus-thumb.webp",
     "rating": 4.9,
     "popularity": 99,
     "releaseDate": "2021-06-15",
@@ -119,9 +116,9 @@
     "description": "Ancient Egypt Classic 帶您探索古埃及的神秘世界，尋找隱藏的寶藏。",
     "descriptionMm": "Ancient Egypt Classic သည် ရှေးဟောင်း အီဂျစ်၏ လျှို့ဝှက်ဆန်းကြယ်သော ကမ္ဘာကို စူးစမ်းရှာဖွေရန် ခေါ်ဆောင်သွားပြီး ပုန်းကွယ်နေသော ရတနာများကို ရှာဖွေသည်။",
     "images": [
-      "/images/games/ancient-egypt-classic-1.jpg"
+      "/images/games/ancient-egypt-classic-1.webp"
     ],
-    "thumbnail": "/images/games/ancient-egypt-classic-thumb.jpg",
+    "thumbnail": "/images/games/ancient-egypt-classic-thumb.webp",
     "rating": 4.4,
     "popularity": 85,
     "releaseDate": "2023-08-22",
@@ -144,9 +141,9 @@
     "description": "Caishen's Gold 以中國財神為主題，象徵財富和好運。遊戲具有中等波動性，適合各種類型的玩家。",
     "descriptionMm": "Caishen's Gold သည် တရုတ် ကြွယ်ဝချမ်းသာမှု နတ်ဘုရားကို အခြေခံထားပြီး စည်းစိမ်ဥစ္စာနှင့် ကံကောင်းမှုကို ကိုယ်စားပြုသည်။ အလယ်အလတ် volatility ရှိပြီး ဂိမ်းအမျိုးအစား အားလုံးအတွက် သင့်တော်သည်။",
     "images": [
-      "/images/games/caishens-gold-1.jpg"
+      "/images/games/caishens-gold-1.webp"
     ],
-    "thumbnail": "/images/games/caishens-gold-thumb.jpg",
+    "thumbnail": "/images/games/caishens-gold-thumb.webp",
     "rating": 4.5,
     "popularity": 88,
     "releaseDate": "2023-12-05",
@@ -169,9 +166,9 @@
     "description": "Crazy 777 2 是經典老虎機的現代版本，保留了傳統的遊戲玩法，同時加入了現代功能。",
     "descriptionMm": "Crazy 777 2 သည် ဂန္ထဝင် slot ဂိမ်း၏ ခေတ်သစ်ဗားရှင်းဖြစ်ပြီး ရိုးရာ ဂိမ်းကစားနည်းကို ထိန်းသိမ်းထားစဉ် ခေတ်သစ် လုပ်ဆောင်ချက်များကို ထည့်သွင်းထားသည်။",
     "images": [
-      "/images/games/crazy-777-2-1.jpg"
+      "/images/games/crazy-777-2-1.webp"
     ],
-    "thumbnail": "/images/games/crazy-777-2-thumb.jpg",
+    "thumbnail": "/images/games/crazy-777-2-thumb.webp",
     "rating": 4.3,
     "popularity": 82,
     "releaseDate": "2024-02-18",
@@ -194,9 +191,9 @@
     "description": "Super Ace DELUXE 是一款高波動性的老虎機遊戲，具有巨大的獲勝潛力和激動人心的功能。",
     "descriptionMm": "Super Ace DELUXE သည် မြင့်မားသော volatility ရှိသော slot ဂိမ်းတစ်ခုဖြစ်ပြီး ကြီးမားသော အနိုင်ရရှိမှု အလားအလာနှင့် စိတ်လှုပ်ရှားဖွယ် လုပ်ဆောင်ချက်များ ရှိသည်။",
     "images": [
-      "/images/games/super-ace-deluxe-1.jpg"
+      "/images/games/super-ace-deluxe-1.webp"
     ],
-    "thumbnail": "/images/games/super-ace-deluxe-thumb.jpg",
+    "thumbnail": "/images/games/super-ace-deluxe-thumb.webp",
     "rating": 4.6,
     "popularity": 90,
     "releaseDate": "2024-04-12",
@@ -219,9 +216,9 @@
     "description": "Sweet Bonanza 是一款以糖果為主題的高波動性老虎機，具有巨大的獲勝潛力。",
     "descriptionMm": "Sweet Bonanza သည် သကြားလုံးကို အခြေခံထားသော မြင့်မားသော volatility ရှိသော slot ဂိမ်းတစ်ခုဖြစ်ပြီး ကြီးမားသော အနိုင်ရရှိမှု အလားအလာ ရှိသည်။",
     "images": [
-      "/images/games/sweet-bonanza-1.jpg"
+      "/images/games/sweet-bonanza-1.webp"
     ],
-    "thumbnail": "/images/games/sweet-bonanza-thumb.jpg",
+    "thumbnail": "/images/games/sweet-bonanza-thumb.webp",
     "rating": 4.8,
     "popularity": 97,
     "releaseDate": "2019-09-20",
@@ -244,9 +241,9 @@
     "description": "The Dog House 是一款以可愛狗狗為主題的老虎機遊戲，具有高波動性和豐厚的獎金。",
     "descriptionMm": "The Dog House သည် ချစ်စရာကောင်းသော ခွေးများကို အခြေခံထားသော slot ဂိမ်းတစ်ခုဖြစ်ပြီး မြင့်မားသော volatility နှင့် ကြွယ်ဝသော ဆုလာဘ်များ ရှိသည်။",
     "images": [
-      "/images/games/the-dog-house-1.jpg"
+      "/images/games/the-dog-house-1.webp"
     ],
-    "thumbnail": "/images/games/the-dog-house-thumb.jpg",
+    "thumbnail": "/images/games/the-dog-house-thumb.webp",
     "rating": 4.7,
     "popularity": 94,
     "releaseDate": "2019-05-23",
@@ -269,9 +266,9 @@
     "description": "Big Bass Bonanza 結合了老虎機和捕魚遊戲的元素，提供獨特的遊戲體驗。",
     "descriptionMm": "Big Bass Bonanza သည် slot ဂိမ်းနှင့် ငါးဖမ်းဂိမ်း၏ ဒြပ်စင်များကို ပေါင်းစပ်ထားပြီး ထူးခြားသော ဂိမ်းအတွေ့အကြုံကို ပေးသည်။",
     "images": [
-      "/images/games/big-bass-bonanza-1.jpg"
+      "/images/games/big-bass-bonanza-1.webp"
     ],
-    "thumbnail": "/images/games/big-bass-bonanza-thumb.jpg",
+    "thumbnail": "/images/games/big-bass-bonanza-thumb.webp",
     "rating": 4.6,
     "popularity": 91,
     "releaseDate": "2020-10-08",
@@ -294,9 +291,9 @@
     "description": "Wild West Gold 帶您回到狂野的西部時代，尋找隱藏的黃金。",
     "descriptionMm": "Wild West Gold သည် သင်ကို ရိုင်းစိုင်းသော အနောက်တိုင်း ခေတ်သို့ ပြန်ခေါ်ဆောင်သွားပြီး ပုန်းကွယ်နေသော ရွှေကို ရှာဖွေသည်။",
     "images": [
-      "/images/games/wild-west-gold-1.jpg"
+      "/images/games/wild-west-gold-1.webp"
     ],
-    "thumbnail": "/images/games/wild-west-gold-thumb.jpg",
+    "thumbnail": "/images/games/wild-west-gold-thumb.webp",
     "rating": 4.5,
     "popularity": 87,
     "releaseDate": "2020-03-19",
@@ -319,9 +316,9 @@
     "description": "Mahjong Ways 以中國傳統麻將為主題，結合現代遊戲機制，提供獨特的遊戲體驗。",
     "descriptionMm": "Mahjong Ways သည် တရုတ်ရိုးရာ မဟ်ဂျုံးကို အခြေခံထားပြီး ခေတ်သစ် ဂိမ်းစနစ်များနှင့် ပေါင်းစပ်ထားကာ ထူးခြားသော ဂိမ်းအတွေ့အကြုံကို ပေးသည်။",
     "images": [
-      "/images/games/mahjong-ways-1.jpg"
+      "/images/games/mahjong-ways-1.webp"
     ],
-    "thumbnail": "/images/games/mahjong-ways-thumb.jpg",
+    "thumbnail": "/images/games/mahjong-ways-thumb.webp",
     "rating": 4.4,
     "popularity": 83,
     "releaseDate": "2021-11-30",
@@ -344,9 +341,9 @@
     "description": "Lucky Neko 以日本招財貓為主題，象徵好運和財富。",
     "descriptionMm": "Lucky Neko သည် ဂျပန် ကြွယ်ဝချမ်းသာမှု ကြောင်ကို အခြေခံထားပြီး ကံကောင်းမှုနှင့် စည်းစိမ်ဥစ္စာကို ကိုယ်စားပြုသည်။",
     "images": [
-      "/images/games/lucky-neko-1.jpg"
+      "/images/games/lucky-neko-1.webp"
     ],
-    "thumbnail": "/images/games/lucky-neko-thumb.jpg",
+    "thumbnail": "/images/games/lucky-neko-thumb.webp",
     "rating": 4.3,
     "popularity": 80,
     "releaseDate": "2022-07-14",
@@ -369,9 +366,9 @@
     "description": "Dragon Tiger 是一款快節奏的真人娛樂城遊戲，規則簡單，適合新手玩家。",
     "descriptionMm": "Dragon Tiger သည် မြန်ဆန်သော လိုင်ဗ် ကာစီနို ဂိမ်းတစ်ခုဖြစ်ပြီး စည်းမျဉ်းများ ရိုးရှင်းပြီး အစပျိုး ကစားသမားများအတွက် သင့်တော်သည်။",
     "images": [
-      "/images/games/dragon-tiger-1.jpg"
+      "/images/games/dragon-tiger-1.webp"
     ],
-    "thumbnail": "/images/games/dragon-tiger-thumb.jpg",
+    "thumbnail": "/images/games/dragon-tiger-thumb.webp",
     "rating": 4.5,
     "popularity": 89,
     "releaseDate": "2018-01-01",
@@ -394,9 +391,9 @@
     "description": "Baccarat 是最受歡迎的真人娛樂城遊戲之一，具有最高的 RTP 和簡單的規則。",
     "descriptionMm": "Baccarat သည် အလွန်ရေပန်းစားသော လိုင်ဗ် ကာစီနို ဂိမ်းတစ်ခုဖြစ်ပြီး အမြင့်ဆုံး RTP နှင့် ရိုးရှင်းသော စည်းမျဉ်းများ ရှိသည်။",
     "images": [
-      "/images/games/baccarat-1.jpg"
+      "/images/games/baccarat-1.webp"
     ],
-    "thumbnail": "/images/games/baccarat-thumb.jpg",
+    "thumbnail": "/images/games/baccarat-thumb.webp",
     "rating": 4.7,
     "popularity": 96,
     "releaseDate": "2017-01-01",
@@ -419,9 +416,9 @@
     "description": "Roulette 是經典的真人娛樂城遊戲，提供多種變體和投注選項。",
     "descriptionMm": "Roulette သည် ဂန္ထဝင် လိုင်ဗ် ကာစီနို ဂိမ်းတစ်ခုဖြစ်ပြီး မျိုးကွဲများစွာနှင့် လောင်းကြေးရွေးချယ်ခွင့်များ ပေးသည်။",
     "images": [
-      "/images/games/roulette-1.jpg"
+      "/images/games/roulette-1.webp"
     ],
-    "thumbnail": "/images/games/roulette-thumb.jpg",
+    "thumbnail": "/images/games/roulette-thumb.webp",
     "rating": 4.6,
     "popularity": 93,
     "releaseDate": "2017-01-01",
@@ -444,9 +441,9 @@
     "description": "Blackjack 是一款策略性桌面遊戲，具有最高的 RTP，適合喜歡思考的玩家。",
     "descriptionMm": "Blackjack သည် နည်းဗျူဟာ စားပွဲဂိမ်းတစ်ခုဖြစ်ပြီး အမြင့်ဆုံး RTP ရှိပြီး စဉ်းစားတွေးခေါ်ရန် နှစ်သက်သော ကစားသမားများအတွက် သင့်တော်သည်။",
     "images": [
-      "/images/games/blackjack-1.jpg"
+      "/images/games/blackjack-1.webp"
     ],
-    "thumbnail": "/images/games/blackjack-thumb.jpg",
+    "thumbnail": "/images/games/blackjack-thumb.webp",
     "rating": 4.8,
     "popularity": 95,
     "releaseDate": "2017-01-01",
@@ -469,9 +466,9 @@
     "description": "Sichuan Poker 是一款快節奏的撲克變體遊戲，規則簡單，適合快速遊戲。",
     "descriptionMm": "Sichuan Poker သည် မြန်ဆန်သော ပိုကာ မျိုးကွဲ ဂိမ်းတစ်ခုဖြစ်ပြီး စည်းမျဉ်းများ ရိုးရှင်းပြီး မြန်ဆန်သော ဂိမ်းအတွက် သင့်တော်သည်။",
     "images": [
-      "/images/games/sichuan-poker-1.jpg"
+      "/images/games/sichuan-poker-1.webp"
     ],
-    "thumbnail": "/images/games/sichuan-poker-thumb.jpg",
+    "thumbnail": "/images/games/sichuan-poker-thumb.webp",
     "rating": 4.2,
     "popularity": 78,
     "releaseDate": "2023-05-20",
@@ -494,9 +491,9 @@
     "description": "PG Fishing 是一款多人實時捕魚遊戲，具有巨大的獲勝潛力和刺激的遊戲體驗。",
     "descriptionMm": "PG Fishing သည် ကစားသမားများစွာ ပါဝင်သော အချိန်နှင့်တပြေးညီ ငါးဖမ်းဂိမ်းတစ်ခုဖြစ်ပြီး ကြီးမားသော အနိုင်ရရှိမှု အလားအလာနှင့် စိတ်လှုပ်ရှားဖွယ် ဂိမ်းအတွေ့အကြုံ ရှိသည်။",
     "images": [
-      "/images/games/pg-fishing-1.jpg"
+      "/images/games/pg-fishing-1.webp"
     ],
-    "thumbnail": "/images/games/pg-fishing-thumb.jpg",
+    "thumbnail": "/images/games/pg-fishing-thumb.webp",
     "rating": 4.5,
     "popularity": 86,
     "releaseDate": "2022-03-15",
@@ -519,9 +516,9 @@
     "description": "Fishing War 是一款以戰爭為主題的捕魚遊戲，提供刺激的多人遊戲體驗。",
     "descriptionMm": "Fishing War သည် စစ်ပွဲကို အခြေခံထားသော ငါးဖမ်းဂိမ်းတစ်ခုဖြစ်ပြီး စိတ်လှုပ်ရှားဖွယ် ကစားသမားများစွာ ဂိမ်းအတွေ့အကြုံကို ပေးသည်။",
     "images": [
-      "/images/games/fishing-war-1.jpg"
+      "/images/games/fishing-war-1.webp"
     ],
-    "thumbnail": "/images/games/fishing-war-thumb.jpg",
+    "thumbnail": "/images/games/fishing-war-thumb.webp",
     "rating": 4.4,
     "popularity": 84,
     "releaseDate": "2023-09-10",
